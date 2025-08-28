@@ -4,19 +4,18 @@
     "items": []
   },
   {
-    "listing": "/slides.html",
-    "items": [
-      "/1-welcome/1-data-on-trees/slides.html"
-    ]
+    "listing": "/index.html",
+    "items": []
   },
   {
     "listing": "/notes.html",
-    "items": [
-      "/1-welcome/1-data-on-trees/notes.html"
-    ]
+    "items": []
   },
   {
-    "listing": "/index.html",
-    "items": []
+    "listing": "/slides.html",
+    "items": [
+      "/1-welcome/1-data-on-trees/slides.html",
+      "/1-welcome/2-lab/slides.html"
+    ]
   }
 ]
