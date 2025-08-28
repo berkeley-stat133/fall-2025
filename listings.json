@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/problem-sets.html",
+    "items": []
+  },
+  {
+    "listing": "/slides.html",
+    "items": [
+      "/1-welcome/1-data-on-trees/slides.html"
+    ]
+  },
+  {
+    "listing": "/notes.html",
+    "items": [
+      "/1-welcome/1-data-on-trees/notes.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": []
+  }
+]
