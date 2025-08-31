@@ -1,7 +1,9 @@
 [
   {
     "listing": "/problem-sets.html",
-    "items": []
+    "items": [
+      "/problem-sets/ps.pdf"
+    ]
   },
   {
     "listing": "/index.html",
@@ -10,12 +12,5 @@
   {
     "listing": "/notes.html",
     "items": []
-  },
-  {
-    "listing": "/slides.html",
-    "items": [
-      "/1-welcome/1-data-on-trees/slides.html",
-      "/1-welcome/2-lab/slides.html"
-    ]
   }
 ]
