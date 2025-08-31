@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="564" height="500" viewBox="0 0 564 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        font-family: Georgia, Georgia;
+        font-size: 235px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #066;
+      }
+    </style>
+  </defs>
+  <g id="Polygon_3" data-name="Polygon 3" class="cls-2">
+    <g id="Polygon_3-2" data-name="Polygon 3">
+      <polygon class="cls-1" points="76.25 369.8 76.25 130.2 283.74 10.39 491.23 130.2 491.23 369.8 283.74 489.61 76.25 369.8"/>
+      <path class="cls-4" d="M283.74,20.78l198.49,114.61v229.22l-198.49,114.61-198.49-114.61V135.39L283.74,20.78M283.74,0L67.25,125v250l216.49,125,216.49-125V125L283.74,0h0Z"/>
+    </g>
+  </g>
+  <g id="_33" data-name="133">
+    <text class="cls-3" transform="translate(103.85 301.74)"><tspan x="0" y="0">133</tspan></text>
+  </g>
+</svg>

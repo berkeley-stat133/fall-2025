@@ -1,3 +1,6 @@
+/* styles for the wall calendar are stored in the ejs
+file in the course-website-ejs extension directory */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap');
 
 /* navigation*/
@@ -75,6 +78,49 @@ body.quarto-homepage .content {
   }
 }
 
-/* styles for the wall calendar are stored in the ejs
-file in the course-website-ejs extension directory */
+/* Scroll-triggered navbar styles */
+.navbar-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px; /* Ensure consistent height */
+}
+
+.navbar-title {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-brand-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-20deg);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+}
+
+/* When scrolled, fade out title and fade in logo with rotation */
+.navbar.scrolled .navbar-title {
+  opacity: 0;
+}
+
+.navbar.scrolled .navbar-brand-logo {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.navbar-brand-logo img {
+  height: 32px;
+  width: auto;
+  vertical-align: middle;
+  display: block;
+}
+
 
