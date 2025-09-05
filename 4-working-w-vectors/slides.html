@@ -202,16 +202,29 @@
 </div>
 
 </section>
-<section id="while-youre-waiting" class="slide level2">
-<h2>While you’re waiting</h2>
+<section id="review" class="slide level2">
+<h2>Review</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">~</span></span>
 <span id="cb1-2"><a></a><span class="ex">└──</span> data-projects</span>
 <span id="cb1-3"><a></a>    <span class="ex">├──</span> project-1</span>
-<span id="cb1-4"><a></a>    <span class="ex">│</span>   ├── syllabus.pdf</span>
-<span id="cb1-5"><a></a>    <span class="ex">│</span>   ├── midterm.pdf</span>
-<span id="cb1-6"><a></a>    <span class="ex">│</span>   └── final.pdf</span>
+<span id="cb1-4"><a></a>    <span class="ex">│</span>   ├── fall-data.txt</span>
+<span id="cb1-5"><a></a>    <span class="ex">│</span>   ├── spring-data.txt</span>
+<span id="cb1-6"><a></a>    <span class="ex">│</span>   └── analysis.r</span>
 <span id="cb1-7"><a></a>    <span class="ex">├──</span> project-2</span>
-<span id="cb1-8"><a></a>    <span class="ex">│</span>   ├── syllabus.docx ●</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a></a>        <span class="ex">└──</span> summer-data.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Question</strong></p>
+</div>
+<div class="callout-content">
+<p>If your present working directory is <code>~/data-projects/project-2</code>, what R command would you use to read the file named <code>fall-data.txt</code>?</p>
+</div>
+</div>
+</div>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
@@ -318,7 +331,7 @@
 </div>
 </div>
 </div>
-<div id="timer_da6df9631e1e030754263664b44e70eb1f878fa5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_2ac3a121d5c75077fb3fdebf468749c8c0457da9" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -739,16 +752,106 @@
 </div>
 </div>
 <div class="fragment">
-<p>Note: the logical</p>
+<p>Note: the logical vector should be of the same length.</p>
+<aside class="notes">
+<p>Examples:</p>
+<p>named_char_vec[rep(c(TRUE, FALSE, TRUE), 2)]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="section-8" class="slide level2 ttan">
+<h2></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Question</strong></p>
+</div>
+<div class="callout-content">
+<p>Write down <em>three</em> methods to generate each vector from the vector <code>z</code>, one for each subsetting method.</p>
+<p><code>z &lt;- c(apple = 2, banana = 4, cherry = 8)</code></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Vector 1:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>banana  apple 
+     4      2 </code></pre>
+</div>
+</div>
+<p>Vector 2:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>cherry cherry 
+     8      8 </code></pre>
+</div>
+</div>
+<div id="timer_2ac3a121d5c75077fb3fdebf468749c8c0457da9" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+ </div>
 </div>
 </section>
 <section id="change-in-place-syntax" class="slide level2">
 <h2>Change in place syntax</h2>
+<p>You can assign into a subsetted vector to change its contents in place.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">apple =</span> <span class="dv">2</span>, <span class="at">banana =</span> <span class="dv">4</span>, <span class="at">cherry =</span> <span class="dv">8</span>)</span>
+<span id="cb56-2"><a></a>z[<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)] <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb56-3"><a></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code> apple banana cherry 
+    12      4     12 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">names</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "apple"  "banana" "cherry"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="fu">names</span>(z) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ali"</span>, <span class="st">"bob"</span>, <span class="st">"chip"</span>)</span>
+<span id="cb60-2"><a></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code> ali  bob chip 
+  12    4   12 </code></pre>
+</div>
+</div>
+</div>
 </section>
 <section id="for-next-time" class="slide level2">
 <h2>For next time</h2>
 <ul>
-<li class="fragment">Work on problem sets.</li>
+<li class="fragment">Work on problem sets and lab.</li>
+<li class="fragment">Visit office hours and group tutoring.</li>
+<li class="fragment">Have a great weekend 😎</li>
 </ul>
 
 
