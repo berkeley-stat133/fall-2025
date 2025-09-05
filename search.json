@@ -126,25 +126,14 @@
     "text": "Concept Acquisition\n\nData is stored on a computer disk in files.\nFiles are stored in directories (or folders).\nFiles and directories can be structured using a tree.\nEach file’s location is defined by its path.\n\n\n\nTool Acquisition\n\nPaths are defined by concatenating nodes separated by a /.\n\n\n\nConcept Application\n\nGiven a file system tree,\n\nwrite down the absolute path to a file.\ngiven two file system items, write the relative path from one to the other.\n\nGiven a set of file paths, reconstruct the file system tree.\n\n\n\n\n**Before Class*:\n\nProject first slide showing laptop policy.\nWrite lab section number / times / GSIS on board.\nPass out index cards, one to each student."
   },
   {
-    "objectID": "2-intro-to-r/notes.html",
-    "href": "2-intro-to-r/notes.html",
-    "title": "Intro to R",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 133",
     "section": "",
-    "text": "tree\ncd data-in-trees/non-stats/one\ncp 125.txt 125-twin.txt\nls\n\nls -l\nman ls\nls -lrt\ncd ~\nls -lrt data-in-trees/non-stats/one\n\nmkdir all-text-files\ncp */*/*/*.txt all-text-files\nls all-text-files\ntree all-text-files\n\nfind . -type f -name \"*.txt\" -print0 | xargs -0 awk 'FNR==2' &gt; combined_output.txt\n\nR"
-  },
-  {
-    "objectID": "2-intro-to-r/notes.html#r-on-the-file-system",
-    "href": "2-intro-to-r/notes.html#r-on-the-file-system",
-    "title": "Intro to R",
-    "section": "R on the file system",
-    "text": "R on the file system\n# Where am I?\ngetwd()\n\n# What's around me?\nls() # this doesn't do what I think it does\nlist.files()\n\n## Tree diagram and working direcory ##\nsystem(\"tree .\")\n\n# Let's change that\nsetwd(\"data-in-trees/stats/three\")\n\n# Let's look at files\ncat(\"108.txt\") # this doesn't do what you think it does?\n# Ask Gemini for the name of the function\n# bring up AI policy from syllabus\nreadLines(\"108.txt\")\n# Ask Gemini about warning\n\n## Def: Warning ##\n\n# let's move our \"working directory\"\nsetwd(\"../../non-stats\")\nreadLines(\"../stats/thee/108.txt\") # make a typo! to show an error message\n## Def: Error ##"
-  },
-  {
-    "objectID": "2-intro-to-r/notes.html#whats-the-distribution-of-distances",
-    "href": "2-intro-to-r/notes.html#whats-the-distribution-of-distances",
-    "title": "Intro to R",
-    "section": "What’s the distribution of distances",
-    "text": "What’s the distribution of distances\nreadLines(\"combined_output.txt\")\ndistances &lt;- readLines(\"combined_output.txt\")\n\nmean(distances)\n\ndistances &lt;- as.numeric(distances)\nmean(distances)\nsd(distances)\nsummary(distances)"
+    "text": "Concepts in Computing with Data\nStat 133 UC Berkeley\n\n\n\n\n\n\n\n\n\n\n  \n  Week 1\n  \n\n  \n    \n    \n    \n    Aug 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 27\n    \n    \n    Welcome\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 28\n    \n    \n    Lab 0: Data in Trees\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 29\n    \n    \n    Intro to R\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 2\n  \n\n  \n    \n    \n    \n    Sep 1\n    \n    \n    No Class: Labor Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 3\n    \n    \n    Atomic Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 4\n    \n    \n    Lab 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Lab\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 3\n  \n\n  \n    \n    \n    \n    Sep 8\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 9\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 11\n    \n    \n    Quiz 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 12\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 4\n  \n\n  \n    \n    \n    \n    Sep 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 18\n    \n    \n    Lab 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 5\n  \n\n  \n    \n    \n    \n    Sep 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 23\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 25\n    \n    \n    Quiz 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 6\n  \n\n  \n    \n    \n    \n    Sep 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 30\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 2\n    \n    \n    Lab 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 7\n  \n\n  \n    \n    \n    \n    Oct 6\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 8\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 9\n    \n    \n    Quiz 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 8\n  \n\n  \n    \n    \n    \n    Oct 13\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 7\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 16\n    \n    \n    Lab 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 9\n  \n\n  \n    \n    \n    \n    Oct 20\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 8\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 23\n    \n    \n    Quiz 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 10\n  \n\n  \n    \n    \n    \n    Oct 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 9\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 30\n    \n    \n    Lab 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 31\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 11\n  \n\n  \n    \n    \n    \n    Nov 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 4\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 10\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 6\n    \n    \n    Quiz 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 12\n  \n\n  \n    \n    \n    \n    Nov 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 11\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 11\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 12\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 13\n    \n    \n    Lab 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 13\n  \n\n  \n    \n    \n    \n    Nov 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 12\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 20\n    \n    \n    Quiz 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 14\n  \n\n  \n    \n    \n    \n    Nov 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 13\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 15\n  \n\n  \n    \n    \n    \n    Dec 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 14\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 4\n    \n    \n    Quiz 7\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 16\n  \n\n  \n    \n    \n    \n    Dec 8\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 9\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 10\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 11\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 12\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 17\n  \n\n  \n    \n    \n    \n    Dec 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 17\n    \n    \n    Final Exam\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "notes.html",
@@ -152,6 +141,90 @@
     "title": "Notes",
     "section": "",
     "text": "Notes\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html",
+    "href": "3-atomic-vectors/notes.html",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "R’s principle data structure to an ordered collection of elements of the same type. Created with the c() function.\n\ndbl_vec &lt;- c(3, 5, 1.2)\ndbl_vec\n\n[1] 3.0 5.0 1.2\n\nint_vec &lt;- c(3L, 5L, 1L)\nint_vec\n\n[1] 3 5 1\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nlog_vec &lt;- c(TRUE, TRUE, FALSE)\nlog_vec\n\n[1]  TRUE  TRUE FALSE"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#atomic-vectors",
+    "href": "3-atomic-vectors/notes.html#atomic-vectors",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "R’s principle data structure to an ordered collection of elements of the same type. Created with the c() function.\n\ndbl_vec &lt;- c(3, 5, 1.2)\ndbl_vec\n\n[1] 3.0 5.0 1.2\n\nint_vec &lt;- c(3L, 5L, 1L)\nint_vec\n\n[1] 3 5 1\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nlog_vec &lt;- c(TRUE, TRUE, FALSE)\nlog_vec\n\n[1]  TRUE  TRUE FALSE"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#inspecting-vectors",
+    "href": "3-atomic-vectors/notes.html#inspecting-vectors",
+    "title": "Atomic Vectors",
+    "section": "Inspecting Vectors",
+    "text": "Inspecting Vectors\ntypeof(): returns the type of the vector length(): returns the number of elements in the vector\n\ntypeof(char_vec)\n\n[1] \"character\"\n\ntypeof(log_vec)\n\n[1] \"logical\"\n\ntypeof(dbl_vec)\n\n[1] \"double\"\n\ntypeof(int_vec)\n\n[1] \"integer\"\n\nlength(char_vec)\n\n[1] 3\n\nlength(log_vec)\n\n[1] 3\n\nlength(dbl_vec)\n\n[1] 3\n\nlength(int_vec)\n\n[1] 3"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#creating-numeric-vectors-quickly",
+    "href": "3-atomic-vectors/notes.html#creating-numeric-vectors-quickly",
+    "title": "Atomic Vectors",
+    "section": "Creating numeric vectors (quickly)",
+    "text": "Creating numeric vectors (quickly)\n:: create a sequence from the left to the right number, separated by 1.\nseq(): creates a sequence from a number to a number by and interval.\nrep(): replicates a vector times times.\n\n4:8\n\n[1] 4 5 6 7 8\n\nseq(from = 1, to = 3, by = .1)\n\n [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8\n[20] 2.9 3.0\n\nseq(1, 3, .1)\n\n [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8\n[20] 2.9 3.0\n\nrep(1:3, times = 2)\n\n[1] 1 2 3 1 2 3\n\n# What three commands will generate the following vectors?\n# [1] 5.0 5.5 6.0 6.5 7.0\n# [1]  2  1  0 -1 -2\n# [1] \"cat\"   \"dog\"   \"dingo\" \"cat\"   \"dog\"   \"dingo\"\n\n\nseq(from = 5, to = 7, by = .5)\n\n[1] 5.0 5.5 6.0 6.5 7.0\n\nseq(from = 2, to = -2, by = -1)\n\n[1]  2  1  0 -1 -2\n\n2:-2 # also works!\n\n[1]  2  1  0 -1 -2\n\nrep(char_vec, times = 2)\n\n[1] \"cat\"   \"dog\"   \"dingo\" \"cat\"   \"dog\"   \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#special-values",
+    "href": "3-atomic-vectors/notes.html#special-values",
+    "title": "Atomic Vectors",
+    "section": "Special values",
+    "text": "Special values\nNULL: does not exist NA: not available / missing NaN: not a number (dividing by zero) Inf: infinity\n\nc(NA, NULL, 1)\n\n[1] NA  1\n\nmean(c(NA, NULL, 1))\n\n[1] NA\n\nmean(c(NA, NULL, 1), na.rm = TRUE)\n\n[1] 1"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#what-will-the-following-lines-return",
+    "href": "3-atomic-vectors/notes.html#what-will-the-following-lines-return",
+    "title": "Atomic Vectors",
+    "section": "What will the following lines return?",
+    "text": "What will the following lines return?\n\n# What do each of the following 3 lines of code return?\n# c(1, 2, 3) + c(2, 3, 4)\n# c(1, 2, 3) + c(2, 3)\n# c(1, \"dog\", TRUE)\n\nc(1, 2, 3) + c(2, 3, 4)\n\n[1] 3 5 7\n\nc(1, 2, 3) + c(2, 3)\n\nWarning in c(1, 2, 3) + c(2, 3): longer object length is not a multiple of\nshorter object length\n\n\n[1] 3 5 5\n\nc(1, \"dog\", TRUE)\n\n[1] \"1\"    \"dog\"  \"TRUE\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#behavior-of-vectors",
+    "href": "3-atomic-vectors/notes.html#behavior-of-vectors",
+    "title": "Atomic Vectors",
+    "section": "Behavior of Vectors",
+    "text": "Behavior of Vectors\nVectorization: Operations and functions that can run on an entire vector at once.\nVector Recycling: If a function requires a longer vector than provided, it will fill with the existing elements, in order.\n\nc(2, 6, 1)^2\n\n[1]  4 36  1"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#type-coersion",
+    "href": "3-atomic-vectors/notes.html#type-coersion",
+    "title": "Atomic Vectors",
+    "section": "Type Coersion",
+    "text": "Type Coersion\nImplicit Coersion: Conversion of data types to ensure atomic vectors according to a hierarchy.\nLogical &lt; Integer &lt; Double &lt; Character\n\nc(TRUE, FALSE, 3)\n\n[1] 1 0 3\n\nmean(c(TRUE, FALSE, FALSE))\n\n[1] 0.3333333\n\n\nNote: logical vectors can be coerced to integers for mathematical operations\nExplicit Coersion\nas.__(x): sets x to be of type ___\n\ndistances &lt;- c(\"2800\", \"450\", \"10\")\ndistances\n\n[1] \"2800\" \"450\"  \"10\"  \n\nmean(distances)\n\nWarning in mean.default(distances): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\ndistances &lt;- as.double(distances)\ndistances\n\n[1] 2800  450   10\n\nmean(distances)\n\n[1] 1086.667"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#subsetting-by-index",
+    "href": "3-atomic-vectors/notes.html#subsetting-by-index",
+    "title": "Atomic Vectors",
+    "section": "Subsetting by Index",
+    "text": "Subsetting by Index\nvec[index]\nAnnotate with vec being “vector”, “square bracket”, and “numeric vector”\n\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nchar_vec[2]\n\n[1] \"dog\"\n\nchar_vec[2:3]\n\n[1] \"dog\"   \"dingo\"\n\nchar_vec[rep(3, 10)]\n\n [1] \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\"\n[10] \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#subsetting-by-name",
+    "href": "3-atomic-vectors/notes.html#subsetting-by-name",
+    "title": "Atomic Vectors",
+    "section": "Subsetting by Name",
+    "text": "Subsetting by Name\n\nnamed_char_vec &lt;- c(\"thrash\" = \"cat\", \"buzz\" = \"dog\", \"poppy\" = \"dingo\")\nnamed_char_vec\n\n thrash    buzz   poppy \n  \"cat\"   \"dog\" \"dingo\" \n\nnamed_char_vec[\"buzz\"]\n\n buzz \n\"dog\" \n\nnamed_char_vec[rep(\"poppy\", 10)]\n\n  poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy \n\"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#subsetting-by-logicals",
+    "href": "3-atomic-vectors/notes.html#subsetting-by-logicals",
+    "title": "Atomic Vectors",
+    "section": "Subsetting by Logicals",
+    "text": "Subsetting by Logicals\n\nnamed_char_vec[c(TRUE, FALSE, TRUE)]\n\n thrash   poppy \n  \"cat\" \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#references",
+    "href": "3-atomic-vectors/notes.html#references",
+    "title": "Atomic Vectors",
+    "section": "References",
+    "text": "References\n\nAdvanced R, Chapter 3: Vectors\nR Coding Basics, Chapter 2: Properties of Vectors\nR Coding Basics, Chapter 3: Creating Vectors"
   },
   {
     "objectID": "office-hours.html",
@@ -174,28 +247,256 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "3lab/slides.html#using-the-shell-locally",
+    "href": "3lab/slides.html#using-the-shell-locally",
+    "title": "First Contact with R",
+    "section": "Using the Shell Locally",
+    "text": "Using the Shell Locally\n\n  \n    −\n    +\n \n 07:00\n \n\nMac:\n\n“zshell” (aka zsh) - UNIX based. Very similar to bash (Base UNIX Shell) with some added functionality.\nTo access, use the Mac’s “Termial” application.\n\nWindows:\n\nWill need to install “Git” if you don’t have it already.\n\nhttps://git-scm.com/downloads\n\nThis will give you access to the “Git Bash” application, which will let you use UNIX Shell on your Windows system."
+  },
+  {
+    "objectID": "3lab/slides.html#brief-review-of-lecture",
+    "href": "3lab/slides.html#brief-review-of-lecture",
+    "title": "First Contact with R",
+    "section": "Brief Review of Lecture",
+    "text": "Brief Review of Lecture\nNew Shell Commands\n\n\nmkdir\n\n\nCreates a new directory.\n\n\n\n\ncp\n\n\nCopy file (arg1) to destination (arg2).\nExample: cp ~/Downloads/hw1.pdf ~/Documents/econ100b/hw/\n\n\n\n\nmv\n\n\nMove file (first argument) to destination directory (second argument).\nExample: mv ~/Downloads/hw1.pdf ~/.Trash\n\n\n\nThey have only heard mv in lecture briefly, so teach them the functionality."
+  },
+  {
+    "objectID": "3lab/slides.html#brief-review-of-lecture-cont.",
+    "href": "3lab/slides.html#brief-review-of-lecture-cont.",
+    "title": "First Contact with R",
+    "section": "Brief Review of Lecture (cont.)",
+    "text": "Brief Review of Lecture (cont.)\nR Equivallent of Shell Commands:\n\ngetwd(): like pwd in Shell.\nsetwd(): like cd in Shell.\nlist.files(): like ls in Shell.\nreadLines(): like cat in Shell."
+  },
+  {
+    "objectID": "3lab/slides.html#brief-review-of-lecture-cont..",
+    "href": "3lab/slides.html#brief-review-of-lecture-cont..",
+    "title": "First Contact with R",
+    "section": "Brief Review of Lecture (cont..)",
+    "text": "Brief Review of Lecture (cont..)\n\na:b: Creates vector of numbers from a to b by 1.\nseq: Creates vector of numbers from \"from\" argument, to \"to\" argument, by steps defined in the \"by\" argument.\nrep: Repeats vector provided \"x\" a number of times defined by \"times\" argument."
+  },
+  {
+    "objectID": "3lab/slides.html#vectorization",
+    "href": "3lab/slides.html#vectorization",
+    "title": "First Contact with R",
+    "section": "Vectorization",
+    "text": "Vectorization\n\nOperations on a single object also works on vectors.\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\n[1] 36 26  5\n\n\n\n\nvec * 3\n\nvec * 3\n\n[1] 216 156  30\n\n\n\n\nvec - 6\n\nvec - 6\n\n[1] 66 46  4"
+  },
+  {
+    "objectID": "3lab/slides.html#recycling",
+    "href": "3lab/slides.html#recycling",
+    "title": "First Contact with R",
+    "section": "Recycling",
+    "text": "Recycling\n\nOperations on two vectors of unequal length.\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\n [1]  1  4  3  8  5 12  7 16  9 20\n\n\n\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 * vec3\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 + vec3\n\n [1]  2  4  6  5  7  9  8 10 12 11"
+  },
+  {
+    "objectID": "3lab/slides.html#lab-1-assignment",
+    "href": "3lab/slides.html#lab-1-assignment",
+    "title": "First Contact with R",
+    "section": "Lab 1 Assignment",
+    "text": "Lab 1 Assignment\n\n  \n    −\n    +\n \n 15:00\n \n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nTwo Parts:\n\nShell\nR: Atomic Vectors, Vectorization, Recycling, Matrices, if statements, for loops.\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important AND are in scope of lectures so far (nothing after 7)."
+  },
+  {
+    "objectID": "3lab/worksheet.html",
+    "href": "3lab/worksheet.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Concepts in Computing with Data\nStat 133 UC Berkeley\n\n\n\n\n\n\n\n\n\n\n  \n  Week 1\n  \n\n  \n    \n    \n    \n    Aug 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 27\n    \n    \n    Welcome\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 28\n    \n    \n    Lab 0: Data in Trees\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 29\n    \n    \n    Intro to R\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 2\n  \n\n  \n    \n    \n    \n    Sep 1\n    \n    \n    No Class: Labor Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 3\n    \n    \n    Atomic Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 4\n    \n    \n    Lab 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Lab\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 3\n  \n\n  \n    \n    \n    \n    Sep 8\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 9\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 11\n    \n    \n    Quiz 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 12\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 4\n  \n\n  \n    \n    \n    \n    Sep 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 18\n    \n    \n    Lab 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 5\n  \n\n  \n    \n    \n    \n    Sep 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 23\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 25\n    \n    \n    Quiz 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 6\n  \n\n  \n    \n    \n    \n    Sep 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 30\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 2\n    \n    \n    Lab 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 7\n  \n\n  \n    \n    \n    \n    Oct 6\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 8\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 9\n    \n    \n    Quiz 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 8\n  \n\n  \n    \n    \n    \n    Oct 13\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 7\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 16\n    \n    \n    Lab 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 9\n  \n\n  \n    \n    \n    \n    Oct 20\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 8\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 23\n    \n    \n    Quiz 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 10\n  \n\n  \n    \n    \n    \n    Oct 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 9\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 30\n    \n    \n    Lab 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 31\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 11\n  \n\n  \n    \n    \n    \n    Nov 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 4\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 10\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 6\n    \n    \n    Quiz 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 12\n  \n\n  \n    \n    \n    \n    Nov 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 11\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 11\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 12\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 13\n    \n    \n    Lab 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 13\n  \n\n  \n    \n    \n    \n    Nov 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 12\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 20\n    \n    \n    Quiz 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 14\n  \n\n  \n    \n    \n    \n    Nov 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 13\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 15\n  \n\n  \n    \n    \n    \n    Dec 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 14\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 4\n    \n    \n    Quiz 7\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 16\n  \n\n  \n    \n    \n    \n    Dec 8\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 9\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 10\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 11\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 12\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 17\n  \n\n  \n    \n    \n    \n    Dec 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 17\n    \n    \n    Final Exam\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "…"
   },
   {
-    "objectID": "2-intro-to-r/slides.html#first-slide",
-    "href": "2-intro-to-r/slides.html#first-slide",
-    "title": "Data Visualization",
-    "section": "First Slide",
-    "text": "First Slide\nSomething."
+    "objectID": "4-working-w-vectors/slides.html#while-youre-waiting",
+    "href": "4-working-w-vectors/slides.html#while-youre-waiting",
+    "title": "Working with Vectors",
+    "section": "While you’re waiting",
+    "text": "While you’re waiting\n~\n└── data-projects\n    ├── project-1\n    │   ├── syllabus.pdf\n    │   ├── midterm.pdf\n    │   └── final.pdf\n    ├── project-2\n    │   ├── syllabus.docx ●"
   },
   {
-    "objectID": "2-intro-to-r/slides.html#second-slide",
-    "href": "2-intro-to-r/slides.html#second-slide",
-    "title": "Data Visualization",
-    "section": "Second Slide",
-    "text": "Second Slide\nAnother thing."
+    "objectID": "4-working-w-vectors/slides.html#announcements",
+    "href": "4-working-w-vectors/slides.html#announcements",
+    "title": "Working with Vectors",
+    "section": "Announcements",
+    "text": "Announcements\n\nWorking locally 🏆\nOffice Hours / Group Tutoring\nProblem Sets"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#vectors",
+    "href": "4-working-w-vectors/slides.html#vectors",
+    "title": "Working with Vectors",
+    "section": "Vectors",
+    "text": "Vectors\n\n\n\nCentral data structure in R\nOrdered set of elements\nAtomic: elements of the same type"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#atomic",
+    "href": "4-working-w-vectors/slides.html#atomic",
+    "title": "Working with Vectors",
+    "section": "Atomic*",
+    "text": "Atomic*\n\n\nSpecial values in an atomic vector.\n\nNA: Not available / Missing\nNULL: Does not exist\nNaN: Not a number (e.g. dividing by zero)\nInf: Infinity\n\n\n\nExamples:\na &lt;- c(NA, NULL, 1) typeof(a) a mean(a) mean(a, na.rm = TRUE)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#a-comment-about-comments",
+    "href": "4-working-w-vectors/slides.html#a-comment-about-comments",
+    "title": "Working with Vectors",
+    "section": "A comment about comments",
+    "text": "A comment about comments\n\nComment character: special character to skip evaluation of remaining characters on a line. R (and Python) use #.\n\n\n\n# create vector\nc(\"A\", \"C\", \"D\") # vector created!\n\n\n\n[1] \"A\" \"C\" \"D\"\n\n\n\n\nvs.\n\ncreate vector\nc(\"A\", \"C\", \"D\") vector created!\n\n\n\nError in parse(text = input): &lt;text&gt;:1:8: unexpected symbol\n1: create vector\n           ^"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-1",
+    "href": "4-working-w-vectors/slides.html#section-1",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\nc(1, 2, 3) + c(2, 4)\nc(1, \"dog\", TRUE)\n\n\n\n\n\n  \n    −\n    +\n \n 02:30"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#vectorization",
+    "href": "4-working-w-vectors/slides.html#vectorization",
+    "title": "Working with Vectors",
+    "section": "Vectorization",
+    "text": "Vectorization\n\nVectorized: Operations and functions that can run on an entire vector at once.\n\n\n\ndbl_vec &lt;- c(1, 2.3, 4)\nlog(dbl_vec) # vectorized\n\n\n\n[1] 0.0000000 0.8329091 1.3862944\n\n\n\n\n\nsum(dbl_vec) # vector-as-argument\n\n\n\n[1] 7.3"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-2",
+    "href": "4-working-w-vectors/slides.html#section-2",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\n\n\nc(1, 2, 3) + c(2, 4)\nc(1, \"dog\", TRUE)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-3",
+    "href": "4-working-w-vectors/slides.html#section-3",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\n\n[1]  3  6 11\n\n\n\nc(1, 2, 3) + c(2, 4)\nc(1, \"dog\", TRUE)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#vector-recycling",
+    "href": "4-working-w-vectors/slides.html#vector-recycling",
+    "title": "Working with Vectors",
+    "section": "Vector Recycling",
+    "text": "Vector Recycling\n\nVector Recycling: If a function requires a longer vector than provided, it will fill the vector with the existing elements, in order.\n\nc(2, 6, 1) ^ 2\n\n[1]  4 36  1\n\n\n\nSketch the two vectors side by side and recycle the second to be c(2, 2, 2)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-4",
+    "href": "4-working-w-vectors/slides.html#section-4",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\n\n[1]  3  6 11\n\n\n\nc(1, 2, 3) + c(2, 4)\n\n\nc(1, \"dog\", TRUE)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-5",
+    "href": "4-working-w-vectors/slides.html#section-5",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\n\n[1]  3  6 11\n\n\n\nc(1, 2, 3) + c(2, 4)\n\n[1] 3 6 5\n\n\n\nc(1, \"dog\", TRUE)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#type-coersion",
+    "href": "4-working-w-vectors/slides.html#type-coersion",
+    "title": "Working with Vectors",
+    "section": "Type Coersion",
+    "text": "Type Coersion\n\n\n\nImplicit Coersion: Automatic change of data types to ensure atomic vectors. Changes follow a hierarchy.\n\nc(1, 2, \"three\")\n\n\n\n[1] \"1\"     \"2\"     \"three\"\n\n\nNote: logical vectors can be coerced to integers for mathematical operations\n\n\nAnnotate:\nLogical &lt; Integer &lt; Double &lt; Character\nCode examples:\nc(1, 2, “three”) c(TRUE, FALSE, 3) mean(c(TRUE, FALSE, FALSE))"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-6",
+    "href": "4-working-w-vectors/slides.html#section-6",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\n\n[1]  3  6 11\n\nc(1, 2, 3) + c(2, 4)\n\n[1] 3 6 5\n\n\n\nc(1, \"dog\", TRUE)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#section-7",
+    "href": "4-working-w-vectors/slides.html#section-7",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Question\n\n\nTurn to neighbor and speculate: what will each of the following lines of code return?\n\nc(1, 2, 3) + c(2, 4, 8)\n\n[1]  3  6 11\n\nc(1, 2, 3) + c(2, 4)\n\n[1] 3 6 5\n\n\n\nc(1, \"dog\", TRUE)\n\n[1] \"1\"    \"dog\"  \"TRUE\""
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#type-coersion-1",
+    "href": "4-working-w-vectors/slides.html#type-coersion-1",
+    "title": "Working with Vectors",
+    "section": "Type Coersion",
+    "text": "Type Coersion\n\nExplicit Coersion\nas.__(x): sets x to be of type ___\n\nas.double()\nas.integer()\nas.character()\nas.logical()\n\n\n\n\nas.double(c(TRUE, FALSE, FALSE, FALSE))\n\n\n\n[1] 1 0 0 0\n\n\n\nExample:\ndistances &lt;- c(“2800”, “450”, “10”) distances mean(distances) distances &lt;- as.double(distances) distances mean(distances)"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#square-bracket-syntax",
+    "href": "4-working-w-vectors/slides.html#square-bracket-syntax",
+    "title": "Working with Vectors",
+    "section": "Square Bracket Syntax",
+    "text": "Square Bracket Syntax\n\nvec1[vec2]\nAnnotate with vec being “vector”, “square bracket”, and “numeric vector”"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#subsetting-by-index",
+    "href": "4-working-w-vectors/slides.html#subsetting-by-index",
+    "title": "Working with Vectors",
+    "section": "Subsetting by Index",
+    "text": "Subsetting by Index\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\n\n\n\nchar_vec[2]\n\n\n\n[1] \"dog\"\n\n\n\n\n\nchar_vec[2:3]\n\n\n\n[1] \"dog\"   \"dingo\"\n\n\n\n\nNote: the indexing vector is not recycled.\n\nExample:\nchar_vec[rep(3, 10)]"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#subsetting-by-name",
+    "href": "4-working-w-vectors/slides.html#subsetting-by-name",
+    "title": "Working with Vectors",
+    "section": "Subsetting by Name",
+    "text": "Subsetting by Name\n\nnamed_char_vec &lt;- c(\"iz\" = \"cat\", \"buzz\" = \"dog\", \"poppy\" = \"dingo\")\nnamed_char_vec\n\n\n\n     iz    buzz   poppy \n  \"cat\"   \"dog\" \"dingo\" \n\n\n\n\nnamed_char_vec[\"buzz\"]\n\n\n\n buzz \n\"dog\" \n\n\n\nExample:\nnamed_char_vec[2] named_char_vec[rep(“poppy”, 10)]"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#subsetting-by-logicals",
+    "href": "4-working-w-vectors/slides.html#subsetting-by-logicals",
+    "title": "Working with Vectors",
+    "section": "Subsetting by Logicals",
+    "text": "Subsetting by Logicals\n\nnamed_char_vec[c(TRUE, FALSE, TRUE)]\n\n\n\n     iz   poppy \n  \"cat\" \"dingo\" \n\n\n\nNote: the logical"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#change-in-place-syntax",
+    "href": "4-working-w-vectors/slides.html#change-in-place-syntax",
+    "title": "Working with Vectors",
+    "section": "Change in place syntax",
+    "text": "Change in place syntax"
+  },
+  {
+    "objectID": "4-working-w-vectors/slides.html#for-next-time",
+    "href": "4-working-w-vectors/slides.html#for-next-time",
+    "title": "Working with Vectors",
+    "section": "For next time",
+    "text": "For next time\n\nWork on problem sets."
+  },
+  {
+    "objectID": "2-intro-to-r/notes.html",
+    "href": "2-intro-to-r/notes.html",
+    "title": "Intro to R",
+    "section": "",
+    "text": "*Annotate file system tree with a square labelled “shell” and another labelled “R”.\n\nBoth have the concept of a working directory that you can change.\nNow let’s live code."
+  },
+  {
+    "objectID": "2-intro-to-r/notes.html#r-on-the-file-system",
+    "href": "2-intro-to-r/notes.html#r-on-the-file-system",
+    "title": "Intro to R",
+    "section": "",
+    "text": "*Annotate file system tree with a square labelled “shell” and another labelled “R”.\n\nBoth have the concept of a working directory that you can change.\nNow let’s live code."
+  },
+  {
+    "objectID": "2-intro-to-r/notes.html#r-on-the-file-system-1",
+    "href": "2-intro-to-r/notes.html#r-on-the-file-system-1",
+    "title": "Intro to R",
+    "section": "R on the file system",
+    "text": "R on the file system\n# Where am I?\ngetwd()\n\n# What's around me?\nls() # this doesn't do what you think it does\nlist.files()\n\n# Let's change that\nsetwd(\"data-in-trees/stats/three\")\n\n# Let's look at files\ncat(\"108.txt\") # this doesn't do what you think it does\n# Ask Gemini for the name of the function\n# bring up AI policy from syllabus\nreadLines(\"108.txt\")\n# Ask Gemini about warning\n\n## Def: Warning ##\n\n# let's move our \"working directory\"\nsetwd(\"../../non-stats\")\nreadLines(\"../stats/thee/108.txt\") # make a typo! to show an error message\n## Def: Error ##"
+  },
+  {
+    "objectID": "2-intro-to-r/notes.html#whats-the-distribution-of-distances",
+    "href": "2-intro-to-r/notes.html#whats-the-distribution-of-distances",
+    "title": "Intro to R",
+    "section": "What’s the distribution of distances",
+    "text": "What’s the distribution of distances\nreadLines(\"combined_output.txt\")\ndistances &lt;- readLines(\"combined_output.txt\")\n\nmean(distances) # whoops, took a mean of characters\n\ndistances &lt;- as.numeric(distances) # convert to numbers\nmean(distances)\nsd(distances)\nsummary(distances)\ngetwd() # like pwd\nlist.files() # like ls\nsetwd() # like cd\nreadLines() # like cat"
+  },
+  {
+    "objectID": "2-intro-to-r/notes.html#r-on-the-file-system-2",
+    "href": "2-intro-to-r/notes.html#r-on-the-file-system-2",
+    "title": "Intro to R",
+    "section": "R on the file system",
+    "text": "R on the file system\n# Where am I?\ngetwd()\n\n# What's around me?\nls() # this doesn't do what I think it does\nlist.files()\n\n## Tree diagram and working direcory ##\nsystem(\"tree .\")\n\n# Let's change that\nsetwd(\"data-in-trees/stats/three\")\n\n# Let's look at files\ncat(\"108.txt\") # this doesn't do what you think it does?\n# Ask Gemini for the name of the function\n# bring up AI policy from syllabus\nreadLines(\"108.txt\")\n# Ask Gemini about warning\n\n## Def: Warning ##\n\n# let's move our \"working directory\"\nsetwd(\"../../non-stats\")\nreadLines(\"../stats/thee/108.txt\") # make a typo! to show an error message\n## Def: Error ##"
+  },
+  {
+    "objectID": "2-intro-to-r/notes.html#whats-the-distribution-of-distances-1",
+    "href": "2-intro-to-r/notes.html#whats-the-distribution-of-distances-1",
+    "title": "Intro to R",
+    "section": "What’s the distribution of distances",
+    "text": "What’s the distribution of distances\nreadLines(\"combined_output.txt\")\ndistances &lt;- readLines(\"combined_output.txt\")\n\nmean(distances)\n\ndistances &lt;- as.numeric(distances)\nmean(distances)\nsd(distances)\nsummary(distances)"
   },
   {
     "objectID": "1-welcome/slides.html#welcome-to-stat-133",

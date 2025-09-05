@@ -30,10 +30,13 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-652537a0693919be03e8de2f4d38d509.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-ba472b613fa77e4eea932685a8c8cade.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -139,28 +142,28 @@
 <h2>Welcome to STAT 133!</h2>
 <p>We will begin at ten past. By that time, please</p>
 <ul>
-<li>silence phones and put into your bag</li>
-<li>close and stow your laptops</li>
+<li class="fragment">silence phones and put into your bag</li>
+<li class="fragment">close and stow your laptops</li>
 </ul>
 </section>
 <section id="making-data" class="slide level2">
 <h2>Making Data</h2>
 <p>On one side of your card write answers to the following questions (borrow a pen from a neighbor if needed):</p>
 <ol type="1">
-<li>What is your lab number? (integer)</li>
-<li>How many years have you been at Cal? (integer)</li>
-<li>Are you a Statistics major? (true / false)</li>
+<li class="fragment">What is your lab number? (integer)</li>
+<li class="fragment">How many years have you been at Cal? (integer)</li>
+<li class="fragment">Are you a Statistics major? (true / false)</li>
 </ol>
 <p>On the other side of the card write answers to the following questions:</p>
 <ol type="1">
-<li>What was your “song of the summer”? (character string)</li>
-<li>What is the farthest that you were from Cal this summer in miles? (numeric)</li>
+<li class="fragment">What was your “song of the summer”? (character string)</li>
+<li class="fragment">What is the farthest that you were from Cal this summer in miles? (numeric)</li>
 </ol>
 </section>
 <section id="with-the-people-around-you" class="slide level2">
 <h2>With the people around you…</h2>
 <p>Take a few minutes to share your <strong>name</strong> and the answers to the questions that you wrote down.</p>
-<div id="timer_524c92dce38b8f78c0e747bd69ab124faff33362" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+<div id="timer_1959386bf792f3f10eb2f6b0367449655d4ef104" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="top: 0;right: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -250,8 +253,8 @@ What is “turnout” over time?</p>
 <section id="analysis-workflow" class="slide level2">
 <h2>Analysis workflow</h2>
 <ol type="1">
-<li>Access and store data</li>
-<li>Perform Optical Character Recognition (OCR): PDF &gt; .xls, .csv</li>
+<li class="fragment">Access and store data</li>
+<li class="fragment">Perform Optical Character Recognition (OCR): PDF &gt; .xls, .csv</li>
 </ol>
 </section>
 <section id="section-6" class="slide level2">
@@ -275,12 +278,12 @@ What is “turnout” over time?</p>
 <section id="analysis-workflow-1" class="slide level2">
 <h2>Analysis workflow</h2>
 <ol type="1">
-<li>Access and store data</li>
-<li>Perform Optical Character Recognition (OCR): PDF &gt; .xls, .csv</li>
-<li>Isolate data from Deschutes County</li>
-<li>Convert day from words to numbers</li>
-<li>Create new column of cumulative returns</li>
-<li>Create line plot</li>
+<li class="fragment">Access and store data</li>
+<li class="fragment">Perform Optical Character Recognition (OCR): PDF &gt; .xls, .csv</li>
+<li class="fragment">Isolate data from Deschutes County</li>
+<li class="fragment">Convert day from words to numbers</li>
+<li class="fragment">Create new column of cumulative returns</li>
+<li class="fragment">Create line plot</li>
 </ol>
 </section>
 <section id="section-9" class="slide level2">
@@ -311,25 +314,25 @@ What is “turnout” over time?</p>
 <section id="lecture" class="slide level2">
 <h2>Lecture</h2>
 <ul>
-<li>Stow laptops and phones</li>
-<li>I’ll do mix of slides and boardwork</li>
-<li>Take handwritten notes (paper or tablet)</li>
+<li class="fragment">Stow laptops and phones</li>
+<li class="fragment">I’ll do mix of slides and boardwork</li>
+<li class="fragment">Take handwritten notes (paper or tablet)</li>
 </ul>
 </section>
 <section id="lab" class="slide level2">
 <h2>Lab</h2>
 <ul>
-<li>A mix of new ideas, practice, and working on lab assignments.</li>
-<li>Every other week you take a quiz in lab.</li>
+<li class="fragment">A mix of new ideas, practice, and working on lab assignments.</li>
+<li class="fragment">Every other week you take a quiz in lab.</li>
 </ul>
 </section>
 <section id="assignment-types" class="slide level2">
 <h2>Assignment types</h2>
 <ul>
-<li>5% Problem Sets (credit / no credit): Small practice problems</li>
-<li>15% Labs (credit / no credit): Explorations of real data and computing workflows</li>
-<li>50% Quizzes: Every two weeks in lab</li>
-<li>30% Final Exam: Wednesday of finals week 7 - 10 pm</li>
+<li class="fragment">5% Problem Sets (credit / no credit): Small practice problems</li>
+<li class="fragment">15% Labs (credit / no credit): Explorations of real data and computing workflows</li>
+<li class="fragment">50% Quizzes: Every two weeks in lab</li>
+<li class="fragment">30% Final Exam: Wednesday of finals week 7 - 10 pm</li>
 </ul>
 </section>
 <section id="about-those-quizzes" class="slide level2">
@@ -353,9 +356,9 @@ What is “turnout” over time?</p>
 </blockquote>
 <p>You will:</p>
 <ol type="1">
-<li>Meet your GSI</li>
-<li>Discuss the syllabus</li>
-<li>Learn fundamentals of storing and structuring data in files on a computer</li>
+<li class="fragment">Meet your GSI</li>
+<li class="fragment">Discuss the syllabus</li>
+<li class="fragment">Learn fundamentals of storing and structuring data in files on a computer</li>
 </ol>
 </section>
 <section id="parting-words" class="slide level2">
@@ -385,6 +388,8 @@ What is “turnout” over time?</p>
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -406,7 +411,9 @@ What is “turnout” over time?</p>
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'chalkboard': {"buttons":false,"chalkEffect":0.2},
+'drop': {"button":false,"shortcut":"`","engine":"webr","webr":{"packages":[]},"pyodide":{"packages":[]}},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -577,7 +584,7 @@ What is “turnout” over time?</p>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealDrop, QuartoSupport,
 
           RevealMath,
           RevealNotes,
