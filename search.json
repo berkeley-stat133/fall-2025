@@ -279,14 +279,14 @@
     "href": "3lab/slides.html#vectorization",
     "title": "First Contact with R",
     "section": "Vectorization",
-    "text": "Vectorization\n\nOperations on a single object also works on vectors.\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\n[1] 36 26  5\n\n\n\n\nvec * 3\n\nvec * 3\n\n[1] 216 156  30\n\n\n\n\nvec - 6\n\nvec - 6\n\n[1] 66 46  4"
+    "text": "Vectorization\n\nOperations on a single object also works on vectors.\n\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\n[1] 36 26  5\n\n\n\n\n\nvec * 3\n\n[1] 216 156  30\n\n\n\n\n\nvec - 6\n\n[1] 66 46  4"
   },
   {
     "objectID": "3lab/slides.html#recycling",
     "href": "3lab/slides.html#recycling",
     "title": "First Contact with R",
     "section": "Recycling",
-    "text": "Recycling\n\nOperations on two vectors of unequal length.\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\n [1]  1  4  3  8  5 12  7 16  9 20\n\n\n\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 * vec3\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 + vec3\n\n [1]  2  4  6  5  7  9  8 10 12 11"
+    "text": "Recycling\n\nOperations on two vectors of unequal length.\n\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\n [1]  1  4  3  8  5 12  7 16  9 20\n\n\n\n\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 + vec3\n\n [1]  2  4  6  5  7  9  8 10 12 11"
   },
   {
     "objectID": "3lab/slides.html#lab-1-assignment",
