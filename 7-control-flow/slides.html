@@ -232,7 +232,7 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.415748</code></pre>
+<pre><code>[1] 0.8961561</code></pre>
 </div>
 </div>
 </div>
@@ -341,7 +341,7 @@
 <div class="fragment">
 <h4 id="question">Question</h4>
 <p>Using the R objects <code>bike_working</code> and <code>enough_time</code>, both logical vectors of length 1, write this decision tree in R using nested if-then statements and <code>print()</code>.</p>
-<div id="timer_7d623814080375e89fd75e7c2afee387d70a40c7" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_bfe36232584dc1da94461fa0453bcea576743d9c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -407,15 +407,21 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.078665 1.103583 1.559321</code></pre>
+<pre><code>[1] -0.8296147 -1.3312899  0.4694577</code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
+<p><br>
+<br>
+<br>
+</p>
+<div class="r-fit-text">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb10-2"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb10-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>      <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb10-2"><a></a>        <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
+<span id="cb10-3"><a></a>      }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <aside class="notes">
 <p>Annotate this if-then by wrapping it in a for loop.</p>
@@ -443,9 +449,7 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "x is positive :)"
-[1] "x is positive :)"
-[1] "x is positive :)"</code></pre>
+<pre><code>[1] "x is positive :)"</code></pre>
 </div>
 </div>
 </section>
@@ -460,9 +464,7 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "element 1 is positive :)"
-[1] "element 2 is positive :)"
-[1] "element 3 is positive :)"</code></pre>
+<pre><code>[1] "element 3 is positive :)"</code></pre>
 </div>
 </div>
 </section>
@@ -477,9 +479,7 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "1.07866502203704 is positive :)"
-[1] "1.1035834760859 is positive :)"
-[1] "1.5593205431534 is positive :)"</code></pre>
+<pre><code>[1] "0.469457657102781 is positive :)"</code></pre>
 </div>
 </div>
 </section>
@@ -496,7 +496,7 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE FALSE</code></pre>
+<pre><code>[1]  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
 </div>
@@ -506,7 +506,7 @@
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "is negative :(" "is negative :(" "is negative :("</code></pre>
+<pre><code>[1] "is positive :)" "is positive :)" "is negative :("</code></pre>
 </div>
 </div>
 
