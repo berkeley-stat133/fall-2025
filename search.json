@@ -11,7 +11,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.7210368\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 1.360502\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -60,7 +60,7 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.8407823  0.3775963 -0.5608018\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.1772188  1.5349638 -0.3602494\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
@@ -81,7 +81,7 @@
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.377596275341377 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"1.53496381736132 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
@@ -505,6 +505,97 @@
     "title": "First Contact with R",
     "section": "Lab 1 Assignment",
     "text": "Lab 1 Assignment\n\n  \n    −\n    +\n \n 15:00\n \n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nTwo Parts:\n\nShell\nR: Atomic Vectors, Vectorization, Recycling, Matrices, if statements, for loops.\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important AND are in scope of lectures so far (nothing after 7)."
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#agenda",
+    "href": "8lab-monks/lab2-slide.html#agenda",
+    "title": "Lab 2",
+    "section": "Agenda",
+    "text": "Agenda\n\nBrief lecture review\nTime to work in groups on lab worksheet (15 minutes)\nDiscuss Project 1 + review key concepts\nWork through select parts of Project 1\nGroup work and time for questions"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#brief-review-of-lecture---control-flow",
+    "href": "8lab-monks/lab2-slide.html#brief-review-of-lecture---control-flow",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture - Control Flow",
+    "text": "Brief Review of Lecture - Control Flow\nIf / Else = Conditional Behavior\nif (x &gt; 0) {\n  print(\"positive\")\n} else {\n  print(\"not positive\")\n}\nVectorized If/Else statements are also possible:\n\nx = 0\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\"\n\n\nFor loops = repeat over items\nfor (i in 1:5) {\n  print(i^2)\n}\n\nCan be used for simulating data"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont.",
+    "href": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont.",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture (cont.)",
+    "text": "Brief Review of Lecture (cont.)\n** add in review of Monday lecture"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont..",
+    "href": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont..",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture (cont..)",
+    "text": "Brief Review of Lecture (cont..)\n** add in review of Wednesday lecture"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#lab-review-worksheet",
+    "href": "8lab-monks/lab2-slide.html#lab-review-worksheet",
+    "title": "Lab 2",
+    "section": "Lab Review Worksheet",
+    "text": "Lab Review Worksheet\n\n  \n    −\n    +\n \n 15:00\n \nGroup work to review essential material"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#sampsons-monks-project-background-concepts",
+    "href": "8lab-monks/lab2-slide.html#sampsons-monks-project-background-concepts",
+    "title": "Lab 2",
+    "section": "Sampson’s Monks Project: Background Concepts",
+    "text": "Sampson’s Monks Project: Background Concepts\n\nIDE basics\nPackages in R\nSociomatrices\nNetwork visualizations & statistics\nRandom vs. observed networks"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#ide-basics",
+    "href": "8lab-monks/lab2-slide.html#ide-basics",
+    "title": "Lab 2",
+    "section": "IDE Basics",
+    "text": "IDE Basics\n\nIDE = Integrated Development Environment\nYou may have used RStudio in past Stats courses. In this class we’ll use Positron\nKey panels:\n\nScript editor (your R code)\nConsole (run code interactively)\nEnvironment (your objects)\nPlots/Help/Files (output + documentation)\n\nAlways save your script (project.R) as you go"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#packages-libraries",
+    "href": "8lab-monks/lab2-slide.html#packages-libraries",
+    "title": "Lab 2",
+    "section": "Packages & Libraries",
+    "text": "Packages & Libraries\n\nBase R is powerful, but we use packages to extend its capabilities\nPackages = collections of functions & datasets\nLibrary = where R looks for installed packages\n\nInstall and load:\ninstall.packages(\"igraph\")\nlibrary(igraph)\n\nToday we will use:\n\nigraph (network analysis & static plots)\n\naccepts adjacency matrices or edge lists. So you can use as.matrix.network() to get the adjacency matrix and convert it into igraph.\n\nnetworkD3 (interactive plots)\n\nexpects data frames of nodes and edges, not a network object.\nEven though the information is already in samplike, you still need to extract it into the right format for networkD3"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#our-dataset-sampsons-monks",
+    "href": "8lab-monks/lab2-slide.html#our-dataset-sampsons-monks",
+    "title": "Lab 2",
+    "section": "Our Dataset: Sampson’s Monks",
+    "text": "Our Dataset: Sampson’s Monks\n\nData collected in a New England monastery (1960s)\nMonks reported:\n\nLiking relationships (time 1, time 2, time 3)\nDisliking relationships (time 1)\n\nClassic dataset for studying group dynamics and conflict\nStored as a network object in ergm package, which we will use to get the data\nWe’ll work with its adjacency matrix form (monk_mat)"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#static-vs.-interactive-plots",
+    "href": "8lab-monks/lab2-slide.html#static-vs.-interactive-plots",
+    "title": "Lab 2",
+    "section": "Static vs. Interactive Plots",
+    "text": "Static vs. Interactive Plots\n\nYou will create one of each in your project\nStatic plots = easy and quick to create using igraph::plot()\nInteractive plots = can zoom, hover, drag nodes using networkD3::forceNetwork()"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#summary-statistics",
+    "href": "8lab-monks/lab2-slide.html#summary-statistics",
+    "title": "Lab 2",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\nWe already covered some of these, like averages and maximums (most popular song of the summer)\nNew ones related to Networks:\n\nTriangles = closed groups of 3 (A likes B, B likes C, A likes C)\nClustering coefficient = proportion of closed triads\nThese help quantify structure beyond random chance"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#why-compare-random-vs.-observed",
+    "href": "8lab-monks/lab2-slide.html#why-compare-random-vs.-observed",
+    "title": "Lab 2",
+    "section": "Why Compare Random vs. Observed?",
+    "text": "Why Compare Random vs. Observed?\nIn your project, you will be asked to compare the observed sociomatrix with one that you have generated.\n\nRandom sociomatrix = ties assigned by chance\nObserved monk network = structured by social dynamics\nKey question: What features do we see in the real network that random ones lack?\n\nTriangles, clusters, leaders, isolated nodes\nShows the complexity of real social systems"
+  },
+  {
+    "objectID": "8lab-monks/lab2-slide.html#lab-1-worksheet-project",
+    "href": "8lab-monks/lab2-slide.html#lab-1-worksheet-project",
+    "title": "Lab 2",
+    "section": "Lab 1 Worksheet + Project",
+    "text": "Lab 1 Worksheet + Project\n\n  \n    −\n    +\n \n 15:00\n \nWorksheet:\n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nProject:\n\nVisualize networks (static + interactive)\nCompute summary statistics\nWrite a function to generate random sociomatrices\nCompare & reflect on real vs. random networks\nSubmit: project.R + README.md on GitHub Classroom\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important and they cannot do alone yet (suggest getting started with downloading packages, doing a visualization, writing the function)"
   },
   {
     "objectID": "syllabus.html",
@@ -1070,7 +1161,7 @@
     "href": "8-functions/slides.html#section",
     "title": "Functions",
     "section": "",
-    "text": "greet &lt;- function(name) {\n  paste0(\"Hello \", name, \"! Welcome to class.\")\n}\n\nname_vec &lt;- c(\"Clara\", \"Zhiwei\", \"Calvin\", \"Gaston\", \"Jayson\", \"Garv\", \"Isabel\", \"Laksha\", \"Hibah\", \"Asim\", \"Rabia\", \"Branden\", \"David\", \"Derek\", \"Karuna\", \"Claire\", \"Ash\", \"Tyrell\", \"Colin\", \"Clarie\", \"Brian\", \"Ethan\", \"Daniel\", \"Wendy\", \"Jeremy\", \"Nicolas\", \"Sacha\", \"Alyssa\")\n\nfor (name in name_vec) {\n  print(greet(name))\n  Sys.sleep(8)\n}"
+    "text": "greet &lt;- function(name) {\n  paste0(\"Hello \", name, \"! Welcome to class.\")\n}\n\nname_vec &lt;- c(\"Clara\", \"Zhiwei\", \"Calvin\", \"Gaston\", \"Jayson\", \"Garv\", \"Isabel\", \"Laksha\", \"Hibah\", \"Asim\", \"Rabia\", \"Branden\", \"David\", \"Derek\", \"Karuna\", \"Claire\", \"Ash\", \"Terrell\", \"Colin\", \"Clarie\", \"Brian\", \"Ethan\", \"Daniel\", \"Wendy\", \"Jeremy\", \"Nicolas\", \"Sacha\", \"Alyssa\")\n\nfor (name in name_vec) {\n  print(greet(name))\n  Sys.sleep(8)\n}"
   },
   {
     "objectID": "8-functions/slides.html#while-youre-waiting",
