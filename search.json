@@ -11,7 +11,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 1.360502\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.1064758\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -60,7 +60,7 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.1772188  1.5349638 -0.3602494\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.79996509 -0.41039802  0.03296762\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
@@ -74,21 +74,21 @@
     "href": "7-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 2 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 3 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#option-3",
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"1.53496381736132 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.0329676160245558 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
     "href": "7-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE FALSE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is negative :(\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE  TRUE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is negative :(\""
   },
   {
     "objectID": "labs.html",
@@ -417,289 +417,45 @@
     "href": "index.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Concepts in Computing with Data\nStat 133 UC Berkeley\n\n\n\n\n\n\n\n\n\n\n  \n  Week 1\n  \n\n  \n    \n    \n    \n    Aug 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 27\n    \n    \n    Welcome\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 28\n    \n    \n    Lab 0: Data in Trees\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 29\n    \n    \n    Intro to R\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 2\n  \n\n  \n    \n    \n    \n    Sep 1\n    \n    \n    No Class: Labor Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 3\n    \n    \n    Atomic Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 4\n    \n    \n    Lab 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Lab\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 5\n    \n    \n    Working with Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 3\n  \n\n  \n    \n    \n    \n    Sep 8\n    \n    \n    Extending Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 9\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 10\n    \n    \n    Lists\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 11\n    \n    \n    Quiz 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 12\n    \n    \n    Control Flow\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 4\n  \n\n  \n    \n    \n    \n    Sep 15\n    \n    \n    Functions\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 18\n    \n    \n    Lab 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 5\n  \n\n  \n    \n    \n    \n    Sep 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 23\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 25\n    \n    \n    Quiz 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 6\n  \n\n  \n    \n    \n    \n    Sep 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 30\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 2\n    \n    \n    Lab 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 7\n  \n\n  \n    \n    \n    \n    Oct 6\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 8\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 9\n    \n    \n    Quiz 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 8\n  \n\n  \n    \n    \n    \n    Oct 13\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 7\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 16\n    \n    \n    Lab 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 9\n  \n\n  \n    \n    \n    \n    Oct 20\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 8\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 23\n    \n    \n    Quiz 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 10\n  \n\n  \n    \n    \n    \n    Oct 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 9\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 30\n    \n    \n    Lab 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 31\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 11\n  \n\n  \n    \n    \n    \n    Nov 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 4\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 10\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 6\n    \n    \n    Quiz 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 12\n  \n\n  \n    \n    \n    \n    Nov 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 11\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 11\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 12\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 13\n    \n    \n    Lab 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 13\n  \n\n  \n    \n    \n    \n    Nov 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 12\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 20\n    \n    \n    Quiz 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 14\n  \n\n  \n    \n    \n    \n    Nov 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 13\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 15\n  \n\n  \n    \n    \n    \n    Dec 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 14\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 4\n    \n    \n    Quiz 7\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 16\n  \n\n  \n    \n    \n    \n    Dec 8\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 9\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 10\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 11\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 12\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 17\n  \n\n  \n    \n    \n    \n    Dec 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 17\n    \n    \n    Final Exam\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n\n\n\nNo matching items",
+    "text": "Concepts in Computing with Data\nStat 133 UC Berkeley\n\n\n\n\n\n\n\n\n\n\n  \n  Week 1\n  \n\n  \n    \n    \n    \n    Aug 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 27\n    \n    \n    Welcome\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 28\n    \n    \n    Lab 0: Data in Trees\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 29\n    \n    \n    Intro to R\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 2\n  \n\n  \n    \n    \n    \n    Sep 1\n    \n    \n    No Class: Labor Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 3\n    \n    \n    Atomic Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 4\n    \n    \n    Lab 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Lab\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 5\n    \n    \n    Working with Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 3\n  \n\n  \n    \n    \n    \n    Sep 8\n    \n    \n    Extending Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 9\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 10\n    \n    \n    Lists\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 11\n    \n    \n    Quiz 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 12\n    \n    \n    Control Flow\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 4\n  \n\n  \n    \n    \n    \n    Sep 15\n    \n    \n    Functions\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 17\n    \n    \n    The R Ecosystem\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 18\n    \n    \n    Lab 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 5\n  \n\n  \n    \n    \n    \n    Sep 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 23\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 25\n    \n    \n    Quiz 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 6\n  \n\n  \n    \n    \n    \n    Sep 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 30\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 2\n    \n    \n    Lab 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 7\n  \n\n  \n    \n    \n    \n    Oct 6\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 8\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 9\n    \n    \n    Quiz 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 8\n  \n\n  \n    \n    \n    \n    Oct 13\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 7\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 16\n    \n    \n    Lab 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 9\n  \n\n  \n    \n    \n    \n    Oct 20\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 8\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 22\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 23\n    \n    \n    Quiz 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 10\n  \n\n  \n    \n    \n    \n    Oct 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 9\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 29\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 30\n    \n    \n    Lab 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 31\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 11\n  \n\n  \n    \n    \n    \n    Nov 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 4\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 10\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 6\n    \n    \n    Quiz 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 12\n  \n\n  \n    \n    \n    \n    Nov 10\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 11\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 11\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 12\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 13\n    \n    \n    Lab 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 13\n  \n\n  \n    \n    \n    \n    Nov 17\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 12\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 20\n    \n    \n    Quiz 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 14\n  \n\n  \n    \n    \n    \n    Nov 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 13\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 27\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 15\n  \n\n  \n    \n    \n    \n    Dec 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 14\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 4\n    \n    \n    Quiz 7\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 16\n  \n\n  \n    \n    \n    \n    Dec 8\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 9\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 10\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 11\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 12\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 17\n  \n\n  \n    \n    \n    \n    Dec 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 17\n    \n    \n    Final Exam\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n\n\n\nNo matching items",
     "crumbs": [
       "Home"
     ]
   },
   {
-    "objectID": "notes.html",
-    "href": "notes.html",
-    "title": "Notes",
-    "section": "",
-    "text": "Notes\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "objectID": "9-packages/slides.html#the-birth-of-r-1976",
+    "href": "9-packages/slides.html#the-birth-of-r-1976",
+    "title": "The R Ecosystem",
+    "section": "The Birth of R (1976)",
+    "text": "The Birth of R (1976)"
   },
   {
-    "objectID": "quizzes/quiz-slides.html#academic-integrity",
-    "href": "quizzes/quiz-slides.html#academic-integrity",
-    "title": "Quiz",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nAcademic integrity is tantamount. Your individual quiz must represent your own work absent the help of other students - either in the room or in another quiz section. All electronics must be stowed and your eyes must not wander to other students quizzes. Conveying information to other students about the content of the quiz violates principles of academic integrity. All instances of academic misconduct will be taken seriously, handled by me personally, and will be coordinated with the Office of Student Conduct.\nDuring the group quiz, you are of course encouraged to collaborate with your teammates (but only your teammates) to answer the questions.\nIf the proctor sees your eyes wandering, you’ll be reseated at the front of the class.\n\nProf. Bray"
+    "objectID": "9-packages/slides.html#s---r",
+    "href": "9-packages/slides.html#s---r",
+    "title": "The R Ecosystem",
+    "section": "S -> R",
+    "text": "S -&gt; R\n\n\n\n\n\nJohn Chambers, Bell Labs\n\n\n\n\n\n\nRobert Gentlemen and Ross Ihaka, University of Auckland"
   },
   {
-    "objectID": "quizzes/quiz-slides.html#individual-quiz",
-    "href": "quizzes/quiz-slides.html#individual-quiz",
-    "title": "Quiz",
-    "section": "Individual Quiz",
-    "text": "Individual Quiz\n\n\nBefore the quiz begins\n\n🧹 Clear your desk of everything except a pen/pencil and your cheat sheet.\n🧢 Remove hats, hoods, and sunglasses.\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should be remain in your bag for the entire class period.\nSpread out as much as possible so that you are not too close to each other.\nWhen you get a quiz, cover it with your cheat sheet and do not begin.\n\n\nDuring the quiz\n\n👀 Keep your eyes on your own quiz.\nIf you need to use the bathroom, bring your quiz and phone to the front of the class.\n⌛If you finish early, please raise your hand and we will collect your quiz.\n❗You must stop writing when time is called or risk a 0.\n\nGood luck! 🍀\n\n\n  \n    −\n    +\n \n 40:00"
+    "objectID": "9-packages/slides.html#open-source-software",
+    "href": "9-packages/slides.html#open-source-software",
+    "title": "The R Ecosystem",
+    "section": " Open-Source Software",
+    "text": "Open-Source Software\nOpen-source software (OSS) is computer software that is released under a license in which the copyright holder grants users the rights to use, study, change, and distribute the software and its source code to anyone and for any purpose. Open-source software may be developed in a collaborative, public manner. Open-source software is a prominent example of open collaboration, meaning any capable user is able to participate online in development, making the number of possible contributors indefinite."
   },
   {
-    "objectID": "quizzes/quiz-slides.html#group-quiz",
-    "href": "quizzes/quiz-slides.html#group-quiz",
-    "title": "Quiz",
-    "section": "Group Quiz",
-    "text": "Group Quiz\n\n\nBefore the quiz begins\n\nForm groups of 2-3 people.\n🧹 Everything except a pen/pencil and your cheat sheet must remain off your desk.\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should be remain in your bag for the entire class period.\nWhen you get a group quiz, write all group members names on it but do not begin.\n\n\nDuring the quiz\n\n🗣️Discuss each of the problems and decide as a group which answer is best.\n⌛If you finish early, please raise your hand and we will collect your quiz.\n❗You must stop writing when time is called or risk a 0.\n\nGood luck! 🍀\n\n\n  \n    −\n    +\n \n 25:00"
+    "objectID": "9-packages/slides.html#ggplot2-by-hadley-wickham",
+    "href": "9-packages/slides.html#ggplot2-by-hadley-wickham",
+    "title": "The R Ecosystem",
+    "section": "ggplot2 by Hadley Wickham",
+    "text": "ggplot2 by Hadley Wickham"
   },
   {
-    "objectID": "3lab/worksheet.html",
-    "href": "3lab/worksheet.html",
-    "title": "STAT 133",
-    "section": "",
-    "text": "…"
-  },
-  {
-    "objectID": "3lab/slides.html#using-the-shell-locally",
-    "href": "3lab/slides.html#using-the-shell-locally",
-    "title": "First Contact with R",
-    "section": "Using the Shell Locally",
-    "text": "Using the Shell Locally\n\n  \n    −\n    +\n \n 07:00\n \n\nMac:\n\n“zshell” (aka zsh) - UNIX based. Very similar to bash (Base UNIX Shell) with some added functionality.\nTo access, use the Mac’s “Termial” application.\n\nWindows:\n\nWill need to install “Git” if you don’t have it already.\n\nhttps://git-scm.com/downloads\n\nThis will give you access to the “Git Bash” application, which will let you use UNIX Shell on your Windows system."
-  },
-  {
-    "objectID": "3lab/slides.html#brief-review-of-lecture",
-    "href": "3lab/slides.html#brief-review-of-lecture",
-    "title": "First Contact with R",
-    "section": "Brief Review of Lecture",
-    "text": "Brief Review of Lecture\nNew Shell Commands\n\n\nmkdir\n\n\nCreates a new directory.\n\n\n\n\ncp\n\n\nCopy file (arg1) to destination (arg2).\nExample: cp ~/Downloads/hw1.pdf ~/Documents/econ100b/hw/\n\n\n\n\nmv\n\n\nMove file (first argument) to destination directory (second argument).\nExample: mv ~/Downloads/hw1.pdf ~/.Trash\n\n\n\nThey have only heard mv in lecture briefly, so teach them the functionality."
-  },
-  {
-    "objectID": "3lab/slides.html#brief-review-of-lecture-cont.",
-    "href": "3lab/slides.html#brief-review-of-lecture-cont.",
-    "title": "First Contact with R",
-    "section": "Brief Review of Lecture (cont.)",
-    "text": "Brief Review of Lecture (cont.)\nR Equivallent of Shell Commands:\n\ngetwd(): like pwd in Shell.\nsetwd(): like cd in Shell.\nlist.files(): like ls in Shell.\nreadLines(): like cat in Shell."
-  },
-  {
-    "objectID": "3lab/slides.html#brief-review-of-lecture-cont..",
-    "href": "3lab/slides.html#brief-review-of-lecture-cont..",
-    "title": "First Contact with R",
-    "section": "Brief Review of Lecture (cont..)",
-    "text": "Brief Review of Lecture (cont..)\n\na:b: Creates vector of numbers from a to b by 1.\nseq: Creates vector of numbers from \"from\" argument, to \"to\" argument, by steps defined in the \"by\" argument.\nrep: Repeats vector provided \"x\" a number of times defined by \"times\" argument."
-  },
-  {
-    "objectID": "3lab/slides.html#vectorization",
-    "href": "3lab/slides.html#vectorization",
-    "title": "First Contact with R",
-    "section": "Vectorization",
-    "text": "Vectorization\n\nOperations on a single object also works on vectors.\n\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\n\n\n[1] 36 26  5\n\n\n\n\n\nvec * 3\n\n\n\n[1] 216 156  30\n\n\n\n\n\nvec - 6\n\n\n\n[1] 66 46  4"
-  },
-  {
-    "objectID": "3lab/slides.html#recycling",
-    "href": "3lab/slides.html#recycling",
-    "title": "First Contact with R",
-    "section": "Recycling",
-    "text": "Recycling\n\nOperations on two vectors of unequal length.\n\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\n\n\n [1]  1  4  3  8  5 12  7 16  9 20\n\n\n\n\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 + vec3\n\n\n\n [1]  2  4  6  5  7  9  8 10 12 11"
-  },
-  {
-    "objectID": "3lab/slides.html#lab-1-assignment",
-    "href": "3lab/slides.html#lab-1-assignment",
-    "title": "First Contact with R",
-    "section": "Lab 1 Assignment",
-    "text": "Lab 1 Assignment\n\n  \n    −\n    +\n \n 15:00\n \n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nTwo Parts:\n\nShell\nR: Atomic Vectors, Vectorization, Recycling, Matrices, if statements, for loops.\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important AND are in scope of lectures so far (nothing after 7)."
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#agenda",
-    "href": "8lab-monks/lab2-slide.html#agenda",
-    "title": "Lab 2",
-    "section": "Agenda",
-    "text": "Agenda\n\nBrief lecture review\nTime to work in groups on lab worksheet (15 minutes)\nDiscuss Project 1 + review key concepts\nWork through select parts of Project 1\nGroup work and time for questions"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#brief-review-of-lecture---control-flow",
-    "href": "8lab-monks/lab2-slide.html#brief-review-of-lecture---control-flow",
-    "title": "Lab 2",
-    "section": "Brief Review of Lecture - Control Flow",
-    "text": "Brief Review of Lecture - Control Flow\nIf / Else = Conditional Behavior\nif (x &gt; 0) {\n  print(\"positive\")\n} else {\n  print(\"not positive\")\n}\nVectorized If/Else statements are also possible:\n\nx = 0\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\"\n\n\nFor loops = repeat over items\nfor (i in 1:5) {\n  print(i^2)\n}\n\nCan be used for simulating data"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont.",
-    "href": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont.",
-    "title": "Lab 2",
-    "section": "Brief Review of Lecture (cont.)",
-    "text": "Brief Review of Lecture (cont.)\n** add in review of Monday lecture"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont..",
-    "href": "8lab-monks/lab2-slide.html#brief-review-of-lecture-cont..",
-    "title": "Lab 2",
-    "section": "Brief Review of Lecture (cont..)",
-    "text": "Brief Review of Lecture (cont..)\n** add in review of Wednesday lecture"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#lab-review-worksheet",
-    "href": "8lab-monks/lab2-slide.html#lab-review-worksheet",
-    "title": "Lab 2",
-    "section": "Lab Review Worksheet",
-    "text": "Lab Review Worksheet\n\n  \n    −\n    +\n \n 15:00\n \nGroup work to review essential material"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#sampsons-monks-project-background-concepts",
-    "href": "8lab-monks/lab2-slide.html#sampsons-monks-project-background-concepts",
-    "title": "Lab 2",
-    "section": "Sampson’s Monks Project: Background Concepts",
-    "text": "Sampson’s Monks Project: Background Concepts\n\nIDE basics\nPackages in R\nSociomatrices\nNetwork visualizations & statistics\nRandom vs. observed networks"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#ide-basics",
-    "href": "8lab-monks/lab2-slide.html#ide-basics",
-    "title": "Lab 2",
-    "section": "IDE Basics",
-    "text": "IDE Basics\n\nIDE = Integrated Development Environment\nYou may have used RStudio in past Stats courses. In this class we’ll use Positron\nKey panels:\n\nScript editor (your R code)\nConsole (run code interactively)\nEnvironment (your objects)\nPlots/Help/Files (output + documentation)\n\nAlways save your script (project.R) as you go"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#packages-libraries",
-    "href": "8lab-monks/lab2-slide.html#packages-libraries",
-    "title": "Lab 2",
-    "section": "Packages & Libraries",
-    "text": "Packages & Libraries\n\nBase R is powerful, but we use packages to extend its capabilities\nPackages = collections of functions & datasets\nLibrary = where R looks for installed packages\n\nInstall and load:\ninstall.packages(\"igraph\")\nlibrary(igraph)\n\nToday we will use:\n\nigraph (network analysis & static plots)\n\naccepts adjacency matrices or edge lists. So you can use as.matrix.network() to get the adjacency matrix and convert it into igraph.\n\nnetworkD3 (interactive plots)\n\nexpects data frames of nodes and edges, not a network object.\nEven though the information is already in samplike, you still need to extract it into the right format for networkD3"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#our-dataset-sampsons-monks",
-    "href": "8lab-monks/lab2-slide.html#our-dataset-sampsons-monks",
-    "title": "Lab 2",
-    "section": "Our Dataset: Sampson’s Monks",
-    "text": "Our Dataset: Sampson’s Monks\n\nData collected in a New England monastery (1960s)\nMonks reported:\n\nLiking relationships (time 1, time 2, time 3)\nDisliking relationships (time 1)\n\nClassic dataset for studying group dynamics and conflict\nStored as a network object in ergm package, which we will use to get the data\nWe’ll work with its adjacency matrix form (monk_mat)"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#static-vs.-interactive-plots",
-    "href": "8lab-monks/lab2-slide.html#static-vs.-interactive-plots",
-    "title": "Lab 2",
-    "section": "Static vs. Interactive Plots",
-    "text": "Static vs. Interactive Plots\n\nYou will create one of each in your project\nStatic plots = easy and quick to create using igraph::plot()\nInteractive plots = can zoom, hover, drag nodes using networkD3::forceNetwork()"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#summary-statistics",
-    "href": "8lab-monks/lab2-slide.html#summary-statistics",
-    "title": "Lab 2",
-    "section": "Summary Statistics",
-    "text": "Summary Statistics\nWe already covered some of these, like averages and maximums (most popular song of the summer)\nNew ones related to Networks:\n\nTriangles = closed groups of 3 (A likes B, B likes C, A likes C)\nClustering coefficient = proportion of closed triads\nThese help quantify structure beyond random chance"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#why-compare-random-vs.-observed",
-    "href": "8lab-monks/lab2-slide.html#why-compare-random-vs.-observed",
-    "title": "Lab 2",
-    "section": "Why Compare Random vs. Observed?",
-    "text": "Why Compare Random vs. Observed?\nIn your project, you will be asked to compare the observed sociomatrix with one that you have generated.\n\nRandom sociomatrix = ties assigned by chance\nObserved monk network = structured by social dynamics\nKey question: What features do we see in the real network that random ones lack?\n\nTriangles, clusters, leaders, isolated nodes\nShows the complexity of real social systems"
-  },
-  {
-    "objectID": "8lab-monks/lab2-slide.html#lab-1-worksheet-project",
-    "href": "8lab-monks/lab2-slide.html#lab-1-worksheet-project",
-    "title": "Lab 2",
-    "section": "Lab 1 Worksheet + Project",
-    "text": "Lab 1 Worksheet + Project\n\n  \n    −\n    +\n \n 15:00\n \nWorksheet:\n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nProject:\n\nVisualize networks (static + interactive)\nCompute summary statistics\nWrite a function to generate random sociomatrices\nCompare & reflect on real vs. random networks\nSubmit: project.R + README.md on GitHub Classroom\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important and they cannot do alone yet (suggest getting started with downloading packages, doing a visualization, writing the function)"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "An introduction to computationally intensive applied statistics. Topics will include organization storage of data, visualization and graphics, statistical learning and data mining, model validation procedures, and the presentation of results. This course uses R as its primary computing language.\n\n\nClass Format\nThis is an in-person class with three lectures each week and one two-hour lab led by a GSI. This class is designed assuming you’ll be in class. If you miss class, you’ll be able to find most materials from class - slides, snippets of code - published on the course wesite.\n\nGroup tutoring\nTutors will offer group tutoring sessions several times each week. This is an opportunity to finish up any assignments that you’ve started in class or review any topics that are confusing for you. You’re welcome to attend any session that works well for your schedule. Check the Office Hours page to see the group tutoring schedule.\nGroup tutoring is a great place to go to meet other students and collaborate on assignments with tutors on hand to help you get unstuck.\n\n\nOffice Hours\nOffice hours are an opportunity to chat one-on-one with your instructor and GSIs. Please come to office hours! Coming to office hours does not send a signal that you are behind or need extra help. On the contrary, coming to office hours early and often tends to co-occur with success in the course. We’re happy to chat about the course material, statistics in general, careers in statistics, and whatever other statistics or data science topics are on your mind! Please check the Office Hours page to see the times of the various office hour/group tutoring sessions.\n\n\n\nMaterials\n\nComputational tools\nEach student will need a laptop in order to engage with the computing aspects of this class. Throughout the semester you’ll be installing several different software tools, all of which are free. We will be mainly using the computing and programming environment R (via RStudio) to analyze data in this class. We will also ask you to use a command line interface to interact with your operating system. You do need your own computer to use R and do the assignments. No need to install these ahead of time; we’ll guide you through how to get set up.\nAbout half of the students in 133 have some coding experience in Python or R and about half do not. For those who come from Data 8 or some previous coding experience in python, the first labs will help you transfer that knowledge over to R. Both languages are excellent platforms for analyzing data, are widely used in data science, and have their individual strengths. R has been developed within the statistics community specifically for data analysis, while python is a general-purpose programming language but has large data analysis capabilities.\n\n\nSupplementary texts\nYour primary reference throughout the course will be the notes that you take in class but there are also several terrific books that are free and online that can expand your knowledge.\n\nAdvanced R, Hadley Wickham\nR for Data Science, Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nR packages, Hadley Wickham and Jenny Bryan\n\n\n\n\nCourse communication\n\nbCourses\nWe don’t use bCourses for much. It is primarily used to disseminate important announcements for the entire class such as the initial welcome announcement, final exam information etc.\n\n\nDiscussion forum\nThe official discussion forum for the class will be hosted on Ed. Ed is a forum to ask and answer questions with your fellow students and course staff. It’s a useful resource for learning from your peers and seeking help from tutors and instructors.\nIf you have a question about the material or assignments (or anything related to the course), create a new post to ask your question on Ed. If it is about something personal, then mark it as “private”, and only course staff will be able to see your post. This is the best way to contact us if you have a personal concern, as it ensures the fastest response. If your question does not include personal information and can be answered by other students, make sure it is public.\nIn a course this large, the instructors have a difficult time responding to individual emails, so please use the class forum or visit office hours if you wish to contact us.\n\n\n\nAssignments, Exams, and Grading\n\nTurning-in assignments\nYou will be turning in your assignments on a platform called Pensieve, the younger sibling of Gradescope. This is also the platform where your assignments will be graded, so you can return there to get feedback on your work. You are welcome to file a regrade request if you notice that we made an error in applying the rubric to your work. Note that regrade requests will need to be submitted by a deadline, which will usually be about a week the grades are released.\n\n\nProblem Sets\nProblem sets provide you with essential practice on the ideas and techniques discussed in class. They are generally due each week and are graded credit / no credit.\n\n\nLabs\nLabs are open-ended assignments assignments designed to apply the concepts from the lecture notes in the cause of doing an analysis of real data. This will involve both writing code and communicating your thoughts and findings in English. We’ll be working through some problems from the labs in lab section, but you will be spending time on them outside of class time.\nLabs are also graded credit / no credit.\n\n\nQuizzes\nPaper-and-pencil quizzes reinforce the most important concepts from the lecture and provide you the opportunity to work through misunderstandings of concepts with peers and the instructor. They cover the material from lecture, problem sets, and labs up until the time of the quiz.\nThere is both an individual and group component to each quiz.\nThe individual component will last about 40 minutes. You are allowed one, A4, one-sided handwritten sheet of notes with your name in the upper right-hand corner. The group component will take place immediately after the individual component has been completed and will last about 25 minutes. Your final (composite) quiz grade will be the average of your group and individual quiz scores.\nThis group quiz system almost always results in higher grades. We’ll do a check at the end of the semester to calculate your quiz grade using just your individual quizzes. In the unlikely event that your individual grade average is higher, we’ll use that grade.\n\n\nExam\nThe paper-and-pencil final exam will be held in person during finals week. It is a comprehensive exam and covers the material from the lecture, problem sets, and labs.\nThe time and date is Wednesday December 17th, 7 - 10 pm.\n\n\nGrading\nYour final grade in this class is, to the best of our ability, a measure of your understanding of the concepts of computing with data. As such, the lions share of your grade comes from measures of your individual understanding: quizzes and the final.\nThe best way to prepare for these assessments is to earnestly engage with the problem sets and labs. Their role in the course is practice and they’ll be your single most effective way to learn. We just want to see that you are indeed engaging in practice, so the problem sets and labs are both graded credit / no credit, with full credit given for evidence of earnest engagement.\n\nProblem Sets: 5%\nLabs: 15%\nQuizzes: 50%\nFinal: 30%\n\nThe grades will not be curved (&gt; 90% is some kind of A, 80-90 is some kind of B, etc.), so there is no limit to the number of As and Bs that are earned.\nIn order to provide flexibility around emergencies that might arise for you throughout the semester we will drop everyone’s lowest quiz grade before calculating your quiz average at the end of the semester.\n\n\n\nPolicies\n\nLate Work\nRigorously completing the problem sets and labs is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don’t just submit a blank page).\n\n\nCollaboration policy\nOn problem sets and labs, we strongly encourage collaboration between students. One of the best ways to learn is to talk things through with someone else. At the same time, these are your best opportunity to practice and learn, so be cautious not to lean to heavily on the understanding of a peer when working through your assignments.\n\n\nAI policy\nPlease be thoughtful when using AI tools for your schoolwork. Doing so on problem sets and labs robs you of a valuable opportunity to learn and undermines your performance on exams. At the same time, they can be helpful in providing feedback on your writing.\nAt the end of the course, we’ll bring in AI tools for coding and learn how to use them. They’re very powerful, but you need firm mental models of the way code works before you’re able to use them well. For that reason, we suggest you refrain from using them until they’re introduced in class.\n\n\nAccomodations for students with disabilities\nStat 133 is a course that is designed to allow all students to succeed. If you have letters of accommodation from the Disabled Students’ Program, please share them with your instructor as soon as possible, and we will work out the necessary arrangements.\n\n\nStaying healthy\nMaintaining your health and that of the Berkeley community is of primary importance, so if you are feeling ill or have been exposed to illness, whether it’s COVID-19 or something else, please do not come to class. You’re encouraged to reach out to fellow students to discuss the class materials or stop by group tutoring or office hours to chat with a tutor or the instructor.\n\n\n\nFrequently Asked Questions\n\nWhat should I do if I’m on the waitlist?\nAttend both lecture and lab and submit all assignments on time. Unfortunately we cannot grow the size of the class any more, so places will become available only when students drop. If you have an urgent need for the course, visit the drop in advising sessions in our department: https://statistics.berkeley.edu/academics/undergrad/advising.\nAre class sessions recorded?\nNo.\nIs attendance required?\nNo.\nAre time conflicts allowed?\nNo.\nWhat if I join the class late?\nIf you join the class within the first two weeks, read through all of the material on the course website that you’ve missed. Also ask a neighbor in lecture if you can borrow their notes. Finally, visit the Group Tutoring to discuss any topics you’ve missed. If you’ve missed any assignments in the first two weeks, request an extension from your GSI.\nAfter two weeks into the semester, you’ll have too much material that you’ll need to make up, so you will have to wait to a subsequent semester to take the course.\n\n\n\nCampus Resources\nUC Berkeley has a vast wealth of resources to help with all aspects of student life. You can read about them at the links below.\n\nBerkeley Supportal- great place to start\nDisabled Students’ Program\nUniversity Health Services\nUCB Path to Care\nStudent Learning Center\nBerkeley International Office\nOmbuds Office for Students and Postdoctoral Appointees\nGender Equity Resource Center\nCenter for Educational Justice & Community Engagement\nUHS Counseling and Psychological Services (CAPS)\nCampus Academic Accommodations Hub\nASUC Student Advocate’s Office\nBasic Needs Center\nASUC Mental Health Resources Guide",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "office-hours.html",
-    "href": "office-hours.html",
-    "title": "Office Hours",
-    "section": "",
-    "text": "Office Hours\nPlease stop by during office hours to chat in a small group setting with the instructor or GSIs.",
-    "crumbs": [
-      "Office Hours"
-    ]
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html",
-    "href": "3-atomic-vectors/notes.html",
-    "title": "Atomic Vectors",
-    "section": "",
-    "text": "R’s principle data structure to an ordered collection of elements of the same type. Created with the c() function.\n\ndbl_vec &lt;- c(3, 5, 1.2)\ndbl_vec\n\n[1] 3.0 5.0 1.2\n\nint_vec &lt;- c(3L, 5L, 1L)\nint_vec\n\n[1] 3 5 1\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nlog_vec &lt;- c(TRUE, TRUE, FALSE)\nlog_vec\n\n[1]  TRUE  TRUE FALSE"
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#atomic-vectors",
-    "href": "3-atomic-vectors/notes.html#atomic-vectors",
-    "title": "Atomic Vectors",
-    "section": "",
-    "text": "R’s principle data structure to an ordered collection of elements of the same type. Created with the c() function.\n\ndbl_vec &lt;- c(3, 5, 1.2)\ndbl_vec\n\n[1] 3.0 5.0 1.2\n\nint_vec &lt;- c(3L, 5L, 1L)\nint_vec\n\n[1] 3 5 1\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nlog_vec &lt;- c(TRUE, TRUE, FALSE)\nlog_vec\n\n[1]  TRUE  TRUE FALSE"
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#inspecting-vectors",
-    "href": "3-atomic-vectors/notes.html#inspecting-vectors",
-    "title": "Atomic Vectors",
-    "section": "Inspecting Vectors",
-    "text": "Inspecting Vectors\ntypeof(): returns the type of the vector length(): returns the number of elements in the vector\n\ntypeof(char_vec)\n\n[1] \"character\"\n\ntypeof(log_vec)\n\n[1] \"logical\"\n\ntypeof(dbl_vec)\n\n[1] \"double\"\n\ntypeof(int_vec)\n\n[1] \"integer\"\n\nlength(char_vec)\n\n[1] 3\n\nlength(log_vec)\n\n[1] 3\n\nlength(dbl_vec)\n\n[1] 3\n\nlength(int_vec)\n\n[1] 3"
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#creating-numeric-vectors-quickly",
-    "href": "3-atomic-vectors/notes.html#creating-numeric-vectors-quickly",
-    "title": "Atomic Vectors",
-    "section": "Creating numeric vectors (quickly)",
-    "text": "Creating numeric vectors (quickly)\n:: create a sequence from the left to the right number, separated by 1.\nseq(): creates a sequence from a number to a number by and interval.\nrep(): replicates a vector times times.\n\n4:8\n\n[1] 4 5 6 7 8\n\nseq(from = 1, to = 3, by = .1)\n\n [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8\n[20] 2.9 3.0\n\nseq(1, 3, .1)\n\n [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8\n[20] 2.9 3.0\n\nrep(1:3, times = 2)\n\n[1] 1 2 3 1 2 3\n\n# What three commands will generate the following vectors?\n# [1] 5.0 5.5 6.0 6.5 7.0\n# [1]  2  1  0 -1 -2\n# [1] \"cat\"   \"dog\"   \"dingo\" \"cat\"   \"dog\"   \"dingo\"\n\n\nseq(from = 5, to = 7, by = .5)\n\n[1] 5.0 5.5 6.0 6.5 7.0\n\nseq(from = 2, to = -2, by = -1)\n\n[1]  2  1  0 -1 -2\n\n2:-2 # also works!\n\n[1]  2  1  0 -1 -2\n\nrep(char_vec, times = 2)\n\n[1] \"cat\"   \"dog\"   \"dingo\" \"cat\"   \"dog\"   \"dingo\""
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#special-values",
-    "href": "3-atomic-vectors/notes.html#special-values",
-    "title": "Atomic Vectors",
-    "section": "Special values",
-    "text": "Special values\nNULL: does not exist NA: not available / missing NaN: not a number (dividing by zero) Inf: infinity\n\nc(NA, NULL, 1)\n\n[1] NA  1\n\nmean(c(NA, NULL, 1))\n\n[1] NA\n\nmean(c(NA, NULL, 1), na.rm = TRUE)\n\n[1] 1"
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#what-will-the-following-lines-return",
-    "href": "3-atomic-vectors/notes.html#what-will-the-following-lines-return",
-    "title": "Atomic Vectors",
-    "section": "What will the following lines return?",
-    "text": "What will the following lines return?\n\n# What do each of the following 3 lines of code return?\n# c(1, 2, 3) + c(2, 3, 4)\n# c(1, 2, 3) + c(2, 3)\n# c(1, \"dog\", TRUE)\n\nc(1, 2, 3) + c(2, 3, 4)\n\n[1] 3 5 7\n\nc(1, 2, 3) + c(2, 3)\n\nWarning in c(1, 2, 3) + c(2, 3): longer object length is not a multiple of\nshorter object length\n\n\n[1] 3 5 5\n\nc(1, \"dog\", TRUE)\n\n[1] \"1\"    \"dog\"  \"TRUE\""
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#behavior-of-vectors",
-    "href": "3-atomic-vectors/notes.html#behavior-of-vectors",
-    "title": "Atomic Vectors",
-    "section": "Behavior of Vectors",
-    "text": "Behavior of Vectors\nVectorization: Operations and functions that can run on an entire vector at once.\nVector Recycling: If a function requires a longer vector than provided, it will fill with the existing elements, in order.\n\nc(2, 6, 1)^2\n\n[1]  4 36  1"
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#type-coersion",
-    "href": "3-atomic-vectors/notes.html#type-coersion",
-    "title": "Atomic Vectors",
-    "section": "Type Coersion",
-    "text": "Type Coersion\nImplicit Coersion: Conversion of data types to ensure atomic vectors according to a hierarchy.\nLogical &lt; Integer &lt; Double &lt; Character\n\nc(TRUE, FALSE, 3)\n\n[1] 1 0 3\n\nmean(c(TRUE, FALSE, FALSE))\n\n[1] 0.3333333\n\n\nNote: logical vectors can be coerced to integers for mathematical operations\nExplicit Coersion\nas.__(x): sets x to be of type ___\n\ndistances &lt;- c(\"2800\", \"450\", \"10\")\ndistances\n\n[1] \"2800\" \"450\"  \"10\"  \n\nmean(distances)\n\nWarning in mean.default(distances): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\ndistances &lt;- as.double(distances)\ndistances\n\n[1] 2800  450   10\n\nmean(distances)\n\n[1] 1086.667"
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#subsetting-by-index",
-    "href": "3-atomic-vectors/notes.html#subsetting-by-index",
-    "title": "Atomic Vectors",
-    "section": "Subsetting by Index",
-    "text": "Subsetting by Index\nvec[index]\nAnnotate with vec being “vector”, “square bracket”, and “numeric vector”\n\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nchar_vec[2]\n\n[1] \"dog\"\n\nchar_vec[2:3]\n\n[1] \"dog\"   \"dingo\"\n\nchar_vec[rep(3, 10)]\n\n [1] \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\"\n[10] \"dingo\""
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#subsetting-by-name",
-    "href": "3-atomic-vectors/notes.html#subsetting-by-name",
-    "title": "Atomic Vectors",
-    "section": "Subsetting by Name",
-    "text": "Subsetting by Name\n\nnamed_char_vec &lt;- c(\"thrash\" = \"cat\", \"buzz\" = \"dog\", \"poppy\" = \"dingo\")\nnamed_char_vec\n\n thrash    buzz   poppy \n  \"cat\"   \"dog\" \"dingo\" \n\nnamed_char_vec[\"buzz\"]\n\n buzz \n\"dog\" \n\nnamed_char_vec[rep(\"poppy\", 10)]\n\n  poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy \n\"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\""
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#subsetting-by-logicals",
-    "href": "3-atomic-vectors/notes.html#subsetting-by-logicals",
-    "title": "Atomic Vectors",
-    "section": "Subsetting by Logicals",
-    "text": "Subsetting by Logicals\n\nnamed_char_vec[c(TRUE, FALSE, TRUE)]\n\n thrash   poppy \n  \"cat\" \"dingo\""
-  },
-  {
-    "objectID": "3-atomic-vectors/notes.html#references",
-    "href": "3-atomic-vectors/notes.html#references",
-    "title": "Atomic Vectors",
-    "section": "References",
-    "text": "References\n\nAdvanced R, Chapter 3: Vectors\nR Coding Basics, Chapter 2: Properties of Vectors\nR Coding Basics, Chapter 3: Creating Vectors"
+    "objectID": "9-packages/slides.html#shiny-by-joe-cheng",
+    "href": "9-packages/slides.html#shiny-by-joe-cheng",
+    "title": "The R Ecosystem",
+    "section": "shiny by Joe Cheng",
+    "text": "shiny by Joe Cheng"
   },
   {
     "objectID": "6-lists/slides.html#section",
@@ -812,6 +568,285 @@
     "title": "Lists",
     "section": "",
     "text": "y &lt;- list(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n\nDraw the train and then write the R code to extract:\n\nThe list containing the character vector with \"rabbit”\nThe vector \"rabbit\"\nThe second element of the list element in y\nThe vector 1:3\nThe element 2.\n\n\n  \n    −\n    +\n \n 02:00"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html",
+    "href": "3-atomic-vectors/notes.html",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "R’s principle data structure to an ordered collection of elements of the same type. Created with the c() function.\n\ndbl_vec &lt;- c(3, 5, 1.2)\ndbl_vec\n\n[1] 3.0 5.0 1.2\n\nint_vec &lt;- c(3L, 5L, 1L)\nint_vec\n\n[1] 3 5 1\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nlog_vec &lt;- c(TRUE, TRUE, FALSE)\nlog_vec\n\n[1]  TRUE  TRUE FALSE"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#atomic-vectors",
+    "href": "3-atomic-vectors/notes.html#atomic-vectors",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "R’s principle data structure to an ordered collection of elements of the same type. Created with the c() function.\n\ndbl_vec &lt;- c(3, 5, 1.2)\ndbl_vec\n\n[1] 3.0 5.0 1.2\n\nint_vec &lt;- c(3L, 5L, 1L)\nint_vec\n\n[1] 3 5 1\n\nchar_vec &lt;- c(\"cat\", \"dog\", \"dingo\")\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nlog_vec &lt;- c(TRUE, TRUE, FALSE)\nlog_vec\n\n[1]  TRUE  TRUE FALSE"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#inspecting-vectors",
+    "href": "3-atomic-vectors/notes.html#inspecting-vectors",
+    "title": "Atomic Vectors",
+    "section": "Inspecting Vectors",
+    "text": "Inspecting Vectors\ntypeof(): returns the type of the vector length(): returns the number of elements in the vector\n\ntypeof(char_vec)\n\n[1] \"character\"\n\ntypeof(log_vec)\n\n[1] \"logical\"\n\ntypeof(dbl_vec)\n\n[1] \"double\"\n\ntypeof(int_vec)\n\n[1] \"integer\"\n\nlength(char_vec)\n\n[1] 3\n\nlength(log_vec)\n\n[1] 3\n\nlength(dbl_vec)\n\n[1] 3\n\nlength(int_vec)\n\n[1] 3"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#creating-numeric-vectors-quickly",
+    "href": "3-atomic-vectors/notes.html#creating-numeric-vectors-quickly",
+    "title": "Atomic Vectors",
+    "section": "Creating numeric vectors (quickly)",
+    "text": "Creating numeric vectors (quickly)\n:: create a sequence from the left to the right number, separated by 1.\nseq(): creates a sequence from a number to a number by and interval.\nrep(): replicates a vector times times.\n\n4:8\n\n[1] 4 5 6 7 8\n\nseq(from = 1, to = 3, by = .1)\n\n [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8\n[20] 2.9 3.0\n\nseq(1, 3, .1)\n\n [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8\n[20] 2.9 3.0\n\nrep(1:3, times = 2)\n\n[1] 1 2 3 1 2 3\n\n# What three commands will generate the following vectors?\n# [1] 5.0 5.5 6.0 6.5 7.0\n# [1]  2  1  0 -1 -2\n# [1] \"cat\"   \"dog\"   \"dingo\" \"cat\"   \"dog\"   \"dingo\"\n\n\nseq(from = 5, to = 7, by = .5)\n\n[1] 5.0 5.5 6.0 6.5 7.0\n\nseq(from = 2, to = -2, by = -1)\n\n[1]  2  1  0 -1 -2\n\n2:-2 # also works!\n\n[1]  2  1  0 -1 -2\n\nrep(char_vec, times = 2)\n\n[1] \"cat\"   \"dog\"   \"dingo\" \"cat\"   \"dog\"   \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#special-values",
+    "href": "3-atomic-vectors/notes.html#special-values",
+    "title": "Atomic Vectors",
+    "section": "Special values",
+    "text": "Special values\nNULL: does not exist NA: not available / missing NaN: not a number (dividing by zero) Inf: infinity\n\nc(NA, NULL, 1)\n\n[1] NA  1\n\nmean(c(NA, NULL, 1))\n\n[1] NA\n\nmean(c(NA, NULL, 1), na.rm = TRUE)\n\n[1] 1"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#what-will-the-following-lines-return",
+    "href": "3-atomic-vectors/notes.html#what-will-the-following-lines-return",
+    "title": "Atomic Vectors",
+    "section": "What will the following lines return?",
+    "text": "What will the following lines return?\n\n# What do each of the following 3 lines of code return?\n# c(1, 2, 3) + c(2, 3, 4)\n# c(1, 2, 3) + c(2, 3)\n# c(1, \"dog\", TRUE)\n\nc(1, 2, 3) + c(2, 3, 4)\n\n[1] 3 5 7\n\nc(1, 2, 3) + c(2, 3)\n\nWarning in c(1, 2, 3) + c(2, 3): longer object length is not a multiple of\nshorter object length\n\n\n[1] 3 5 5\n\nc(1, \"dog\", TRUE)\n\n[1] \"1\"    \"dog\"  \"TRUE\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#behavior-of-vectors",
+    "href": "3-atomic-vectors/notes.html#behavior-of-vectors",
+    "title": "Atomic Vectors",
+    "section": "Behavior of Vectors",
+    "text": "Behavior of Vectors\nVectorization: Operations and functions that can run on an entire vector at once.\nVector Recycling: If a function requires a longer vector than provided, it will fill with the existing elements, in order.\n\nc(2, 6, 1)^2\n\n[1]  4 36  1"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#type-coersion",
+    "href": "3-atomic-vectors/notes.html#type-coersion",
+    "title": "Atomic Vectors",
+    "section": "Type Coersion",
+    "text": "Type Coersion\nImplicit Coersion: Conversion of data types to ensure atomic vectors according to a hierarchy.\nLogical &lt; Integer &lt; Double &lt; Character\n\nc(TRUE, FALSE, 3)\n\n[1] 1 0 3\n\nmean(c(TRUE, FALSE, FALSE))\n\n[1] 0.3333333\n\n\nNote: logical vectors can be coerced to integers for mathematical operations\nExplicit Coersion\nas.__(x): sets x to be of type ___\n\ndistances &lt;- c(\"2800\", \"450\", \"10\")\ndistances\n\n[1] \"2800\" \"450\"  \"10\"  \n\nmean(distances)\n\nWarning in mean.default(distances): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\ndistances &lt;- as.double(distances)\ndistances\n\n[1] 2800  450   10\n\nmean(distances)\n\n[1] 1086.667"
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#subsetting-by-index",
+    "href": "3-atomic-vectors/notes.html#subsetting-by-index",
+    "title": "Atomic Vectors",
+    "section": "Subsetting by Index",
+    "text": "Subsetting by Index\nvec[index]\nAnnotate with vec being “vector”, “square bracket”, and “numeric vector”\n\nchar_vec\n\n[1] \"cat\"   \"dog\"   \"dingo\"\n\nchar_vec[2]\n\n[1] \"dog\"\n\nchar_vec[2:3]\n\n[1] \"dog\"   \"dingo\"\n\nchar_vec[rep(3, 10)]\n\n [1] \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\"\n[10] \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#subsetting-by-name",
+    "href": "3-atomic-vectors/notes.html#subsetting-by-name",
+    "title": "Atomic Vectors",
+    "section": "Subsetting by Name",
+    "text": "Subsetting by Name\n\nnamed_char_vec &lt;- c(\"thrash\" = \"cat\", \"buzz\" = \"dog\", \"poppy\" = \"dingo\")\nnamed_char_vec\n\n thrash    buzz   poppy \n  \"cat\"   \"dog\" \"dingo\" \n\nnamed_char_vec[\"buzz\"]\n\n buzz \n\"dog\" \n\nnamed_char_vec[rep(\"poppy\", 10)]\n\n  poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy   poppy \n\"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\" \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#subsetting-by-logicals",
+    "href": "3-atomic-vectors/notes.html#subsetting-by-logicals",
+    "title": "Atomic Vectors",
+    "section": "Subsetting by Logicals",
+    "text": "Subsetting by Logicals\n\nnamed_char_vec[c(TRUE, FALSE, TRUE)]\n\n thrash   poppy \n  \"cat\" \"dingo\""
+  },
+  {
+    "objectID": "3-atomic-vectors/notes.html#references",
+    "href": "3-atomic-vectors/notes.html#references",
+    "title": "Atomic Vectors",
+    "section": "References",
+    "text": "References\n\nAdvanced R, Chapter 3: Vectors\nR Coding Basics, Chapter 2: Properties of Vectors\nR Coding Basics, Chapter 3: Creating Vectors"
+  },
+  {
+    "objectID": "office-hours.html",
+    "href": "office-hours.html",
+    "title": "Office Hours",
+    "section": "",
+    "text": "Office Hours\nPlease stop by during office hours to chat in a small group setting with the instructor or GSIs.",
+    "crumbs": [
+      "Office Hours"
+    ]
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "An introduction to computationally intensive applied statistics. Topics will include organization storage of data, visualization and graphics, statistical learning and data mining, model validation procedures, and the presentation of results. This course uses R as its primary computing language.\n\n\nClass Format\nThis is an in-person class with three lectures each week and one two-hour lab led by a GSI. This class is designed assuming you’ll be in class. If you miss class, you’ll be able to find most materials from class - slides, snippets of code - published on the course wesite.\n\nGroup tutoring\nTutors will offer group tutoring sessions several times each week. This is an opportunity to finish up any assignments that you’ve started in class or review any topics that are confusing for you. You’re welcome to attend any session that works well for your schedule. Check the Office Hours page to see the group tutoring schedule.\nGroup tutoring is a great place to go to meet other students and collaborate on assignments with tutors on hand to help you get unstuck.\n\n\nOffice Hours\nOffice hours are an opportunity to chat one-on-one with your instructor and GSIs. Please come to office hours! Coming to office hours does not send a signal that you are behind or need extra help. On the contrary, coming to office hours early and often tends to co-occur with success in the course. We’re happy to chat about the course material, statistics in general, careers in statistics, and whatever other statistics or data science topics are on your mind! Please check the Office Hours page to see the times of the various office hour/group tutoring sessions.\n\n\n\nMaterials\n\nComputational tools\nEach student will need a laptop in order to engage with the computing aspects of this class. Throughout the semester you’ll be installing several different software tools, all of which are free. We will be mainly using the computing and programming environment R (via RStudio) to analyze data in this class. We will also ask you to use a command line interface to interact with your operating system. You do need your own computer to use R and do the assignments. No need to install these ahead of time; we’ll guide you through how to get set up.\nAbout half of the students in 133 have some coding experience in Python or R and about half do not. For those who come from Data 8 or some previous coding experience in python, the first labs will help you transfer that knowledge over to R. Both languages are excellent platforms for analyzing data, are widely used in data science, and have their individual strengths. R has been developed within the statistics community specifically for data analysis, while python is a general-purpose programming language but has large data analysis capabilities.\n\n\nSupplementary texts\nYour primary reference throughout the course will be the notes that you take in class but there are also several terrific books that are free and online that can expand your knowledge.\n\nAdvanced R, Hadley Wickham\nR for Data Science, Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nR packages, Hadley Wickham and Jenny Bryan\n\n\n\n\nCourse communication\n\nbCourses\nWe don’t use bCourses for much. It is primarily used to disseminate important announcements for the entire class such as the initial welcome announcement, final exam information etc.\n\n\nDiscussion forum\nThe official discussion forum for the class will be hosted on Ed. Ed is a forum to ask and answer questions with your fellow students and course staff. It’s a useful resource for learning from your peers and seeking help from tutors and instructors.\nIf you have a question about the material or assignments (or anything related to the course), create a new post to ask your question on Ed. If it is about something personal, then mark it as “private”, and only course staff will be able to see your post. This is the best way to contact us if you have a personal concern, as it ensures the fastest response. If your question does not include personal information and can be answered by other students, make sure it is public.\nIn a course this large, the instructors have a difficult time responding to individual emails, so please use the class forum or visit office hours if you wish to contact us.\n\n\n\nAssignments, Exams, and Grading\n\nTurning-in assignments\nYou will be turning in your assignments on a platform called Pensieve, the younger sibling of Gradescope. This is also the platform where your assignments will be graded, so you can return there to get feedback on your work. You are welcome to file a regrade request if you notice that we made an error in applying the rubric to your work. Note that regrade requests will need to be submitted by a deadline, which will usually be about a week the grades are released.\n\n\nProblem Sets\nProblem sets provide you with essential practice on the ideas and techniques discussed in class. They are generally due each week and are graded credit / no credit.\n\n\nProjects\nProjects are open-ended assignments assignments designed to apply the concepts from the lecture notes in the cause of doing an analysis of real data. This will involve both writing code and communicating your thoughts and findings in English. We’ll be working through some problems from the projects in lab section, but you will be spending time on them outside of class time.\nProjects are also graded credit / no credit.\n\n\nQuizzes\nPaper-and-pencil quizzes reinforce the most important concepts from the lecture and provide you the opportunity to work through misunderstandings of concepts with peers and the instructor. They cover the material from lecture, problem sets, and projects up until the time of the quiz.\nThere is both an individual and group component to each quiz.\nThe individual component will last about 40 minutes. You are allowed one, A4, one-sided handwritten sheet of notes with your name in the upper right-hand corner. The group component will take place immediately after the individual component has been completed and will last about 25 minutes. Your final (composite) quiz grade will be the average of your group and individual quiz scores.\nThis group quiz system almost always results in higher grades. We’ll do a check at the end of the semester to calculate your quiz grade using just your individual quizzes. In the unlikely event that your individual grade average is higher, we’ll use that grade.\n\n\nExam\nThe paper-and-pencil final exam will be held in person during finals week. It is a comprehensive exam and covers the material from the lecture, problem sets, and projects.\nThe time and date is Wednesday December 17th, 7 - 10 pm.\n\n\nGrading\nYour final grade in this class is, to the best of our ability, a measure of your understanding of the concepts of computing with data. As such, the lions share of your grade comes from measures of your individual understanding: quizzes and the final.\nThe best way to prepare for these assessments is to earnestly engage with the problem sets and proejects. Their role in the course is practice and they’ll be your single most effective way to learn. We just want to see that you are indeed engaging in practice, so the problem sets and projects are both graded credit / no credit, with full credit given for evidence of earnest engagement.\n\nProblem Sets: 5%\nProjects: 15%\nQuizzes: 50%\nFinal: 30%\n\nThe grades will not be curved (&gt; 90% is some kind of A, 80-90 is some kind of B, etc.), so there is no limit to the number of As and Bs that are earned.\nIn order to provide flexibility around emergencies that might arise for you throughout the semester we will drop everyone’s lowest quiz grade before calculating your quiz average at the end of the semester.\n\n\n\nPolicies\n\nLate Work\nRigorously completing the problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don’t just submit a blank page).\n\n\nCollaboration policy\nOn problem sets and projects, we strongly encourage collaboration between students. One of the best ways to learn is to talk things through with someone else. At the same time, these are your best opportunity to practice and learn, so be cautious not to lean to heavily on the understanding of a peer when working through your assignments.\n\n\nAI policy\nPlease be thoughtful when using AI tools for your schoolwork. Doing so on problem sets and projects robs you of a valuable opportunity to learn and undermines your performance on exams. At the same time, they can be helpful in providing feedback on your writing.\nAt the end of the course, we’ll bring in AI tools for coding and learn how to use them. They’re very powerful, but you need firm mental models of the way code works before you’re able to use them well. For that reason, we suggest you refrain from using them until they’re introduced in class.\n\n\nAccomodations for students with disabilities\nStat 133 is a course that is designed to allow all students to succeed. If you have letters of accommodation from the Disabled Students’ Program, please share them with your instructor as soon as possible, and we will work out the necessary arrangements.\n\n\nStaying healthy\nMaintaining your health and that of the Berkeley community is of primary importance, so if you are feeling ill or have been exposed to illness, whether it’s COVID-19 or something else, please do not come to class. You’re encouraged to reach out to fellow students to discuss the class materials or stop by group tutoring or office hours to chat with a tutor or the instructor.\n\n\n\nFrequently Asked Questions\n\nWhat should I do if I’m on the waitlist?\nAttend both lecture and lab and submit all assignments on time. Unfortunately we cannot grow the size of the class any more, so places will become available only when students drop. If you have an urgent need for the course, visit the drop in advising sessions in our department: https://statistics.berkeley.edu/academics/undergrad/advising.\nAre class sessions recorded?\nNo.\nIs attendance required?\nNo.\nAre time conflicts allowed?\nNo.\nWhat if I join the class late?\nIf you join the class within the first two weeks, read through all of the material on the course website that you’ve missed. Also ask a neighbor in lecture if you can borrow their notes. Finally, visit the Group Tutoring to discuss any topics you’ve missed. If you’ve missed any assignments in the first two weeks, request an extension from your GSI.\nAfter two weeks into the semester, you’ll have too much material that you’ll need to make up, so you will have to wait to a subsequent semester to take the course.\n\n\n\nCampus Resources\nUC Berkeley has a vast wealth of resources to help with all aspects of student life. You can read about them at the links below.\n\nBerkeley Supportal- great place to start\nDisabled Students’ Program\nUniversity Health Services\nUCB Path to Care\nStudent Learning Center\nBerkeley International Office\nOmbuds Office for Students and Postdoctoral Appointees\nGender Equity Resource Center\nCenter for Educational Justice & Community Engagement\nUHS Counseling and Psychological Services (CAPS)\nCampus Academic Accommodations Hub\nASUC Student Advocate’s Office\nBasic Needs Center\nASUC Mental Health Resources Guide",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "8lab-monks/slides.html#agenda",
+    "href": "8lab-monks/slides.html#agenda",
+    "title": "Lab 2",
+    "section": "Agenda",
+    "text": "Agenda\n\nBrief lecture review\nReview key concepts\nTime to work in groups on lab worksheet (15 minutes)\nDiscuss Project 2 + Work through select parts\nTime for questions"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#brief-review-of-lecture-control-flow",
+    "href": "8lab-monks/slides.html#brief-review-of-lecture-control-flow",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture: Control Flow",
+    "text": "Brief Review of Lecture: Control Flow\nIf / Else = Conditional Behavior\nif (x &gt; 0) {\n  print(\"positive\")\n} else {\n  print(\"not positive\")\n}\nVectorized If/Else statements are also possible:\n\nx = 0\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\"\n\n\nFor loops = repeat over items\nfor (i in 1:5) {\n  print(i^2)\n}"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#brief-review-of-lecture-functions",
+    "href": "8lab-monks/slides.html#brief-review-of-lecture-functions",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture: Functions",
+    "text": "Brief Review of Lecture: Functions\n\nfunction_name &lt;- function(arg1, arg2, ...) {\n  # code to execute\n  result &lt;- arg1 + arg2  # example operation\n  return(result)         # optional, returns result\n}"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#sampsons-monks-project-background-concepts",
+    "href": "8lab-monks/slides.html#sampsons-monks-project-background-concepts",
+    "title": "Lab 2",
+    "section": "Sampson’s Monks Project: Background Concepts",
+    "text": "Sampson’s Monks Project: Background Concepts\n\nPackages in R\nSociomatrices\nNetwork visualizations & statistics\nRandom vs. observed networks\n\n\nMotivate for students that we will be working on the project and turning it in in 2 weeks, and it will be about the monks data. These are some of the necessary skills they will need for the project"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#packages-libraries",
+    "href": "8lab-monks/slides.html#packages-libraries",
+    "title": "Lab 2",
+    "section": "Packages & Libraries",
+    "text": "Packages & Libraries\n\nBase R is powerful, but we use packages to extend its capabilities\nPackages collections of functions & datasets\n\nlibrary() is used to load a previously installed package into an R session.\n\nInstall and load:\ninstall.packages(\"igraph\") # only need to do once!\nlibrary(igraph)"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#packages-to-use-today",
+    "href": "8lab-monks/slides.html#packages-to-use-today",
+    "title": "Lab 2",
+    "section": "Packages to use today:",
+    "text": "Packages to use today:\nigraph (network analysis & static plots)\n\naccepts adjacency matrices.\n\nnetworkD3 (interactive plots)\n\nexpects data frames of nodes and edges, not a network object.\nnodes are the names/points in the resulting plot\nedges are the directed lines between the points\n\nEven though the information is already in sampson, you still need to extract it into the right format for networkD3."
+  },
+  {
+    "objectID": "8lab-monks/slides.html#what-do-networks-look-like",
+    "href": "8lab-monks/slides.html#what-do-networks-look-like",
+    "title": "Lab 2",
+    "section": "What do networks look like?",
+    "text": "What do networks look like?\n\nLet’s use a familar dataset to create network plots!"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#our-dataset-sampsons-monks",
+    "href": "8lab-monks/slides.html#our-dataset-sampsons-monks",
+    "title": "Lab 2",
+    "section": "Our Dataset: Sampson’s Monks",
+    "text": "Our Dataset: Sampson’s Monks\n\nData collected in a New England monastery (1960s)\nMonks reported:\n\nLiking relationships (time 1, time 2, time 3)\nDisliking relationships (time 1)\n\nClassic dataset for studying group dynamics and conflict\nStored as a list of matrices in lda package, which we will use to get the data"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#our-dataset-sampsons-monks-continued",
+    "href": "8lab-monks/slides.html#our-dataset-sampsons-monks-continued",
+    "title": "Lab 2",
+    "section": "Our Dataset: Sampson’s Monks (continued)",
+    "text": "Our Dataset: Sampson’s Monks (continued)\nFrom this matrix, we can get:\n\nIn-degree (col sums) = number of ties received / how many monks said they liked them\nOut-degree (row sums) = number of ties sent / how many monks they said they liked"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#static-vs.-interactive-plots",
+    "href": "8lab-monks/slides.html#static-vs.-interactive-plots",
+    "title": "Lab 2",
+    "section": "Static vs. Interactive Plots",
+    "text": "Static vs. Interactive Plots\n\nYou will create one of each in your project\nStatic plots = easy and quick to create using plot() from igraph\nInteractive plots = can zoom, hover, drag nodes using forceNetwork() from networkD3"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#why-compare-random-vs.-observed",
+    "href": "8lab-monks/slides.html#why-compare-random-vs.-observed",
+    "title": "Lab 2",
+    "section": "Why Compare Random vs. Observed?",
+    "text": "Why Compare Random vs. Observed?\nIn your project, you will be asked to compare the observed sociomatrix with one that you have generated.\n\nRandom sociomatrix = ties assigned by chance\nObserved monk network = structured by social dynamics\nKey question: What features do we see in the real network that random ones lack?\n\nShows the complexity of real social systems"
+  },
+  {
+    "objectID": "8lab-monks/slides.html#lab-review-worksheet",
+    "href": "8lab-monks/slides.html#lab-review-worksheet",
+    "title": "Lab 2",
+    "section": "Lab Review Worksheet",
+    "text": "Lab Review Worksheet\n\n  \n    −\n    +\n \n 30:00\n \nGroup work to review essential material\n\nLab worksheet is meant to give students the skills they need for the project, which they will mostly be taking home and working on in their own time. Lab worksheet is fully during lab. Can go over the answers to this in lab or have them volunteer answers."
+  },
+  {
+    "objectID": "8lab-monks/slides.html#lab-2-project",
+    "href": "8lab-monks/slides.html#lab-2-project",
+    "title": "Lab 2",
+    "section": "Lab 2 Project",
+    "text": "Lab 2 Project\n\n  \n    −\n    +\n \n 15:00\n \nWorksheet:\n\nWritten responses. Please code along on your laptop. This is for your own practice / not turned in.\n\nProject:\n\nFour parts\nSubmit: project.R + README.md on GitHub Classroom\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important and they may struggle with (suggest getting started with downloading packages, doing a visualization, writing the function)"
+  },
+  {
+    "objectID": "3lab/slides.html#using-the-shell-locally",
+    "href": "3lab/slides.html#using-the-shell-locally",
+    "title": "First Contact with R",
+    "section": "Using the Shell Locally",
+    "text": "Using the Shell Locally\n\n  \n    −\n    +\n \n 07:00\n \n\nMac:\n\n“zshell” (aka zsh) - UNIX based. Very similar to bash (Base UNIX Shell) with some added functionality.\nTo access, use the Mac’s “Termial” application.\n\nWindows:\n\nWill need to install “Git” if you don’t have it already.\n\nhttps://git-scm.com/downloads\n\nThis will give you access to the “Git Bash” application, which will let you use UNIX Shell on your Windows system."
+  },
+  {
+    "objectID": "3lab/slides.html#brief-review-of-lecture",
+    "href": "3lab/slides.html#brief-review-of-lecture",
+    "title": "First Contact with R",
+    "section": "Brief Review of Lecture",
+    "text": "Brief Review of Lecture\nNew Shell Commands\n\n\nmkdir\n\n\nCreates a new directory.\n\n\n\n\ncp\n\n\nCopy file (arg1) to destination (arg2).\nExample: cp ~/Downloads/hw1.pdf ~/Documents/econ100b/hw/\n\n\n\n\nmv\n\n\nMove file (first argument) to destination directory (second argument).\nExample: mv ~/Downloads/hw1.pdf ~/.Trash\n\n\n\nThey have only heard mv in lecture briefly, so teach them the functionality."
+  },
+  {
+    "objectID": "3lab/slides.html#brief-review-of-lecture-cont.",
+    "href": "3lab/slides.html#brief-review-of-lecture-cont.",
+    "title": "First Contact with R",
+    "section": "Brief Review of Lecture (cont.)",
+    "text": "Brief Review of Lecture (cont.)\nR Equivallent of Shell Commands:\n\ngetwd(): like pwd in Shell.\nsetwd(): like cd in Shell.\nlist.files(): like ls in Shell.\nreadLines(): like cat in Shell."
+  },
+  {
+    "objectID": "3lab/slides.html#brief-review-of-lecture-cont..",
+    "href": "3lab/slides.html#brief-review-of-lecture-cont..",
+    "title": "First Contact with R",
+    "section": "Brief Review of Lecture (cont..)",
+    "text": "Brief Review of Lecture (cont..)\n\na:b: Creates vector of numbers from a to b by 1.\nseq: Creates vector of numbers from \"from\" argument, to \"to\" argument, by steps defined in the \"by\" argument.\nrep: Repeats vector provided \"x\" a number of times defined by \"times\" argument."
+  },
+  {
+    "objectID": "3lab/slides.html#vectorization",
+    "href": "3lab/slides.html#vectorization",
+    "title": "First Contact with R",
+    "section": "Vectorization",
+    "text": "Vectorization\n\nOperations on a single object also works on vectors.\n\n\nvec &lt;- c(72, 52, 10)\n\nvec / 2\n\n\n\n[1] 36 26  5\n\n\n\n\n\nvec * 3\n\n\n\n[1] 216 156  30\n\n\n\n\n\nvec - 6\n\n\n\n[1] 66 46  4"
+  },
+  {
+    "objectID": "3lab/slides.html#recycling",
+    "href": "3lab/slides.html#recycling",
+    "title": "First Contact with R",
+    "section": "Recycling",
+    "text": "Recycling\n\nOperations on two vectors of unequal length.\n\n\nvec1 &lt;- 1:10\nvec2 &lt;- c(1, 2)\n\nvec1 * vec2\n\n\n\n [1]  1  4  3  8  5 12  7 16  9 20\n\n\n\n\n\nvec3 &lt;- c(1, 2, 3)\n\nvec1 + vec3\n\n\n\n [1]  2  4  6  5  7  9  8 10 12 11"
+  },
+  {
+    "objectID": "3lab/slides.html#lab-1-assignment",
+    "href": "3lab/slides.html#lab-1-assignment",
+    "title": "First Contact with R",
+    "section": "Lab 1 Assignment",
+    "text": "Lab 1 Assignment\n\n  \n    −\n    +\n \n 15:00\n \n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nTwo Parts:\n\nShell\nR: Atomic Vectors, Vectorization, Recycling, Matrices, if statements, for loops.\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important AND are in scope of lectures so far (nothing after 7)."
+  },
+  {
+    "objectID": "3lab/worksheet.html",
+    "href": "3lab/worksheet.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "quizzes/quiz-slides.html#academic-integrity",
+    "href": "quizzes/quiz-slides.html#academic-integrity",
+    "title": "Quiz",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAcademic integrity is tantamount. Your individual quiz must represent your own work absent the help of other students - either in the room or in another quiz section. All electronics must be stowed and your eyes must not wander to other students quizzes. Conveying information to other students about the content of the quiz violates principles of academic integrity. All instances of academic misconduct will be taken seriously, handled by me personally, and will be coordinated with the Office of Student Conduct.\nDuring the group quiz, you are of course encouraged to collaborate with your teammates (but only your teammates) to answer the questions.\nIf the proctor sees your eyes wandering, you’ll be reseated at the front of the class.\n\nProf. Bray"
+  },
+  {
+    "objectID": "quizzes/quiz-slides.html#individual-quiz",
+    "href": "quizzes/quiz-slides.html#individual-quiz",
+    "title": "Quiz",
+    "section": "Individual Quiz",
+    "text": "Individual Quiz\n\n\nBefore the quiz begins\n\n🧹 Clear your desk of everything except a pen/pencil and your cheat sheet.\n🧢 Remove hats, hoods, and sunglasses.\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should be remain in your bag for the entire class period.\nSpread out as much as possible so that you are not too close to each other.\nWhen you get a quiz, cover it with your cheat sheet and do not begin.\n\n\nDuring the quiz\n\n👀 Keep your eyes on your own quiz.\nIf you need to use the bathroom, bring your quiz and phone to the front of the class.\n⌛If you finish early, please raise your hand and we will collect your quiz.\n❗You must stop writing when time is called or risk a 0.\n\nGood luck! 🍀\n\n\n  \n    −\n    +\n \n 40:00"
+  },
+  {
+    "objectID": "quizzes/quiz-slides.html#group-quiz",
+    "href": "quizzes/quiz-slides.html#group-quiz",
+    "title": "Quiz",
+    "section": "Group Quiz",
+    "text": "Group Quiz\n\n\nBefore the quiz begins\n\nForm groups of 2-3 people.\n🧹 Everything except a pen/pencil and your cheat sheet must remain off your desk.\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should be remain in your bag for the entire class period.\nWhen you get a group quiz, write all group members names on it but do not begin.\n\n\nDuring the quiz\n\n🗣️Discuss each of the problems and decide as a group which answer is best.\n⌛If you finish early, please raise your hand and we will collect your quiz.\n❗You must stop writing when time is called or risk a 0.\n\nGood luck! 🍀\n\n\n  \n    −\n    +\n \n 25:00"
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Notes\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "4-working-w-vectors/slides.html#review",
