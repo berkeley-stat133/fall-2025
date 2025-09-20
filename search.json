@@ -11,7 +11,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.748501\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.06686405\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -60,7 +60,7 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.13968194 -0.01676454  0.40910215\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.6767627 -0.2147398  1.7445887\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
@@ -81,7 +81,7 @@
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.409102151285247 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"1.74458872052955 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
@@ -689,7 +689,14 @@
     "href": "10-dataframes/slides.html#factors-1",
     "title": "Factors and Data Frames",
     "section": "Factors",
-    "text": "Factors\nA data structure for storing categorical data. Stores the values in an integer vector and adds a levels attribute to map integers to character strings. Created with factor().\n\n\nmaj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\n\n\nas.integer(maj)\n\n\n\n[1] 3 2 3 1 2\n\n\n\n\n\nc(maj, 2L)\n\n\n\n[1] 3 2 3 1 2 2"
+    "text": "Factors\nA data structure for storing categorical data. Stores the values in an integer vector and adds a levels attribute to map integers to character strings. Created with factor().\n\n\nmaj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\nDraw two vection of the same data: as a character vector as as an integer vector coupled with a levels lookup table."
+  },
+  {
+    "objectID": "10-dataframes/slides.html#section",
+    "href": "10-dataframes/slides.html#section",
+    "title": "Factors and Data Frames",
+    "section": "",
+    "text": "as.integer(maj)\n\n\n\n[1] 3 2 3 1 2\n\n\n\n\n\nc(maj, 2L)\n\n\n\n[1] 3 2 3 1 2 2"
   },
   {
     "objectID": "10-dataframes/slides.html#attributes",
@@ -720,8 +727,8 @@
     "text": "Ordering levels\nYou can create a factor with ordered levels by adding ordered = TRUE.\n\nmaj_or &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"),\n                 levels = c(\"STAT\", \"ECON\", \"DATA\", \"BIO\"),\n                 ordered = TRUE)\n\n\n\nmaj_or\n\n\n\n[1] STAT ECON STAT DATA ECON\nLevels: STAT &lt; ECON &lt; DATA &lt; BIO\n\n\n\n\n\nsort(maj_or)\n\n\n\n[1] STAT STAT ECON ECON DATA\nLevels: STAT &lt; ECON &lt; DATA &lt; BIO"
   },
   {
-    "objectID": "10-dataframes/slides.html#section",
-    "href": "10-dataframes/slides.html#section",
+    "objectID": "10-dataframes/slides.html#section-1",
+    "href": "10-dataframes/slides.html#section-1",
     "title": "Factors and Data Frames",
     "section": "",
     "text": "barplot(summary(maj_or))\n\n\n\n\n\n\n\n\n\n\n\n\nbarplot(summary(maj))"
@@ -797,8 +804,8 @@
     "text": "Index Cards as a Data Frame, cont.\n\n\nindex_cards[2, ]\n\n\n\n         songs distances\n2 Stay with me       800\n\n\n\n\n👍👍"
   },
   {
-    "objectID": "10-dataframes/slides.html#section-1",
-    "href": "10-dataframes/slides.html#section-1",
+    "objectID": "10-dataframes/slides.html#section-2",
+    "href": "10-dataframes/slides.html#section-2",
     "title": "Factors and Data Frames",
     "section": "",
     "text": "Question\n\n\n    name gender height weight\n1 Anakin   male   1.88     84\n2  Padme female   1.65     45\n3   Luke   male   1.72     77\n4   Leia female   1.50     49\n\n\nUsing what you know about matrix and list subsetting, write code to subset from star_wars…\n\n\nThe data frame containing only height and weight.\nThe character vector gender.\nThe data frame containing only the last row.\nThe value 1.88\n\n\n\n  \n    −\n    +\n \n 02:30"
