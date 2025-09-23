@@ -6,12 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <title>STAT 133 – Control Flow</title>
+  <title>STAT 133 – Git &amp; Github</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,235 +194,63 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133_slide.png" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Control Flow</h1>
-  <p class="subtitle">Choices and Iteration</p>
+  <h1 class="title">Git &amp; Github</h1>
+  <p class="subtitle">Tools for robust, collaborative coding</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section id="computational-toolbox" class="slide level2">
+<h2>Computational Toolbox</h2>
+<ol type="1">
+<li class="fragment"><strong>Unix Shell</strong>: Organize and edit file system.</li>
+<li class="fragment"><strong>R</strong>: Computational enrivonment to make data products to write to file system.</li>
+<li class="fragment"><strong>git</strong>: Track changes to files on files system.</li>
+</ol>
+</section>
 <section>
-<section id="choices" class="title-slide slide level1 center">
-<h1>Choices</h1>
+<section id="git" class="title-slide slide level1 center">
+<h1>git</h1>
 
 </section>
-<section id="section" class="slide level2" data-background-image="images/lyft.jpeg" data-background-size="contain">
+<section id="section" class="slide level2">
 <h2></h2>
-</section>
-<section id="getting-to-campus" class="slide level2">
-<h2>Getting to Campus</h2>
-<p>If my bike is working<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride my bike to campus.</p>
-<div class="fragment">
-<p>If my bike is not working and I have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride the bus to campus.</p>
-</div>
-<div class="fragment">
-<p>If my bike is not working and I don’t have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I take a cab.</p>
-</div>
-</section>
-<section id="a-random-condition-in-r" class="slide level2">
-<h2>A random condition in R</h2>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">rnorm</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.7130608</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><code>rnorm()</code> will generate a random number from a Normal distribution with mean 0 and SD 1.</p>
-</div>
-</section>
-<section id="if-then" class="slide level2">
-<h2>if-then</h2>
-<p><strong>“if then” statement</strong>: executes a block of code if a condition is met.</p>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb3-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb3-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes">
-<p>Drop:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/git-logo.png"></p>
+</div><div class="column" style="width:50%;">
 <ul>
-<li>Run this multiple times to see how it’s random.</li>
-<li>Could set x &lt;- 1 to make it deterministic or even just TRUE.</li>
-<li>Annotate code with different colors: if-then syntax, logical condition, and what to do.</li>
+<li class="fragment">Free and open-source command line tool</li>
+<li class="fragment">Developed to help coordinate collaborative coding</li>
+<li class="fragment">99% of software projects use it</li>
+<li class="fragment">Many scientific projects use it</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
+</div></div>
 </section>
-<section id="if-else" class="slide level2">
-<h2>if-else</h2>
-<p><strong>“if else” statement</strong>: executes one block of code if a condition is met and a different block of code if it is not met.</p>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb4-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb4-5"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb4-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative :("</span>)</span>
-<span id="cb4-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes">
-<p>Similarly, run it multiple times and annotate code with different colors: if-then syntax, logical condition, and what to do.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
+<section id="what-does-it-do" class="slide level2">
+<h2>What does it do?</h2>
+<p><code>git</code> allows you to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;save your work,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;document your process,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;share it and,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;collaborate with others.</p>
 </section>
-<section id="nested-ifs" class="slide level2">
-<h2>Nested ifs</h2>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb5-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb5-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb5-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative :("</span>)</span>
-<span id="cb5-7"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb5-8"><a></a>  <span class="fu">print</span>(<span class="st">"x is zero :|"</span>)</span>
-<span id="cb5-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes">
-<p>Run it multiple times, then get the zero to toggle using x &lt;- 0</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="getting-to-campus-1" class="slide level2">
-<h2>Getting to Campus</h2>
-<div class="fragment">
-<p>If my bike is working<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride my bike to campus.</p>
-<p>If my bike is not working and I have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride the bus to campus.</p>
-<p>If my bike is not working and I don’t have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I take a cab.</p>
-</div>
-<div class="fragment">
-<h4 id="question">Question</h4>
-<p>Using the R objects <code>bike_working</code> and <code>enough_time</code>, both logical vectors of length 1, write this decision tree in R using nested if-then statements and <code>print()</code>.</p>
-<div id="timer_ea09b908574254a1372069a25d0826836e9f4136" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
- </div>
-</div>
-</section>
-<section id="section-1" class="slide level2">
+<section id="section-1" class="slide level2" data-background-image="images/diy-vs-git.png" data-background-size="contain">
 <h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="cf">if</span> (bike_working) {</span>
-<span id="cb6-2"><a></a>  <span class="fu">print</span>(<span class="st">"ride bike"</span>)</span>
-<span id="cb6-3"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (enough_time) {</span>
-<span id="cb6-4"><a></a>  <span class="fu">print</span>(<span class="st">"ride bus"</span>)</span>
-<span id="cb6-5"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb6-6"><a></a>  <span class="fu">print</span>(<span class="st">"call cab"</span>)</span>
-<span id="cb6-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes">
-<p>If time you can set the values of bike_working and enough_time to verify that it works.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="iteration" class="title-slide slide level1 center">
-<h1>Iteration</h1>
-
 </section>
-<section id="for-loops" class="slide level2">
-<h2>For loops</h2>
-<p><a href="https://stat133.berkeley.edu/spring-2025/slides/stat133-02-prog3-for-loop.pdf">Prof.&nbsp;Sanchez Slides</a></p>
+<section id="git-commands-to-get-started" class="slide level2">
+<h2>Git commands to get started</h2>
 <div class="fragment">
-<div class="r-fit-text">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="cf">for</span> (item <span class="cf">in</span> vector) {</span>
-<span id="cb7-2"><a></a>    perform_action</span>
-<span id="cb7-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="iterated-choices" class="title-slide slide level1 center">
-<h1>Iterated Choices</h1>
-
-</section>
-<section id="what-if-x-has-multiple-elements" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What if x has multiple elements?</h2>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">3</span>)</span>
-<span id="cb8-2"><a></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.3709785  2.4733567  0.4614448</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><br>
-<br>
-<br>
-</p>
-<div class="r-fit-text">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>      <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb10-2"><a></a>        <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb10-3"><a></a>      }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<p>Each command is called from the command line following <code>git</code> (e.g.&nbsp;<code>git init</code>).</p>
+<ul>
+<li class="fragment"><code>init</code>: initialize a <em>repository</em> (repo)</li>
+<li class="fragment"><code>add</code>: move a file into the <em>staging area</em></li>
+<li class="fragment"><code>commit</code>: take a snapshot of files in the staging area with a message (<code>-m</code>)</li>
+<li class="fragment"><code>push</code>: send commits to another repo</li>
+</ul>
 <aside class="notes">
-<p>Annotate this if-then by wrapping it in a for loop.</p>
+<p>Before showing these commands, open a terminal and type <code>git --help</code> to show the menu of commands.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -438,83 +264,331 @@
       }</style></aside>
 </div>
 </section>
-<section id="option-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Option 1</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
-<span id="cb11-2" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (x[i] <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb11-3" class="hljs-ln-code"><a></a>    <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb11-4" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb11-5" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "x is positive :)"
-[1] "x is positive :)"</code></pre>
-</div>
-</div>
+<section id="section-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column smaller" style="width:40%;">
+<ul>
+<li class="fragment"><code>init</code>: invite the photographer (git) to the wedding (repo)</li>
+<li class="fragment"><code>add</code>: move the bride and groom into the camera frame</li>
+<li class="fragment"><code>commit</code>: take a picture of the bride and groom and caption it</li>
+<li class="fragment"><code>push</code>: share the photos online</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/wedding-photographer.png"></p>
+</div></div>
 </section>
-<section id="option-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Option 2</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
-<span id="cb13-2" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (x[i] <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb13-3" class="hljs-ln-code"><a></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"element"</span>, i, <span class="st">"is positive :)"</span>))</span>
-<span id="cb13-4" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb13-5" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "element 2 is positive :)"
-[1] "element 3 is positive :)"</code></pre>
-</div>
-</div>
+<section id="section-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><code>init</code>: invite the photographer (git) to the wedding (repo)</li>
+<li><code>add</code>: move the bride and groom into the camera frame</li>
+<li><code>commit</code>: take a picture of the bride and groom and caption it</li>
+<li><code>push</code>: share the photos online</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb1-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> wedding</span>
+<span id="cb1-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> wedding</span>
+<span id="cb1-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb1-4" class="hljs-ln-code"><a></a><span class="fu">git</span> add bride groom</span>
+<span id="cb1-5" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"cutting the cake"</span></span>
+<span id="cb1-6" class="hljs-ln-code"><a></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section></section>
+<section>
+<section id="example-1-demo-project" class="title-slide slide level1 center">
+<h1>Example 1: Demo Project</h1>
+
 </section>
-<section id="option-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Option 3</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a></a><span class="cf">for</span> (x_elem <span class="cf">in</span> x) {</span>
-<span id="cb15-2" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (x_elem <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb15-3" class="hljs-ln-code"><a></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x_elem, <span class="st">"is positive :)"</span>))</span>
-<span id="cb15-4" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb15-5" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2.47335672352223 is positive :)"
-[1] "0.461444811443331 is positive :)"</code></pre>
-</div>
-</div>
+<section id="section-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb2-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+</ol>
+</div></div>
 </section>
-<section id="ifelse" class="slide level2">
-<h2><code>ifelse()</code></h2>
-<div class="fragment">
-<p><code>ifelse()</code>: A <em>vectorized</em> if-else statement.</p>
-<p><br>
-</p>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>x <span class="sc">&lt;</span> <span class="dv">0</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  TRUE FALSE FALSE</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ifelse</span>(<span class="at">test =</span> x <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="at">yes =</span> <span class="st">"is positive :)"</span>, <span class="at">no =</span> <span class="st">"is negative :("</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "is positive :)" "is negative :(" "is negative :("</code></pre>
-</div>
-</div>
+<section id="section-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb3-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb3-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb4-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb4-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb4-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb5-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb5-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb5-4" class="hljs-ln-code"><a></a><span class="bu">echo</span> <span class="st">"# My First Project"</span> <span class="op">&gt;</span> README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+<li>Create file using <code>echo</code> cmd (not git).</li>
+</ol>
+</div></div>
+</section>
+<section id="section-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb6-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb6-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb6-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb6-4" class="hljs-ln-code"><a></a><span class="bu">echo</span> <span class="st">"# My First Project"</span> <span class="op">&gt;</span> README.md</span>
+<span id="cb6-5" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+<li>Create file using <code>echo</code> cmd (not git).</li>
+<li>Add file to staging area.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-9" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb7-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb7-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb7-4" class="hljs-ln-code"><a></a><span class="bu">echo</span> <span class="st">"# My First Project"</span> <span class="op">&gt;</span> README.md</span>
+<span id="cb7-5" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span>
+<span id="cb7-6" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+<li>Create file using <code>echo</code> cmd (not git).</li>
+<li>Add file to staging area.</li>
+<li>Commit the change with message.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-10" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb8-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb8-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb8-4" class="hljs-ln-code"><a></a><span class="bu">echo</span> <span class="st">"# My First Project"</span> <span class="op">&gt;</span> README.md</span>
+<span id="cb8-5" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span>
+<span id="cb8-6" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial commit"</span></span>
+<span id="cb8-7" class="hljs-ln-code"><a></a><span class="co"># edit file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+<li>Create file using <code>echo</code> cmd (not git).</li>
+<li>Add file to staging area.</li>
+<li>Commit the change with message.</li>
+<li>Make changes to file.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-11" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb9-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb9-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb9-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb9-4" class="hljs-ln-code"><a></a><span class="bu">echo</span> <span class="st">"# My First Project"</span> <span class="op">&gt;</span> README.md</span>
+<span id="cb9-5" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span>
+<span id="cb9-6" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial commit"</span></span>
+<span id="cb9-7" class="hljs-ln-code"><a></a><span class="co"># edit file</span></span>
+<span id="cb9-8" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span>
+<span id="cb9-9" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project description"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+<li>Create file using <code>echo</code> cmd (not git).</li>
+<li>Add file to staging area.</li>
+<li>Commit the change with message.</li>
+<li>Make changes to file.</li>
+<li>Add file to staging area.</li>
+<li>Commit the change with message.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-12" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb10-1" class="hljs-ln-code"><a></a><span class="fu">mkdir</span> demo-project</span>
+<span id="cb10-2" class="hljs-ln-code"><a></a><span class="bu">cd</span> demo-project</span>
+<span id="cb10-3" class="hljs-ln-code"><a></a><span class="fu">git</span> init</span>
+<span id="cb10-4" class="hljs-ln-code"><a></a><span class="bu">echo</span> <span class="st">"# My First Project"</span> <span class="op">&gt;</span> README.md</span>
+<span id="cb10-5" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span>
+<span id="cb10-6" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial commit"</span></span>
+<span id="cb10-7" class="hljs-ln-code"><a></a><span class="co"># edit file</span></span>
+<span id="cb10-8" class="hljs-ln-code"><a></a><span class="fu">git</span> add README.md</span>
+<span id="cb10-9" class="hljs-ln-code"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add project description"</span></span>
+<span id="cb10-10" class="hljs-ln-code"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Create new directory for my project.</li>
+<li>Move into that directory.</li>
+<li>Initialize git repo.</li>
+<li>Create file using <code>echo</code> cmd (not git).</li>
+<li>Add file to staging area.</li>
+<li>Commit the change with message.</li>
+<li>Make changes to file.</li>
+<li>Add file to staging area.</li>
+<li>Commit the change with message.</li>
+<li>View the commit history.</li>
+</ol>
+</div></div>
+</section></section>
+<section>
+<section id="github" class="title-slide slide level1 center">
+<h1>GitHub</h1>
+
+</section>
+<section id="what-does-it-do-1" class="slide level2">
+<h2>What does it do?</h2>
+<p><code>git</code> allows you to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;save your work,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;document your process,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;share it and,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;collaborate with others.</p>
+</section>
+<section id="github-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">GitHub</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="images/github.png"></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/octocat.png"></p>
+</div></div>
+</section>
+<section id="github-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">GitHub</h2>
+
+<img data-src="images/github.png" class="r-stretch"><ol type="1">
+<li class="fragment">Allows you to create web-hosted repos to share with others</li>
+<li class="fragment">“Facebook for coders”
+<ul>
+<li class="fragment">Individuals or projects have their own accounts/profiles</li>
+<li class="fragment">Can follow one another</li>
+</ul></li>
+</ol>
+</section>
+<section id="create-a-repo" class="slide level2">
+<h2>Create a repo</h2>
+<p>Live Coding to set up <code>https://github.com/andrewpbray/demo-project.git</code></p>
+</section>
+<section id="sharing-your-work" class="slide level2">
+<h2>Sharing your work</h2>
+
+<img data-src="images/wedding-photographer.png" class="r-stretch"></section>
+<section id="sharing-your-work-1" class="slide level2">
+<h2>Sharing your work</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><code>remote add</code>: link your camera to the online album</li>
+<li><code>push</code>: sync photos with online album</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="fu">git</span> remote add wedding-pics wedding-pics.com</span>
+<span id="cb11-2"><a></a><span class="fu">git</span> push <span class="at">-u</span> wedding-pics main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="section-13" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb12-1" class="hljs-ln-code"><a></a><span class="fu">git</span> remote add origin https://github.com/andrewpbray/demo-project.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Add new remote repo called <code>origin</code>.</li>
+</ol>
+</div></div>
+</section>
+<section id="section-14" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode bash hljs"><span id="cb13-1" class="hljs-ln-code"><a></a><span class="fu">git</span> remote add origin https://github.com/andrewpbray/demo-project.git</span>
+<span id="cb13-2" class="hljs-ln-code"><a></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size:0.8em">
+<ol type="1">
+<li>Add new remote repo called <code>origin</code>.</li>
+<li>Push all commits in local repo to remote</li>
+</ol>
+</div></div>
+<!-- # Example 2: Index Card Data Frame
+
+:::{.notes}
+Sketch data pipeline with a bunch of index cards as input data and what I want coming out is the data frame with all four columns: major, year, song, distance.
+:::
+ -->
+</section></section>
+<section>
+<section id="next-steps" class="title-slide slide level1 center">
+<h1>Next Steps</h1>
+
+</section>
+<section id="survey" class="slide level2">
+<h2>Survey</h2>
+<ol type="1">
+<li class="fragment">Prompt you to set up GitHub account.</li>
+<li class="fragment">Guide you through git installation.</li>
+<li class="fragment">Guide you through git configuration.</li>
+</ol>
+</section>
+<section id="github-classroom" class="slide level2">
+<h2>GitHub Classroom</h2>
+<ol type="1">
+<li class="fragment">We will post a link to Ed with a Demo Project link.</li>
+<li class="fragment">When you click it, you’ll get a new repo in your account.</li>
+<li class="fragment">You will <em>clone</em> the repo locally, work on it, then <em>push</em> your work.</li>
+</ol>
+<!-- ## Survey
+
+1. `git --version`
+2. `git config --global --list`
+3.  -->
 
 
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -736,44 +810,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
