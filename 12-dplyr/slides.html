@@ -225,7 +225,7 @@
 <li class="fragment">A data frame that contains the four original cols plus the one with the height in inches.</li>
 <li class="fragment">The average height of characters from Tatooine</li>
 </ol>
-<div id="timer_408c1f4c8f13449f4d2e0bf87e90ba8ffec55340" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_5e73e1e24764132212aad44a10e620b6211a2d07" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -236,12 +236,13 @@
 <section id="whats-going-on-here" class="slide level2">
 <h2>What’s going on here?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>star_wars[star_wars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.7</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>star_wars[star_wars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.75</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>   name homeworld height weight
-2 Padme     Naboo    1.6     45</code></pre>
+2 Padme     Naboo    1.6     45
+3  Luke  Tatooine    1.7     77</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -256,11 +257,11 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>star_wars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>star_wars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE  TRUE FALSE FALSE</code></pre>
+<pre><code>[1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
 </div>
@@ -360,7 +361,7 @@
 <h2>Let’s make this better</h2>
 <div style="font-size:1.3em">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>star_wars[star_wars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.7</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>star_wars[star_wars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.75</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -584,8 +585,6 @@ Note each *cell* contains a value.
 <h2 data-id="quarto-animate-title"><code>select()</code></h2>
 <div class="fragment">
 <p>Selects variables by name or number.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>star_wars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -596,7 +595,8 @@ Note each *cell* contains a value.
 4 JarJar     Naboo    1.9     90</code></pre>
 </div>
 </div>
-</div><div class="column fragment" style="width:50%;">
+</div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">select</span>(star_wars, homeworld)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -609,14 +609,11 @@ Note each *cell* contains a value.
 4     Naboo</code></pre>
 </div>
 </div>
-</div></div>
 </div>
 </section>
 <section id="select-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>select()</code></h2>
 <p>Selects variables by name or number.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>star_wars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -627,7 +624,6 @@ Note each *cell* contains a value.
 4 JarJar     Naboo    1.9     90</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">select</span>(star_wars, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -640,13 +636,10 @@ Note each *cell* contains a value.
 4     Naboo</code></pre>
 </div>
 </div>
-</div></div>
 </section>
 <section id="select-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>select()</code></h2>
 <p>Selects variables by name or number.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>star_wars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -657,7 +650,6 @@ Note each *cell* contains a value.
 4 JarJar     Naboo    1.9     90</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">select</span>(star_wars, homeworld, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -670,7 +662,6 @@ Note each *cell* contains a value.
 4     Naboo JarJar</code></pre>
 </div>
 </div>
-</div></div>
 </section>
 <section id="filter" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>filter()</code></h2>
@@ -1042,7 +1033,7 @@ Note each *cell* contains a value.
 <li class="fragment">A data frame that contains the four original cols plus the one with the height in inches.</li>
 <li class="fragment">The average height of characters from Tatooine</li>
 </ol>
-<div id="timer_408c1f4c8f13449f4d2e0bf87e90ba8ffec55340" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_5e73e1e24764132212aad44a10e620b6211a2d07" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
