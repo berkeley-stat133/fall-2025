@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -210,107 +176,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="data-wrangling-i" class="level3">
-<h3 class="anchored" data-anchor-id="data-wrangling-i">Data Wrangling I</h3>
-<p>The questions below refer to the data frame called <code>day_at_cal</code>, with the habits of six students during a day at Cal including the day of the week (<code>weekday</code>), their study spot that day (<code>study_spot</code>), the number of total hours that they used AI in the course of their work (<code>ai</code>), and the number of steps walked, in thousands (<code>steps_k</code>). To check your answers in R, you can copy and paste the code that creates this data frame from the last slide from class.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>day_at_cal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  weekday study_spot ai_hours steps_k
-  &lt;ord&gt;   &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt;
-1 Mon     Moffitt         1.2     8.5
-2 Mon     Doe             0.4     6.2
-3 Tue     Cory            2.1     9.1
-4 Tue     MLK             1       7  
-5 Wed     CITRIS          0.8     5.8
-6 Wed     Soda            1.6    10.3</code></pre>
-</div>
-</div>
-<p>Write a single <code>dplyr</code> command that will produce each of the following.</p>
-<ol class="example" type="1">
-<li>A data frame containing the 2nd and 5th students.</li>
-</ol>
-<p><br>
-</p>
-<ol start="2" class="example" type="1">
-<li>A data frame without the 3rd student.</li>
-</ol>
-<p><br>
-</p>
-<ol start="3" class="example" type="1">
-<li>A data frame with only the AI hours column.</li>
-</ol>
-<p><br>
-</p>
-<ol start="4" class="example" type="1">
-<li>A data frame with only the factor columns<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
-</ol>
-<p><br>
-</p>
-<ol start="5" class="example" type="1">
-<li>A data frame containing only the students with at least one hour of AI use.</li>
-</ol>
-<p><br>
-</p>
-<ol start="6" class="example" type="1">
-<li>A data frame with students who study in either Moffitt or Doe.</li>
-</ol>
-<p><br>
-</p>
-<ol start="7" class="example" type="1">
-<li>A data frame with a fifth column called <code>ai_min</code> with the AI use in minutes.</li>
-</ol>
-<p><br>
-</p>
-<ol start="8" class="example" type="1">
-<li>A data frame with a fifth (logical) column called <code>active_day</code> where the number of steps exceeds 8,000.</li>
-</ol>
-<p><br>
-</p>
-<ol start="9" class="example" type="1">
-<li>The same data frame sorted in descending order of number of hours of AI.</li>
-</ol>
-<p><br>
-</p>
-<ol start="10" class="example" type="1">
-<li>The same data frame sorted according to the day of the week. Within rows with the same day of the week, sort in descending order of the number of steps.</li>
-</ol>
-<p><br>
-</p>
-<ol start="11" class="example" type="1">
-<li>A data frame with the overall mean hours of AI use. Name that statistic <code>mean_ai</code>.</li>
-</ol>
-<p><br>
-</p>
-<ol start="12" class="example" type="1">
-<li>A data frame with the minimum steps walked (<code>min_steps</code>), the maximum steps walked (<code>max_steps</code>), and the standard deviation of steps walked (<code>sd_steps</code>).</li>
-</ol>
-<p><br>
-</p>
-<ol start="13" class="example" type="1">
-<li>Skim the documentation for the <code>tibble</code> package (<a href="https://tibble.tidyverse.org/" class="uri">https://tibble.tidyverse.org/</a>) then write down three ways in which tibbles behave differently than data frames.</li>
-</ol>
-<p><br>
-<br>
-<br>
-<br>
-</p>
-<ol start="14" class="example" type="1">
-<li>If you’re interested in reading more about the design philosophy behind the Tidyverse, read <em>The Tidy Tools Manifesto</em> by Hadley Wickham, <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html" class="uri">https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html</a>, (it’s just two pages).</li>
-</ol>
+<section id="intro-to-data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="intro-to-data-visualization">Intro to Data Visualization</h3>
+<p>Coming soon!</p>
+<!-- Today's exercises bear on the first chapter of Kieran Healy, an expert in Data Visualization at Duke University.
+
+<https://socviz.co/lookatdata.html#lookatdata>
+
+@. Healy splits bad data visualization into three categories of failure: aesthetic, substantive, and perceptual.  -->
 <div style="page-break-after: always;"></div>
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>There is a clever way to do this that avoids having to type the names of the columns that are factors. See the help file for <code>select()</code>, particularly about predicate functions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
