@@ -123,7 +123,7 @@
     "href": "14-intro-to-data-viz/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Intro to Data Visualization\nComing soon!"
+    "text": "Intro to Data Visualization\nToday’s exercises bear on the first chapter of Data Visualization by Kieran Healy.\nhttps://socviz.co/lookatdata.html#lookatdata\nHealy splits bad data visualization into three categories of failure: aesthetic, substantive, and perceptual.\nFor each of the following visualizations, describe whether the graphic falls into any of those categories.\n\n\n\n\n\nFor each of the following variables with data types, describe which color palette would be most appropriate: sequential, diverging, or qualitative.\n\nAnnual income (double vector).\n\n\n\n\nTemperature change (double vector), containing positive and negative changes.\n\n\n\n\nCountry (character vector or factor).\n\n\n\n\nHighest educational degree (ordered factor).\n\n\n\n\nPerceptual research shows that human can more accurately interpret data visualizations when they utilize particular channels. Which common plot types use channels that are known to be the most accurate? Which plot types use channels known to be inaccurate?"
   },
   {
     "objectID": "11-git/slides.html#computational-toolbox",
@@ -522,14 +522,14 @@
     "href": "13-data-wrangling-2/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "For this problem set, you’ll be working with the storms tibble built into dplyr. This is a larger data frame than previous, so you’ll need to inspect it more carefully in R in order formulate the necessary code below.\n\nlibrary(dplyr)\nstorms\n\n# A tibble: 19,537 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 19,527 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\nWhat are the dimensions of the data frame? What does every row correspond to?\n\n\n\n\n\n\n\nCalculate the average wind speed and pressure for each category of storm.\n\n\n\n\n\n\n\nFind the number of observations and the maximum wind speed for each combination of storm status and category. Sort the results by maximum wind speed in descending order1.\n\n\n\n\n\n\n\n\n\nUse the .by shortcut to calculate the average pressure for each year. Repeat the calculation using group_by(). Do you get the same answer?\n\n\n\n\n\n\n\n\n\nFor each storm name, calculate the z-score of wind speed (standardized within each storm). Add a new column called wind_z that constains these standarized values.\n\n\n\n\n\n\n\nAdditional advanced exercises coming soon."
+    "text": "For this problem set, you’ll be working with the storms tibble built into dplyr. This is a larger data frame than previous, so you may need to inspect it more carefully in R before proceeding with these questions. Please answer the question in common english and provide the code needed to produce the output used in your answer.\nOn the challenging exercises, a helpful approach is to start by sketching the data frame that would answer the question. What are the dimensions? What does each row refer to? Which columns are needed? Then piece together your pipeline to lead from storms to that data frame.\n\nlibrary(dplyr)\nstorms\n\n# A tibble: 19,537 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 19,527 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\nWhat are the dimensions of the data frame? What does each row correspond to (i.e. what is the unit of observation)?\n\n\n\n\n\n\n\n\nCalculate the average wind speed and pressure for each category of storm.\n\n\n\n\n\n\n\n\nFind the number of observations and the maximum wind speed for each combination of storm status and category. Sort the results by maximum wind speed in descending order1.\n\n\n\n\n\n\n\n\n\nUse the .by shortcut to calculate the average pressure for each year. Repeat the calculation using group_by(). Do you get the same answer?\n\n\n\n\n\n\n\n\n\nFor each storm name, calculate the z-score of wind speed (standardized within each storm) and store it in a new column called wind_z. Return the data frame that\n\n\n\n\n\n\n\nChallenging. For each storm category, arrange the storms in descending order by their maximum wind speed. Retain only the top three storms in each category2.\n\n\n\n\n\n\n\n\n\n\nChallenging: Create a summary that shows, for each year: the number of unique storms, the average duration (in hours) of storms, and the proportion of observations that are category 4 or 5 storms.\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou may have noticed that your results for the answers in this problem set contain a value of NA. By default, most statistical summaries in R (mean(), max(), etc.) with return NA if any of the values are NA. If you prefer, you can calculate the mean after dropping the NA observations. One way to do this is to use the na.rm = TRUE option for functions that allow it (see ?mean). The other way is to use the drop_na() function in dplyr (see ?drop_na()).\nRevisit your code above and, if you haven’t already, drop the NA values in a column before calculating summary statistics."
   },
   {
     "objectID": "13-data-wrangling-2/ps.html#footnotes",
     "href": "13-data-wrangling-2/ps.html#footnotes",
     "title": "STAT 133",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nHint 1: n() is a function that returns the row count when used inside summarize(). Hint 2: You can group by more than one variable.↩︎"
+    "text": "Footnotes\n\n\nHint 1: n() is a function that returns the row count when used inside summarize(). Hint 2: You can group by more than one variable.↩︎\nHint: If you group by multiple variables, a call to summarize() will peel off the outermost grouping (the last argument in group_by()) and keep the others↩︎"
   },
   {
     "objectID": "10-dataframes/slides.html#while-youre-waiting",
@@ -700,95 +700,11 @@
     "text": "Tibbles\nAn updated version of a data frame with convenient behaviors.\n\n\nlibrary(tibble)\nstar_wars_tbl &lt;- as_tibble(star_wars)\nstar_wars_tbl\n\n\n\n# A tibble: 4 × 4\n  name   gender height weight\n  &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1 Anakin male     1.88     84\n2 Padme  female   1.65     45\n3 Luke   male     1.72     77\n4 Leia   female   1.5      49\n\n\n\n\n\nThe main difference is that tibbles are lazy and surly: they do less and complain more - Hadley Wickham"
   },
   {
-    "objectID": "8lab-monks/slides.html#agenda",
-    "href": "8lab-monks/slides.html#agenda",
-    "title": "Lab 2",
-    "section": "Agenda",
-    "text": "Agenda\n\nBrief lecture review\nReview key concepts\nTime to work in groups on lab worksheet (15 minutes)\nDiscuss Project 2 + Work through select parts\nTime for questions"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#brief-review-of-lecture-control-flow",
-    "href": "8lab-monks/slides.html#brief-review-of-lecture-control-flow",
-    "title": "Lab 2",
-    "section": "Brief Review of Lecture: Control Flow",
-    "text": "Brief Review of Lecture: Control Flow\nIf / Else = Conditional Behavior\nif (x &gt; 0) {\n  print(\"positive\")\n} else {\n  print(\"not positive\")\n}\nVectorized If/Else statements are also possible:\n\nx = 0\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\"\n\n\nFor loops = repeat over items\nfor (i in 1:5) {\n  print(i^2)\n}"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#brief-review-of-lecture-functions",
-    "href": "8lab-monks/slides.html#brief-review-of-lecture-functions",
-    "title": "Lab 2",
-    "section": "Brief Review of Lecture: Functions",
-    "text": "Brief Review of Lecture: Functions\n\nfunction_name &lt;- function(arg1, arg2, ...) {\n  # code to execute\n  result &lt;- arg1 + arg2  # example operation\n  return(result)         # optional, returns result\n}"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#sampsons-monks-project-background-concepts",
-    "href": "8lab-monks/slides.html#sampsons-monks-project-background-concepts",
-    "title": "Lab 2",
-    "section": "Sampson’s Monks Project: Background Concepts",
-    "text": "Sampson’s Monks Project: Background Concepts\n\nPackages in R\nSociomatrices\nNetwork visualizations & statistics\nRandom vs. observed networks\n\n\nMotivate for students that we will be working on the project and turning it in in 2 weeks, and it will be about the monks data. These are some of the necessary skills they will need for the project"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#packages-libraries",
-    "href": "8lab-monks/slides.html#packages-libraries",
-    "title": "Lab 2",
-    "section": "Packages & Libraries",
-    "text": "Packages & Libraries\n\nBase R is powerful, but we use packages to extend its capabilities\nPackages collections of functions & datasets\n\nlibrary() is used to load a previously installed package into an R session.\n\nInstall and load:\ninstall.packages(\"igraph\") # only need to do once!\nlibrary(igraph)"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#packages-to-use-today",
-    "href": "8lab-monks/slides.html#packages-to-use-today",
-    "title": "Lab 2",
-    "section": "Packages to use today:",
-    "text": "Packages to use today:\nigraph (network analysis & static plots)\n\naccepts adjacency matrices.\n\nnetworkD3 (interactive plots)\n\nexpects data frames of nodes and edges, not a network object.\nnodes are the names/points in the resulting plot\nedges are the directed lines between the points\n\nEven though the information is already in sampson, you still need to extract it into the right format for networkD3."
-  },
-  {
-    "objectID": "8lab-monks/slides.html#what-do-networks-look-like",
-    "href": "8lab-monks/slides.html#what-do-networks-look-like",
-    "title": "Lab 2",
-    "section": "What do networks look like?",
-    "text": "What do networks look like?\n\nLet’s use a familar dataset to create network plots!"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#our-dataset-sampsons-monks",
-    "href": "8lab-monks/slides.html#our-dataset-sampsons-monks",
-    "title": "Lab 2",
-    "section": "Our Dataset: Sampson’s Monks",
-    "text": "Our Dataset: Sampson’s Monks\n\nData collected in a New England monastery (1960s)\nMonks reported:\n\nLiking relationships (time 1, time 2, time 3)\nDisliking relationships (time 1)\n\nClassic dataset for studying group dynamics and conflict\nStored as a list of matrices in lda package, which we will use to get the data"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#our-dataset-sampsons-monks-continued",
-    "href": "8lab-monks/slides.html#our-dataset-sampsons-monks-continued",
-    "title": "Lab 2",
-    "section": "Our Dataset: Sampson’s Monks (continued)",
-    "text": "Our Dataset: Sampson’s Monks (continued)\nFrom this matrix, we can get:\n\nIn-degree (col sums) = number of ties received / how many monks said they liked them\nOut-degree (row sums) = number of ties sent / how many monks they said they liked"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#static-vs.-interactive-plots",
-    "href": "8lab-monks/slides.html#static-vs.-interactive-plots",
-    "title": "Lab 2",
-    "section": "Static vs. Interactive Plots",
-    "text": "Static vs. Interactive Plots\n\nYou will create one of each in your project\nStatic plots = easy and quick to create using plot() from igraph\nInteractive plots = can zoom, hover, drag nodes using forceNetwork() from networkD3"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#why-compare-random-vs.-observed",
-    "href": "8lab-monks/slides.html#why-compare-random-vs.-observed",
-    "title": "Lab 2",
-    "section": "Why Compare Random vs. Observed?",
-    "text": "Why Compare Random vs. Observed?\nIn your project, you will be asked to compare the observed sociomatrix with one that you have generated.\n\nRandom sociomatrix = ties assigned by chance\nObserved monk network = structured by social dynamics\nKey question: What features do we see in the real network that random ones lack?\n\nShows the complexity of real social systems"
-  },
-  {
-    "objectID": "8lab-monks/slides.html#lab-review-worksheet",
-    "href": "8lab-monks/slides.html#lab-review-worksheet",
-    "title": "Lab 2",
-    "section": "Lab Review Worksheet",
-    "text": "Lab Review Worksheet\n\n  \n    −\n    +\n \n 30:00\n \nGroup work to review essential material\n\nLab worksheet is meant to give students the skills they need for the project, which they will mostly be taking home and working on in their own time. Lab worksheet is fully during lab. Can go over the answers to this in lab or have them volunteer answers."
-  },
-  {
-    "objectID": "8lab-monks/slides.html#lab-2-project",
-    "href": "8lab-monks/slides.html#lab-2-project",
-    "title": "Lab 2",
-    "section": "Lab 2 Project",
-    "text": "Lab 2 Project\n\n  \n    −\n    +\n \n 15:00\n \nWorksheet:\n\nWritten responses. Please code along on your laptop. This is for your own practice / not turned in.\n\nProject:\n\nFour parts\nSubmit: project.R + README.md on GitHub Classroom\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important and they may struggle with (suggest getting started with downloading packages, doing a visualization, writing the function)"
+    "objectID": "15-grammar-of-graphics/ps.html",
+    "href": "15-grammar-of-graphics/ps.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "Intro to Data Visualization\nToday’s exercises bear on the first chapter of Data Visualization by Kieran Healy.\nhttps://socviz.co/lookatdata.html#lookatdata\n\nHealy splits bad data visualization into three categories of failure: aesthetic, substantive, and perceptual."
   },
   {
     "objectID": "12-data-wrangling-1/ps.html",
@@ -869,6 +785,97 @@
     "title": "First Contact with R",
     "section": "Lab 1 Assignment",
     "text": "Lab 1 Assignment\n\n  \n    −\n    +\n \n 15:00\n \n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nTwo Parts:\n\nShell\nR: Atomic Vectors, Vectorization, Recycling, Matrices, if statements, for loops.\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important AND are in scope of lectures so far (nothing after 7)."
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#agenda",
+    "href": "projects/sampsons-monks/slides.html#agenda",
+    "title": "Lab 2",
+    "section": "Agenda",
+    "text": "Agenda\n\nBrief lecture review\nReview key concepts\nTime to work in groups on lab worksheet (15 minutes)\nDiscuss Project 2 + Work through select parts\nTime for questions"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#brief-review-of-lecture-control-flow",
+    "href": "projects/sampsons-monks/slides.html#brief-review-of-lecture-control-flow",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture: Control Flow",
+    "text": "Brief Review of Lecture: Control Flow\nIf / Else = Conditional Behavior\nif (x &gt; 0) {\n  print(\"positive\")\n} else {\n  print(\"not positive\")\n}\nVectorized If/Else statements are also possible:\n\nx = 0\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\"\n\n\nFor loops = repeat over items\nfor (i in 1:5) {\n  print(i^2)\n}"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#brief-review-of-lecture-functions",
+    "href": "projects/sampsons-monks/slides.html#brief-review-of-lecture-functions",
+    "title": "Lab 2",
+    "section": "Brief Review of Lecture: Functions",
+    "text": "Brief Review of Lecture: Functions\n\nfunction_name &lt;- function(arg1, arg2, ...) {\n  # code to execute\n  result &lt;- arg1 + arg2  # example operation\n  return(result)         # optional, returns result\n}"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#sampsons-monks-project-background-concepts",
+    "href": "projects/sampsons-monks/slides.html#sampsons-monks-project-background-concepts",
+    "title": "Lab 2",
+    "section": "Sampson’s Monks Project: Background Concepts",
+    "text": "Sampson’s Monks Project: Background Concepts\n\nPackages in R\nSociomatrices\nNetwork visualizations & statistics\nRandom vs. observed networks\n\n\nMotivate for students that we will be working on the project and turning it in in 2 weeks, and it will be about the monks data. These are some of the necessary skills they will need for the project"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#packages-libraries",
+    "href": "projects/sampsons-monks/slides.html#packages-libraries",
+    "title": "Lab 2",
+    "section": "Packages & Libraries",
+    "text": "Packages & Libraries\n\nBase R is powerful, but we use packages to extend its capabilities\nPackages collections of functions & datasets\n\nlibrary() is used to load a previously installed package into an R session.\n\nInstall and load:\ninstall.packages(\"igraph\") # only need to do once!\nlibrary(igraph)"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#packages-to-use-today",
+    "href": "projects/sampsons-monks/slides.html#packages-to-use-today",
+    "title": "Lab 2",
+    "section": "Packages to use today:",
+    "text": "Packages to use today:\nigraph (network analysis & static plots)\n\naccepts adjacency matrices.\n\nnetworkD3 (interactive plots)\n\nexpects data frames of nodes and edges, not a network object.\nnodes are the names/points in the resulting plot\nedges are the directed lines between the points\n\nEven though the information is already in sampson, you still need to extract it into the right format for networkD3."
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#what-do-networks-look-like",
+    "href": "projects/sampsons-monks/slides.html#what-do-networks-look-like",
+    "title": "Lab 2",
+    "section": "What do networks look like?",
+    "text": "What do networks look like?\n\nLet’s use a familar dataset to create network plots!"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#our-dataset-sampsons-monks",
+    "href": "projects/sampsons-monks/slides.html#our-dataset-sampsons-monks",
+    "title": "Lab 2",
+    "section": "Our Dataset: Sampson’s Monks",
+    "text": "Our Dataset: Sampson’s Monks\n\nData collected in a New England monastery (1960s)\nMonks reported:\n\nLiking relationships (time 1, time 2, time 3)\nDisliking relationships (time 1)\n\nClassic dataset for studying group dynamics and conflict\nStored as a list of matrices in lda package, which we will use to get the data"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#our-dataset-sampsons-monks-continued",
+    "href": "projects/sampsons-monks/slides.html#our-dataset-sampsons-monks-continued",
+    "title": "Lab 2",
+    "section": "Our Dataset: Sampson’s Monks (continued)",
+    "text": "Our Dataset: Sampson’s Monks (continued)\nFrom this matrix, we can get:\n\nIn-degree (col sums) = number of ties received / how many monks said they liked them\nOut-degree (row sums) = number of ties sent / how many monks they said they liked"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#static-vs.-interactive-plots",
+    "href": "projects/sampsons-monks/slides.html#static-vs.-interactive-plots",
+    "title": "Lab 2",
+    "section": "Static vs. Interactive Plots",
+    "text": "Static vs. Interactive Plots\n\nYou will create one of each in your project\nStatic plots = easy and quick to create using plot() from igraph\nInteractive plots = can zoom, hover, drag nodes using forceNetwork() from networkD3"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#why-compare-random-vs.-observed",
+    "href": "projects/sampsons-monks/slides.html#why-compare-random-vs.-observed",
+    "title": "Lab 2",
+    "section": "Why Compare Random vs. Observed?",
+    "text": "Why Compare Random vs. Observed?\nIn your project, you will be asked to compare the observed sociomatrix with one that you have generated.\n\nRandom sociomatrix = ties assigned by chance\nObserved monk network = structured by social dynamics\nKey question: What features do we see in the real network that random ones lack?\n\nShows the complexity of real social systems"
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#lab-review-worksheet",
+    "href": "projects/sampsons-monks/slides.html#lab-review-worksheet",
+    "title": "Lab 2",
+    "section": "Lab Review Worksheet",
+    "text": "Lab Review Worksheet\n\n  \n    −\n    +\n \n 30:00\n \nGroup work to review essential material\n\nLab worksheet is meant to give students the skills they need for the project, which they will mostly be taking home and working on in their own time. Lab worksheet is fully during lab. Can go over the answers to this in lab or have them volunteer answers."
+  },
+  {
+    "objectID": "projects/sampsons-monks/slides.html#lab-2-project",
+    "href": "projects/sampsons-monks/slides.html#lab-2-project",
+    "title": "Lab 2",
+    "section": "Lab 2 Project",
+    "text": "Lab 2 Project\n\n  \n    −\n    +\n \n 15:00\n \nWorksheet:\n\nWritten responses. Please code along on your laptop. This is for your own practice / not turned in.\n\nProject:\n\nFour parts\nSubmit: project.R + README.md on GitHub Classroom\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important and they may struggle with (suggest getting started with downloading packages, doing a visualization, writing the function)"
   },
   {
     "objectID": "1-welcome/notes.html",
@@ -1046,7 +1053,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -1.116082\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.06511427\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -1095,7 +1102,7 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.08508088  1.62911601  0.14258595\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.0122803  0.5818683  1.3034890\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
@@ -1116,7 +1123,7 @@
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"1.62911600710248 is positive :)\"\n[1] \"0.142585948046054 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.581868341875054 is positive :)\"\n[1] \"1.30348896650778 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
@@ -1537,6 +1544,13 @@
     "title": "Data Wrangling I",
     "section": "Practice Data Frame",
     "text": "Practice Data Frame\n\nlibrary(tibble)\n\nday_at_cal &lt;- tibble(\n  weekday    = factor(c(\"Mon\",\"Mon\",\"Tue\",\"Tue\",\"Wed\",\"Wed\"),\n                      levels = c(\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\"), ordered = TRUE),\n  study_spot = factor(c(\"Moffitt\",\"Doe\",\"Cory\",\"MLK\",\"CITRIS\",\"Soda\")),\n  ai_hours   = c(1.2, 0.4, 2.1, 1.0, 0.8, 1.6),\n  steps_k    = c(8.5, 6.2, 9.1, 7.0, 5.8, 10.3))"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#section",
+    "href": "15-grammar-of-graphics/slides.html#section",
+    "title": "Grammar of Graphics",
+    "section": "",
+    "text": "bubble chart and scatter plot\n\nQ: What do they have in common? A: Geometry\n\nhistogram vs boxplot vs barchart\n\nQ: What do they have in common? A: Aesthetic Mappings"
   },
   {
     "objectID": "13-data-wrangling-2/slides.html#agenda",
