@@ -6,10 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <title>STAT 133 – Grammar of Graphics</title>
+  <title>STAT 133 – The Grammar of Graphics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-ba472b613fa77e4eea932685a8c8cade.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -129,25 +196,319 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133_slide.png" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Grammar of Graphics</h1>
+  <h1 class="title">The Grammar of Graphics</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section id="meet-the-palmer-penguins" class="slide level2 smaller">
+<h2>Meet the Palmer Penguins <img data-src="images/penguins-hex.png" width="80"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-2"><a></a>penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p>bubble chart and scatter plot</p>
-<ul>
-<li class="fragment">Q: What do they have in common? A: Geometry</li>
-</ul>
-<p>histogram vs boxplot vs barchart</p>
-<ul>
-<li class="fragment">Q: What do they have in common? A: Aesthetic Mappings</li>
-</ul>
-
+<p><strong>Question</strong>: In terms of the way they are constructed…</p>
+<p>What do these plots have in common? How do they differ?</p>
+<div id="timer_724d7f8b7e079f6e9e5d50a3e4a2ca8a09f89e3c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">20</span></code>
+ </div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><strong>Question</strong>: What do these plots have in common? How do they differ?</p>
+<div id="timer_724d7f8b7e079f6e9e5d50a3e4a2ca8a09f89e3c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">20</span></code>
+ </div>
+</section>
+<section>
+<section id="the-grammar-of-graphics" class="title-slide slide level1 center">
+<h1>The Grammar of Graphics</h1>
 
 </section>
+<section id="the-grammar-of-graphics-1" class="slide level2">
+<h2>“The Grammar of Graphics”</h2>
+<p>Leland Wilkinson (1999)</p>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment">A grammar to describes all statistical graphics.</li>
+<li class="fragment">Underlies most modern data visualization software.</li>
+</ul>
+</div><div class="column fragment">
+<p><img data-src="images/grammar-of-graphics.png"></p>
+</div></div>
+</section>
+<section id="aesthetic-mapping" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aesthetic Mapping</h2>
+<div class="fragment">
+<p>An <em>aesthetic mapping</em> links a variable in the data to a visual channel that can encode its variation.</p>
+</div>
+<div class="fragment">
+<h3 id="channels-for-ordered-variables">Channels for ordered variables</h3>
+<p><img data-src="images/channels-1.png"></p>
+
+</div>
+<aside><div>
+<p>From “Data Visualization” by Kieran Healy.</p>
+</div></aside></section>
+<section id="aesthetic-mapping-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aesthetic Mapping</h2>
+<p>An <em>aesthetic mapping</em> links a variable in the data to a visual channel that can encode its variation.</p>
+<h3 id="channels-for-unordered-variables">Channels for unordered variables</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/channels-2.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+
+<aside><div>
+<p>From “Data Visualization” by Kieran Healy.</p>
+</div></aside></section>
+<section id="geometry" class="slide level2">
+<h2>Geometry</h2>
+<p>The <em>geometry</em> describes how to translate the observations into marks on the page.</p>
+<div class="fragment">
+<h3 id="examples">Examples</h3>
+<ul>
+<li class="fragment">Point</li>
+<li class="fragment">Line</li>
+<li class="fragment">Bar</li>
+</ul>
+</div>
+</section>
+<section id="named-plots" class="slide level2">
+<h2>Named plots</h2>
+<aside class="notes">
+<p>Draw “Scatterplot” and “barchart” along with their description in the g of g.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="redux-1" class="slide level2">
+<h2>Redux 1</h2>
+</section>
+<section id="redux-1-1" class="slide level2">
+<h2>Redux 1</h2>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><strong>Question</strong>: What are the aesthetic mappings and geometries used here?</p>
+<div id="timer_724d7f8b7e079f6e9e5d50a3e4a2ca8a09f89e3c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+ </div>
+</section></section>
+<section>
+<section id="ggplot2" class="title-slide slide level1 center">
+<h1>ggplot2</h1>
+
+</section>
+<section id="section-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+
+<img data-src="images/tidyverse-hex.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/tidyverse-hex.svg"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/dplyr-hex.svg"></p>
+</div></div>
+</section>
+<section id="section-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="images/ggplot2-hex.svg"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/tidyverse-hex.svg"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/dplyr-hex.svg"></p>
+</div></div>
+</section>
+<section id="ggplot2-1" class="slide level2">
+<h2><code>ggplot2()</code></h2>
+<div class="fragment">
+<p>A plot can be decomposed into three primary elements:</p>
+<ol type="1">
+<li class="fragment">the <strong>data</strong>,</li>
+<li class="fragment">the <strong>aesthetic mapping</strong> of the variables in the data to visual channels, and</li>
+<li class="fragment">the <strong>geometry</strong> used to translate the observations into marks on the plot.</li>
+</ol>
+</div>
+</section>
+<section id="section-6" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a></a>  <span class="fu">select</span>(bill_length_mm,</span>
+<span id="cb2-3" class="hljs-ln-code"><a></a>         flipper_length_mm,</span>
+<span id="cb2-4" class="hljs-ln-code"><a></a>         species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</div><div class="column fragment">
+
+</div></div>
+<aside class="notes">
+<p>Draw arrows mapping variables to visual cues</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-7" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb3-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb3-3" class="hljs-ln-code"><a></a>             <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb3-4" class="hljs-ln-code"><a></a>             <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb3-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</div><div class="column">
+
+</div></div>
+</section>
+<section id="ggplot2-syntax" class="slide level2">
+<h2><code>ggplot2()</code> syntax</h2>
+<div class="fragment">
+<p><code>ggplot2()</code> builds a plot layer by layer, each one added on top of one another with <code>+</code> (not <code>|&gt;</code>).</p>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment"><code>ggplot(df)</code> creates canvas</li>
+<li class="fragment"><code>aes()</code> creates mappings, called inside <code>ggplot()</code> or a <code>geom()</code></li>
+<li class="fragment"><code>geom_()</code> puts down marks using declared geometry</li>
+</ul>
+</div>
+</section>
+<section id="layer-by-layer" class="slide level2">
+<h2>Layer by layer</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb4-3"><a></a>             <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb4-4"><a></a>             <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb4-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">theme_gray</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</section>
+<section id="common-aes" class="slide level2">
+<h2>Common <code>aes()</code></h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><code>x</code></li>
+<li class="fragment"><code>y</code></li>
+<li class="fragment"><code>color</code></li>
+<li class="fragment"><code>fill</code></li>
+</ul>
+</div><div class="column">
+<ul>
+<li class="fragment"><code>size</code></li>
+<li class="fragment"><code>shape</code></li>
+<li class="fragment"><code>alpha</code></li>
+</ul>
+</div></div>
+</section>
+<section id="common-geom_" class="slide level2">
+<h2>Common <code>geom_()</code></h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><code>geom_point()</code></li>
+<li class="fragment"><code>geom_bar() / geom_col()</code></li>
+<li class="fragment"><code>geom_line()</code></li>
+</ul>
+</div><div class="column">
+<ul>
+<li class="fragment"><code>geom_histogram()</code></li>
+<li class="fragment"><code>geom_boxplot()</code></li>
+<li class="fragment"><code>geom_violin()</code></li>
+<li class="fragment"><code>geom_density()</code></li>
+</ul>
+</div></div>
+</section>
+<section id="mapping-vs-setting" class="slide level2">
+<h2>Mapping vs Setting</h2>
+<p>demo</p>
+<!-- 
+## Two types of Viz
+
+::: {.columns}
+::: {.column}
+### Explanatory Data Analysis
+:::
+::: {.column}
+### Exploratory Data Analysis
+
+:::
+:::
+
+::: notes
+Add notes to each:
+
+Explanatory:
+- consumer: stakeholder
+- goal: tell a specific story
+- customized
+- polished aesthetic
+
+Exploratory:
+- consumer: the analyst
+- goal: uncover structure for further analysis
+- follow templates
+- prioritize quick and accurate interpretation
+::: -->
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-logo-vsmall.png" class="slide-logo"></p>
@@ -368,6 +729,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
