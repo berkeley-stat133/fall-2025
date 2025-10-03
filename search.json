@@ -508,14 +508,14 @@
     "href": "for-next-time.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section."
+    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section.\nConsider added a pre tidyverse lecture that’s about data IO: reading and writing different types of files.\nActually, yeah, that might be the best way to do the units here:\n\nReading and Writing Data (base + readr)\nData Wrangling (dplyr, tidyr)\n\nCol types\nMissing data\nReshaping\nNormalization\n\nEDA (ggplot2, stringr, lubridate, leaflet)\n\nStatistical summaries\nData visualization\n\nModeling ()\nSharing your work (Dashboards, APIs)"
   },
   {
     "objectID": "for-next-time.html#notes-for-next-time",
     "href": "for-next-time.html#notes-for-next-time",
     "title": "STAT 133",
     "section": "",
-    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section."
+    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section.\nConsider added a pre tidyverse lecture that’s about data IO: reading and writing different types of files.\nActually, yeah, that might be the best way to do the units here:\n\nReading and Writing Data (base + readr)\nData Wrangling (dplyr, tidyr)\n\nCol types\nMissing data\nReshaping\nNormalization\n\nEDA (ggplot2, stringr, lubridate, leaflet)\n\nStatistical summaries\nData visualization\n\nModeling ()\nSharing your work (Dashboards, APIs)"
   },
   {
     "objectID": "13-data-wrangling-2/slides.html#agenda",
@@ -1439,7 +1439,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -1.062531\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.290219\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -1488,7 +1488,7 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.2641948  0.5106322 -0.6836147\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  0.5176509 -1.5586430 -0.3891979\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
@@ -1502,21 +1502,21 @@
     "href": "7-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 2 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#option-3",
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.510632243918617 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.517650905059194 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
     "href": "7-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE FALSE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is negative :(\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE  TRUE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is positive :)\" \"is positive :)\""
   },
   {
     "objectID": "1-welcome/slides.html#welcome-to-stat-133",
@@ -1681,6 +1681,230 @@
     "title": "Welcome to Class",
     "section": "",
     "text": "Concept Acquisition\n\nData is stored on a computer disk in files.\nFiles are stored in directories (or folders).\nFiles and directories can be structured using a tree.\nEach file’s location is defined by its path.\n\n\n\nTool Acquisition\n\nPaths are defined by concatenating nodes separated by a /.\n\n\n\nConcept Application\n\nGiven a file system tree,\n\nwrite down the absolute path to a file.\ngiven two file system items, write the relative path from one to the other.\n\nGiven a set of file paths, reconstruct the file system tree.\n\n\n\n\n**Before Class*:\n\nProject first slide showing laptop policy.\nWrite lab section number / times / GSIS on board.\nPass out index cards, one to each student."
+  },
+  {
+    "objectID": "16-eda/slides.html#agenda",
+    "href": "16-eda/slides.html#agenda",
+    "title": "EDA",
+    "section": "Agenda",
+    "text": "Agenda\n\nTools: Quarto and Positron\nExploratory Data Analysis\nExplanatory Data Analysis"
+  },
+  {
+    "objectID": "16-eda/slides.html#quarto-1",
+    "href": "16-eda/slides.html#quarto-1",
+    "title": "EDA",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is an open-source scientific publishing system that you can run at the command line.\n\nSource document is .qmd and output document can be a pdf, a webpage, slides, a dashboard, etc.\nThe source document can hold text, images, videos, and code.\nRendering the source document runs all the code and puts the data products into the output document.\n$ quarto render mydoc.qmd\nMicrosoft Word + Microsoft Excel + a lot more."
+  },
+  {
+    "objectID": "16-eda/slides.html#positron-1",
+    "href": "16-eda/slides.html#positron-1",
+    "title": "EDA",
+    "section": "Positron",
+    "text": "Positron\nPositron is an Integrated Development Environment (IDE) that makes it easy to pull together many different tools to do Data Science.\n\nShell, R, Editor, Viewer, git, and Quarto all in one place\nSuccessor to RStudio\nR, Python, and Julia are equal citizens\n\n\nOn board draw the 4 panels and label them to get them used to what they’ll see in the video."
+  },
+  {
+    "objectID": "16-eda/slides.html#section-3",
+    "href": "16-eda/slides.html#section-3",
+    "title": "EDA",
+    "section": "",
+    "text": "Questions:\n\nSketch the data frame that was used to create this plot.\nDescribe the aesthetic mappings and geometry used.\nWhat is effective about this plot? How could it be improved?\n\n\nWrite these on the board."
+  },
+  {
+    "objectID": "16-eda/slides.html#section-4",
+    "href": "16-eda/slides.html#section-4",
+    "title": "EDA",
+    "section": "",
+    "text": "−\n    +\n \n 02:30"
+  },
+  {
+    "objectID": "16-eda/slides.html#section-8",
+    "href": "16-eda/slides.html#section-8",
+    "title": "EDA",
+    "section": "",
+    "text": "(miniconda3) (base) andrewbray@MacBookPro fall-2025-private % cd 16-eda/data   \n(miniconda3) (base) andrewbray@MacBookPro data % ls\nev-registrations.csv    ev-xlsx.png\n(miniconda3) (base) andrewbray@MacBookPro data % cat ev-registrations.csv\nState,Count\nAlabama,\"13,047\"\nAlaska,\"2,697\"\nArizona,\"89,798\"\nArkansas,\"7,108\"\nCalifornia,\"1,256,646\"\nColorado,\"90,083\"\nConnecticut,\"31,557\"\nDelaware,\"8,435\"\nDistrict of Columbia,\"8,066\"\nFlorida,\"254,878\"\nGeorgia,\"92,368\"\nHawaii,\"25,565\"\nIdaho,\"8,501\"\nIllinois,\"99,573\"\nIndiana,\"26,101\"\nIowa,\"9,031\"\nKansas,\"11,271\"\nKentucky,\"11,617\"\nLouisiana,\"8,150\"\nMaine,\"7,377\"\nMaryland,\"72,139\"\nMassachusetts,\"73,768\"\nMichigan,\"50,284\"\nMinnesota,\"37,050\"\nMississippi,\"3,590\"\nMissouri,\"26,861\"\nMontana,\"4,608\"\nNebraska,\"6,920\"\nNevada,\"47,361\"\nNew Hampshire,\"9,861\"\nNew Jersey,\"134,753\"\nNew Mexico,\"10,276\"\nNew York,\"131,250\"\nNorth Carolina,\"70,164\"\nNorth Dakota,959\nOhio,\"50,393\"\nOklahoma,\"22,843\"\nOregon,\"64,361\"\nPennsylvania,\"70,154\"\nRhode Island,\"6,396\"\nSouth Carolina,\"20,873\"\nSouth Dakota,\"1,675\"\nTennessee,\"33,221\"\nTexas,\"230,125\"\nUtah,\"39,998\"\nVermont,\"7,816\"\nVirginia,\"84,936\"\nWashington,\"152,101\"\nWest Virginia,\"2,758\"\nWisconsin,\"24,943\"\nWyoming,\"1,139\""
+  },
+  {
+    "objectID": "16-eda/slides.html#csvs",
+    "href": "16-eda/slides.html#csvs",
+    "title": "EDA",
+    "section": "CSVs",
+    "text": "CSVs\nA comma separate value (CSV) file stores tabular data with each row on a new line and each column delimited by a comma. Good for storing R data frames in a linga-franca in your file system.\n\n\n\nReading into R (base R)\n\nev &lt;- read.csv(\"data/ev-registrations.csv\")\nev\n\n\n\n                  State     Count\n1               Alabama    13,047\n2                Alaska     2,697\n3               Arizona    89,798\n4              Arkansas     7,108\n5            California 1,256,646\n6              Colorado    90,083\n7           Connecticut    31,557\n8              Delaware     8,435\n9  District of Columbia     8,066\n10              Florida   254,878\n11              Georgia    92,368\n12               Hawaii    25,565\n13                Idaho     8,501\n14             Illinois    99,573\n15              Indiana    26,101\n16                 Iowa     9,031\n17               Kansas    11,271\n18             Kentucky    11,617\n19            Louisiana     8,150\n20                Maine     7,377\n21             Maryland    72,139\n22        Massachusetts    73,768\n23             Michigan    50,284\n24            Minnesota    37,050\n25          Mississippi     3,590\n26             Missouri    26,861\n27              Montana     4,608\n28             Nebraska     6,920\n29               Nevada    47,361\n30        New Hampshire     9,861\n31           New Jersey   134,753\n32           New Mexico    10,276\n33             New York   131,250\n34       North Carolina    70,164\n35         North Dakota       959\n36                 Ohio    50,393\n37             Oklahoma    22,843\n38               Oregon    64,361\n39         Pennsylvania    70,154\n40         Rhode Island     6,396\n41       South Carolina    20,873\n42         South Dakota     1,675\n43            Tennessee    33,221\n44                Texas   230,125\n45                 Utah    39,998\n46              Vermont     7,816\n47             Virginia    84,936\n48           Washington   152,101\n49        West Virginia     2,758\n50            Wisconsin    24,943\n51              Wyoming     1,139"
+  },
+  {
+    "objectID": "16-eda/slides.html#csvs-1",
+    "href": "16-eda/slides.html#csvs-1",
+    "title": "EDA",
+    "section": "CSVs",
+    "text": "CSVs\nA comma separate value (CSV) file stores tabular data with each row on a new line and each column delimited by a comma. Good for storing R data frames in a linga-franca in your file system.\n\n\nReading into R (readr)\n\nlibrary(readr)\n# library(tidyverse) # easy alternative\nev &lt;- read_csv(\"data/ev-registrations.csv\")\nev\n\n\n\n# A tibble: 51 × 2\n   State                  Count\n   &lt;chr&gt;                  &lt;dbl&gt;\n 1 Alabama                13047\n 2 Alaska                  2697\n 3 Arizona                89798\n 4 Arkansas                7108\n 5 California           1256646\n 6 Colorado               90083\n 7 Connecticut            31557\n 8 Delaware                8435\n 9 District of Columbia    8066\n10 Florida               254878\n# ℹ 41 more rows"
+  },
+  {
+    "objectID": "16-eda/slides.html#q1-what-are-the-cols-and-rows",
+    "href": "16-eda/slides.html#q1-what-are-the-cols-and-rows",
+    "title": "EDA",
+    "section": "Q1: What are the cols and rows?",
+    "text": "Q1: What are the cols and rows?\n\n\ndim(ev)\n\n\n\n[1] 51  2\n\n\n\n\n\nsapply(ev, class)\n\n\n\n      State       Count \n\"character\"   \"numeric\""
+  },
+  {
+    "objectID": "16-eda/slides.html#q1-what-are-the-cols-and-rows-1",
+    "href": "16-eda/slides.html#q1-what-are-the-cols-and-rows-1",
+    "title": "EDA",
+    "section": "Q1: What are the cols and rows?",
+    "text": "Q1: What are the cols and rows?\n\nev\n\n\n\n# A tibble: 51 × 2\n   State                  Count\n   &lt;chr&gt;                  &lt;dbl&gt;\n 1 Alabama                13047\n 2 Alaska                  2697\n 3 Arizona                89798\n 4 Arkansas                7108\n 5 California           1256646\n 6 Colorado               90083\n 7 Connecticut            31557\n 8 Delaware                8435\n 9 District of Columbia    8066\n10 Florida               254878\n# ℹ 41 more rows\n\n\n\nUnit of observation: a state (or DC)\nVariables: name (character) and registration count (double)\n\n\n\nA description of the variables is often stored in a separate file called a data dictionary."
+  },
+  {
+    "objectID": "16-eda/slides.html#q2-is-there-any-missing-data",
+    "href": "16-eda/slides.html#q2-is-there-any-missing-data",
+    "title": "EDA",
+    "section": "Q2: Is there any missing data?",
+    "text": "Q2: Is there any missing data?\n\nOption 1: Total missing counts\n\nlibrary(dplyr)\nev |&gt;\n  summarize(n_missing = sum(is.na(Count)))\n\n\n\n# A tibble: 1 × 1\n  n_missing\n      &lt;int&gt;\n1         0\n\n\n\n\nOption 2: Proportion missing counts\n\nev |&gt;\n  summarize(p_missing = mean(is.na(Count)))\n\n\n\n# A tibble: 1 × 1\n  p_missing\n      &lt;dbl&gt;\n1         0"
+  },
+  {
+    "objectID": "16-eda/slides.html#q3-what-is-the-distribution-of-count",
+    "href": "16-eda/slides.html#q3-what-is-the-distribution-of-count",
+    "title": "EDA",
+    "section": "Q3: What is the distribution of count?",
+    "text": "Q3: What is the distribution of count?\n\n\nlibrary(ggplot2)\nev |&gt;\n  ggplot(aes(x = Count)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "16-eda/slides.html#q3-what-is-the-distribution-of-count-1",
+    "href": "16-eda/slides.html#q3-what-is-the-distribution-of-count-1",
+    "title": "EDA",
+    "section": "Q3: What is the distribution of count?",
+    "text": "Q3: What is the distribution of count?\n\nev |&gt;\n  ggplot(aes(x = State)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "16-eda/slides.html#q3-what-is-the-distribution-of-count-2",
+    "href": "16-eda/slides.html#q3-what-is-the-distribution-of-count-2",
+    "title": "EDA",
+    "section": "Q3: What is the distribution of count?",
+    "text": "Q3: What is the distribution of count?\n\nev |&gt;\n  ggplot(aes(y = State)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "16-eda/slides.html#geom_bar",
+    "href": "16-eda/slides.html#geom_bar",
+    "title": "EDA",
+    "section": "geom_bar()",
+    "text": "geom_bar()\n\ngeom_bar() counts up the number of observations in each level of a single variable, then draws bars up to that height.\n\n\n\nlibrary(palmerpenguins)\npenguins\n\n\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "16-eda/slides.html#geom_bar-1",
+    "href": "16-eda/slides.html#geom_bar-1",
+    "title": "EDA",
+    "section": "geom_bar()",
+    "text": "geom_bar()\n\ngeom_bar() counts up the number of observations in each level of a single variable, then draws bars up to that height.\n\n\n\nlibrary(palmerpenguins)\npenguins |&gt;\n  ggplot(aes(y = island)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "16-eda/slides.html#summarizing-with-counts",
+    "href": "16-eda/slides.html#summarizing-with-counts",
+    "title": "EDA",
+    "section": "Summarizing with counts",
+    "text": "Summarizing with counts\n\n\npenguins |&gt;\n  group_by(island) |&gt;\n  summarize(count = n())\n\n\n\n# A tibble: 3 × 2\n  island    count\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52"
+  },
+  {
+    "objectID": "16-eda/slides.html#summarizing-with-counts-1",
+    "href": "16-eda/slides.html#summarizing-with-counts-1",
+    "title": "EDA",
+    "section": "Summarizing with counts",
+    "text": "Summarizing with counts\n\npenguins |&gt;\n  count(island)\n\n\n\n# A tibble: 3 × 2\n  island        n\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52"
+  },
+  {
+    "objectID": "16-eda/slides.html#geom_col",
+    "href": "16-eda/slides.html#geom_col",
+    "title": "EDA",
+    "section": "geom_col()",
+    "text": "geom_col()\n\ngeom_col() takes one column of categories and draws a bar for each up to the height of a second column of counts.\n\n\n\npenguins |&gt;\n  count(island) |&gt;\n  ggplot(aes(y = island, x = n)) +\n  geom_col()"
+  },
+  {
+    "objectID": "16-eda/slides.html#q3-what-is-the-distribution-of-count-3",
+    "href": "16-eda/slides.html#q3-what-is-the-distribution-of-count-3",
+    "title": "EDA",
+    "section": "Q3: What is the distribution of count?",
+    "text": "Q3: What is the distribution of count?\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col()"
+  },
+  {
+    "objectID": "16-eda/slides.html#q3-what-is-the-distribution-of-count-4",
+    "href": "16-eda/slides.html#q3-what-is-the-distribution-of-count-4",
+    "title": "EDA",
+    "section": "Q3: What is the distribution of count?",
+    "text": "Q3: What is the distribution of count?\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5))"
+  },
+  {
+    "objectID": "16-eda/slides.html#two-types-of-viz",
+    "href": "16-eda/slides.html#two-types-of-viz",
+    "title": "EDA",
+    "section": "Two types of Viz",
+    "text": "Two types of Viz\n\n\nExploratory Data Analysis (EDA)\n\nExplanatory Data Analysis\n\n\nAdd notes to each:\nExploratory: - consumer: the analyst - goal: uncover structure for further analysis - follow templates - prioritize quick and accurate interpretation\nExplanatory: - consumer: stakeholder - goal: tell a specific story - customized - polished aesthetic"
+  },
+  {
+    "objectID": "16-eda/slides.html#goal-1",
+    "href": "16-eda/slides.html#goal-1",
+    "title": "EDA",
+    "section": "Goal #1",
+    "text": "Goal #1\n\nDisplay the registration counts in a manner that makes it easy to see the counts of each individual state equally well.\n\n\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5))"
+  },
+  {
+    "objectID": "16-eda/slides.html#labels",
+    "href": "16-eda/slides.html#labels",
+    "title": "EDA",
+    "section": "Labels",
+    "text": "Labels\nThe labels on the plot can refer to many different places where text is added to describe what is plotted.\n\n\n\n\ntitle\nsubtitle\nx-axis\ny-axis\nlegends\n\n\nIn ggplot2, these are arguments to a labs() layer.\n\ntitle\nsubtitle\ncolor\nfill\nsize\nshape"
+  },
+  {
+    "objectID": "16-eda/slides.html#labels-1",
+    "href": "16-eda/slides.html#labels-1",
+    "title": "EDA",
+    "section": "Labels",
+    "text": "Labels\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes",
+    "href": "16-eda/slides.html#themes",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes\nThemes describe a set of visual design choices made for the plot on things like the background, the gridlines, the axes, the tick marks, and the fonts.\n\nSome ggplot2 themes (each one can be added as layer)\n\ntheme_gray(): the default\ntheme_bw()\ntheme_minimal()"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes-1",
+    "href": "16-eda/slides.html#themes-1",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\") + \n  theme_minimal()"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes-2",
+    "href": "16-eda/slides.html#themes-2",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme_minimal(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")\n\n\n\nError in theme_minimal(axis.text.x = element_text(angle = 270, hjust = 0, : unused argument (axis.text.x = element_text(angle = 270, hjust = 0, vjust = 0.5))"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes-3",
+    "href": "16-eda/slides.html#themes-3",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes-4",
+    "href": "16-eda/slides.html#themes-4",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes\nThemes describe a set of visual design choices made for the plot on things like the background, the gridlines, the axes, the tick marks, and the fonts.\nSome ggplot2 themes (each one can be added as layer)\n\ntheme_gray(): the default\ntheme_bw()\ntheme_minimal()\n\n\n\ntheme() will change defaults of the exiting theme, so add it last."
+  },
+  {
+    "objectID": "16-eda/slides.html#setting-aesthetics",
+    "href": "16-eda/slides.html#setting-aesthetics",
+    "title": "EDA",
+    "section": "Setting Aesthetics",
+    "text": "Setting Aesthetics\n\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col(color = \"blue\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
+  },
+  {
+    "objectID": "16-eda/slides.html#setting-aesthetics-1",
+    "href": "16-eda/slides.html#setting-aesthetics-1",
+    "title": "EDA",
+    "section": "Setting Aesthetics",
+    "text": "Setting Aesthetics\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col(fill = \"steelblue\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
   },
   {
     "objectID": "projects/notecards/slides.html#using-the-shell-locally",

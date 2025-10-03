@@ -6,10 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
-  <title>STAT 133 – The Grammar of Graphics</title>
+  <title>STAT 133 – EDA</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6248525f1bfeb46420cc643b2d6e76f6.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -129,45 +197,853 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133_slide.png" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">The Grammar of Graphics</h1>
+  <h1 class="title">EDA</h1>
+  <p class="subtitle">Exploratory/Explanatory Data Analysis</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
-<!-- 
-## Two types of Viz
-
-::: {.columns}
-::: {.column}
-### Explanatory Data Analysis
-:::
-::: {.column}
-### Exploratory Data Analysis
-
-:::
-:::
-
-::: notes
-Add notes to each:
-
-Explanatory:
-- consumer: stakeholder
-- goal: tell a specific story
-- customized
-- polished aesthetic
-
-Exploratory:
-- consumer: the analyst
-- goal: uncover structure for further analysis
-- follow templates
-- prioritize quick and accurate interpretation
-::: -->
-
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ul>
+<li class="fragment">Tools: Quarto and Positron</li>
+<li class="fragment">Exploratory Data Analysis</li>
+<li class="fragment">Explanatory Data Analysis</li>
+</ul>
+</section>
+<section>
+<section id="quarto" class="title-slide slide level1 center">
+<h1>Quarto</h1>
 
 </section>
+<section id="section" class="slide level2" data-background-image="images/quarto.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="quarto-1" class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Quarto</strong> is an open-source scientific publishing system that you can run at the command line.</p>
+<ol type="1">
+<li class="fragment"><p>Source document is <code>.qmd</code> and output document can be a pdf, a webpage, slides, a dashboard, etc.</p></li>
+<li class="fragment"><p>The source document can hold text, images, videos, and code.</p></li>
+<li class="fragment"><p><em>Rendering</em> the source document runs all the code and puts the data products into the output document.</p>
+<p><code>$ quarto render mydoc.qmd</code></p></li>
+<li class="fragment"><p>Microsoft Word + Microsoft Excel + a lot more.</p></li>
+</ol>
+</section>
+<section id="section-1" class="slide level2" data-background-image="images/quarto-sample.png" data-background-size="contain">
+<h2></h2>
+</section></section>
+<section>
+<section id="positron" class="title-slide slide level1 center">
+<h1>Positron</h1>
+
+</section>
+<section id="positron-1" class="slide level2">
+<h2>Positron</h2>
+<p><a href="https://positron.posit.co/">Positron</a> is an Integrated Development Environment (IDE) that makes it easy to pull together many different tools to do Data Science.</p>
+<ol type="1">
+<li class="fragment">Shell, R, Editor, Viewer, git, and Quarto all in one place</li>
+<li class="fragment">Successor to RStudio</li>
+<li class="fragment">R, Python, and Julia are equal citizens</li>
+</ol>
+<aside class="notes">
+<p>On board draw the 4 panels and label them to get them used to what they’ll see in the video.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>
+<a href="https://positron.posit.co?wvideo=ncfm02eugr"><img src="https://embed-ssl.wistia.com/deliveries/7e137b1ccb5dc007c163149ee97fdd24273ffa4c.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button_rounded=1&amp;image_play_button_color=223d50e0" width="1600" height="900" style="width: 1600px; height: 900px;"></a>
+</p>
+<p>
+<a href="https://positron.posit.co?wvideo=ncfm02eugr"></a>
+</p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><strong>Questions</strong>:</p>
+<ol type="1">
+<li>Sketch the data frame that was used to create this plot.</li>
+<li>Describe the aesthetic mappings and geometry used.</li>
+<li>What is effective about this plot? How could it be improved?</li>
+</ol>
+<aside class="notes">
+<p>Write these on the board.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-4" class="slide level2" data-background-image="images/ev-barchart-full.png" data-background-size="contain">
+<h2></h2>
+<div id="timer_849147036bb2966bf3d0576e065d595624c58ead" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+ </div>
+</section></section>
+<section>
+<section id="exploratory-data-analysis" class="title-slide slide level1 center">
+<h1>Exploratory Data Analysis</h1>
+
+</section>
+<section id="section-5" class="slide level2" data-background-image="images/ev-excel.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-6" class="slide level2" data-background-image="images/data-sheet.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/save-csv.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2-3|4|5-15|16-26|27-37|38-48|49-56"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="kw">(</span><span class="ex">miniconda3</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">andrewbray@MacBookPro</span> fall-2025-private % cd 16-eda/data   </span>
+<span id="cb1-2"><a></a><span class="kw">(</span><span class="ex">miniconda3</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">andrewbray@MacBookPro</span> data % ls</span>
+<span id="cb1-3"><a></a><span class="ex">ev-registrations.csv</span>    ev-xlsx.png</span>
+<span id="cb1-4"><a></a><span class="kw">(</span><span class="ex">miniconda3</span><span class="kw">)</span> <span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">andrewbray@MacBookPro</span> data % cat ev-registrations.csv</span>
+<span id="cb1-5"><a></a><span class="ex">State,Count</span></span>
+<span id="cb1-6"><a></a><span class="ex">Alabama,</span><span class="st">"13,047"</span></span>
+<span id="cb1-7"><a></a><span class="ex">Alaska,</span><span class="st">"2,697"</span></span>
+<span id="cb1-8"><a></a><span class="ex">Arizona,</span><span class="st">"89,798"</span></span>
+<span id="cb1-9"><a></a><span class="ex">Arkansas,</span><span class="st">"7,108"</span></span>
+<span id="cb1-10"><a></a><span class="ex">California,</span><span class="st">"1,256,646"</span></span>
+<span id="cb1-11"><a></a><span class="ex">Colorado,</span><span class="st">"90,083"</span></span>
+<span id="cb1-12"><a></a><span class="ex">Connecticut,</span><span class="st">"31,557"</span></span>
+<span id="cb1-13"><a></a><span class="ex">Delaware,</span><span class="st">"8,435"</span></span>
+<span id="cb1-14"><a></a><span class="ex">District</span> of Columbia,<span class="st">"8,066"</span></span>
+<span id="cb1-15"><a></a><span class="ex">Florida,</span><span class="st">"254,878"</span></span>
+<span id="cb1-16"><a></a><span class="ex">Georgia,</span><span class="st">"92,368"</span></span>
+<span id="cb1-17"><a></a><span class="ex">Hawaii,</span><span class="st">"25,565"</span></span>
+<span id="cb1-18"><a></a><span class="ex">Idaho,</span><span class="st">"8,501"</span></span>
+<span id="cb1-19"><a></a><span class="ex">Illinois,</span><span class="st">"99,573"</span></span>
+<span id="cb1-20"><a></a><span class="ex">Indiana,</span><span class="st">"26,101"</span></span>
+<span id="cb1-21"><a></a><span class="ex">Iowa,</span><span class="st">"9,031"</span></span>
+<span id="cb1-22"><a></a><span class="ex">Kansas,</span><span class="st">"11,271"</span></span>
+<span id="cb1-23"><a></a><span class="ex">Kentucky,</span><span class="st">"11,617"</span></span>
+<span id="cb1-24"><a></a><span class="ex">Louisiana,</span><span class="st">"8,150"</span></span>
+<span id="cb1-25"><a></a><span class="ex">Maine,</span><span class="st">"7,377"</span></span>
+<span id="cb1-26"><a></a><span class="ex">Maryland,</span><span class="st">"72,139"</span></span>
+<span id="cb1-27"><a></a><span class="ex">Massachusetts,</span><span class="st">"73,768"</span></span>
+<span id="cb1-28"><a></a><span class="ex">Michigan,</span><span class="st">"50,284"</span></span>
+<span id="cb1-29"><a></a><span class="ex">Minnesota,</span><span class="st">"37,050"</span></span>
+<span id="cb1-30"><a></a><span class="ex">Mississippi,</span><span class="st">"3,590"</span></span>
+<span id="cb1-31"><a></a><span class="ex">Missouri,</span><span class="st">"26,861"</span></span>
+<span id="cb1-32"><a></a><span class="ex">Montana,</span><span class="st">"4,608"</span></span>
+<span id="cb1-33"><a></a><span class="ex">Nebraska,</span><span class="st">"6,920"</span></span>
+<span id="cb1-34"><a></a><span class="ex">Nevada,</span><span class="st">"47,361"</span></span>
+<span id="cb1-35"><a></a><span class="ex">New</span> Hampshire,<span class="st">"9,861"</span></span>
+<span id="cb1-36"><a></a><span class="ex">New</span> Jersey,<span class="st">"134,753"</span></span>
+<span id="cb1-37"><a></a><span class="ex">New</span> Mexico,<span class="st">"10,276"</span></span>
+<span id="cb1-38"><a></a><span class="ex">New</span> York,<span class="st">"131,250"</span></span>
+<span id="cb1-39"><a></a><span class="ex">North</span> Carolina,<span class="st">"70,164"</span></span>
+<span id="cb1-40"><a></a><span class="ex">North</span> Dakota,959</span>
+<span id="cb1-41"><a></a><span class="ex">Ohio,</span><span class="st">"50,393"</span></span>
+<span id="cb1-42"><a></a><span class="ex">Oklahoma,</span><span class="st">"22,843"</span></span>
+<span id="cb1-43"><a></a><span class="ex">Oregon,</span><span class="st">"64,361"</span></span>
+<span id="cb1-44"><a></a><span class="ex">Pennsylvania,</span><span class="st">"70,154"</span></span>
+<span id="cb1-45"><a></a><span class="ex">Rhode</span> Island,<span class="st">"6,396"</span></span>
+<span id="cb1-46"><a></a><span class="ex">South</span> Carolina,<span class="st">"20,873"</span></span>
+<span id="cb1-47"><a></a><span class="ex">South</span> Dakota,<span class="st">"1,675"</span></span>
+<span id="cb1-48"><a></a><span class="ex">Tennessee,</span><span class="st">"33,221"</span></span>
+<span id="cb1-49"><a></a><span class="ex">Texas,</span><span class="st">"230,125"</span></span>
+<span id="cb1-50"><a></a><span class="ex">Utah,</span><span class="st">"39,998"</span></span>
+<span id="cb1-51"><a></a><span class="ex">Vermont,</span><span class="st">"7,816"</span></span>
+<span id="cb1-52"><a></a><span class="ex">Virginia,</span><span class="st">"84,936"</span></span>
+<span id="cb1-53"><a></a><span class="ex">Washington,</span><span class="st">"152,101"</span></span>
+<span id="cb1-54"><a></a><span class="ex">West</span> Virginia,<span class="st">"2,758"</span></span>
+<span id="cb1-55"><a></a><span class="ex">Wisconsin,</span><span class="st">"24,943"</span></span>
+<span id="cb1-56"><a></a><span class="ex">Wyoming,</span><span class="st">"1,139"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</section>
+<section id="csvs" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">CSVs</h2>
+<p>A <em>comma separate value (CSV)</em> file stores tabular data with each row on a new line and each column delimited by a comma. Good for storing R data frames in a linga-franca in your file system.</p>
+<div class="fragment">
+<p><br>
+</p>
+<h4 id="reading-into-r-base-r">Reading into R (base R)</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a></a>ev <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/ev-registrations.csv"</span>)</span>
+<span id="cb2-2" class="hljs-ln-code"><a></a>ev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>                  State     Count
+1               Alabama    13,047
+2                Alaska     2,697
+3               Arizona    89,798
+4              Arkansas     7,108
+5            California 1,256,646
+6              Colorado    90,083
+7           Connecticut    31,557
+8              Delaware     8,435
+9  District of Columbia     8,066
+10              Florida   254,878
+11              Georgia    92,368
+12               Hawaii    25,565
+13                Idaho     8,501
+14             Illinois    99,573
+15              Indiana    26,101
+16                 Iowa     9,031
+17               Kansas    11,271
+18             Kentucky    11,617
+19            Louisiana     8,150
+20                Maine     7,377
+21             Maryland    72,139
+22        Massachusetts    73,768
+23             Michigan    50,284
+24            Minnesota    37,050
+25          Mississippi     3,590
+26             Missouri    26,861
+27              Montana     4,608
+28             Nebraska     6,920
+29               Nevada    47,361
+30        New Hampshire     9,861
+31           New Jersey   134,753
+32           New Mexico    10,276
+33             New York   131,250
+34       North Carolina    70,164
+35         North Dakota       959
+36                 Ohio    50,393
+37             Oklahoma    22,843
+38               Oregon    64,361
+39         Pennsylvania    70,154
+40         Rhode Island     6,396
+41       South Carolina    20,873
+42         South Dakota     1,675
+43            Tennessee    33,221
+44                Texas   230,125
+45                 Utah    39,998
+46              Vermont     7,816
+47             Virginia    84,936
+48           Washington   152,101
+49        West Virginia     2,758
+50            Wisconsin    24,943
+51              Wyoming     1,139</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="csvs-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">CSVs</h2>
+<p>A <em>comma separate value (CSV)</em> file stores tabular data with each row on a new line and each column delimited by a comma. Good for storing R data frames in a linga-franca in your file system.</p>
+<p><br>
+</p>
+<h4 id="reading-into-r-readr">Reading into R (<code>readr</code>)</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-2" class="hljs-ln-code"><a></a><span class="co"># library(tidyverse) # easy alternative</span></span>
+<span id="cb4-3" class="hljs-ln-code"><a></a>ev <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ev-registrations.csv"</span>)</span>
+<span id="cb4-4" class="hljs-ln-code"><a></a>ev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 51 × 2
+   State                  Count
+   &lt;chr&gt;                  &lt;dbl&gt;
+ 1 Alabama                13047
+ 2 Alaska                  2697
+ 3 Arizona                89798
+ 4 Arkansas                7108
+ 5 California           1256646
+ 6 Colorado               90083
+ 7 Connecticut            31557
+ 8 Delaware                8435
+ 9 District of Columbia    8066
+10 Florida               254878
+# ℹ 41 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="q1-what-are-the-cols-and-rows" class="slide level2">
+<h2>Q1: What are the cols and rows?</h2>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">dim</span>(ev)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 51  2</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">sapply</span>(ev, class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>      State       Count 
+"character"   "numeric" </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="q1-what-are-the-cols-and-rows-1" class="slide level2">
+<h2>Q1: What are the cols and rows?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>ev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 51 × 2
+   State                  Count
+   &lt;chr&gt;                  &lt;dbl&gt;
+ 1 Alabama                13047
+ 2 Alaska                  2697
+ 3 Arizona                89798
+ 4 Arkansas                7108
+ 5 California           1256646
+ 6 Colorado               90083
+ 7 Connecticut            31557
+ 8 Delaware                8435
+ 9 District of Columbia    8066
+10 Florida               254878
+# ℹ 41 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">Unit of observation: a state (or DC)</li>
+<li class="fragment">Variables: name (character) and registration count (double)</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>A description of the variables is often stored in a separate file called a <em>data dictionary</em>.</p>
+</blockquote>
+</div>
+</section>
+<section id="q2-is-there-any-missing-data" class="slide level2">
+<h2>Q2: Is there any missing data?</h2>
+<div class="fragment">
+<p><strong>Option 1</strong>: Total missing counts</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-2"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n_missing =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(Count)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  n_missing
+      &lt;int&gt;
+1         0</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Option 2</strong>: Proportion missing counts</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">summarize</span>(<span class="at">p_missing =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(Count)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_missing
+      &lt;dbl&gt;
+1         0</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="q3-what-is-the-distribution-of-count" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Q3: What is the distribution of count?</h2>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-2" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb16-3" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Count)) <span class="sc">+</span></span>
+<span id="cb16-4" class="hljs-ln-code"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="q3-what-is-the-distribution-of-count-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Q3: What is the distribution of count?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb17-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State)) <span class="sc">+</span></span>
+<span id="cb17-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q3-what-is-the-distribution-of-count-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Q3: What is the distribution of count?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb18-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> State)) <span class="sc">+</span></span>
+<span id="cb18-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="geom_bar" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><code>geom_bar()</code></h2>
+<div class="fragment">
+<p><code>geom_bar()</code> counts up the number of observations in each level of a single variable, then draws bars up to that height.</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb19-2" class="hljs-ln-code"><a></a>penguins</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# ℹ 334 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="geom_bar-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><code>geom_bar()</code></h2>
+<div class="fragment">
+<p><code>geom_bar()</code> counts up the number of observations in each level of a single variable, then draws bars up to that height.</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb21-2" class="hljs-ln-code"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb21-3" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> island)) <span class="sc">+</span></span>
+<span id="cb21-4" class="hljs-ln-code"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="summarizing-with-counts" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Summarizing with counts</h2>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb22-2" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb22-3" class="hljs-ln-code"><a></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  island    count
+  &lt;fct&gt;     &lt;int&gt;
+1 Biscoe      168
+2 Dream       124
+3 Torgersen    52</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="summarizing-with-counts-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Summarizing with counts</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb24-2" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(island)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  island        n
+  &lt;fct&gt;     &lt;int&gt;
+1 Biscoe      168
+2 Dream       124
+3 Torgersen    52</code></pre>
+</div>
+</div>
+</section>
+<section id="geom_col" class="slide level2">
+<h2><code>geom_col()</code></h2>
+<div class="fragment">
+<p><code>geom_col()</code> takes one column of categories and draws a bar for each up to the height of a second column of counts.</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">count</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> island, <span class="at">x =</span> n)) <span class="sc">+</span></span>
+<span id="cb26-4"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="q3-what-is-the-distribution-of-count-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Q3: What is the distribution of count?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb27-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb27-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb27-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><img data-src="images/gemini-gg.png" class="absolute" style="top: 100px; left: 160px; "></p>
+</div>
+</section>
+<section id="q3-what-is-the-distribution-of-count-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Q3: What is the distribution of count?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb28-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb28-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb28-4" class="hljs-ln-code"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb28-5" class="hljs-ln-code"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb28-6" class="hljs-ln-code"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/ev-barchart.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="two-types-of-viz" class="slide level2">
+<h2>Two types of Viz</h2>
+<div class="columns">
+<div class="column">
+<h3 id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h3>
+</div><div class="column">
+<h3 id="explanatory-data-analysis">Explanatory Data Analysis</h3>
+</div></div>
+<aside class="notes">
+<p>Add notes to each:</p>
+<p>Exploratory: - consumer: the analyst - goal: uncover structure for further analysis - follow templates - prioritize quick and accurate interpretation</p>
+<p>Explanatory: - consumer: stakeholder - goal: tell a specific story - customized - polished aesthetic</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="explanatory-data-analysis-1" class="title-slide slide level1 center">
+<h1>Explanatory Data Analysis</h1>
+
+</section>
+<section id="goal-1" class="slide level2">
+<h2>Goal #1</h2>
+<ul>
+<li class="fragment">Display the registration counts in a manner that makes it easy to see the counts of each individual state equally well.</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb29-3"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb29-4"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb29-5"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb29-6"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="labels" class="slide level2">
+<h2>Labels</h2>
+<p>The labels on the plot can refer to many different places where text is added to describe what is plotted.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment">title</li>
+<li class="fragment">subtitle</li>
+<li class="fragment">x-axis</li>
+<li class="fragment">y-axis</li>
+<li class="fragment">legends</li>
+</ul>
+</div><div class="column fragment">
+<p>In <code>ggplot2</code>, these are arguments to a <code>labs()</code> layer.</p>
+<ul>
+<li class="fragment"><code>title</code></li>
+<li class="fragment"><code>subtitle</code></li>
+<li class="fragment"><code>color</code></li>
+<li class="fragment"><code>fill</code></li>
+<li class="fragment"><code>size</code></li>
+<li class="fragment"><code>shape</code></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="labels-1" class="slide level2">
+<h2>Labels</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb30-3"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb30-4"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb30-5"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb30-6"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb30-7"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electric Vehicle Registrations by State"</span>,</span>
+<span id="cb30-8"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb30-9"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="themes" class="slide level2">
+<h2>Themes</h2>
+<p><em>Themes</em> describe a set of visual design choices made for the plot on things like the background, the gridlines, the axes, the tick marks, and the fonts.</p>
+<div class="fragment">
+<p>Some <code>ggplot2</code> themes (each one can be added as layer)</p>
+<ul>
+<li class="fragment"><code>theme_gray()</code>: the default</li>
+<li class="fragment"><code>theme_bw()</code></li>
+<li class="fragment"><code>theme_minimal()</code></li>
+</ul>
+</div>
+</section>
+<section id="themes-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Themes</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb31-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb31-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb31-4" class="hljs-ln-code"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb31-5" class="hljs-ln-code"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb31-6" class="hljs-ln-code"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb31-7" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electric Vehicle Registrations by State"</span>,</span>
+<span id="cb31-8" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb31-9" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>) <span class="sc">+</span> </span>
+<span id="cb31-10" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="themes-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Themes</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb32-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb32-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb32-4" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb32-5" class="hljs-ln-code"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb32-6" class="hljs-ln-code"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb32-7" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electric Vehicle Registrations by State"</span>,</span>
+<span id="cb32-8" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb32-9" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-error">
+<pre><code>Error in theme_minimal(axis.text.x = element_text(angle = 270, hjust = 0, : unused argument (axis.text.x = element_text(angle = 270, hjust = 0, vjust = 0.5))</code></pre>
+</div>
+</div>
+</section>
+<section id="themes-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Themes</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb34-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb34-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb34-4" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb34-5" class="hljs-ln-code"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb34-6" class="hljs-ln-code"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb34-7" class="hljs-ln-code"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb34-8" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electric Vehicle Registrations by State"</span>,</span>
+<span id="cb34-9" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb34-10" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="themes-4" class="slide level2">
+<h2>Themes</h2>
+<p><em>Themes</em> describe a set of visual design choices made for the plot on things like the background, the gridlines, the axes, the tick marks, and the fonts.</p>
+<p>Some <code>ggplot2</code> themes (each one can be added as layer)</p>
+<ul>
+<li><code>theme_gray()</code>: the default</li>
+<li><code>theme_bw()</code></li>
+<li><code>theme_minimal()</code></li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p><code>theme()</code> will change defaults of the exiting theme, so add it last.</p>
+</blockquote>
+</div>
+</section>
+<section id="setting-aesthetics" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Setting Aesthetics</h2>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb35-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb35-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb35-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb35-4" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb35-5" class="hljs-ln-code"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb35-6" class="hljs-ln-code"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb35-7" class="hljs-ln-code"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb35-8" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electric Vehicle Registrations by State"</span>,</span>
+<span id="cb35-9" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb35-10" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-aesthetics-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Setting Aesthetics</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb36-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<span id="cb36-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb36-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb36-4" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb36-5" class="hljs-ln-code"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
+<span id="cb36-6" class="hljs-ln-code"><a></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, </span>
+<span id="cb36-7" class="hljs-ln-code"><a></a>                                   <span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb36-8" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Electric Vehicle Registrations by State"</span>,</span>
+<span id="cb36-9" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb36-10" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="images/ev-barchart.png"></p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-logo-vsmall.png" class="slide-logo"></p>
@@ -388,6 +1264,44 @@ Exploratory:
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
