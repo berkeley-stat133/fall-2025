@@ -1439,7 +1439,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.0724253\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.7157404\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -1488,35 +1488,35 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  0.15199976  0.82451794 -0.07832297\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.5804510 -0.2601370  0.9297869\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
     "href": "7-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#option-2",
     "href": "7-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\"\n[1] \"element 2 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 3 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#option-3",
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.151999760178218 is positive :)\"\n[1] \"0.82451794475673 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.929786860732606 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
     "href": "7-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE FALSE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is negative :(\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE  TRUE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is negative :(\""
   },
   {
     "objectID": "1-welcome/slides.html#welcome-to-stat-133",
