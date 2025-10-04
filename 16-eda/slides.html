@@ -294,7 +294,7 @@
 </section>
 <section id="section-4" class="slide level2" data-background-image="images/ev-barchart-full.png" data-background-size="contain">
 <h2></h2>
-<div id="timer_849147036bb2966bf3d0576e065d595624c58ead" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_e5918a623e383374ff5032f02ba058279a3ffc3f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -865,7 +865,7 @@
 <section id="labels-1" class="slide level2">
 <h2>Labels</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>ev <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30" data-code-line-numbers="7-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>ev <span class="sc">|&gt;</span></span>
 <span id="cb30-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
 <span id="cb30-3"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb30-4"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
@@ -900,7 +900,7 @@
 <section id="themes-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Themes</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" data-code-line-numbers="10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
 <span id="cb31-2" class="hljs-ln-code"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
 <span id="cb31-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb31-4" class="hljs-ln-code"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">270</span>, </span>
@@ -911,7 +911,9 @@
 <span id="cb31-9" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>) <span class="sc">+</span> </span>
 <span id="cb31-10" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell fragment">
+
+</section>
+<section id="themes-1-output" class="slide level2 output-location-slide"><h2>Themes</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -919,9 +921,7 @@
 </figure>
 </div>
 </div>
-</div>
-</section>
-<section id="themes-2" class="slide level2" data-auto-animate="true">
+</div></section><section id="themes-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Themes</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
@@ -934,13 +934,13 @@
 <span id="cb32-8" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
 <span id="cb32-9" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell fragment">
+
+</section>
+<section id="themes-2-output" class="slide level2 output-location-slide"><h2>Themes</h2><div class="cell output-location-slide">
 <div class="cell-output cell-output-error">
 <pre><code>Error in theme_minimal(axis.text.x = element_text(angle = 270, hjust = 0, : unused argument (axis.text.x = element_text(angle = 270, hjust = 0, vjust = 0.5))</code></pre>
 </div>
-</div>
-</section>
-<section id="themes-3" class="slide level2" data-auto-animate="true">
+</div></section><section id="themes-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Themes</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
@@ -954,7 +954,9 @@
 <span id="cb34-9" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
 <span id="cb34-10" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell fragment">
+
+</section>
+<section id="themes-3-output" class="slide level2 output-location-slide"><h2>Themes</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -962,9 +964,7 @@
 </figure>
 </div>
 </div>
-</div>
-</section>
-<section id="themes-4" class="slide level2">
+</div></section><section id="themes-4" class="slide level2">
 <h2>Themes</h2>
 <p><em>Themes</em> describe a set of visual design choices made for the plot on things like the background, the gridlines, the axes, the tick marks, and the fonts.</p>
 <p>Some <code>ggplot2</code> themes (each one can be added as layer)</p>
@@ -994,7 +994,10 @@
 <span id="cb35-9" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
 <span id="cb35-10" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell fragment">
+
+</div>
+</section>
+<section id="setting-aesthetics-output" class="slide level2 output-location-slide"><h2>Setting Aesthetics</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -1002,10 +1005,7 @@
 </figure>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="setting-aesthetics-1" class="slide level2" data-auto-animate="true">
+</div></section><section id="setting-aesthetics-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Setting Aesthetics</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb36-1" class="hljs-ln-code"><a></a>ev <span class="sc">|&gt;</span></span>
@@ -1019,7 +1019,9 @@
 <span id="cb36-9" class="hljs-ln-code"><a></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
 <span id="cb36-10" class="hljs-ln-code"><a></a>       <span class="at">y =</span> <span class="st">"Registration Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell fragment">
+
+</section>
+<section id="setting-aesthetics-1-output" class="slide level2 output-location-slide"><h2>Setting Aesthetics</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -1027,9 +1029,7 @@
 </figure>
 </div>
 </div>
-</div>
-</section>
-<section id="section-10" class="slide level2">
+</div></section><section id="section-10" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="cell-output-display">

@@ -1425,7 +1425,7 @@
     "href": "16-eda/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "EDA\nComing soon!"
+    "text": "EDA\nYour task is to understand the basic structure of a new data set from 2020 related to tuition costs at colleges and universities across the country. It is stored as a csv on github that can be read into your R session (or a Quarto document) using:\n\ntuition_cost &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-03-10/tuition_cost.csv')\n\nFor each of the following, please answer the question in full sentences and also provide the code that you used. If you generated a plot, also sketch the plot.\n\nWhat are the dimensions of the data set? What is the unit of observation? What is the nature of the variables (that they are, their units or levels, and their type)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs there any missing data? If so, where?\n\n\n\n\n\n\n\n\n\n\nWhat is the distribution of the cost of in-state tuition? Answer with summary statistics, a plot, and a written description of its shape.\n\n\n\n\n\n\n\n\n\n\nHow does the distribution of in-state tuition differ between the three types of institutions? Answer with a plot and a written description of how the distributions compare.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich are the three most expensive institutions? The three least expensive institutions?\n\n\n\n\n\n\n\n\n\n\nCreate one more visualization of at least two variables that you’re curious about. Describe the structure that you see with a written description."
   },
   {
     "objectID": "7-control-flow/slides.html#getting-to-campus",
@@ -1439,7 +1439,7 @@
     "href": "7-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.290219\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -2.649083\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "7-control-flow/slides.html#if-then",
@@ -1488,35 +1488,35 @@
     "href": "7-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  0.5176509 -1.5586430 -0.3891979\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.9389224  0.0738164  0.1414598\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "7-control-flow/slides.html#option-1",
     "href": "7-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\""
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#option-2",
     "href": "7-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 2 is positive :)\"\n[1] \"element 3 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#option-3",
     "href": "7-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.517650905059194 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.0738164035541371 is positive :)\"\n[1] \"0.141459769601069 is positive :)\""
   },
   {
     "objectID": "7-control-flow/slides.html#ifelse",
     "href": "7-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE  TRUE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is positive :)\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE FALSE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is negative :(\" \"is negative :(\""
   },
   {
     "objectID": "1-welcome/slides.html#welcome-to-stat-133",
@@ -1872,11 +1872,25 @@
     "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\") + \n  theme_minimal()"
   },
   {
+    "objectID": "16-eda/slides.html#themes-1-output",
+    "href": "16-eda/slides.html#themes-1-output",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes"
+  },
+  {
     "objectID": "16-eda/slides.html#themes-2",
     "href": "16-eda/slides.html#themes-2",
     "title": "EDA",
     "section": "Themes",
-    "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme_minimal(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")\n\n\n\nError in theme_minimal(axis.text.x = element_text(angle = 270, hjust = 0, : unused argument (axis.text.x = element_text(angle = 270, hjust = 0, vjust = 0.5))"
+    "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme_minimal(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes-2-output",
+    "href": "16-eda/slides.html#themes-2-output",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes\n\nError in theme_minimal(axis.text.x = element_text(angle = 270, hjust = 0, : unused argument (axis.text.x = element_text(angle = 270, hjust = 0, vjust = 0.5))"
   },
   {
     "objectID": "16-eda/slides.html#themes-3",
@@ -1884,6 +1898,13 @@
     "title": "EDA",
     "section": "Themes",
     "text": "Themes\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col() +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
+  },
+  {
+    "objectID": "16-eda/slides.html#themes-3-output",
+    "href": "16-eda/slides.html#themes-3-output",
+    "title": "EDA",
+    "section": "Themes",
+    "text": "Themes"
   },
   {
     "objectID": "16-eda/slides.html#themes-4",
@@ -1900,11 +1921,25 @@
     "text": "Setting Aesthetics\n\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col(color = \"blue\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
   },
   {
+    "objectID": "16-eda/slides.html#setting-aesthetics-output",
+    "href": "16-eda/slides.html#setting-aesthetics-output",
+    "title": "EDA",
+    "section": "Setting Aesthetics",
+    "text": "Setting Aesthetics"
+  },
+  {
     "objectID": "16-eda/slides.html#setting-aesthetics-1",
     "href": "16-eda/slides.html#setting-aesthetics-1",
     "title": "EDA",
     "section": "Setting Aesthetics",
     "text": "Setting Aesthetics\n\nev |&gt;\n  ggplot(aes(x = State, y = Count)) +\n  geom_col(fill = \"steelblue\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 270, \n                                   hjust = 0, \n                                   vjust = 0.5)) +\n  labs(title = \"Electric Vehicle Registrations by State\",\n       x = \"\",\n       y = \"Registration Count\")"
+  },
+  {
+    "objectID": "16-eda/slides.html#setting-aesthetics-1-output",
+    "href": "16-eda/slides.html#setting-aesthetics-1-output",
+    "title": "EDA",
+    "section": "Setting Aesthetics",
+    "text": "Setting Aesthetics"
   },
   {
     "objectID": "projects/notecards/slides.html#using-the-shell-locally",
