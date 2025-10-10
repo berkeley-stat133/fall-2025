@@ -1557,7 +1557,7 @@
     "href": "07-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.3772259\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.471507\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "07-control-flow/slides.html#if-then",
@@ -1606,35 +1606,35 @@
     "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.2083794 -1.9092734 -1.3970256\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.3523229  1.8270092  0.2426841\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "07-control-flow/slides.html#option-1",
     "href": "07-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}"
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-2",
     "href": "07-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}"
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 2 is positive :)\"\n[1] \"element 3 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-3",
     "href": "07-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}"
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"1.82700921795956 is positive :)\"\n[1] \"0.242684064079063 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#ifelse",
     "href": "07-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] TRUE TRUE TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE FALSE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is negative :(\" \"is negative :(\""
   },
   {
     "objectID": "06-lists/slides.html#section",
@@ -3044,7 +3044,7 @@
     "href": "17-explain/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Explanatory Data Analysis\nAll of the plots in this problem set are meant to focus on a particular story to tell your a particular audience. As you craft them, think carefully about the labels, themes, aesthetic settings, and the manner in which it facilitates comparisons.\n\nProvide the code that will create this plot from the storms data set inside the dplyr package. A few notes:\n\n\nYou will need to create a new column indicating storm type. For that you’ll need to learn how that determination is made and then add it to the data frame. The case_when() function is a helpful shortcut similar to ifelse().\nThe color palette belows to a set of palettes called ColorBrewer. You can read more about them here: https://ggplot2.tidyverse.org/reference/scale_brewer.html.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAre there any changes that you’d make to the plot above to make it easier to read or clarify what it is showing?\n\n\n\n\n\n\n\n\n\nRemake your plot using a very specific visual theme: the botanical paintings of the US Department of Agriculture. They have been wrapped up into a ggplot2 theme inside the ggpomological package: https://github.com/gadenbuie/ggpomological. Read about how to use the package and write below the additional layers that you added to your plot above (for a challenge, see if you can get the handwriting font to show up).\n\n\n\n\n\n\n\n\n\nThe present data frame stores data from the US Census about the number of boys and girls born each year between 1940 and 2013. It is stored in the stat20data package, which can be installed from GitHub using the devtools package.\n\n# install.packages(\"devtools\")\n# devtools::install_github(\"https://github.com/stat20/stat20data\")\nlibrary(stat20data)\nslice(present, 1:5)\n\nMake a plot to visualize the trend over time in the proportion of births that are girls. Put the annual variability into context by ensuring the viewer can see the full range of possible values that the proportion could take. Allow the comparison to a baseline of .5 by drawing a horizontal line at that value (see geom_hline()).\n\n\n\n(Challenge) Some of the most effective plots on the web don’t come from R or Python, but from dedicated visualization libraries written in JavaScript. That is the case for the EV registration plot made by the Department of Energy (https://afdc.energy.gov/data/10962), which uses a library called Highcharts.\nWhile you could craft the plot directly using JavaScript, a member of the R community has written a package that allows you to make them directly from R: you write R code, which the package turns into Javascript, which Highcharts then renders as a plot. Read how to use the package on its documention site: https://github.com/jbkunst/highcharter/.\nYour task is to recreate the EV Highcharts plot exactly using the data found in an excel spreadsheet on the DoE website. You can export the excel spreadsheet as a csv file, as we did in class, or you can experiment with the readxl package to read it into R directly."
+    "text": "Explanatory Data Analysis\nAll of the plots in this problem set are meant to focus on a particular story to tell your a particular audience. As you craft them, think carefully about the labels, themes, aesthetic settings, and the manner in which it facilitates comparisons.\n\nProvide the code that will create this plot from the storms data set inside the dplyr package. Here, each dot is a single storm. A few notes:\n\n\nYou will need to create a new column indicating storm type. For that you’ll need to learn how that determination is made and then add it to the data frame. The case_when() function is a helpful shortcut similar to ifelse().\nThe color palette belows to a set of palettes called ColorBrewer. You can read more about them here: https://ggplot2.tidyverse.org/reference/scale_brewer.html.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAre there any changes that you’d make to the plot above to make it easier to read or clarify what it is showing?\n\n\n\n\n\n\n\n\n\nRemake your plot using a very specific visual theme: the botanical paintings of the US Department of Agriculture. They have been wrapped up into a ggplot2 theme inside the ggpomological package: https://github.com/gadenbuie/ggpomological. Read about how to use the package and write below the additional layers that you added to your plot above (for a challenge, see if you can get the handwriting font to show up).\n\n\n\n\n\n\n\n\n\nThe present data frame stores data from the US Census about the number of boys and girls born each year between 1940 and 2013. It is stored in the stat20data package, which can be installed from GitHub using the devtools package.\n\n# install.packages(\"devtools\")\n# devtools::install_github(\"https://github.com/stat20/stat20data\")\nlibrary(stat20data)\nslice(present, 1:5)\n\nMake a plot to visualize the trend over time in the proportion of births that are girls. Put the annual variability into context by ensuring the viewer can see the full range of possible values that the proportion could take. Allow the comparison to a baseline of .5 by drawing a horizontal line at that value (see geom_hline()).\n\n\n\n(Challenge) Some of the most effective plots on the web don’t come from R or Python, but from dedicated visualization libraries written in JavaScript. That is the case for the EV registration plot made by the Department of Energy (https://afdc.energy.gov/data/10962), which uses a library called Highcharts.\nWhile you could craft the plot directly using JavaScript, a member of the R community has written a package that allows you to make them directly from R: you write R code, which the package turns into Javascript, which Highcharts then renders as a plot. Read how to use the package on its documention site: https://github.com/jbkunst/highcharter/.\nYour task is to recreate the EV Highcharts plot exactly using the data found in an excel spreadsheet on the DoE website. You can export the excel spreadsheet as a csv file, as we did in class, or you can experiment with the readxl package to read it into R directly."
   },
   {
     "objectID": "18-joins/slides.html#while-youre-waiting",
