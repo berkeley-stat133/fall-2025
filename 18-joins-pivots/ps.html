@@ -200,9 +200,133 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="reshaping-joins" class="level3">
-<h3 class="anchored" data-anchor-id="reshaping-joins">Reshaping Joins</h3>
-<p>Coming soon!</p>
+<section id="joins" class="level3">
+<h3 class="anchored" data-anchor-id="joins">Joins</h3>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code># A tibble: 4 × 3
+  student_id name    major
+       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+1          1 Ada     Stat 
+2          2 Bruno   DS   
+3          3 Chandra Stat 
+4          4 Diego   Econ </code></pre>
+</div>
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code># A tibble: 4 × 2
+  student_id quiz_score
+       &lt;dbl&gt;      &lt;dbl&gt;
+1          2         88
+2          3         94
+3          4         77
+4          5         91</code></pre>
+</div>
+</div>
+</div>
+<p>These data sets illustrate a roster of students registered for a particular lab section (<code>roster</code>) and the record of grades on a quiz (<code>grades</code>). For each of the following, write appropriate the <code>dplyr</code> join command and sketch the resulting data frame that contains those records.</p>
+<ol class="example" type="1">
+<li>All registered students who took the quiz.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="2" class="example" type="1">
+<li>The quiz scores for all registered students.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="3" class="example" type="1">
+<li>The names and majors or all students who took the quiz.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="4" class="example" type="1">
+<li>All records for students either registered for the section or who took the quiz or both.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="5" class="example" type="1">
+<li>The name and major of the registered students who didn’t take the quiz.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="6" class="example" type="1">
+<li>Calculate the maximum wind speed of each storm, then attach that column of data to the original <code>storms</code> data frame.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="7" class="example" type="1">
+<li>Create a small data frame that you can then use to filter the <code>storms</code> data so that it only retains records of storms that are “Hurricanes”, “Tropical Storms”, and “Tropical Depressions”. (note: don’t use <code>filter</code>!)</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="8" class="example" type="1">
+<li>Create a small data frame that you can use to add on a new column to <code>storms</code> called <code>type</code> that has levels of “Hurricanes”, “Tropical Storms”, and “Tropical Depressions” for storms with that <code>status</code> and “Other” for all other storms. (note: don’t use <code>mutate()</code>!)</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<ol start="9" class="example" type="1">
+<li>Remake the state-by-state EV registration chart but instead of plotting the distribution of registrations, display, for every state, either: a) the proportion of vehicle registrations that are EV b) the ratio of EV registrations to residents. To do this you will need to track down additional data online and join it with the EV data registration data.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="10" class="example" type="1">
+<li>In the space below, sketch out four Venn diagrams, one for each of the mutating joins. Each diagram should have two circles representing tables X and Y, showing some overlap. Shade in the parts of the diagram where those rows exist in the joined data frame.</li>
+</ol>
 
 
 </section>
