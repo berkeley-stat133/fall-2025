@@ -1592,134 +1592,134 @@
     "text": "Lab 1 Assignment\n\n  \n    −\n    +\n \n 15:00\n \n\nWill be turned in physically.\nWritten responses. Please code along on your laptop.\n\nTwo Parts:\n\nShell\nR: Atomic Vectors, Vectorization, Recycling, Matrices, if statements, for loops.\n\nWork on selected problems.\n\nGive students 15 minutes to work on problems that you find important AND are in scope of lectures so far (nothing after 7)."
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#agenda",
-    "href": "projects/4-ev-power/4-slides.html#agenda",
+    "objectID": "projects/4-ev-power/slides.html#agenda",
+    "href": "projects/4-ev-power/slides.html#agenda",
     "title": "EV Power Project",
     "section": "Agenda",
     "text": "Agenda\n\nOverview of Project\nLab Review Worksheet\nWork through select parts of Project 4\nGroup work and time for questions"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#ev-power-project-overview",
-    "href": "projects/4-ev-power/4-slides.html#ev-power-project-overview",
+    "objectID": "projects/4-ev-power/slides.html#ev-power-project-overview",
+    "href": "projects/4-ev-power/slides.html#ev-power-project-overview",
     "title": "EV Power Project",
     "section": "EV Power Project Overview",
     "text": "EV Power Project Overview\n\nElectric vehicles reduce direct emissions, but does the electricity used to charge them actually come from clean sources? How clean is the power that charges America’s EVs, and how does this vary across states?"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#previous-work",
-    "href": "projects/4-ev-power/4-slides.html#previous-work",
+    "objectID": "projects/4-ev-power/slides.html#previous-work",
+    "href": "projects/4-ev-power/slides.html#previous-work",
     "title": "EV Power Project",
     "section": "Previous Work",
     "text": "Previous Work\nLet’s take a look at some work that’s been done in this field already. What are some improvements we could make in our own analysis?"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#graph-1",
-    "href": "projects/4-ev-power/4-slides.html#graph-1",
+    "objectID": "projects/4-ev-power/slides.html#graph-1",
+    "href": "projects/4-ev-power/slides.html#graph-1",
     "title": "EV Power Project",
     "section": "Graph 1",
     "text": "Graph 1\n\n\nSome problems with this one: outdated data, terrible/unclear color scheme, using data 2007-2017 but unclear of the metric (cumulative? average per year? etc), too many categories to be clear"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#graph-2",
-    "href": "projects/4-ev-power/4-slides.html#graph-2",
+    "objectID": "projects/4-ev-power/slides.html#graph-2",
+    "href": "projects/4-ev-power/slides.html#graph-2",
     "title": "EV Power Project",
     "section": "Graph 2",
     "text": "Graph 2\n\n\nLooks nicer but: Still problems with this one: outdated data, unreliable data source, strange bins of percentages"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#lets-try-it-ourseleves",
-    "href": "projects/4-ev-power/4-slides.html#lets-try-it-ourseleves",
+    "objectID": "projects/4-ev-power/slides.html#lets-try-it-ourseleves",
+    "href": "projects/4-ev-power/slides.html#lets-try-it-ourseleves",
     "title": "EV Power Project",
     "section": "Let’s Try it Ourseleves:",
     "text": "Let’s Try it Ourseleves:\n\nDataset: Multiple tables covering U.S. electricity generation by source and average energy costs (2021–2023) from the US Energy Information Administration (EIA) and US Department of Energy\nGoal: Analyze the relationship between EV adoption and the cleanliness of each state’s energy mix to understand how “green” electric driving really is across the US using maps\nClient: The everyday consumer wanting to make informed, sustainable choices"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#defining-key-terms",
-    "href": "projects/4-ev-power/4-slides.html#defining-key-terms",
+    "objectID": "projects/4-ev-power/slides.html#defining-key-terms",
+    "href": "projects/4-ev-power/slides.html#defining-key-terms",
     "title": "EV Power Project",
     "section": "Defining Key Terms",
     "text": "Defining Key Terms\nDirect emissions:\n\nGreenhouse gases released directly from a vehicle’s operation (exhaust from fuel combustion)\n\nClean energy:\n\nProduces little to no greenhouse gases (includes nuclear, hydro, wind, solar)\n\nRenewable energy:\n\nComes from naturally replenished sources like solar, wind, hydro, geothermal, biomass"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#data-sources",
-    "href": "projects/4-ev-power/4-slides.html#data-sources",
+    "objectID": "projects/4-ev-power/slides.html#data-sources",
+    "href": "projects/4-ev-power/slides.html#data-sources",
     "title": "EV Power Project",
     "section": "Data Sources",
     "text": "Data Sources\n\n\nU.S. renewable energy use by state by year\n\nrenew_use_2021.csv\nrenew_use_2022.csv\nrenew_use_2023.csv\n\nAverage energy price by state by year\n\nav_energy_price_2021-2023.csv\n\n\nU.S. total energy use by state by year\n\ntotal_energy_use_2021.csv\ntotal_energy_use_2022.csv\ntotal_energy_use_2023.csv\n\nEV Registrations by state in 2023\n\nev-registrations-by_state_2023.csv"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#skill-for-this-project-string-manipulation",
-    "href": "projects/4-ev-power/4-slides.html#skill-for-this-project-string-manipulation",
+    "objectID": "projects/4-ev-power/slides.html#skill-for-this-project-string-manipulation",
+    "href": "projects/4-ev-power/slides.html#skill-for-this-project-string-manipulation",
     "title": "EV Power Project",
     "section": "Skill for this project: String Manipulation",
     "text": "Skill for this project: String Manipulation\nPurpose: Clean and extract text patterns (like energy source names or units)\nCommon Regex Tools in R (using library {stringr}):\nstr_detect(string, pattern) → checks if a pattern exists\nstr_extract(string, pattern) → extracts the matching part\nstr_replace(string, pattern, replacement) → replaces text"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#skill-for-this-project-joining-tables",
-    "href": "projects/4-ev-power/4-slides.html#skill-for-this-project-joining-tables",
+    "objectID": "projects/4-ev-power/slides.html#skill-for-this-project-joining-tables",
+    "href": "projects/4-ev-power/slides.html#skill-for-this-project-joining-tables",
     "title": "EV Power Project",
     "section": "Skill for this project: Joining Tables",
     "text": "Skill for this project: Joining Tables\nGoal: Combine datasets (for example: energy source + electricity cost + EV registration data)\nGiven left (X) table and right (Y) table\n\n\n\n\n\n\n\n\nJoin Type\nDescription\nResult\n\n\n\n\nleft_join()\nKeep all rows from the X table\nAll X + matching Y\n\n\nright_join()\nKeep all rows from the Y table\nAll Y + matching X\n\n\ninner_join()\nKeep only matching rows from both\nMatching only\n\n\nfull_join()\nKeep all rows from both tables\nAll data combined\n\n\nsemi_join()\nKeep rows from X that have matches in Y\nX (filtered)\n\n\nanti_join()\nKeep rows from X without matches in Y\nX (non-matching)"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#skill-for-this-project-pivots",
-    "href": "projects/4-ev-power/4-slides.html#skill-for-this-project-pivots",
+    "objectID": "projects/4-ev-power/slides.html#skill-for-this-project-pivots",
+    "href": "projects/4-ev-power/slides.html#skill-for-this-project-pivots",
     "title": "EV Power Project",
     "section": "Skill for this project: Pivots",
     "text": "Skill for this project: Pivots\nIncluded in tidyr package\n\npivot_longer(data, cols, names_to, values_to)\npivot_wider(data, names_from, values_from)\n\nRefer to Tidyverse Documentation of Pivot for more information"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#skill-for-this-project-basic-mapping",
-    "href": "projects/4-ev-power/4-slides.html#skill-for-this-project-basic-mapping",
+    "objectID": "projects/4-ev-power/slides.html#skill-for-this-project-basic-mapping",
+    "href": "projects/4-ev-power/slides.html#skill-for-this-project-basic-mapping",
     "title": "EV Power Project",
     "section": "Skill for this project: Basic Mapping",
     "text": "Skill for this project: Basic Mapping\nGoal: Visualize state-level metrics (like renewable share or EV ratio)\nLibraries: {maps}, {sf}, {ggplot2}\nChoropleth Maps\nMap where areas (like states) are colored based on a number.\n\nDarker or brighter colors usually mean higher numbers.\nLighter colors usually mean lower numbers.\nExample uses: population by state, election results, or renewable energy share."
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#basic-example-of-syntax",
-    "href": "projects/4-ev-power/4-slides.html#basic-example-of-syntax",
+    "objectID": "projects/4-ev-power/slides.html#basic-example-of-syntax",
+    "href": "projects/4-ev-power/slides.html#basic-example-of-syntax",
     "title": "EV Power Project",
     "section": "Basic example of syntax:",
-    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/Rtmp1GwejB/remotes3b2d6ba6aa/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
+    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/RtmpnR922X/remotes3b53c695820/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#section",
-    "href": "projects/4-ev-power/4-slides.html#section",
+    "objectID": "projects/4-ev-power/slides.html#section",
+    "href": "projects/4-ev-power/slides.html#section",
     "title": "EV Power Project",
     "section": "",
     "text": "# loading example data\npop_data &lt;- data.frame(\n  name = c(\"California\", \"Texas\", \"New York\", \"Florida\"),\n  population_millions = c(39, 30, 20, 22)\n)\n# Join the data by state name\nus_joined &lt;- us_states |&gt;\n  left_join(pop_data, by = \"name\")\n# Plot and color by population\nggplot(us_joined) +\n  geom_sf(aes(fill = population_millions), color = \"white\") +\n  scale_fill_continuous(name = \"Population (millions)\", na.value = \"grey90\") +\n  labs(title = \"Example: Coloring U.S. States by Population\") +\n  coord_sf(xlim = c(-125, -66), ylim = c(24, 50), expand = FALSE) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nWe add data with geom_sf() to color states by metric."
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#interactive-maps---leaflet",
-    "href": "projects/4-ev-power/4-slides.html#interactive-maps---leaflet",
+    "objectID": "projects/4-ev-power/slides.html#interactive-maps---leaflet",
+    "href": "projects/4-ev-power/slides.html#interactive-maps---leaflet",
     "title": "EV Power Project",
     "section": "Interactive Maps - leaflet",
     "text": "Interactive Maps - leaflet\nR package for creating interactive maps\n\n\nAdd base maps (e.g., OpenStreetMap, CartoDB)\n\nOverlay markers, polygons, and popups\n\nUse color palettes to represent data values\n\nFully interactive and embeddable in Shiny apps or Quarto documents"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#section-1",
-    "href": "projects/4-ev-power/4-slides.html#section-1",
+    "objectID": "projects/4-ev-power/slides.html#section-1",
+    "href": "projects/4-ev-power/slides.html#section-1",
     "title": "EV Power Project",
     "section": "",
     "text": "library(leaflet)\n\nleaflet() |&gt;\n  addTiles() |&gt;\n  addMarkers(lng = -122.259, lat = 37.872, popup = \"UC Berkeley\")"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#putting-everything-together",
-    "href": "projects/4-ev-power/4-slides.html#putting-everything-together",
+    "objectID": "projects/4-ev-power/slides.html#putting-everything-together",
+    "href": "projects/4-ev-power/slides.html#putting-everything-together",
     "title": "EV Power Project",
     "section": "Putting everything together:",
     "text": "Putting everything together:\nWorkflow :\n\nClean and extract relevant info with regex\n\nMerge datasets using appropriate table methods\n\nVisualize patterns geographically with maps\n\nPresent findings in a report PDF (or, optionally, a Quarto dashboard)\n\nDeliverable :\nA clear report PDF answering:\n\n“How renewable is the electricity powering EVs across the U.S.?”"
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#lab-review-worksheet",
-    "href": "projects/4-ev-power/4-slides.html#lab-review-worksheet",
+    "objectID": "projects/4-ev-power/slides.html#lab-review-worksheet",
+    "href": "projects/4-ev-power/slides.html#lab-review-worksheet",
     "title": "EV Power Project",
     "section": "Lab Review Worksheet",
     "text": "Lab Review Worksheet\n\n  \n    −\n    +\n \n 30:00\n \nGroup work to review essential material. To get started, visit the ed post with the links to EV Power Project repositories. Accept your assignment, clone the repository, and find worksheet.qmd."
   },
   {
-    "objectID": "projects/4-ev-power/4-slides.html#project-work-time",
-    "href": "projects/4-ev-power/4-slides.html#project-work-time",
+    "objectID": "projects/4-ev-power/slides.html#project-work-time",
+    "href": "projects/4-ev-power/slides.html#project-work-time",
     "title": "EV Power Project",
     "section": "Project Work Time",
     "text": "Project Work Time\n\n  \n    −\n    +\n \n 30:00\n \nGet started on the project and feel free to ask questions."
@@ -2191,7 +2191,7 @@
     "href": "07-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.3706805\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.8297327\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "07-control-flow/slides.html#if-then",
@@ -2240,35 +2240,35 @@
     "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  0.5946119 -0.7090386  1.5884885\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  2.2129080 -0.8902073 -0.7975281\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "07-control-flow/slides.html#option-1",
     "href": "07-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-2",
     "href": "07-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\"\n[1] \"element 3 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-3",
     "href": "07-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.594611939053884 is positive :)\"\n[1] \"1.58848854264091 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"2.21290801935736 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#ifelse",
     "href": "07-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE  TRUE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is positive :)\" \"is negative :(\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE  TRUE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is positive :)\" \"is positive :)\""
   },
   {
     "objectID": "office-hours.html",
