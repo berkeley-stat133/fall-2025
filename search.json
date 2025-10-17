@@ -2488,7 +2488,7 @@
     "href": "07-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.3381987\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.2724082\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "07-control-flow/slides.html#if-then",
@@ -2537,7 +2537,7 @@
     "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.1658917 -1.2358775  1.3270370\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.5193781  0.1520676 -1.1526745\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "07-control-flow/slides.html#option-1",
@@ -2551,21 +2551,21 @@
     "href": "07-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 3 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 2 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-3",
     "href": "07-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"1.32703695164793 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.152067570181829 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#ifelse",
     "href": "07-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE  TRUE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is negative :(\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE FALSE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is negative :(\" \"is positive :)\""
   },
   {
     "objectID": "office-hours.html",
@@ -2827,7 +2827,7 @@
     "href": "projects/4-ev-power/slides.html#basic-example-of-syntax",
     "title": "EV Power Project",
     "section": "Basic example of syntax:",
-    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/RtmpP71iI1/remotes5efddd9a96/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
+    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/RtmpwPPvyn/remotes5ec5eef0200/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
   },
   {
     "objectID": "projects/4-ev-power/slides.html#section",
