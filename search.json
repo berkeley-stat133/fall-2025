@@ -889,14 +889,21 @@
     "href": "20-strings-1/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Strings"
+    "text": "The following questions concern the R object called fruit that is stored in the stringr package.\n\nlibrary(stringr)\nhead(fruit)\n\n[1] \"apple\"       \"apricot\"     \"avocado\"     \"banana\"      \"bell pepper\"\n[6] \"bilberry\"   \n\n\n\nWhat data structure is fruit and what is its length?\n\n\n\n\n\n\n\nWhich fruits have the longest and shortest names?\n\n\n\n\n\n\n\nReplace the entry \"currant\" with \"red currant\".\n\n\n\n\n\n\nForm a single string that starts with \"My favorite fruits are\" and then lists all of the fruits, separated by a comma and a space. The end of the list should have \"and\" before the last fruit and end with a period.\n\n\n\n\n\n\nForm a string like the following but with another fruit and emoji1 of your choice. Note the fruit name should come directly from fruit.\n\n\n\n[1] \"🍋  lemon  🍋\"\n\n\n\n\n\n\n\nPrint all of the fruit names containing berry.\n\n\n\n\n\n\nHow many fruit names contain the letter \"o\"?\n\n\n\n\n\n\nWhich fruits names contain the most \"o\"s?\n\n\n\n\n\n\nHow many fruits feature two \"a\"s separated by one other character?"
+  },
+  {
+    "objectID": "20-strings-1/ps.html#footnotes",
+    "href": "20-strings-1/ps.html#footnotes",
+    "title": "STAT 133",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nEach emoji is defined by an 8 digit code called Unicode. See https://r4ds.hadley.nz/strings.html#other-special-characters.↩︎"
   },
   {
     "objectID": "21-strings-2/ps.html",
     "href": "21-strings-2/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Strings"
+    "text": "Strings II\nThese questions deal with the babynames data set inside the package of the same name. Read about the data set with ?babynames.\n\n# install.packages(\"babynames\")\nlibrary(babynames)\nbabynames\n\n# A tibble: 1,924,665 × 5\n    year sex   name          n   prop\n   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;\n 1  1880 F     Mary       7065 0.0724\n 2  1880 F     Anna       2604 0.0267\n 3  1880 F     Emma       2003 0.0205\n 4  1880 F     Elizabeth  1939 0.0199\n 5  1880 F     Minnie     1746 0.0179\n 6  1880 F     Margaret   1578 0.0162\n 7  1880 F     Ida        1472 0.0151\n 8  1880 F     Alice      1414 0.0145\n 9  1880 F     Bertha     1320 0.0135\n10  1880 F     Sarah      1288 0.0132\n# ℹ 1,924,655 more rows\n\n\n\nWhat does every row refer to, i.e. what is the unit of observation? What time range is covered by this data? How is prop calculated (what is the numerator and demoninator)?\n\n\n\n\n\n\n\nCreate a plot like the following but for your name.\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nCreate a plot that shows the relatively frequency of the name “Barack” starting from 1990 to the most recent date."
   },
   {
     "objectID": "12-data-wrangling-1/ps.html",
@@ -1051,282 +1058,6 @@
     "title": "Functions",
     "section": "Why write functions?",
     "text": "Why write functions?\n\nMake your code more readable\nDon’t Repeat Yourself (DRY)\nFocus on the variables, not the constants\nEasier to test, update"
-  },
-  {
-    "objectID": "16-eda/ps.html",
-    "href": "16-eda/ps.html",
-    "title": "STAT 133",
-    "section": "",
-    "text": "EDA\nYour task is to understand the basic structure of a new data set from 2020 related to tuition costs at colleges and universities across the country. It is stored as a csv on github that can be read into your R session (or a Quarto document) using:\n\ntuition_cost &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-03-10/tuition_cost.csv')\n\nFor each of the following, please answer the question in full sentences and also provide the code that you used. If you generated a plot, also sketch the plot.\n\nWhat are the dimensions of the data set? What is the unit of observation? What is the nature of the variables (that they are, their units or levels, and their type)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs there any missing data? If so, where?\n\n\n\n\n\n\n\n\n\n\nWhat is the distribution of the cost of in-state tuition? Answer with summary statistics, a plot, and a written description of its shape.\n\n\n\n\n\n\n\n\n\n\nHow does the distribution of in-state tuition differ between the three types of institutions? Answer with a plot and a written description of how the distributions compare.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich are the three most expensive institutions? The three least expensive institutions?\n\n\n\n\n\n\n\n\n\n\nCreate one more visualization of at least two variables that you’re curious about. Describe the structure that you see with a written description."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/ps.html",
-    "href": "15-grammar-of-graphics/ps.html",
-    "title": "STAT 133",
-    "section": "",
-    "text": "Each of the following questions should be answered using the storms data set built into dplyr. Provide the code to construct each of the following plots and make a sketch of the resulting plot. No need to enumerate all of the detail of the data in the plot but focus on the general shape and be sure to be clear what all axes and legends are (i.e. what the aesthetic mappings are).\n\nPlot the distribution of the wind speed three ways: as a histogram, a box plot, and a density curve.\n\n\n\n\n\n\n\n\n\n\n\n\nA bar chart showing the distribution of storm status found across all records in the data set.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA bar chart showing the distribution of storm status of when considering just one record for each named storm1.\n\n\n\n\n\n\n\n\n\n\n\n\n\nA scatterplot of the relationship between wind speed and pressure for every record in the data set.\n\n\n\n\n\n\n\n\n\n\n\nA scatterplot of the relationship between average wind speed and average pressure for each storm.\n\n\n\n\n\n\n\n\n\n\n\nA line plot of the relationship between wind speed and pressure for all of the storms in 2014. Each storm should be indicated with a different color2.\n\n\n\n\n\n\n\n\n\n\n\nCreate a line plot that shows the average duration of storms over time. That is: the x-axis should be the year and the y-axis should be average storm duration."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/ps.html#footnotes",
-    "href": "15-grammar-of-graphics/ps.html#footnotes",
-    "title": "STAT 133",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThere are several ways to reduce the data frame to contain only one row for each named storm. The simplest is probably to group the data frame, then slice it and take the first record↩︎\nIf you’d like to a slightly more sophisticated version of this plot, read about geom_path(). Instead of lines, this can plot paths with an arrowhead indicating the progression of that storm.↩︎"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "An introduction to computationally intensive applied statistics. Topics will include organization storage of data, visualization and graphics, statistical learning and data mining, model validation procedures, and the presentation of results. This course uses R as its primary computing language.\n\n\nClass Format\nThis is an in-person class with three lectures each week and one two-hour lab led by a GSI. This class is designed assuming you’ll be in class. If you miss class, you’ll be able to find most materials from class - slides, snippets of code - published on the course wesite.\n\nGroup tutoring\nTutors will offer group tutoring sessions several times each week. This is an opportunity to finish up any assignments that you’ve started in class or review any topics that are confusing for you. You’re welcome to attend any session that works well for your schedule. Check the Office Hours page to see the group tutoring schedule.\nGroup tutoring is a great place to go to meet other students and collaborate on assignments with tutors on hand to help you get unstuck.\n\n\nOffice Hours\nOffice hours are an opportunity to chat one-on-one with your instructor and GSIs. Please come to office hours! Coming to office hours does not send a signal that you are behind or need extra help. On the contrary, coming to office hours early and often tends to co-occur with success in the course. We’re happy to chat about the course material, statistics in general, careers in statistics, and whatever other statistics or data science topics are on your mind! Please check the Office Hours page to see the times of the various office hour/group tutoring sessions.\n\n\n\nMaterials\n\nComputational tools\nEach student will need a laptop in order to engage with the computing aspects of this class. Throughout the semester you’ll be installing several different software tools, all of which are free. We will be mainly using the computing and programming environment R (via RStudio) to analyze data in this class. We will also ask you to use a command line interface to interact with your operating system. You do need your own computer to use R and do the assignments. No need to install these ahead of time; we’ll guide you through how to get set up.\nAbout half of the students in 133 have some coding experience in Python or R and about half do not. For those who come from Data 8 or some previous coding experience in python, the first labs will help you transfer that knowledge over to R. Both languages are excellent platforms for analyzing data, are widely used in data science, and have their individual strengths. R has been developed within the statistics community specifically for data analysis, while python is a general-purpose programming language but has large data analysis capabilities.\n\n\nSupplementary texts\nYour primary reference throughout the course will be the notes that you take in class but there are also several terrific books that are free and online that can expand your knowledge.\n\nAdvanced R, Hadley Wickham\nR for Data Science, Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nR packages, Hadley Wickham and Jenny Bryan\n\n\n\n\nCourse communication\n\nbCourses\nWe don’t use bCourses for much. It is primarily used to disseminate important announcements for the entire class such as the initial welcome announcement, final exam information etc.\n\n\nDiscussion forum\nThe official discussion forum for the class will be hosted on Ed. Ed is a forum to ask and answer questions with your fellow students and course staff. It’s a useful resource for learning from your peers and seeking help from tutors and instructors.\nIf you have a question about the material or assignments (or anything related to the course), create a new post to ask your question on Ed. If it is about something personal, then mark it as “private”, and only course staff will be able to see your post. This is the best way to contact us if you have a personal concern, as it ensures the fastest response. If your question does not include personal information and can be answered by other students, make sure it is public.\nIn a course this large, the instructors have a difficult time responding to individual emails, so please use the class forum or visit office hours if you wish to contact us.\n\n\n\nAssignments, Exams, and Grading\n\nTurning-in assignments\nYou will be turning in your assignments on a platform called Pensieve, the younger sibling of Gradescope. This is also the platform where your assignments will be graded, so you can return there to get feedback on your work. You are welcome to file a regrade request if you notice that we made an error in applying the rubric to your work. Note that regrade requests will need to be submitted by a deadline, which will usually be about a week the grades are released.\n\n\nProblem Sets\nProblem sets provide you with essential practice on the ideas and techniques discussed in class. They are generally due each week and are graded credit / no credit.\n\n\nProjects\nProjects are open-ended assignments assignments designed to apply the concepts from the lecture notes in the cause of doing an analysis of real data. This will involve both writing code and communicating your thoughts and findings in English. We’ll be working through some problems from the projects in lab section, but you will be spending time on them outside of class time.\nProjects are also graded credit / no credit.\n\n\nQuizzes\nPaper-and-pencil quizzes reinforce the most important concepts from the lecture and provide you the opportunity to work through misunderstandings of concepts with peers and the instructor. They cover the material from lecture, problem sets, and projects up until the time of the quiz.\nThere is both an individual and group component to each quiz.\nThe individual component will last about 40 minutes. You are allowed one, A4, one-sided handwritten sheet of notes with your name in the upper right-hand corner. The group component will take place immediately after the individual component has been completed and will last about 25 minutes. Your final (composite) quiz grade will be the average of your group and individual quiz scores.\nThis group quiz system almost always results in higher grades. We’ll do a check at the end of the semester to calculate your quiz grade using just your individual quizzes. In the unlikely event that your individual grade average is higher, we’ll use that grade.\n\n\nExam\nThe paper-and-pencil final exam will be held in person during finals week. It is a comprehensive exam and covers the material from the lecture, problem sets, and projects.\nThe time and date is Wednesday December 17th, 7 - 10 pm.\n\n\nGrading\nYour final grade in this class is, to the best of our ability, a measure of your understanding of the concepts of computing with data. As such, the lions share of your grade comes from measures of your individual understanding: quizzes and the final.\nThe best way to prepare for these assessments is to earnestly engage with the problem sets and proejects. Their role in the course is practice and they’ll be your single most effective way to learn. We just want to see that you are indeed engaging in practice, so the problem sets and projects are both graded credit / no credit, with full credit given for evidence of earnest engagement.\n\nProblem Sets: 5%\nProjects: 15%\nQuizzes: 50%\nFinal: 30%\n\nThe grades will not be curved (&gt; 90% is some kind of A, 80-90 is some kind of B, etc.), so there is no limit to the number of As and Bs that are earned.\nIn order to provide flexibility around emergencies that might arise for you throughout the semester we will drop everyone’s lowest quiz grade before calculating your quiz average at the end of the semester.\n\n\n\nPolicies\n\nLate Work\nRigorously completing the problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don’t just submit a blank page).\n\n\nCollaboration policy\nOn problem sets and projects, we strongly encourage collaboration between students. One of the best ways to learn is to talk things through with someone else. At the same time, these are your best opportunity to practice and learn, so be cautious not to lean to heavily on the understanding of a peer when working through your assignments.\n\n\nAI policy\nPlease be thoughtful when using AI tools for your schoolwork. Doing so on problem sets and projects robs you of a valuable opportunity to learn and undermines your performance on exams. At the same time, they can be helpful in providing feedback on your writing.\nAt the end of the course, we’ll bring in AI tools for coding and learn how to use them. They’re very powerful, but you need firm mental models of the way code works before you’re able to use them well. For that reason, we suggest you refrain from using them until they’re introduced in class.\n\n\nAccomodations for students with disabilities\nStat 133 is a course that is designed to allow all students to succeed. If you have letters of accommodation from the Disabled Students’ Program, please share them with your instructor as soon as possible, and we will work out the necessary arrangements.\n\n\nStaying healthy\nMaintaining your health and that of the Berkeley community is of primary importance, so if you are feeling ill or have been exposed to illness, whether it’s COVID-19 or something else, please do not come to class. You’re encouraged to reach out to fellow students to discuss the class materials or stop by group tutoring or office hours to chat with a tutor or the instructor.\n\n\n\nFrequently Asked Questions\n\nWhat should I do if I’m on the waitlist?\nAttend both lecture and lab and submit all assignments on time. Unfortunately we cannot grow the size of the class any more, so places will become available only when students drop. If you have an urgent need for the course, visit the drop in advising sessions in our department: https://statistics.berkeley.edu/academics/undergrad/advising.\nAre class sessions recorded?\nNo.\nIs attendance required?\nNo.\nAre time conflicts allowed?\nNo.\nWhat if I join the class late?\nIf you join the class within the first two weeks, read through all of the material on the course website that you’ve missed. Also ask a neighbor in lecture if you can borrow their notes. Finally, visit the Group Tutoring to discuss any topics you’ve missed. If you’ve missed any assignments in the first two weeks, request an extension from your GSI.\nAfter two weeks into the semester, you’ll have too much material that you’ll need to make up, so you will have to wait to a subsequent semester to take the course.\n\n\n\nCampus Resources\nUC Berkeley has a vast wealth of resources to help with all aspects of student life. You can read about them at the links below.\n\nBerkeley Supportal- great place to start\nDisabled Students’ Program\nUniversity Health Services\nUCB Path to Care\nStudent Learning Center\nBerkeley International Office\nOmbuds Office for Students and Postdoctoral Appointees\nGender Equity Resource Center\nCenter for Educational Justice & Community Engagement\nUHS Counseling and Psychological Services (CAPS)\nCampus Academic Accommodations Hub\nASUC Student Advocate’s Office\nBasic Needs Center\nASUC Mental Health Resources Guide",
-    "crumbs": [
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#welcome-to-stat-133-lab",
-    "href": "1lab-data-in-trees/slides.html#welcome-to-stat-133-lab",
-    "title": "Data in Trees",
-    "section": "Welcome to Stat 133 Lab",
-    "text": "Welcome to Stat 133 Lab\nAs you come in, please drop your index card from lecture on the front desk or fill out a new card using the same prompt:\n\nOn one side of your card write answers to the following questions (borrow a pen from a neighbor if needed):\n\nWhat is your lab number? (integer)\nHow many years have you been at Cal? (integer)\nAre you a Statistics major? (true / false)\n\nOn the other side of the card write answers to the following questions:\n\nWhat was your “song of the summer”? (character string)\nWhat is the farthest that you were from Cal this summer in miles? (numeric)\n\n\n\nGather all of the index cards that you have from students in your section for the Data as Trees activity. If you are missing a few cards, no worries."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#syllabus",
-    "href": "1lab-data-in-trees/slides.html#syllabus",
-    "title": "Data in Trees",
-    "section": "Syllabus",
-    "text": "Syllabus\n\n  \n    −\n    +\n \n 05:00\n \nPlease take 5 minutes to read the syllabus and jot down at least two questions that you have.\n\n\nPass out printed copies of the syllabus and have students read it silently for ~ 5 min.\nAfterwards ask for questions. Do your best to answer them. If you’re not sure of the answer, sign-in to Ed and demonstrate how to make a new post to ask a question. Then, while still projecting, ask that student to open their laptop and make that post. You should see it appear on your screen. You can respond with something like, “I’m not sure but I’ll find out!”.\nThe goals here are two-fold: answer logistical questions about the class and be sure people have a sense of how to ask questions on Ed."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#discussion-forum-ed",
-    "href": "1lab-data-in-trees/slides.html#discussion-forum-ed",
-    "title": "Data in Trees",
-    "section": "Discussion forum: Ed",
-    "text": "Discussion forum: Ed"
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#course-website",
-    "href": "1lab-data-in-trees/slides.html#course-website",
-    "title": "Data in Trees",
-    "section": "Course website",
-    "text": "Course website\nberkeley-stat133/fall-2025"
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#section",
-    "href": "1lab-data-in-trees/slides.html#section",
-    "title": "Data in Trees",
-    "section": "",
-    "text": "boardwork\n\nGather up the stack of index cards from your students with answers to the questions asked in lecture.\nOn the board sketch a very simple version of the Question &gt; Data Product diagram seen in lecture: Question: what were the songs of summer for Stat 133 students? Then for data, draw a box for each individual index card. Then draw a big empty “computational” box, and then ask what sort of data products could answer this question. Students may suggest different types of visualizations (e.g.) barchart ordered in descending order by popularity), summary statistics (most popular song of Stat 133 students), estimates (most popular song of Berkeley students).\nToday we’ll focus on how to store that data on a computer. Draw one box inside the bix “computational” box labelled “Storage”."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#section-1",
-    "href": "1lab-data-in-trees/slides.html#section-1",
-    "title": "Data in Trees",
-    "section": "",
-    "text": "File\n\n\nA named container that stores data – such as text, images, or programs – on a computer disk. The file name usually ends in an extension (.txt, .png) that indicates the format."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#example",
-    "href": "1lab-data-in-trees/slides.html#example",
-    "title": "Data in Trees",
-    "section": "Example",
-    "text": "Example\n\n\n\n\n\n\n\n\n\n\n127.txt\n\nGolden Klaxons\n3000?\n\n\n\nOne way to store the data on the index card is as a text file. Read more about this particular format here: https://en.wikipedia.org/wiki/Text_file\nQuestions you could ask after showing the .txt:\n\nWhere did the number 127 come from? It was an arbitrary ID.\nDoes anyone see anything that might be a challenge as we try to analysis this txt file as data? We will likely have to remove the ? to treat 3000 as a number.\nDoes anyone know this song? Probably not, because it seems to be a mix of a song and an artist … see next slide."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#section-2",
-    "href": "1lab-data-in-trees/slides.html#section-2",
-    "title": "Data in Trees",
-    "section": "",
-    "text": "I’m not sure what happened here! I can’t find a song called “Golden Klaxons”, only this one. The question for the students - how should we handle this? Should we fix it?\n(we’ll leave it for now and fix it in a later class)"
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#section-3",
-    "href": "1lab-data-in-trees/slides.html#section-3",
-    "title": "Data in Trees",
-    "section": "",
-    "text": "Directory (or folder)\n\n\nA named container that stores a set of files or other folders."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#how-should-we-organize-our-cards-into-directories",
-    "href": "1lab-data-in-trees/slides.html#how-should-we-organize-our-cards-into-directories",
-    "title": "Data in Trees",
-    "section": "How should we organize our cards into directories?",
-    "text": "How should we organize our cards into directories?\nBoardwork.\n\nLead students into thinking about the information that we have on the other side of the card: Lab #, Years at Cal, and Stats Major (yes/no).\nAs they propose one form of sorting, say by years at Cal, ask them if we can do any sorting within each directory – in this case, by Stats Major.\nWhichever sorting scheme they propose, draw it on the board as a tree with a root node (an empty circle), with lines leading to each of the top level directory (say, circles labelled “One”, “Two”, “Three”, and “Four”), and then for each, lines leading to circles of the subdirectories (“S” for stats major, “NS” for non-stats major, say), then with lines leading to the files. For those, tape the index cards in the appropriate place."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#how-can-we-specify-the-location-of-a-filedirectory-in-the-tree",
-    "href": "1lab-data-in-trees/slides.html#how-can-we-specify-the-location-of-a-filedirectory-in-the-tree",
-    "title": "Data in Trees",
-    "section": "How can we specify the location of a file/directory in the tree?",
-    "text": "How can we specify the location of a file/directory in the tree?\n\n\nPath\n\n\nA description of a file or directory’s location in the file system, written as a sequence of folder names that leads to it, separated by /.1\nAbsolute path: Starts from the root of the file system, indicated by /. Example: /Documents/Schoolwork/HW1.pdf\n\n\n\nWhat absolute paths are found in our tree?\n\nReturn to the board and circle a file or two and ask for someone to provide you the absolute path. Write it on the board (be sure to start with /). Repeat by asking the path to a directory. Circle that directory and write the path next to it (it will start with a / and end with the name of that directory).\n\n\n\\ is used on older Windows computers but newer versions recognize the more standard /."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#section-4",
-    "href": "1lab-data-in-trees/slides.html#section-4",
-    "title": "Data in Trees",
-    "section": "",
-    "text": "Path\n\n\nA description of a file or directory’s location in the file system, written as a sequence of folder names that leads to it, separated by /.\nAbsolute path: Starts from the root of the file system, indicated by /. Example: /Documents/Schoolwork/HW1.pdf\nRelative path: Starts from the current directory and shows how to reach a target. .. means “go up one level”. Example if you’re in Documents, Schoolwork/HW1.pdf\n\n\n\nWhat relative paths are found in our tree?\n\nOn the board pick at least two relative paths for them to give you, one that goes from a directory to a file in a subdirectory, and another that requires going “up one level” to a file in a differet directory at the same level. You can indiated the “start” and “end” of the relative path using, say a square and a triangle."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#unix-commands",
-    "href": "1lab-data-in-trees/slides.html#unix-commands",
-    "title": "Data in Trees",
-    "section": "UNIX1 Commands",
-    "text": "UNIX1 Commands\n\n\npwd\n\n\nReturns your present working directory.\n\n\n\n\nls\n\n\nLists the contents of your present working directory.\n\n\nUNIX is a family of operating systems that includes Linux and MacOS. Most of the commands work on windows too."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#section-5",
-    "href": "1lab-data-in-trees/slides.html#section-5",
-    "title": "Data in Trees",
-    "section": "",
-    "text": "cd\n\n\nChanges your directory to the path provided (after a space). Examples:\n\ncd Homework: (relative) only takes you into the Homework directory if you’re in Documents.\ncd /Document/Homework: (absolute) takes you into the Homework directory regardless of your pwd.\n\n\n\n\n\ncat\n\n\nPrints to the screen the contents of the file at the path provided. Example: cat 127.txt.\n\n\n\nReturn to DataHub and show them examples of each of the commands. At some point (either now or when reviewing answers to the practice problems), you can show them the tree command."
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#datahub",
-    "href": "1lab-data-in-trees/slides.html#datahub",
-    "title": "Data in Trees",
-    "section": "DataHub",
-    "text": "DataHub\nWe will practice on a sample of our index cards on a cloud-hosted machine that has a directory containing sample of our index card files.\nLogin Here:\nhttps://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fberkeley-stat133%2Fdata-in-trees&urlpath=tree%2Fdata-in-trees%2F&branch=master"
-  },
-  {
-    "objectID": "1lab-data-in-trees/slides.html#practice",
-    "href": "1lab-data-in-trees/slides.html#practice",
-    "title": "Data in Trees",
-    "section": "Practice",
-    "text": "Practice\n\n  \n    −\n    +\n \n 10:00"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#meet-the-palmer-penguins",
-    "href": "15-grammar-of-graphics/slides.html#meet-the-palmer-penguins",
-    "title": "The Grammar of Graphics",
-    "section": "Meet the Palmer Penguins ",
-    "text": "Meet the Palmer Penguins \n\nlibrary(palmerpenguins)\npenguins\n\n\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#section",
-    "href": "15-grammar-of-graphics/slides.html#section",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "Question: In terms of the way they are constructed…\n\nWhat do these plots have in common? How do they differ?\n\n  \n    −\n    +\n \n 01:20"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#section-1",
-    "href": "15-grammar-of-graphics/slides.html#section-1",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "Question: What do these plots have in common? How do they differ?\n\n\n  \n    −\n    +\n \n 01:20"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#the-grammar-of-graphics-1",
-    "href": "15-grammar-of-graphics/slides.html#the-grammar-of-graphics-1",
-    "title": "The Grammar of Graphics",
-    "section": "“The Grammar of Graphics”",
-    "text": "“The Grammar of Graphics”\nLeland Wilkinson (1999)\n\n\n\nA grammar to describes all statistical graphics.\nUnderlies most modern data visualization software."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#aesthetic-mapping",
-    "href": "15-grammar-of-graphics/slides.html#aesthetic-mapping",
-    "title": "The Grammar of Graphics",
-    "section": "Aesthetic Mapping",
-    "text": "Aesthetic Mapping\n\nAn aesthetic mapping links a variable in the data to a visual channel that can encode its variation.\n\n\nChannels for ordered variables\n\n\n\n\nFrom “Data Visualization” by Kieran Healy."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#aesthetic-mapping-1",
-    "href": "15-grammar-of-graphics/slides.html#aesthetic-mapping-1",
-    "title": "The Grammar of Graphics",
-    "section": "Aesthetic Mapping",
-    "text": "Aesthetic Mapping\nAn aesthetic mapping links a variable in the data to a visual channel that can encode its variation.\nChannels for unordered variables\n\n\n\n\n\n\n\nFrom “Data Visualization” by Kieran Healy."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#geometry",
-    "href": "15-grammar-of-graphics/slides.html#geometry",
-    "title": "The Grammar of Graphics",
-    "section": "Geometry",
-    "text": "Geometry\nThe geometry describes how to translate the observations into marks on the page.\n\nExamples\n\nPoint\nLine\nBar"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#named-plots",
-    "href": "15-grammar-of-graphics/slides.html#named-plots",
-    "title": "The Grammar of Graphics",
-    "section": "Named plots",
-    "text": "Named plots\n\nDraw “Scatterplot” and “barchart” along with their description in the g of g."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#redux-1",
-    "href": "15-grammar-of-graphics/slides.html#redux-1",
-    "title": "The Grammar of Graphics",
-    "section": "Redux 1",
-    "text": "Redux 1"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#redux-1-1",
-    "href": "15-grammar-of-graphics/slides.html#redux-1-1",
-    "title": "The Grammar of Graphics",
-    "section": "Redux 1",
-    "text": "Redux 1"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#section-2",
-    "href": "15-grammar-of-graphics/slides.html#section-2",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "Question: What are the aesthetic mappings and geometries used here?\n\n\n  \n    −\n    +\n \n 01:30"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#ggplot2-1",
-    "href": "15-grammar-of-graphics/slides.html#ggplot2-1",
-    "title": "The Grammar of Graphics",
-    "section": "ggplot2()",
-    "text": "ggplot2()\n\nA plot can be decomposed into three primary elements:\n\nthe data,\nthe aesthetic mapping of the variables in the data to visual channels, and\nthe geometry used to translate the observations into marks on the plot."
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#section-6",
-    "href": "15-grammar-of-graphics/slides.html#section-6",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "penguins |&gt;\n  select(bill_length_mm,\n         flipper_length_mm,\n         species)\n\n\n\n# A tibble: 344 × 3\n   bill_length_mm flipper_length_mm species\n            &lt;dbl&gt;             &lt;int&gt; &lt;fct&gt;  \n 1           39.1               181 Adelie \n 2           39.5               186 Adelie \n 3           40.3               195 Adelie \n 4           NA                  NA Adelie \n 5           36.7               193 Adelie \n 6           39.3               190 Adelie \n 7           38.9               181 Adelie \n 8           39.2               195 Adelie \n 9           34.1               193 Adelie \n10           42                 190 Adelie \n# ℹ 334 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDraw arrows mapping variables to visual cues"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#section-7",
-    "href": "15-grammar-of-graphics/slides.html#section-7",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "penguins |&gt;\n  ggplot(aes(x = bill_length_mm,\n             y = flipper_length_mm,\n             color = species)) +\n  geom_point()"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#ggplot2-syntax",
-    "href": "15-grammar-of-graphics/slides.html#ggplot2-syntax",
-    "title": "The Grammar of Graphics",
-    "section": "ggplot2() syntax",
-    "text": "ggplot2() syntax\n\nggplot2() builds a plot layer by layer, each one added on top of one another with + (not |&gt;).\n\n\n\nggplot(df) creates canvas\naes() creates mappings, called inside ggplot() or a geom()\ngeom_() puts down marks using declared geometry"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#layer-by-layer",
-    "href": "15-grammar-of-graphics/slides.html#layer-by-layer",
-    "title": "The Grammar of Graphics",
-    "section": "Layer by layer",
-    "text": "Layer by layer\n\npenguins |&gt;\n  ggplot(aes(x = bill_length_mm,\n             y = flipper_length_mm,\n             color = species)) +\n  geom_point() +\n  theme_gray(base_size = 18)"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#common-aes",
-    "href": "15-grammar-of-graphics/slides.html#common-aes",
-    "title": "The Grammar of Graphics",
-    "section": "Common aes()",
-    "text": "Common aes()\n\n\n\nx\ny\ncolor\nfill\n\n\n\nsize\nshape\nalpha"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#common-geom_",
-    "href": "15-grammar-of-graphics/slides.html#common-geom_",
-    "title": "The Grammar of Graphics",
-    "section": "Common geom_()",
-    "text": "Common geom_()\n\n\n\ngeom_point()\ngeom_bar() / geom_col()\ngeom_line()\n\n\n\ngeom_histogram()\ngeom_boxplot()\ngeom_violin()\ngeom_density()"
-  },
-  {
-    "objectID": "15-grammar-of-graphics/slides.html#mapping-vs-setting",
-    "href": "15-grammar-of-graphics/slides.html#mapping-vs-setting",
-    "title": "The Grammar of Graphics",
-    "section": "Mapping vs Setting",
-    "text": "Mapping vs Setting\ndemo"
   },
   {
     "objectID": "16-eda/slides.html#agenda",
@@ -1586,6 +1317,282 @@
     "title": "EDA",
     "section": "Setting Aesthetics",
     "text": "Setting Aesthetics"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#meet-the-palmer-penguins",
+    "href": "15-grammar-of-graphics/slides.html#meet-the-palmer-penguins",
+    "title": "The Grammar of Graphics",
+    "section": "Meet the Palmer Penguins ",
+    "text": "Meet the Palmer Penguins \n\nlibrary(palmerpenguins)\npenguins\n\n\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#section",
+    "href": "15-grammar-of-graphics/slides.html#section",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "Question: In terms of the way they are constructed…\n\nWhat do these plots have in common? How do they differ?\n\n  \n    −\n    +\n \n 01:20"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#section-1",
+    "href": "15-grammar-of-graphics/slides.html#section-1",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "Question: What do these plots have in common? How do they differ?\n\n\n  \n    −\n    +\n \n 01:20"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#the-grammar-of-graphics-1",
+    "href": "15-grammar-of-graphics/slides.html#the-grammar-of-graphics-1",
+    "title": "The Grammar of Graphics",
+    "section": "“The Grammar of Graphics”",
+    "text": "“The Grammar of Graphics”\nLeland Wilkinson (1999)\n\n\n\nA grammar to describes all statistical graphics.\nUnderlies most modern data visualization software."
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#aesthetic-mapping",
+    "href": "15-grammar-of-graphics/slides.html#aesthetic-mapping",
+    "title": "The Grammar of Graphics",
+    "section": "Aesthetic Mapping",
+    "text": "Aesthetic Mapping\n\nAn aesthetic mapping links a variable in the data to a visual channel that can encode its variation.\n\n\nChannels for ordered variables\n\n\n\n\nFrom “Data Visualization” by Kieran Healy."
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#aesthetic-mapping-1",
+    "href": "15-grammar-of-graphics/slides.html#aesthetic-mapping-1",
+    "title": "The Grammar of Graphics",
+    "section": "Aesthetic Mapping",
+    "text": "Aesthetic Mapping\nAn aesthetic mapping links a variable in the data to a visual channel that can encode its variation.\nChannels for unordered variables\n\n\n\n\n\n\n\nFrom “Data Visualization” by Kieran Healy."
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#geometry",
+    "href": "15-grammar-of-graphics/slides.html#geometry",
+    "title": "The Grammar of Graphics",
+    "section": "Geometry",
+    "text": "Geometry\nThe geometry describes how to translate the observations into marks on the page.\n\nExamples\n\nPoint\nLine\nBar"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#named-plots",
+    "href": "15-grammar-of-graphics/slides.html#named-plots",
+    "title": "The Grammar of Graphics",
+    "section": "Named plots",
+    "text": "Named plots\n\nDraw “Scatterplot” and “barchart” along with their description in the g of g."
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#redux-1",
+    "href": "15-grammar-of-graphics/slides.html#redux-1",
+    "title": "The Grammar of Graphics",
+    "section": "Redux 1",
+    "text": "Redux 1"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#redux-1-1",
+    "href": "15-grammar-of-graphics/slides.html#redux-1-1",
+    "title": "The Grammar of Graphics",
+    "section": "Redux 1",
+    "text": "Redux 1"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#section-2",
+    "href": "15-grammar-of-graphics/slides.html#section-2",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "Question: What are the aesthetic mappings and geometries used here?\n\n\n  \n    −\n    +\n \n 01:30"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#ggplot2-1",
+    "href": "15-grammar-of-graphics/slides.html#ggplot2-1",
+    "title": "The Grammar of Graphics",
+    "section": "ggplot2()",
+    "text": "ggplot2()\n\nA plot can be decomposed into three primary elements:\n\nthe data,\nthe aesthetic mapping of the variables in the data to visual channels, and\nthe geometry used to translate the observations into marks on the plot."
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#section-6",
+    "href": "15-grammar-of-graphics/slides.html#section-6",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "penguins |&gt;\n  select(bill_length_mm,\n         flipper_length_mm,\n         species)\n\n\n\n# A tibble: 344 × 3\n   bill_length_mm flipper_length_mm species\n            &lt;dbl&gt;             &lt;int&gt; &lt;fct&gt;  \n 1           39.1               181 Adelie \n 2           39.5               186 Adelie \n 3           40.3               195 Adelie \n 4           NA                  NA Adelie \n 5           36.7               193 Adelie \n 6           39.3               190 Adelie \n 7           38.9               181 Adelie \n 8           39.2               195 Adelie \n 9           34.1               193 Adelie \n10           42                 190 Adelie \n# ℹ 334 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDraw arrows mapping variables to visual cues"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#section-7",
+    "href": "15-grammar-of-graphics/slides.html#section-7",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "penguins |&gt;\n  ggplot(aes(x = bill_length_mm,\n             y = flipper_length_mm,\n             color = species)) +\n  geom_point()"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#ggplot2-syntax",
+    "href": "15-grammar-of-graphics/slides.html#ggplot2-syntax",
+    "title": "The Grammar of Graphics",
+    "section": "ggplot2() syntax",
+    "text": "ggplot2() syntax\n\nggplot2() builds a plot layer by layer, each one added on top of one another with + (not |&gt;).\n\n\n\nggplot(df) creates canvas\naes() creates mappings, called inside ggplot() or a geom()\ngeom_() puts down marks using declared geometry"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#layer-by-layer",
+    "href": "15-grammar-of-graphics/slides.html#layer-by-layer",
+    "title": "The Grammar of Graphics",
+    "section": "Layer by layer",
+    "text": "Layer by layer\n\npenguins |&gt;\n  ggplot(aes(x = bill_length_mm,\n             y = flipper_length_mm,\n             color = species)) +\n  geom_point() +\n  theme_gray(base_size = 18)"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#common-aes",
+    "href": "15-grammar-of-graphics/slides.html#common-aes",
+    "title": "The Grammar of Graphics",
+    "section": "Common aes()",
+    "text": "Common aes()\n\n\n\nx\ny\ncolor\nfill\n\n\n\nsize\nshape\nalpha"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#common-geom_",
+    "href": "15-grammar-of-graphics/slides.html#common-geom_",
+    "title": "The Grammar of Graphics",
+    "section": "Common geom_()",
+    "text": "Common geom_()\n\n\n\ngeom_point()\ngeom_bar() / geom_col()\ngeom_line()\n\n\n\ngeom_histogram()\ngeom_boxplot()\ngeom_violin()\ngeom_density()"
+  },
+  {
+    "objectID": "15-grammar-of-graphics/slides.html#mapping-vs-setting",
+    "href": "15-grammar-of-graphics/slides.html#mapping-vs-setting",
+    "title": "The Grammar of Graphics",
+    "section": "Mapping vs Setting",
+    "text": "Mapping vs Setting\ndemo"
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#welcome-to-stat-133-lab",
+    "href": "1lab-data-in-trees/slides.html#welcome-to-stat-133-lab",
+    "title": "Data in Trees",
+    "section": "Welcome to Stat 133 Lab",
+    "text": "Welcome to Stat 133 Lab\nAs you come in, please drop your index card from lecture on the front desk or fill out a new card using the same prompt:\n\nOn one side of your card write answers to the following questions (borrow a pen from a neighbor if needed):\n\nWhat is your lab number? (integer)\nHow many years have you been at Cal? (integer)\nAre you a Statistics major? (true / false)\n\nOn the other side of the card write answers to the following questions:\n\nWhat was your “song of the summer”? (character string)\nWhat is the farthest that you were from Cal this summer in miles? (numeric)\n\n\n\nGather all of the index cards that you have from students in your section for the Data as Trees activity. If you are missing a few cards, no worries."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#syllabus",
+    "href": "1lab-data-in-trees/slides.html#syllabus",
+    "title": "Data in Trees",
+    "section": "Syllabus",
+    "text": "Syllabus\n\n  \n    −\n    +\n \n 05:00\n \nPlease take 5 minutes to read the syllabus and jot down at least two questions that you have.\n\n\nPass out printed copies of the syllabus and have students read it silently for ~ 5 min.\nAfterwards ask for questions. Do your best to answer them. If you’re not sure of the answer, sign-in to Ed and demonstrate how to make a new post to ask a question. Then, while still projecting, ask that student to open their laptop and make that post. You should see it appear on your screen. You can respond with something like, “I’m not sure but I’ll find out!”.\nThe goals here are two-fold: answer logistical questions about the class and be sure people have a sense of how to ask questions on Ed."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#discussion-forum-ed",
+    "href": "1lab-data-in-trees/slides.html#discussion-forum-ed",
+    "title": "Data in Trees",
+    "section": "Discussion forum: Ed",
+    "text": "Discussion forum: Ed"
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#course-website",
+    "href": "1lab-data-in-trees/slides.html#course-website",
+    "title": "Data in Trees",
+    "section": "Course website",
+    "text": "Course website\nberkeley-stat133/fall-2025"
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#section",
+    "href": "1lab-data-in-trees/slides.html#section",
+    "title": "Data in Trees",
+    "section": "",
+    "text": "boardwork\n\nGather up the stack of index cards from your students with answers to the questions asked in lecture.\nOn the board sketch a very simple version of the Question &gt; Data Product diagram seen in lecture: Question: what were the songs of summer for Stat 133 students? Then for data, draw a box for each individual index card. Then draw a big empty “computational” box, and then ask what sort of data products could answer this question. Students may suggest different types of visualizations (e.g.) barchart ordered in descending order by popularity), summary statistics (most popular song of Stat 133 students), estimates (most popular song of Berkeley students).\nToday we’ll focus on how to store that data on a computer. Draw one box inside the bix “computational” box labelled “Storage”."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#section-1",
+    "href": "1lab-data-in-trees/slides.html#section-1",
+    "title": "Data in Trees",
+    "section": "",
+    "text": "File\n\n\nA named container that stores data – such as text, images, or programs – on a computer disk. The file name usually ends in an extension (.txt, .png) that indicates the format."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#example",
+    "href": "1lab-data-in-trees/slides.html#example",
+    "title": "Data in Trees",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\n\n\n\n127.txt\n\nGolden Klaxons\n3000?\n\n\n\nOne way to store the data on the index card is as a text file. Read more about this particular format here: https://en.wikipedia.org/wiki/Text_file\nQuestions you could ask after showing the .txt:\n\nWhere did the number 127 come from? It was an arbitrary ID.\nDoes anyone see anything that might be a challenge as we try to analysis this txt file as data? We will likely have to remove the ? to treat 3000 as a number.\nDoes anyone know this song? Probably not, because it seems to be a mix of a song and an artist … see next slide."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#section-2",
+    "href": "1lab-data-in-trees/slides.html#section-2",
+    "title": "Data in Trees",
+    "section": "",
+    "text": "I’m not sure what happened here! I can’t find a song called “Golden Klaxons”, only this one. The question for the students - how should we handle this? Should we fix it?\n(we’ll leave it for now and fix it in a later class)"
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#section-3",
+    "href": "1lab-data-in-trees/slides.html#section-3",
+    "title": "Data in Trees",
+    "section": "",
+    "text": "Directory (or folder)\n\n\nA named container that stores a set of files or other folders."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#how-should-we-organize-our-cards-into-directories",
+    "href": "1lab-data-in-trees/slides.html#how-should-we-organize-our-cards-into-directories",
+    "title": "Data in Trees",
+    "section": "How should we organize our cards into directories?",
+    "text": "How should we organize our cards into directories?\nBoardwork.\n\nLead students into thinking about the information that we have on the other side of the card: Lab #, Years at Cal, and Stats Major (yes/no).\nAs they propose one form of sorting, say by years at Cal, ask them if we can do any sorting within each directory – in this case, by Stats Major.\nWhichever sorting scheme they propose, draw it on the board as a tree with a root node (an empty circle), with lines leading to each of the top level directory (say, circles labelled “One”, “Two”, “Three”, and “Four”), and then for each, lines leading to circles of the subdirectories (“S” for stats major, “NS” for non-stats major, say), then with lines leading to the files. For those, tape the index cards in the appropriate place."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#how-can-we-specify-the-location-of-a-filedirectory-in-the-tree",
+    "href": "1lab-data-in-trees/slides.html#how-can-we-specify-the-location-of-a-filedirectory-in-the-tree",
+    "title": "Data in Trees",
+    "section": "How can we specify the location of a file/directory in the tree?",
+    "text": "How can we specify the location of a file/directory in the tree?\n\n\nPath\n\n\nA description of a file or directory’s location in the file system, written as a sequence of folder names that leads to it, separated by /.1\nAbsolute path: Starts from the root of the file system, indicated by /. Example: /Documents/Schoolwork/HW1.pdf\n\n\n\nWhat absolute paths are found in our tree?\n\nReturn to the board and circle a file or two and ask for someone to provide you the absolute path. Write it on the board (be sure to start with /). Repeat by asking the path to a directory. Circle that directory and write the path next to it (it will start with a / and end with the name of that directory).\n\n\n\\ is used on older Windows computers but newer versions recognize the more standard /."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#section-4",
+    "href": "1lab-data-in-trees/slides.html#section-4",
+    "title": "Data in Trees",
+    "section": "",
+    "text": "Path\n\n\nA description of a file or directory’s location in the file system, written as a sequence of folder names that leads to it, separated by /.\nAbsolute path: Starts from the root of the file system, indicated by /. Example: /Documents/Schoolwork/HW1.pdf\nRelative path: Starts from the current directory and shows how to reach a target. .. means “go up one level”. Example if you’re in Documents, Schoolwork/HW1.pdf\n\n\n\nWhat relative paths are found in our tree?\n\nOn the board pick at least two relative paths for them to give you, one that goes from a directory to a file in a subdirectory, and another that requires going “up one level” to a file in a differet directory at the same level. You can indiated the “start” and “end” of the relative path using, say a square and a triangle."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#unix-commands",
+    "href": "1lab-data-in-trees/slides.html#unix-commands",
+    "title": "Data in Trees",
+    "section": "UNIX1 Commands",
+    "text": "UNIX1 Commands\n\n\npwd\n\n\nReturns your present working directory.\n\n\n\n\nls\n\n\nLists the contents of your present working directory.\n\n\nUNIX is a family of operating systems that includes Linux and MacOS. Most of the commands work on windows too."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#section-5",
+    "href": "1lab-data-in-trees/slides.html#section-5",
+    "title": "Data in Trees",
+    "section": "",
+    "text": "cd\n\n\nChanges your directory to the path provided (after a space). Examples:\n\ncd Homework: (relative) only takes you into the Homework directory if you’re in Documents.\ncd /Document/Homework: (absolute) takes you into the Homework directory regardless of your pwd.\n\n\n\n\n\ncat\n\n\nPrints to the screen the contents of the file at the path provided. Example: cat 127.txt.\n\n\n\nReturn to DataHub and show them examples of each of the commands. At some point (either now or when reviewing answers to the practice problems), you can show them the tree command."
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#datahub",
+    "href": "1lab-data-in-trees/slides.html#datahub",
+    "title": "Data in Trees",
+    "section": "DataHub",
+    "text": "DataHub\nWe will practice on a sample of our index cards on a cloud-hosted machine that has a directory containing sample of our index card files.\nLogin Here:\nhttps://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fberkeley-stat133%2Fdata-in-trees&urlpath=tree%2Fdata-in-trees%2F&branch=master"
+  },
+  {
+    "objectID": "1lab-data-in-trees/slides.html#practice",
+    "href": "1lab-data-in-trees/slides.html#practice",
+    "title": "Data in Trees",
+    "section": "Practice",
+    "text": "Practice\n\n  \n    −\n    +\n \n 10:00"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "An introduction to computationally intensive applied statistics. Topics will include organization storage of data, visualization and graphics, statistical learning and data mining, model validation procedures, and the presentation of results. This course uses R as its primary computing language.\n\n\nClass Format\nThis is an in-person class with three lectures each week and one two-hour lab led by a GSI. This class is designed assuming you’ll be in class. If you miss class, you’ll be able to find most materials from class - slides, snippets of code - published on the course wesite.\n\nGroup tutoring\nTutors will offer group tutoring sessions several times each week. This is an opportunity to finish up any assignments that you’ve started in class or review any topics that are confusing for you. You’re welcome to attend any session that works well for your schedule. Check the Office Hours page to see the group tutoring schedule.\nGroup tutoring is a great place to go to meet other students and collaborate on assignments with tutors on hand to help you get unstuck.\n\n\nOffice Hours\nOffice hours are an opportunity to chat one-on-one with your instructor and GSIs. Please come to office hours! Coming to office hours does not send a signal that you are behind or need extra help. On the contrary, coming to office hours early and often tends to co-occur with success in the course. We’re happy to chat about the course material, statistics in general, careers in statistics, and whatever other statistics or data science topics are on your mind! Please check the Office Hours page to see the times of the various office hour/group tutoring sessions.\n\n\n\nMaterials\n\nComputational tools\nEach student will need a laptop in order to engage with the computing aspects of this class. Throughout the semester you’ll be installing several different software tools, all of which are free. We will be mainly using the computing and programming environment R (via RStudio) to analyze data in this class. We will also ask you to use a command line interface to interact with your operating system. You do need your own computer to use R and do the assignments. No need to install these ahead of time; we’ll guide you through how to get set up.\nAbout half of the students in 133 have some coding experience in Python or R and about half do not. For those who come from Data 8 or some previous coding experience in python, the first labs will help you transfer that knowledge over to R. Both languages are excellent platforms for analyzing data, are widely used in data science, and have their individual strengths. R has been developed within the statistics community specifically for data analysis, while python is a general-purpose programming language but has large data analysis capabilities.\n\n\nSupplementary texts\nYour primary reference throughout the course will be the notes that you take in class but there are also several terrific books that are free and online that can expand your knowledge.\n\nAdvanced R, Hadley Wickham\nR for Data Science, Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nR packages, Hadley Wickham and Jenny Bryan\n\n\n\n\nCourse communication\n\nbCourses\nWe don’t use bCourses for much. It is primarily used to disseminate important announcements for the entire class such as the initial welcome announcement, final exam information etc.\n\n\nDiscussion forum\nThe official discussion forum for the class will be hosted on Ed. Ed is a forum to ask and answer questions with your fellow students and course staff. It’s a useful resource for learning from your peers and seeking help from tutors and instructors.\nIf you have a question about the material or assignments (or anything related to the course), create a new post to ask your question on Ed. If it is about something personal, then mark it as “private”, and only course staff will be able to see your post. This is the best way to contact us if you have a personal concern, as it ensures the fastest response. If your question does not include personal information and can be answered by other students, make sure it is public.\nIn a course this large, the instructors have a difficult time responding to individual emails, so please use the class forum or visit office hours if you wish to contact us.\n\n\n\nAssignments, Exams, and Grading\n\nTurning-in assignments\nYou will be turning in your assignments on a platform called Pensieve, the younger sibling of Gradescope. This is also the platform where your assignments will be graded, so you can return there to get feedback on your work. You are welcome to file a regrade request if you notice that we made an error in applying the rubric to your work. Note that regrade requests will need to be submitted by a deadline, which will usually be about a week the grades are released.\n\n\nProblem Sets\nProblem sets provide you with essential practice on the ideas and techniques discussed in class. They are generally due each week and are graded credit / no credit.\n\n\nProjects\nProjects are open-ended assignments assignments designed to apply the concepts from the lecture notes in the cause of doing an analysis of real data. This will involve both writing code and communicating your thoughts and findings in English. We’ll be working through some problems from the projects in lab section, but you will be spending time on them outside of class time.\nProjects are also graded credit / no credit.\n\n\nQuizzes\nPaper-and-pencil quizzes reinforce the most important concepts from the lecture and provide you the opportunity to work through misunderstandings of concepts with peers and the instructor. They cover the material from lecture, problem sets, and projects up until the time of the quiz.\nThere is both an individual and group component to each quiz.\nThe individual component will last about 40 minutes. You are allowed one, A4, one-sided handwritten sheet of notes with your name in the upper right-hand corner. The group component will take place immediately after the individual component has been completed and will last about 25 minutes. Your final (composite) quiz grade will be the average of your group and individual quiz scores.\nThis group quiz system almost always results in higher grades. We’ll do a check at the end of the semester to calculate your quiz grade using just your individual quizzes. In the unlikely event that your individual grade average is higher, we’ll use that grade.\n\n\nExam\nThe paper-and-pencil final exam will be held in person during finals week. It is a comprehensive exam and covers the material from the lecture, problem sets, and projects.\nThe time and date is Wednesday December 17th, 7 - 10 pm.\n\n\nGrading\nYour final grade in this class is, to the best of our ability, a measure of your understanding of the concepts of computing with data. As such, the lions share of your grade comes from measures of your individual understanding: quizzes and the final.\nThe best way to prepare for these assessments is to earnestly engage with the problem sets and proejects. Their role in the course is practice and they’ll be your single most effective way to learn. We just want to see that you are indeed engaging in practice, so the problem sets and projects are both graded credit / no credit, with full credit given for evidence of earnest engagement.\n\nProblem Sets: 5%\nProjects: 15%\nQuizzes: 50%\nFinal: 30%\n\nThe grades will not be curved (&gt; 90% is some kind of A, 80-90 is some kind of B, etc.), so there is no limit to the number of As and Bs that are earned.\nIn order to provide flexibility around emergencies that might arise for you throughout the semester we will drop everyone’s lowest quiz grade before calculating your quiz average at the end of the semester.\n\n\n\nPolicies\n\nLate Work\nRigorously completing the problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don’t just submit a blank page).\n\n\nCollaboration policy\nOn problem sets and projects, we strongly encourage collaboration between students. One of the best ways to learn is to talk things through with someone else. At the same time, these are your best opportunity to practice and learn, so be cautious not to lean to heavily on the understanding of a peer when working through your assignments.\n\n\nAI policy\nPlease be thoughtful when using AI tools for your schoolwork. Doing so on problem sets and projects robs you of a valuable opportunity to learn and undermines your performance on exams. At the same time, they can be helpful in providing feedback on your writing.\nAt the end of the course, we’ll bring in AI tools for coding and learn how to use them. They’re very powerful, but you need firm mental models of the way code works before you’re able to use them well. For that reason, we suggest you refrain from using them until they’re introduced in class.\n\n\nAccomodations for students with disabilities\nStat 133 is a course that is designed to allow all students to succeed. If you have letters of accommodation from the Disabled Students’ Program, please share them with your instructor as soon as possible, and we will work out the necessary arrangements.\n\n\nStaying healthy\nMaintaining your health and that of the Berkeley community is of primary importance, so if you are feeling ill or have been exposed to illness, whether it’s COVID-19 or something else, please do not come to class. You’re encouraged to reach out to fellow students to discuss the class materials or stop by group tutoring or office hours to chat with a tutor or the instructor.\n\n\n\nFrequently Asked Questions\n\nWhat should I do if I’m on the waitlist?\nAttend both lecture and lab and submit all assignments on time. Unfortunately we cannot grow the size of the class any more, so places will become available only when students drop. If you have an urgent need for the course, visit the drop in advising sessions in our department: https://statistics.berkeley.edu/academics/undergrad/advising.\nAre class sessions recorded?\nNo.\nIs attendance required?\nNo.\nAre time conflicts allowed?\nNo.\nWhat if I join the class late?\nIf you join the class within the first two weeks, read through all of the material on the course website that you’ve missed. Also ask a neighbor in lecture if you can borrow their notes. Finally, visit the Group Tutoring to discuss any topics you’ve missed. If you’ve missed any assignments in the first two weeks, request an extension from your GSI.\nAfter two weeks into the semester, you’ll have too much material that you’ll need to make up, so you will have to wait to a subsequent semester to take the course.\n\n\n\nCampus Resources\nUC Berkeley has a vast wealth of resources to help with all aspects of student life. You can read about them at the links below.\n\nBerkeley Supportal- great place to start\nDisabled Students’ Program\nUniversity Health Services\nUCB Path to Care\nStudent Learning Center\nBerkeley International Office\nOmbuds Office for Students and Postdoctoral Appointees\nGender Equity Resource Center\nCenter for Educational Justice & Community Engagement\nUHS Counseling and Psychological Services (CAPS)\nCampus Academic Accommodations Hub\nASUC Student Advocate’s Office\nBasic Needs Center\nASUC Mental Health Resources Guide",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "15-grammar-of-graphics/ps.html",
+    "href": "15-grammar-of-graphics/ps.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "Each of the following questions should be answered using the storms data set built into dplyr. Provide the code to construct each of the following plots and make a sketch of the resulting plot. No need to enumerate all of the detail of the data in the plot but focus on the general shape and be sure to be clear what all axes and legends are (i.e. what the aesthetic mappings are).\n\nPlot the distribution of the wind speed three ways: as a histogram, a box plot, and a density curve.\n\n\n\n\n\n\n\n\n\n\n\n\nA bar chart showing the distribution of storm status found across all records in the data set.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA bar chart showing the distribution of storm status of when considering just one record for each named storm1.\n\n\n\n\n\n\n\n\n\n\n\n\n\nA scatterplot of the relationship between wind speed and pressure for every record in the data set.\n\n\n\n\n\n\n\n\n\n\n\nA scatterplot of the relationship between average wind speed and average pressure for each storm.\n\n\n\n\n\n\n\n\n\n\n\nA line plot of the relationship between wind speed and pressure for all of the storms in 2014. Each storm should be indicated with a different color2.\n\n\n\n\n\n\n\n\n\n\n\nCreate a line plot that shows the average duration of storms over time. That is: the x-axis should be the year and the y-axis should be average storm duration."
+  },
+  {
+    "objectID": "15-grammar-of-graphics/ps.html#footnotes",
+    "href": "15-grammar-of-graphics/ps.html#footnotes",
+    "title": "STAT 133",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThere are several ways to reduce the data frame to contain only one row for each named storm. The simplest is probably to group the data frame, then slice it and take the first record↩︎\nIf you’d like to a slightly more sophisticated version of this plot, read about geom_path(). Instead of lines, this can plot paths with an arrowhead indicating the progression of that storm.↩︎"
+  },
+  {
+    "objectID": "16-eda/ps.html",
+    "href": "16-eda/ps.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "EDA\nYour task is to understand the basic structure of a new data set from 2020 related to tuition costs at colleges and universities across the country. It is stored as a csv on github that can be read into your R session (or a Quarto document) using:\n\ntuition_cost &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-03-10/tuition_cost.csv')\n\nFor each of the following, please answer the question in full sentences and also provide the code that you used. If you generated a plot, also sketch the plot.\n\nWhat are the dimensions of the data set? What is the unit of observation? What is the nature of the variables (that they are, their units or levels, and their type)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs there any missing data? If so, where?\n\n\n\n\n\n\n\n\n\n\nWhat is the distribution of the cost of in-state tuition? Answer with summary statistics, a plot, and a written description of its shape.\n\n\n\n\n\n\n\n\n\n\nHow does the distribution of in-state tuition differ between the three types of institutions? Answer with a plot and a written description of how the distributions compare.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich are the three most expensive institutions? The three least expensive institutions?\n\n\n\n\n\n\n\n\n\n\nCreate one more visualization of at least two variables that you’re curious about. Describe the structure that you see with a written description."
   },
   {
     "objectID": "12-data-wrangling-1/slides.html#section",
@@ -2488,7 +2495,7 @@
     "href": "07-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.2724082\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.632827\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "07-control-flow/slides.html#if-then",
@@ -2537,35 +2544,35 @@
     "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.5193781  0.1520676 -1.1526745\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] 0.21247615 0.09933618 1.96828871\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "07-control-flow/slides.html#option-1",
     "href": "07-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\""
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-2",
     "href": "07-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 2 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\"\n[1] \"element 2 is positive :)\"\n[1] \"element 3 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-3",
     "href": "07-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.152067570181829 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.212476148185985 is positive :)\"\n[1] \"0.0993361839865808 is positive :)\"\n[1] \"1.96828870775113 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#ifelse",
     "href": "07-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE FALSE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is negative :(\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE FALSE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is negative :(\" \"is negative :(\""
   },
   {
     "objectID": "office-hours.html",
@@ -2827,7 +2834,7 @@
     "href": "projects/4-ev-power/slides.html#basic-example-of-syntax",
     "title": "EV Power Project",
     "section": "Basic example of syntax:",
-    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/RtmpwPPvyn/remotes5ec5eef0200/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
+    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/Rtmp9IJCfk/remotes65139fbe878/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
   },
   {
     "objectID": "projects/4-ev-power/slides.html#section",
@@ -3415,14 +3422,14 @@
     "href": "for-next-time.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section.\nConsider added a pre tidyverse lecture that’s about data IO: reading and writing different types of files.\nActually, yeah, that might be the best way to do the units here:\n\nReading and Writing Data (base + readr)\nData Wrangling (dplyr, tidyr)\n\nCol types\nMissing data\nReshaping\nNormalization\n\nEDA (ggplot2, stringr, lubridate, leaflet)\n\nStatistical summaries\nData visualization\n\nModeling ()\nSharing your work (Dashboards, APIs)"
+    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section.\nConsider added a pre tidyverse lecture that’s about data IO: reading and writing different types of files.\nActually, yeah, that might be the best way to do the units here:\n\nReading and Writing Data (base + readr)\nData Wrangling (dplyr, tidyr)\n\nCol types\nMissing data\nReshaping\nNormalization\n\nEDA (ggplot2, stringr, lubridate, leaflet)\n\nStatistical summaries\nData visualization\n\nModeling ()\nSharing your work (Dashboards, APIs)\n\nSlide classes: Definition, Your Turn, Example, Historical Note.\nStart talking bits and bytes for storing data (numbers) and the compact hexademical notation and then come back to it for the hexadecimal encoding of unicode characters."
   },
   {
     "objectID": "for-next-time.html#notes-for-next-time",
     "href": "for-next-time.html#notes-for-next-time",
     "title": "STAT 133",
     "section": "",
-    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section.\nConsider added a pre tidyverse lecture that’s about data IO: reading and writing different types of files.\nActually, yeah, that might be the best way to do the units here:\n\nReading and Writing Data (base + readr)\nData Wrangling (dplyr, tidyr)\n\nCol types\nMissing data\nReshaping\nNormalization\n\nEDA (ggplot2, stringr, lubridate, leaflet)\n\nStatistical summaries\nData visualization\n\nModeling ()\nSharing your work (Dashboards, APIs)"
+    "text": "Starting them on JupyterClassic was great, then terminal / git bash, the R command line, then R app.\nFor Lab 0, have students transcribe the index cards in lab to go through the process of data digitization.\nBe clearer about the fact that shell commands like ls, cat, mkdir, cp, mv take paths as their arguments, and those paths can be relative or absolute\nBe more deliberate about the home directory, ~, and introduce it in lecture.\nConsider using the norm of ending each path to a dir with / and also teaching what . does at the start of a path.\nBe more deliberate about introducing the R environment and how it differs from files on the file system (data structures in memory vs data files on disk).\nMove factors to end of Vectors stuff, before matrices.\nFor each project, write out the cogs of the computational machine that will need to be in place - data digitization, reshaping, text data, time / date, spatial, etc - and ensure each lab goes all the way through to the communication step. Each lab, you spiral back over some similar elements and add some new ones.\nWhen introducing matrices, introduce the notion of attributes attributes() and a class: it changes the behavior of print(), e.g., even though the matrix is a a vector.That opens the door to factors and date times.\nUnits: Filesystems and the Shell, R: Data Structures, R: as a programming language,\nHave a separate section of the website for “Tools” that contains install / walkthroughs of: shell, R, git, quarto, Positron. Push these out ahead of the first time they’re used in class so that they’re not seeing them for the first time in lab section.\nConsider added a pre tidyverse lecture that’s about data IO: reading and writing different types of files.\nActually, yeah, that might be the best way to do the units here:\n\nReading and Writing Data (base + readr)\nData Wrangling (dplyr, tidyr)\n\nCol types\nMissing data\nReshaping\nNormalization\n\nEDA (ggplot2, stringr, lubridate, leaflet)\n\nStatistical summaries\nData visualization\n\nModeling ()\nSharing your work (Dashboards, APIs)\n\nSlide classes: Definition, Your Turn, Example, Historical Note.\nStart talking bits and bytes for storing data (numbers) and the compact hexademical notation and then come back to it for the hexadecimal encoding of unicode characters."
   },
   {
     "objectID": "18-joins-pivots/slides.html#while-youre-waiting",
