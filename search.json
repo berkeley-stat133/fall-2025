@@ -903,7 +903,7 @@
     "href": "21-strings-2/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Strings II\nThese questions deal with the babynames data set inside the package of the same name. Read about the data set with ?babynames.\n\n# install.packages(\"babynames\")\nlibrary(babynames)\nbabynames\n\n# A tibble: 1,924,665 × 5\n    year sex   name          n   prop\n   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;\n 1  1880 F     Mary       7065 0.0724\n 2  1880 F     Anna       2604 0.0267\n 3  1880 F     Emma       2003 0.0205\n 4  1880 F     Elizabeth  1939 0.0199\n 5  1880 F     Minnie     1746 0.0179\n 6  1880 F     Margaret   1578 0.0162\n 7  1880 F     Ida        1472 0.0151\n 8  1880 F     Alice      1414 0.0145\n 9  1880 F     Bertha     1320 0.0135\n10  1880 F     Sarah      1288 0.0132\n# ℹ 1,924,655 more rows\n\n\n\nWhat does every row refer to, i.e. what is the unit of observation? What time range is covered by this data? How is prop calculated (what is the numerator and demoninator)?\n\n\n\n\n\n\n\nCreate a plot like the following but for your name.\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nCreate a plot that shows the relatively frequency of the name “Barack” starting from 1990 to the most recent date."
+    "text": "Strings II\nThese questions deal with the babynames data set inside the package of the same name. Read about the data set with ?babynames.\n\n# install.packages(\"babynames\")\nlibrary(babynames)\nbabynames\n\n# A tibble: 1,924,665 × 5\n    year sex   name          n   prop\n   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;\n 1  1880 F     Mary       7065 0.0724\n 2  1880 F     Anna       2604 0.0267\n 3  1880 F     Emma       2003 0.0205\n 4  1880 F     Elizabeth  1939 0.0199\n 5  1880 F     Minnie     1746 0.0179\n 6  1880 F     Margaret   1578 0.0162\n 7  1880 F     Ida        1472 0.0151\n 8  1880 F     Alice      1414 0.0145\n 9  1880 F     Bertha     1320 0.0135\n10  1880 F     Sarah      1288 0.0132\n# ℹ 1,924,655 more rows\n\n\n\nWhat does every row refer to, i.e. what is the unit of observation? What time range is covered by this data? How is prop calculated (what is the numerator and demoninator)?\n\n\n\n\n\n\n\nIn 2010, what proportion of boys names ended with a vowel? How about girls names? How does those proportions differ when calculated in 1910?\n\n\n\n\n\n\n\nNarrow down the data frame to the rows with names that end in a diminuitive (e.g. “Joey” and “Juanita”). Do some research to gather a set of diminuitives used in languages found in American baby names.\n\n\n\n\n\n\n\n\n\n\nHow many distinct names rhyme with “Aiden”?\n\n\n\n\n\n\n\nCreate a plot like the following but for your name.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a plot that shows the relatively frequency of a name shared by a historic figure over time (e.g. “Barack”).\n\n\n\n\n\n\n\n\n\n\nOptional Challenge: For each year since 2000, which names have been the most gender neutral?\n\n\n\n\n\n\n\n\nOptional Challenge: Plot the proportion of diminuitive names over time.\n\n\n\n\n\n\n\n\n\nR has a built in palette of colors that you can access with colors(). Note that many of the colors in that palette have numbered variants that are different darknesses. How many colors are in this palette after removing the numbered variants of a color?\n\n\n\n\n\n\n\nThe following questions deal with the chorus of the song, “Golden”, but Huntrix. Be sure they copy into R as a string that captures the new line characters. Provide the code to programmatically answer each question. There are many ways to answer these questions but str_split() might be helpful.\n\nx &lt;- \"We're goin' up, up, up, it's our moment\nYou know together we're glowing\nGonna be, gonna be golden\nOh, up, up, up, with our voices\n\\uc601\\uc6d0\\ud788 \\uae68\\uc9c8 \\uc218 \\uc5c6\\ub294\nGonna be, gonna be golden\"\n\n\nHow many lines are in the chorus?\n\n\n\n\n\n\nHow many times is the word \"up” used in the chorus?\n\n\n\n\n\n\nHow many distinct four letter words are used?\n\n\n\n\n\n\n\nReplace each of the contractions with the expanded english equivalent.\n\n\n\n\n\n\n\n\n\nWhat is the first word of each line?\n\n\n\n\n\n\n\nHow many words are in each line?\n\n\n\n\n\n\n\nProvide a new string that writes the Korean word for “Golden” using the appropriate Unicode characters."
   },
   {
     "objectID": "12-data-wrangling-1/ps.html",
@@ -2495,7 +2495,7 @@
     "href": "07-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.632827\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.3309653\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "07-control-flow/slides.html#if-then",
@@ -2544,35 +2544,35 @@
     "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] 0.21247615 0.09933618 1.96828871\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  0.6400048  1.5716352 -0.9010611\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "07-control-flow/slides.html#option-1",
     "href": "07-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-2",
     "href": "07-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\"\n[1] \"element 2 is positive :)\"\n[1] \"element 3 is positive :)\""
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\"\n[1] \"element 2 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-3",
     "href": "07-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.212476148185985 is positive :)\"\n[1] \"0.0993361839865808 is positive :)\"\n[1] \"1.96828870775113 is positive :)\""
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.640004750004208 is positive :)\"\n[1] \"1.5716352039491 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#ifelse",
     "href": "07-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE FALSE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is negative :(\" \"is negative :(\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE FALSE  TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is negative :(\" \"is positive :)\""
   },
   {
     "objectID": "office-hours.html",
@@ -2834,7 +2834,7 @@
     "href": "projects/4-ev-power/slides.html#basic-example-of-syntax",
     "title": "EV Power Project",
     "section": "Basic example of syntax:",
-    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/Rtmp9IJCfk/remotes65139fbe878/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
+    "text": "Basic example of syntax:\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Get U.S. states as sf object\nus_states &lt;- ne_states(country = \"united states of america\", returnclass = \"sf\")\n\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file ‘/tmp/RtmpoozfPD/remotes65e536ddb91/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK\n* preparing ‘rnaturalearthhires’:\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’"
   },
   {
     "objectID": "projects/4-ev-power/slides.html#section",
