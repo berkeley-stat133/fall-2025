@@ -11,7 +11,7 @@
     "href": "26-gerrymandering/ps.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Gerrymandering\nComing soon!"
+    "text": "Gerrymandering\nPractice related to this lecture is found in the worksheet associated with Project: Gerrymandering."
   },
   {
     "objectID": "03-atomic-vectors/notes.html",
@@ -2471,6 +2471,233 @@
     "text": "Project Work Time\n\n  \n    −\n    +\n \n 25:00\n \nGet started on the project and feel free to ask questions."
   },
   {
+    "objectID": "16-eda/ps.html",
+    "href": "16-eda/ps.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "EDA\nYour task is to understand the basic structure of a new data set from 2020 related to tuition costs at colleges and universities across the country. It is stored as a csv on github that can be read into your R session (or a Quarto document) using:\n\ntuition_cost &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-03-10/tuition_cost.csv')\n\nFor each of the following, please answer the question in full sentences and also provide the code that you used. If you generated a plot, also sketch the plot.\n\nWhat are the dimensions of the data set? What is the unit of observation? What is the nature of the variables (that they are, their units or levels, and their type)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs there any missing data? If so, where?\n\n\n\n\n\n\n\n\n\n\nWhat is the distribution of the cost of in-state tuition? Answer with summary statistics, a plot, and a written description of its shape.\n\n\n\n\n\n\n\n\n\n\nHow does the distribution of in-state tuition differ between the three types of institutions? Answer with a plot and a written description of how the distributions compare.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich are the three most expensive institutions? The three least expensive institutions?\n\n\n\n\n\n\n\n\n\n\nCreate one more visualization of at least two variables that you’re curious about. Describe the structure that you see with a written description."
+  },
+  {
+    "objectID": "office-hours.html",
+    "href": "office-hours.html",
+    "title": "Office Hours",
+    "section": "",
+    "text": "Office Hours\nPlease stop by during office hours to chat in a small group setting with the instructor or GSIs.",
+    "crumbs": [
+      "Office Hours"
+    ]
+  },
+  {
+    "objectID": "07-control-flow/slides.html#getting-to-campus",
+    "href": "07-control-flow/slides.html#getting-to-campus",
+    "title": "Control Flow",
+    "section": "Getting to Campus",
+    "text": "Getting to Campus\nIf my bike is working\n     then I ride my bike to campus.\n\nIf my bike is not working and I have enough time\n     then I ride the bus to campus.\n\n\nIf my bike is not working and I don’t have enough time\n     then I take a cab."
+  },
+  {
+    "objectID": "07-control-flow/slides.html#a-random-condition-in-r",
+    "href": "07-control-flow/slides.html#a-random-condition-in-r",
+    "title": "Control Flow",
+    "section": "A random condition in R",
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.6160782\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+  },
+  {
+    "objectID": "07-control-flow/slides.html#if-then",
+    "href": "07-control-flow/slides.html#if-then",
+    "title": "Control Flow",
+    "section": "if-then",
+    "text": "if-then\n“if then” statement: executes a block of code if a condition is met.\n\n\nx &lt;- rnorm(1)\n\nif (x &gt; 0) {\n  print(\"x is positive :)\")\n}\n\n\nDrop:\n\nRun this multiple times to see how it’s random.\nCould set x &lt;- 1 to make it deterministic or even just TRUE.\nAnnotate code with different colors: if-then syntax, logical condition, and what to do."
+  },
+  {
+    "objectID": "07-control-flow/slides.html#if-else",
+    "href": "07-control-flow/slides.html#if-else",
+    "title": "Control Flow",
+    "section": "if-else",
+    "text": "if-else\n“if else” statement: executes one block of code if a condition is met and a different block of code if it is not met.\n\n\nx &lt;- rnorm(1)\n\nif (x &gt; 0) {\n  print(\"x is positive :)\")\n} else {\n  print(\"x is negative :(\")\n}\n\n\nSimilarly, run it multiple times and annotate code with different colors: if-then syntax, logical condition, and what to do."
+  },
+  {
+    "objectID": "07-control-flow/slides.html#nested-ifs",
+    "href": "07-control-flow/slides.html#nested-ifs",
+    "title": "Control Flow",
+    "section": "Nested ifs",
+    "text": "Nested ifs\n\n\nx &lt;- rnorm(1)\n\nif (x &gt; 0) {\n  print(\"x is positive :)\")\n} else if (x &lt; 0) {\n  print(\"x is negative :(\")\n} else {\n  print(\"x is zero :|\")\n}\n\n\nRun it multiple times, then get the zero to toggle using x &lt;- 0"
+  },
+  {
+    "objectID": "07-control-flow/slides.html#getting-to-campus-1",
+    "href": "07-control-flow/slides.html#getting-to-campus-1",
+    "title": "Control Flow",
+    "section": "Getting to Campus",
+    "text": "Getting to Campus\n\nIf my bike is working\n     then I ride my bike to campus.\nIf my bike is not working and I have enough time\n     then I ride the bus to campus.\nIf my bike is not working and I don’t have enough time\n     then I take a cab.\n\n\nQuestion\nUsing the R objects bike_working and enough_time, both logical vectors of length 1, write this decision tree in R using nested if-then statements and print().\n\n  \n    −\n    +\n \n 02:30"
+  },
+  {
+    "objectID": "07-control-flow/slides.html#section-1",
+    "href": "07-control-flow/slides.html#section-1",
+    "title": "Control Flow",
+    "section": "",
+    "text": "if (bike_working) {\n  print(\"ride bike\")\n} else if (enough_time) {\n  print(\"ride bus\")\n} else {\n  print(\"call cab\")\n}\n\n\nIf time you can set the values of bike_working and enough_time to verify that it works."
+  },
+  {
+    "objectID": "07-control-flow/slides.html#for-loops",
+    "href": "07-control-flow/slides.html#for-loops",
+    "title": "Control Flow",
+    "section": "For loops",
+    "text": "For loops\nProf. Sanchez Slides\n\n\n\nfor (item in vector) {\n    perform_action\n}"
+  },
+  {
+    "objectID": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
+    "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
+    "title": "Control Flow",
+    "section": "What if x has multiple elements?",
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1]  0.6230553 -1.4575602  0.6725099\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+  },
+  {
+    "objectID": "07-control-flow/slides.html#option-1",
+    "href": "07-control-flow/slides.html#option-1",
+    "title": "Control Flow",
+    "section": "Option 1",
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\"\n[1] \"x is positive :)\""
+  },
+  {
+    "objectID": "07-control-flow/slides.html#option-2",
+    "href": "07-control-flow/slides.html#option-2",
+    "title": "Control Flow",
+    "section": "Option 2",
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 1 is positive :)\"\n[1] \"element 3 is positive :)\""
+  },
+  {
+    "objectID": "07-control-flow/slides.html#option-3",
+    "href": "07-control-flow/slides.html#option-3",
+    "title": "Control Flow",
+    "section": "Option 3",
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"0.623055317616619 is positive :)\"\n[1] \"0.672509899726276 is positive :)\""
+  },
+  {
+    "objectID": "07-control-flow/slides.html#ifelse",
+    "href": "07-control-flow/slides.html#ifelse",
+    "title": "Control Flow",
+    "section": "ifelse()",
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] FALSE  TRUE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is negative :(\" \"is positive :)\" \"is negative :(\""
+  },
+  {
+    "objectID": "06-lists/slides.html#section",
+    "href": "06-lists/slides.html#section",
+    "title": "Lists",
+    "section": "",
+    "text": "Discuss with a neighbor\nWhich of the following four objects are the same?\n\nseq(1, 6)\nseq(1, 3) + seq(4, 6)\nc(seq(1, 3), seq(4, 6))\nc(c(seq(1, 3), seq(4, 6)))\n\n\n  \n    −\n    +\n \n 01:30"
+  },
+  {
+    "objectID": "06-lists/slides.html#section-1",
+    "href": "06-lists/slides.html#section-1",
+    "title": "Lists",
+    "section": "",
+    "text": "Discuss with a neighbor\nWhich of the following four objects are the same?\n\nseq(1, 6)\n\n[1] 1 2 3 4 5 6\n\nseq(1, 3) + seq(4, 6)\n\n[1] 5 7 9\n\nc(seq(1, 3), seq(4, 6))\n\n[1] 1 2 3 4 5 6\n\nc(c(seq(1, 3), seq(4, 6)))\n\n[1] 1 2 3 4 5 6"
+  },
+  {
+    "objectID": "06-lists/slides.html#atomic-vectors",
+    "href": "06-lists/slides.html#atomic-vectors",
+    "title": "Lists",
+    "section": "Atomic Vectors",
+    "text": "Atomic Vectors\nBy atomic we mean:\n\nAll elements of the same type\nCannot contain other vectors"
+  },
+  {
+    "objectID": "06-lists/slides.html#lists-defined",
+    "href": "06-lists/slides.html#lists-defined",
+    "title": "Lists",
+    "section": "Lists, defined",
+    "text": "Lists, defined\nA list is a non-atomic vector that can contain:\n\nAtomic vectors of different types\nOther lists\n\n\nCreated with list().\n\n\n\nlist(1, \"rabbit\")\n\n\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] \"rabbit\""
+  },
+  {
+    "objectID": "06-lists/slides.html#contains-atomic-vectors-of-different-types",
+    "href": "06-lists/slides.html#contains-atomic-vectors-of-different-types",
+    "title": "Lists",
+    "section": "“Contains atomic vectors of different types”",
+    "text": "“Contains atomic vectors of different types”\n\n\n\nlist(1, \"rabbit\")\n\n\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] \"rabbit\"\n\n\n\n\nlist(1:3, \"a\", 4:6)\n\n\n\n[[1]]\n[1] 1 2 3\n\n[[2]]\n[1] \"a\"\n\n[[3]]\n[1] 4 5 6"
+  },
+  {
+    "objectID": "06-lists/slides.html#subsetting",
+    "href": "06-lists/slides.html#subsetting",
+    "title": "Lists",
+    "section": "Subsetting",
+    "text": "Subsetting"
+  },
+  {
+    "objectID": "06-lists/slides.html#subsetting-with",
+    "href": "06-lists/slides.html#subsetting-with",
+    "title": "Lists",
+    "section": "Subsetting with []",
+    "text": "Subsetting with []\n[] extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.\n\nAtomic vectors and matrices return atomic vectors\n\n\n\nvec &lt;- 1:4\nvec[1:2]\n\n\n\n[1] 1 2\n\n\n\n\n\nmat &lt;- matrix(vec, nrow = 2)\nmat\n\n\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n\n\n\n\nmat[2]\n\n\n\n[1] 2"
+  },
+  {
+    "objectID": "06-lists/slides.html#subsetting-with-1",
+    "href": "06-lists/slides.html#subsetting-with-1",
+    "title": "Lists",
+    "section": "Subsetting with []",
+    "text": "Subsetting with []\n[] extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.\n\nAtomic vectors and matrices return atomic vectors\nLists return lists\n\n\n\nx &lt;- list(1:3, \"a\", 4:6)\nx[1]\n\n\n\n[[1]]\n[1] 1 2 3\n\n\n\n\n\nx[2:3]\n\n\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 4 5 6"
+  },
+  {
+    "objectID": "06-lists/slides.html#yes-you-can-name-elements-of-a-list",
+    "href": "06-lists/slides.html#yes-you-can-name-elements-of-a-list",
+    "title": "Lists",
+    "section": "Yes, you can name elements of a list",
+    "text": "Yes, you can name elements of a list\n\n\nnamed_x &lt;- list(\"Ape\" = 1:3, \"Boy\" = \"a\", \"Cat\" = 4:6)\nnamed_x\n\n\n\n$Ape\n[1] 1 2 3\n\n$Boy\n[1] \"a\"\n\n$Cat\n[1] 4 5 6\n\n\n\n\n\nnamed_x[c(\"Boy\", \"Cat\")]\n\n\n\n$Boy\n[1] \"a\"\n\n$Cat\n[1] 4 5 6"
+  },
+  {
+    "objectID": "06-lists/slides.html#yes-it-works-with-logicals-too",
+    "href": "06-lists/slides.html#yes-it-works-with-logicals-too",
+    "title": "Lists",
+    "section": "Yes, it works with logicals too",
+    "text": "Yes, it works with logicals too\n\n\nnamed_x &lt;- list(\"Ape\" = 1:3, \"Boy\" = \"a\", \"Cat\" = 4:6)\nnamed_x[c(FALSE, TRUE, FALSE)]\n\n\n\n$Boy\n[1] \"a\"\n\n\n\n\n\nBut what if you want the actual data structure inside the list?"
+  },
+  {
+    "objectID": "06-lists/slides.html#subsetting-single-elements-with",
+    "href": "06-lists/slides.html#subsetting-single-elements-with",
+    "title": "Lists",
+    "section": "Subsetting single elements with [[]]",
+    "text": "Subsetting single elements with [[]]\n\n[[i]] Extracts original object inside the list.\n\n\n\nx &lt;- list(1:3, \"a\", 4:6)\nx[[1]]\n\n\n\n[1] 1 2 3\n\n\n\n\nTo tell [] and [[]] apart, let’s use a metaphor of a train.\n\nSketch first of the following image slides."
+  },
+  {
+    "objectID": "06-lists/slides.html#section-2",
+    "href": "06-lists/slides.html#section-2",
+    "title": "Lists",
+    "section": "",
+    "text": "Draw the appropriate train or car for each of the following\n\nx[1:2]\nx[[3]]\nx[-2]\nx[c(1, 1)]\nc(x[[3]], x[[1]])\n\n\n  \n    −\n    +\n \n 02:30"
+  },
+  {
+    "objectID": "06-lists/slides.html#subsetting-single-elements-with-1",
+    "href": "06-lists/slides.html#subsetting-single-elements-with-1",
+    "title": "Lists",
+    "section": "Subsetting single elements with $",
+    "text": "Subsetting single elements with $\n$ will extract a single element of a list by name.\n\nnamed_x &lt;- list(\"Ape\" = 1:3, \"Boy\" = \"a\", \"Cat\" = 4:6)\nnamed_x$Cat\n\n\n\n[1] 4 5 6\n\n\n\n\nnamed_x$C\n\n\n\n[1] 4 5 6\n\n\n\n\nPermits partial matching."
+  },
+  {
+    "objectID": "06-lists/slides.html#lists-defined-1",
+    "href": "06-lists/slides.html#lists-defined-1",
+    "title": "Lists",
+    "section": "Lists, defined",
+    "text": "Lists, defined\n\nA list is a non-atomic vector that can contain:\n\nAtomic vectors of different types\nOther lists\n\n\n\n\nlist(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] \"rabbit\"\n\n[[3]]\n[[3]][[1]]\n[1] TRUE\n\n[[3]][[2]]\n[1] 1 2 3"
+  },
+  {
+    "objectID": "06-lists/slides.html#implications-for-subsetting",
+    "href": "06-lists/slides.html#implications-for-subsetting",
+    "title": "Lists",
+    "section": "Implications for subsetting",
+    "text": "Implications for subsetting\n\n\ny &lt;- list(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n\n\nDrop:\n\nlength(y[3])\n\n\n\n\nDraw the train:"
+  },
+  {
+    "objectID": "06-lists/slides.html#section-5",
+    "href": "06-lists/slides.html#section-5",
+    "title": "Lists",
+    "section": "",
+    "text": "y &lt;- list(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n\nDraw the train and then write the R code to extract:\n\nThe list containing the character vector with \"rabbit”\nThe vector \"rabbit\"\nThe second element of the list element in y\nThe vector 1:3\nThe element 2.\n\n\n  \n    −\n    +\n \n 02:00"
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Notes\n\n\n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "16-eda/slides.html#agenda",
     "href": "16-eda/slides.html#agenda",
     "title": "EDA",
@@ -2728,233 +2955,6 @@
     "title": "EDA",
     "section": "Setting Aesthetics",
     "text": "Setting Aesthetics"
-  },
-  {
-    "objectID": "notes.html",
-    "href": "notes.html",
-    "title": "Notes",
-    "section": "",
-    "text": "Notes\n\n\n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "06-lists/slides.html#section",
-    "href": "06-lists/slides.html#section",
-    "title": "Lists",
-    "section": "",
-    "text": "Discuss with a neighbor\nWhich of the following four objects are the same?\n\nseq(1, 6)\nseq(1, 3) + seq(4, 6)\nc(seq(1, 3), seq(4, 6))\nc(c(seq(1, 3), seq(4, 6)))\n\n\n  \n    −\n    +\n \n 01:30"
-  },
-  {
-    "objectID": "06-lists/slides.html#section-1",
-    "href": "06-lists/slides.html#section-1",
-    "title": "Lists",
-    "section": "",
-    "text": "Discuss with a neighbor\nWhich of the following four objects are the same?\n\nseq(1, 6)\n\n[1] 1 2 3 4 5 6\n\nseq(1, 3) + seq(4, 6)\n\n[1] 5 7 9\n\nc(seq(1, 3), seq(4, 6))\n\n[1] 1 2 3 4 5 6\n\nc(c(seq(1, 3), seq(4, 6)))\n\n[1] 1 2 3 4 5 6"
-  },
-  {
-    "objectID": "06-lists/slides.html#atomic-vectors",
-    "href": "06-lists/slides.html#atomic-vectors",
-    "title": "Lists",
-    "section": "Atomic Vectors",
-    "text": "Atomic Vectors\nBy atomic we mean:\n\nAll elements of the same type\nCannot contain other vectors"
-  },
-  {
-    "objectID": "06-lists/slides.html#lists-defined",
-    "href": "06-lists/slides.html#lists-defined",
-    "title": "Lists",
-    "section": "Lists, defined",
-    "text": "Lists, defined\nA list is a non-atomic vector that can contain:\n\nAtomic vectors of different types\nOther lists\n\n\nCreated with list().\n\n\n\nlist(1, \"rabbit\")\n\n\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] \"rabbit\""
-  },
-  {
-    "objectID": "06-lists/slides.html#contains-atomic-vectors-of-different-types",
-    "href": "06-lists/slides.html#contains-atomic-vectors-of-different-types",
-    "title": "Lists",
-    "section": "“Contains atomic vectors of different types”",
-    "text": "“Contains atomic vectors of different types”\n\n\n\nlist(1, \"rabbit\")\n\n\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] \"rabbit\"\n\n\n\n\nlist(1:3, \"a\", 4:6)\n\n\n\n[[1]]\n[1] 1 2 3\n\n[[2]]\n[1] \"a\"\n\n[[3]]\n[1] 4 5 6"
-  },
-  {
-    "objectID": "06-lists/slides.html#subsetting",
-    "href": "06-lists/slides.html#subsetting",
-    "title": "Lists",
-    "section": "Subsetting",
-    "text": "Subsetting"
-  },
-  {
-    "objectID": "06-lists/slides.html#subsetting-with",
-    "href": "06-lists/slides.html#subsetting-with",
-    "title": "Lists",
-    "section": "Subsetting with []",
-    "text": "Subsetting with []\n[] extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.\n\nAtomic vectors and matrices return atomic vectors\n\n\n\nvec &lt;- 1:4\nvec[1:2]\n\n\n\n[1] 1 2\n\n\n\n\n\nmat &lt;- matrix(vec, nrow = 2)\nmat\n\n\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n\n\n\n\nmat[2]\n\n\n\n[1] 2"
-  },
-  {
-    "objectID": "06-lists/slides.html#subsetting-with-1",
-    "href": "06-lists/slides.html#subsetting-with-1",
-    "title": "Lists",
-    "section": "Subsetting with []",
-    "text": "Subsetting with []\n[] extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.\n\nAtomic vectors and matrices return atomic vectors\nLists return lists\n\n\n\nx &lt;- list(1:3, \"a\", 4:6)\nx[1]\n\n\n\n[[1]]\n[1] 1 2 3\n\n\n\n\n\nx[2:3]\n\n\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 4 5 6"
-  },
-  {
-    "objectID": "06-lists/slides.html#yes-you-can-name-elements-of-a-list",
-    "href": "06-lists/slides.html#yes-you-can-name-elements-of-a-list",
-    "title": "Lists",
-    "section": "Yes, you can name elements of a list",
-    "text": "Yes, you can name elements of a list\n\n\nnamed_x &lt;- list(\"Ape\" = 1:3, \"Boy\" = \"a\", \"Cat\" = 4:6)\nnamed_x\n\n\n\n$Ape\n[1] 1 2 3\n\n$Boy\n[1] \"a\"\n\n$Cat\n[1] 4 5 6\n\n\n\n\n\nnamed_x[c(\"Boy\", \"Cat\")]\n\n\n\n$Boy\n[1] \"a\"\n\n$Cat\n[1] 4 5 6"
-  },
-  {
-    "objectID": "06-lists/slides.html#yes-it-works-with-logicals-too",
-    "href": "06-lists/slides.html#yes-it-works-with-logicals-too",
-    "title": "Lists",
-    "section": "Yes, it works with logicals too",
-    "text": "Yes, it works with logicals too\n\n\nnamed_x &lt;- list(\"Ape\" = 1:3, \"Boy\" = \"a\", \"Cat\" = 4:6)\nnamed_x[c(FALSE, TRUE, FALSE)]\n\n\n\n$Boy\n[1] \"a\"\n\n\n\n\n\nBut what if you want the actual data structure inside the list?"
-  },
-  {
-    "objectID": "06-lists/slides.html#subsetting-single-elements-with",
-    "href": "06-lists/slides.html#subsetting-single-elements-with",
-    "title": "Lists",
-    "section": "Subsetting single elements with [[]]",
-    "text": "Subsetting single elements with [[]]\n\n[[i]] Extracts original object inside the list.\n\n\n\nx &lt;- list(1:3, \"a\", 4:6)\nx[[1]]\n\n\n\n[1] 1 2 3\n\n\n\n\nTo tell [] and [[]] apart, let’s use a metaphor of a train.\n\nSketch first of the following image slides."
-  },
-  {
-    "objectID": "06-lists/slides.html#section-2",
-    "href": "06-lists/slides.html#section-2",
-    "title": "Lists",
-    "section": "",
-    "text": "Draw the appropriate train or car for each of the following\n\nx[1:2]\nx[[3]]\nx[-2]\nx[c(1, 1)]\nc(x[[3]], x[[1]])\n\n\n  \n    −\n    +\n \n 02:30"
-  },
-  {
-    "objectID": "06-lists/slides.html#subsetting-single-elements-with-1",
-    "href": "06-lists/slides.html#subsetting-single-elements-with-1",
-    "title": "Lists",
-    "section": "Subsetting single elements with $",
-    "text": "Subsetting single elements with $\n$ will extract a single element of a list by name.\n\nnamed_x &lt;- list(\"Ape\" = 1:3, \"Boy\" = \"a\", \"Cat\" = 4:6)\nnamed_x$Cat\n\n\n\n[1] 4 5 6\n\n\n\n\nnamed_x$C\n\n\n\n[1] 4 5 6\n\n\n\n\nPermits partial matching."
-  },
-  {
-    "objectID": "06-lists/slides.html#lists-defined-1",
-    "href": "06-lists/slides.html#lists-defined-1",
-    "title": "Lists",
-    "section": "Lists, defined",
-    "text": "Lists, defined\n\nA list is a non-atomic vector that can contain:\n\nAtomic vectors of different types\nOther lists\n\n\n\n\nlist(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] \"rabbit\"\n\n[[3]]\n[[3]][[1]]\n[1] TRUE\n\n[[3]][[2]]\n[1] 1 2 3"
-  },
-  {
-    "objectID": "06-lists/slides.html#implications-for-subsetting",
-    "href": "06-lists/slides.html#implications-for-subsetting",
-    "title": "Lists",
-    "section": "Implications for subsetting",
-    "text": "Implications for subsetting\n\n\ny &lt;- list(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n\n\nDrop:\n\nlength(y[3])\n\n\n\n\nDraw the train:"
-  },
-  {
-    "objectID": "06-lists/slides.html#section-5",
-    "href": "06-lists/slides.html#section-5",
-    "title": "Lists",
-    "section": "",
-    "text": "y &lt;- list(1, \"rabbit\", list(TRUE, 1:3))\n\n\n\n\nDraw the train and then write the R code to extract:\n\nThe list containing the character vector with \"rabbit”\nThe vector \"rabbit\"\nThe second element of the list element in y\nThe vector 1:3\nThe element 2.\n\n\n  \n    −\n    +\n \n 02:00"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#getting-to-campus",
-    "href": "07-control-flow/slides.html#getting-to-campus",
-    "title": "Control Flow",
-    "section": "Getting to Campus",
-    "text": "Getting to Campus\nIf my bike is working\n     then I ride my bike to campus.\n\nIf my bike is not working and I have enough time\n     then I ride the bus to campus.\n\n\nIf my bike is not working and I don’t have enough time\n     then I take a cab."
-  },
-  {
-    "objectID": "07-control-flow/slides.html#a-random-condition-in-r",
-    "href": "07-control-flow/slides.html#a-random-condition-in-r",
-    "title": "Control Flow",
-    "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.7815712\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
-  },
-  {
-    "objectID": "07-control-flow/slides.html#if-then",
-    "href": "07-control-flow/slides.html#if-then",
-    "title": "Control Flow",
-    "section": "if-then",
-    "text": "if-then\n“if then” statement: executes a block of code if a condition is met.\n\n\nx &lt;- rnorm(1)\n\nif (x &gt; 0) {\n  print(\"x is positive :)\")\n}\n\n\nDrop:\n\nRun this multiple times to see how it’s random.\nCould set x &lt;- 1 to make it deterministic or even just TRUE.\nAnnotate code with different colors: if-then syntax, logical condition, and what to do."
-  },
-  {
-    "objectID": "07-control-flow/slides.html#if-else",
-    "href": "07-control-flow/slides.html#if-else",
-    "title": "Control Flow",
-    "section": "if-else",
-    "text": "if-else\n“if else” statement: executes one block of code if a condition is met and a different block of code if it is not met.\n\n\nx &lt;- rnorm(1)\n\nif (x &gt; 0) {\n  print(\"x is positive :)\")\n} else {\n  print(\"x is negative :(\")\n}\n\n\nSimilarly, run it multiple times and annotate code with different colors: if-then syntax, logical condition, and what to do."
-  },
-  {
-    "objectID": "07-control-flow/slides.html#nested-ifs",
-    "href": "07-control-flow/slides.html#nested-ifs",
-    "title": "Control Flow",
-    "section": "Nested ifs",
-    "text": "Nested ifs\n\n\nx &lt;- rnorm(1)\n\nif (x &gt; 0) {\n  print(\"x is positive :)\")\n} else if (x &lt; 0) {\n  print(\"x is negative :(\")\n} else {\n  print(\"x is zero :|\")\n}\n\n\nRun it multiple times, then get the zero to toggle using x &lt;- 0"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#getting-to-campus-1",
-    "href": "07-control-flow/slides.html#getting-to-campus-1",
-    "title": "Control Flow",
-    "section": "Getting to Campus",
-    "text": "Getting to Campus\n\nIf my bike is working\n     then I ride my bike to campus.\nIf my bike is not working and I have enough time\n     then I ride the bus to campus.\nIf my bike is not working and I don’t have enough time\n     then I take a cab.\n\n\nQuestion\nUsing the R objects bike_working and enough_time, both logical vectors of length 1, write this decision tree in R using nested if-then statements and print().\n\n  \n    −\n    +\n \n 02:30"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#section-1",
-    "href": "07-control-flow/slides.html#section-1",
-    "title": "Control Flow",
-    "section": "",
-    "text": "if (bike_working) {\n  print(\"ride bike\")\n} else if (enough_time) {\n  print(\"ride bus\")\n} else {\n  print(\"call cab\")\n}\n\n\nIf time you can set the values of bike_working and enough_time to verify that it works."
-  },
-  {
-    "objectID": "07-control-flow/slides.html#for-loops",
-    "href": "07-control-flow/slides.html#for-loops",
-    "title": "Control Flow",
-    "section": "For loops",
-    "text": "For loops\nProf. Sanchez Slides\n\n\n\nfor (item in vector) {\n    perform_action\n}"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
-    "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
-    "title": "Control Flow",
-    "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.9078322 -1.9370401 -0.5837278\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
-  },
-  {
-    "objectID": "07-control-flow/slides.html#option-1",
-    "href": "07-control-flow/slides.html#option-1",
-    "title": "Control Flow",
-    "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#option-2",
-    "href": "07-control-flow/slides.html#option-2",
-    "title": "Control Flow",
-    "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#option-3",
-    "href": "07-control-flow/slides.html#option-3",
-    "title": "Control Flow",
-    "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}"
-  },
-  {
-    "objectID": "07-control-flow/slides.html#ifelse",
-    "href": "07-control-flow/slides.html#ifelse",
-    "title": "Control Flow",
-    "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] TRUE TRUE TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is positive :)\""
-  },
-  {
-    "objectID": "office-hours.html",
-    "href": "office-hours.html",
-    "title": "Office Hours",
-    "section": "",
-    "text": "Office Hours\nPlease stop by during office hours to chat in a small group setting with the instructor or GSIs.",
-    "crumbs": [
-      "Office Hours"
-    ]
-  },
-  {
-    "objectID": "16-eda/ps.html",
-    "href": "16-eda/ps.html",
-    "title": "STAT 133",
-    "section": "",
-    "text": "EDA\nYour task is to understand the basic structure of a new data set from 2020 related to tuition costs at colleges and universities across the country. It is stored as a csv on github that can be read into your R session (or a Quarto document) using:\n\ntuition_cost &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-03-10/tuition_cost.csv')\n\nFor each of the following, please answer the question in full sentences and also provide the code that you used. If you generated a plot, also sketch the plot.\n\nWhat are the dimensions of the data set? What is the unit of observation? What is the nature of the variables (that they are, their units or levels, and their type)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIs there any missing data? If so, where?\n\n\n\n\n\n\n\n\n\n\nWhat is the distribution of the cost of in-state tuition? Answer with summary statistics, a plot, and a written description of its shape.\n\n\n\n\n\n\n\n\n\n\nHow does the distribution of in-state tuition differ between the three types of institutions? Answer with a plot and a written description of how the distributions compare.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich are the three most expensive institutions? The three least expensive institutions?\n\n\n\n\n\n\n\n\n\n\nCreate one more visualization of at least two variables that you’re curious about. Describe the structure that you see with a written description."
   },
   {
     "objectID": "projects/2-sampsons-monks/slides.html#agenda",
@@ -4581,14 +4581,14 @@
     "href": "23-date-time-1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\n\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2025-10-30 00:50:22 UTC\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\nStart off with reminder about factors: a integer vector with the factor class that allows it to store the levels look up table."
+    "text": "An R vector for date-times\n\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2025-10-30 01:30:06 UTC\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\nStart off with reminder about factors: a integer vector with the factor class that allows it to store the levels look up table."
   },
   {
     "objectID": "23-date-time-1/slides.html#why-not-just-use-a-double-vector",
     "href": "23-date-time-1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2025-10-30 00:50:22 UTC\"\n\n\n\n\n\n# while respecting artithmetic\nnow + 1\n\n\n\n[1] \"2025-10-30 00:50:23 UTC\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2025-10-30 00:50:22 UTC\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"10/30/25\""
+    "text": "Why not just use a double vector?\n\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2025-10-30 01:30:06 UTC\"\n\n\n\n\n\n# while respecting artithmetic\nnow + 1\n\n\n\n[1] \"2025-10-30 01:30:07 UTC\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2025-10-30 01:30:07 UTC\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"10/30/25\""
   },
   {
     "objectID": "23-date-time-1/slides.html#creating-date-time-vectors",
@@ -4637,7 +4637,7 @@
     "href": "23-date-time-1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2026\nnow\n\n\n\n[1] \"2026-10-30 00:50:22 UTC\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2026\nnow\n\n\n\n[1] \"2026-10-30 01:30:06 UTC\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "23-date-time-1/slides.html#your-turn",
