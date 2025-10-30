@@ -410,36 +410,28 @@
 <span id="cb1-7"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="at">country =</span> <span class="st">"united states of america"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/tmp/RtmplY0vJ2/remotes44f74de3aec/ropensci-rnaturalearthhires-e4736f6/DESCRIPTION’ ... OK
-* preparing ‘rnaturalearthhires’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘rnaturalearthhires_1.0.0.9000.tar.gz’</code></pre>
-</div>
+
 </div>
 </section>
 <section id="section" class="slide level2 smaller">
 <h2></h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># loading example data</span></span>
-<span id="cb3-2"><a></a>pop_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-3"><a></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"California"</span>, <span class="st">"Texas"</span>, <span class="st">"New York"</span>, <span class="st">"Florida"</span>),</span>
-<span id="cb3-4"><a></a>  <span class="at">population_millions =</span> <span class="fu">c</span>(<span class="dv">39</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">22</span>)</span>
-<span id="cb3-5"><a></a>)</span>
-<span id="cb3-6"><a></a><span class="co"># Join the data by state name</span></span>
-<span id="cb3-7"><a></a>us_joined <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span></span>
-<span id="cb3-8"><a></a>  <span class="fu">left_join</span>(pop_data, <span class="at">by =</span> <span class="st">"name"</span>)</span>
-<span id="cb3-9"><a></a><span class="co"># Plot and color by population</span></span>
-<span id="cb3-10"><a></a><span class="fu">ggplot</span>(us_joined) <span class="sc">+</span></span>
-<span id="cb3-11"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> population_millions), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb3-12"><a></a>  <span class="fu">scale_fill_continuous</span>(<span class="at">name =</span> <span class="st">"Population (millions)"</span>, <span class="at">na.value =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
-<span id="cb3-13"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Example: Coloring U.S. States by Population"</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">125</span>, <span class="sc">-</span><span class="dv">66</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">50</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb3-15"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># loading example data</span></span>
+<span id="cb2-2"><a></a>pop_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"California"</span>, <span class="st">"Texas"</span>, <span class="st">"New York"</span>, <span class="st">"Florida"</span>),</span>
+<span id="cb2-4"><a></a>  <span class="at">population_millions =</span> <span class="fu">c</span>(<span class="dv">39</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">22</span>)</span>
+<span id="cb2-5"><a></a>)</span>
+<span id="cb2-6"><a></a><span class="co"># Join the data by state name</span></span>
+<span id="cb2-7"><a></a>us_joined <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a></a>  <span class="fu">left_join</span>(pop_data, <span class="at">by =</span> <span class="st">"name"</span>)</span>
+<span id="cb2-9"><a></a><span class="co"># Plot and color by population</span></span>
+<span id="cb2-10"><a></a><span class="fu">ggplot</span>(us_joined) <span class="sc">+</span></span>
+<span id="cb2-11"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> population_millions), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a></a>  <span class="fu">scale_fill_continuous</span>(<span class="at">name =</span> <span class="st">"Population (millions)"</span>, <span class="at">na.value =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Example: Coloring U.S. States by Population"</span>) <span class="sc">+</span></span>
+<span id="cb2-14"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">125</span>, <span class="sc">-</span><span class="dv">66</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">50</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
@@ -469,16 +461,16 @@
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">122.259</span>, <span class="at">lat =</span> <span class="fl">37.872</span>, <span class="at">popup =</span> <span class="st">"UC Berkeley"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">122.259</span>, <span class="at">lat =</span> <span class="fl">37.872</span>, <span class="at">popup =</span> <span class="st">"UC Berkeley"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-8a474c6be082e3abf7a6" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8a474c6be082e3abf7a6">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[37.872,-122.259,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"UC Berkeley",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.872,37.872],"lng":[-122.259,-122.259]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-7b270156aa5637e0357b" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7b270156aa5637e0357b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[37.872,-122.259,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"UC Berkeley",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.872,37.872],"lng":[-122.259,-122.259]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -502,7 +494,7 @@ A clear report PDF answering:</p>
 </section>
 <section id="lab-review-worksheet" class="slide level2">
 <h2>Lab Review Worksheet</h2>
-<div id="timer_ccc010023f80cd4cbfeb39037aba3896114ff2a6" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+<div id="timer_900710d78204c6e6baa0a33db1672b855a9b9258" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="top: 0;right: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -517,7 +509,7 @@ A clear report PDF answering:</p>
 </section>
 <section id="project-work-time" class="slide level2">
 <h2>Project Work Time</h2>
-<div id="timer_ccc010023f80cd4cbfeb39037aba3896114ff2a6" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+<div id="timer_900710d78204c6e6baa0a33db1672b855a9b9258" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="top: 0;right: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
