@@ -241,7 +241,115 @@ ul.task-list li input[type="checkbox"] {
 <br>
 </p>
 <hr>
-<p>Next visit the documention site: <a href="https://api.bart.gov/docs/overview/index.aspx" class="uri">https://api.bart.gov/docs/overview/index.aspx</a>.</p>
+<p>Next visit the documention site: <a href="https://api.bart.gov/docs/overview/index.aspx" class="uri">https://api.bart.gov/docs/overview/index.aspx</a>. Note that each category of data has its own endpoint / base URL, and all takes a similar format (e.g.&nbsp;for estimated departure data use <a href="https://api.bart.gov/api/etd.aspx" class="uri">https://api.bart.gov/api/etd.aspx</a>.)</p>
+<ol start="2" class="example" type="1">
+<li>Provide the URL that will query the API for a list of all BART stations in JSON format.</li>
+</ol>
+<p><br>
+<br>
+</p>
+<ol start="3" class="example" type="1">
+<li>Provide the corresponding shell/terminal command.</li>
+</ol>
+<p><br>
+<br>
+</p>
+<ol start="4" class="example" type="1">
+<li>Provide the corresponding R code that will perform the query and parse the JSON response into an R list object.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="5" class="example" type="1">
+<li>Subset the list to to return a data frame that contains the station abbreviation, name, latitude, longitude, address, city, county, state, and zipcode for each station. Which county has the greatest number of stations?</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<hr>
+<ol start="6" class="example" type="1">
+<li>Provide the URL that will query the API for estimated departure times (ETDs) from the Downtown Berkeley Station in JSON format.</li>
+</ol>
+<p><br>
+<br>
+</p>
+<ol start="7" class="example" type="1">
+<li>Provide the corresponding R code that will perform the query and parse the JSON response into an R list object.</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="8" class="example" type="1">
+<li>Extract the elemented called <code>root</code> and then the <code>station</code> element within it. View the object using the data viewer. What type of object is it an what are it’s dimensions?</li>
+</ol>
+<p><br>
+<br>
+</p>
+<ol start="9" class="example" type="1">
+<li>Use the <code>unnest()</code> function from the <code>tidyr</code> package to expand the <code>etd</code> list-column. What are the dimensions of the resulting data frame?</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="10" class="example" type="1">
+<li>Use <code>unnest()</code> again to expand the <code>estimate</code> list-column. What are the dimensions of the resulting data frame?</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="11" class="example" type="1">
+<li>How long (in minutes) is the shortest estimated wait time for a train departing from Downtown Berkeley Station? Which destination does this train go to? For reference, what time is it now?</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<hr>
+<ol start="12" class="example" type="1">
+<li>Query the BSA (BART System Advisories) endpoint to retrieve the latest system advisory information. You’re welcome to use any method: web browser, command line, or R. What are the different bits of information that they provide through this endpoint?</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="13" class="example" type="1">
+<li><em>Optional Challenge</em>: Use the data provided by the BART API to construct a map of the BART system showing the locations of all stations. You could make it interactive with leaflet or static like the one below.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../35-apis/images/bart-map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
 
 
 </section>
