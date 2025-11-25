@@ -742,14 +742,14 @@
     "href": "23-date-time-1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\n\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2025-11-24 02:52:30 UTC\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\nStart off with reminder about factors: a integer vector with the factor class that allows it to store the levels look up table."
+    "text": "An R vector for date-times\n\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2025-11-25 01:28:13 UTC\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\nStart off with reminder about factors: a integer vector with the factor class that allows it to store the levels look up table."
   },
   {
     "objectID": "23-date-time-1/slides.html#why-not-just-use-a-double-vector",
     "href": "23-date-time-1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2025-11-24 02:52:30 UTC\"\n\n\n\n\n\n# while respecting artithmetic\nnow + 1\n\n\n\n[1] \"2025-11-24 02:52:31 UTC\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2025-11-24 02:52:30 UTC\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"11/24/25\""
+    "text": "Why not just use a double vector?\n\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2025-11-25 01:28:13 UTC\"\n\n\n\n\n\n# while respecting artithmetic\nnow + 1\n\n\n\n[1] \"2025-11-25 01:28:14 UTC\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2025-11-25 01:28:13 UTC\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"11/25/25\""
   },
   {
     "objectID": "23-date-time-1/slides.html#creating-date-time-vectors",
@@ -777,28 +777,28 @@
     "href": "23-date-time-1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\n\nyear(now)\n\n\n\n[1] 2025\n\n\n\n\n\nday(now)\n\n\n\n[1] 24\n\n\n\n\n\nwday(now)\n\n\n\n[1] 2"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\n\nyear(now)\n\n\n\n[1] 2025\n\n\n\n\n\nday(now)\n\n\n\n[1] 25\n\n\n\n\n\nwday(now)\n\n\n\n[1] 3"
   },
   {
     "objectID": "23-date-time-1/slides.html#getting-1",
     "href": "23-date-time-1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2025\n\n\n\nday(now)\n\n[1] 24\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Mon\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2025\n\n\n\nday(now)\n\n[1] 25\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Tue\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "23-date-time-1/slides.html#getting-2",
     "href": "23-date-time-1/slides.html#getting-2",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2025\n\n\n\nday(now)\n\n[1] 24\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2025\n\n\n\nday(now)\n\n[1] 25\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "23-date-time-1/slides.html#setting",
     "href": "23-date-time-1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2026\nnow\n\n\n\n[1] \"2026-11-24 02:52:30 UTC\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2026\nnow\n\n\n\n[1] \"2026-11-25 01:28:13 UTC\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "23-date-time-1/slides.html#your-turn",
@@ -1410,13 +1410,6 @@
     "text": "Group Quiz\n\n\nBefore the quiz begins\n\nForm groups of 2-3 people.\n🧹 Everything except a pen/pencil and your cheat sheet must remain off your desk.\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should be remain in your bag for the entire class period.\nWhen you get a group quiz, write all group members names on it but do not begin.\n\n\nDuring the quiz\n\n🗣️Discuss each of the problems and decide as a group which answer is best.\n⌛If you finish early, please raise your hand and we will collect your quiz.\n❗You must stop writing when time is called or risk a 0.\n\nGood luck! 🍀\n\n\n  \n    −\n    +\n \n 25:00"
   },
   {
-    "objectID": "35-apis/ps.html",
-    "href": "35-apis/ps.html",
-    "title": "STAT 133",
-    "section": "",
-    "text": "APIs\nRevisit the homepage for the BART Legacy API discussed in Lecture.\nhttps://www.bart.gov/schedules/developers/api\n\nWhat is the public key that can be used to access data through the legacy API?\n\n\n\n\n\nNext visit the documention site: https://api.bart.gov/docs/overview/index.aspx. Note that each category of data has its own endpoint / base URL, and all takes a similar format (e.g. for estimated departure data use https://api.bart.gov/api/etd.aspx.)\n\nProvide the URL that will query the API for a list of all BART stations in JSON format.\n\n\n\n\n\nProvide the corresponding shell/terminal command.\n\n\n\n\n\nProvide the corresponding R code that will perform the query and parse the JSON response into an R list object.\n\n\n\n\n\n\n\n\n\n\n\nSubset the list to to return a data frame that contains the station abbreviation, name, latitude, longitude, address, city, county, state, and zipcode for each station. Which county has the greatest number of stations?\n\n\n\n\n\n\n\n\n\nProvide the URL that will query the API for estimated departure times (ETDs) from the Downtown Berkeley Station in JSON format.\n\n\n\n\n\nProvide the corresponding R code that will perform the query and parse the JSON response into an R list object.\n\n\n\n\n\n\n\n\n\n\n\n\nExtract the elemented called root and then the station element within it. View the object using the data viewer. What type of object is it an what are it’s dimensions?\n\n\n\n\n\nUse the unnest() function from the tidyr package to expand the etd list-column. What are the dimensions of the resulting data frame?\n\n\n\n\n\n\n\n\nUse unnest() again to expand the estimate list-column. What are the dimensions of the resulting data frame?\n\n\n\n\n\n\n\n\nHow long (in minutes) is the shortest estimated wait time for a train departing from Downtown Berkeley Station? Which destination does this train go to? For reference, what time is it now?\n\n\n\n\n\n\n\n\n\nQuery the BSA (BART System Advisories) endpoint to retrieve the latest system advisory information. You’re welcome to use any method: web browser, command line, or R. What are the different bits of information that they provide through this endpoint?\n\n\n\n\n\n\n\n\n\n\n\n\nOptional Challenge: Use the data provided by the BART API to construct a map of the BART system showing the locations of all stations. You could make it interactive with leaflet or static like the one below."
-  },
-  {
     "objectID": "21-strings-2/ps.html",
     "href": "21-strings-2/ps.html",
     "title": "STAT 133",
@@ -1436,6 +1429,20 @@
     "title": "STAT 133",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nDashboards collect the colors and fonts into themes similar to ggplot2. You can find the list of themes here: https://quarto.org/docs/dashboards/theming.html.↩︎\nQuarto dashboards can use any of the icons in a large collection called Bootstrap. Search for an icon and then use the corresponding name as a string: https://icons.getbootstrap.com/.↩︎"
+  },
+  {
+    "objectID": "36-apis-2/ps.html",
+    "href": "36-apis-2/ps.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "Begin by copying the source for two endpoints into an R script called stat133-api.R: /babynames and /grades. Start your API server in your R session, then test it out by making requests using a web browser and navigating to http://localhost:8080/babynames and http://localhost:8080/grades.\n\nKeeping track of the version of your API is very important. Other software systems may be built around your API, and your users need to access to a stable version. Consult to Plumber references (https://www.rplumber.io/articles/annotations.html) to learn: what is the tag that can be used to add a version to your API? Write it below then add it to your API.\n\n\n\n\n\nModify babynames to accept two more parameters: sex, that will return the babynames of the specified sex and year, that will return the babynames for the specified year. All three parameters should be optional. If no value is specified for a given parameter, the endpoint should return all babynames. For example:\n\n\nhttp://localhost:8080/babynames?sex=F should return all female babynames.\nhttp://localhost:8080/babynames?year=2000 should return all babynames from the year 2000.\nhttp://localhost:8080/babynames?sex=M&year=1990 should return all male babynames from the year 1990.\n\nProvide your modified endpoint code below then test your endpoint using a web browser.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate an additional endpoint called /requestcontents that is a POST request that does nothing but returns the contents of the requests as a JSON object. Write the code for this endpoint below.\n\n\n\n\n\n\n\n\n\nTest your new endpoint using the httr2 package by sending a POST request with a JSON body that contains the following data:1\n\nlist([dish = \"Turkey\", quantity = 1, vegetarian = FALSE])\nProvide the R code you used to send the request and the response you received below (formatted as an R list).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModify the /grades endpoint to reflect two important components of our grading scheme that was omitted in the original implementation:\n\nEach quiz number score is an average of an individual grade and a group grade.\nEach quiz number score is evenly weighted when determining the quiz average.\nThe lowest quiz number score will be dropped before calculating the quiz average.\n\n\nWrite the code of the modified endpoint below. Also write out an R list containing a fictional students’ full assignment grades, that will serve as the JSON payload when testing the endpoint."
+  },
+  {
+    "objectID": "36-apis-2/ps.html#footnotes",
+    "href": "36-apis-2/ps.html#footnotes",
+    "title": "STAT 133",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is a good way to get a sense of what information is available in the request object when you write your endpoints.↩︎"
   },
   {
     "objectID": "30-r-packages-1/ps.html",
@@ -1641,6 +1648,146 @@
     "text": "Vectors\n\nCentral data structure in R\n\nVectorization\nVector Recycling\n\nOrdered set of elements\n\nSubsetting with []\n\nAtomic: elements of the same type\n\nType coersion\n\n\n\n\n\nMatrices\n\nA vector with dimension info\n\nVectorization\nVector Recycling\n\nOrdered set of elements\n\nSubsetting with [vec_ind] or [row,col]\n\nAlso Atomic"
   },
   {
+    "objectID": "35-apis-1/slides.html#section",
+    "href": "35-apis-1/slides.html#section",
+    "title": "APIs",
+    "section": "",
+    "text": "x &lt;- \"Hello world!\\n I have arrived!\"\ny &lt;- tibble(n = c(1, 2), pet = c(\"cat\", \"dog\"))\nz &lt;- list(x, y)\n\nwrite_____(x, \"greeting.___\")\nwrite_____(y, \"pets.___\")\nwrite_____(z, \"greeting-pets.___\")\n\nQuestion: What are the file extensions should go in the blanks above (at the end of the file names) to write the contents the objects x, y, and z to disk in the most appropriate formats?"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#json",
+    "href": "35-apis-1/slides.html#json",
+    "title": "APIs",
+    "section": "JSON",
+    "text": "JSON\nJavaScript Object Notation (JSON): a lightweight, text-based format for representing structured data. Roughly anaologous to R lists.\nComponents:\n\nObjects: key-value pairs enclosed in curly braces {}.\nValues: can be strings, numbers, booleans, null, objects, or arrays.\nArrays: ordered lists of values enclosed in square brackets []."
+  },
+  {
+    "objectID": "35-apis-1/slides.html#json-example-1",
+    "href": "35-apis-1/slides.html#json-example-1",
+    "title": "APIs",
+    "section": "JSON Example 1",
+    "text": "JSON Example 1\n{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"is_student\": false,\n  \"courses\": [\"Math\", \"Science\", \"History\"],\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Wonderland\"\n  }\n}"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#json-example-2",
+    "href": "35-apis-1/slides.html#json-example-2",
+    "title": "APIs",
+    "section": "JSON Example 2",
+    "text": "JSON Example 2\n[\n  {\n    \"title\": \"Inception\",\n    \"director\": \"Christopher Nolan\",\n    \"genres\": [\"Action\", \"Sci-Fi\"]\n  },\n  {\n    \"title\": \"The Matrix\",\n    \"director\": \"The Wachowskis\",\n    \"genres\": [\"Action\", \"Sci-Fi\"]\n  }\n]"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#section-1",
+    "href": "35-apis-1/slides.html#section-1",
+    "title": "APIs",
+    "section": "",
+    "text": "library(jsonlite)\nx &lt;- list(\n  title = \"The Matrix\",\n  director = \"The Wachowskis\",\n  genres = c(\"Action\", \"Sci-Fi\")\n)\n\n\n\n\n\n\ntoJSON(x, auto_unbox = TRUE, pretty = TRUE)\n\n\n\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"The Wachowskis\",\n  \"genres\": [\"Action\", \"Sci-Fi\"]\n}"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#agenda",
+    "href": "35-apis-1/slides.html#agenda",
+    "title": "APIs",
+    "section": "Agenda",
+    "text": "Agenda\n\nPreamble: JSON files\nWhat are APIs?\n\nWeb interface\nCommand line interface\nR interface\n\nExample: Bay Area Rapid Transit (BART)"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#consider-the-statewide-database",
+    "href": "35-apis-1/slides.html#consider-the-statewide-database",
+    "title": "APIs",
+    "section": "Consider the Statewide Database",
+    "text": "Consider the Statewide Database\n\n\n\n\n\nCollect election data from each county each election cycle.\nSynthesize and clean hetereogeneous data into single file.\nUpload these files to website.\nUsers download files to local machines for analysis.\n\n\nHow can this be improved?\n\n\n\nAnnotate with: what if the analyst is a machine? how can they programatiically download the data?\nWhat if the data comes in in real-time? how can we make the data available instantaneously?"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#apis",
+    "href": "35-apis-1/slides.html#apis",
+    "title": "APIs",
+    "section": "APIs",
+    "text": "APIs\nApplication Programming Interfaces (APIs): a structured format for computers to exchange data over the internet.\n\nClient-server model: client (user) makes request to server for data. Server responds with requested data.\nData typically returned in as JSON (or XML).\nMost require client to have API key to make request.\nCommon requests:\n\nGET: retrieve data from server\nPOST: send data to server"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-with-an-api",
+    "href": "35-apis-1/slides.html#interacting-with-an-api",
+    "title": "APIs",
+    "section": "Interacting with an API",
+    "text": "Interacting with an API\n\nWeb browser: enter URL with parameters to make request.\nCommand line: use curl to make request.\nR or Python: use HTTP libraries to make request."
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-with-a-browser",
+    "href": "35-apis-1/slides.html#interacting-with-a-browser",
+    "title": "APIs",
+    "section": "Interacting with a Browser",
+    "text": "Interacting with a Browser\nCraft URL from a base URL (endpoint) and parameters.\n\n\n\n\nhttps://api.bart.gov/api/stn.aspx?cmd=stninfo&\n\n\norig=DBRK&json=y&key=MW9S-E7SL-26DU-VV8V\""
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-from-command-line",
+    "href": "35-apis-1/slides.html#interacting-from-command-line",
+    "title": "APIs",
+    "section": "Interacting from Command Line",
+    "text": "Interacting from Command Line\nMost shells have curl command for making HTTP requests.\n\ncurl \"https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&json=y&key=MW9S-E7SL-26DU-VV8V\""
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-from-r",
+    "href": "35-apis-1/slides.html#interacting-from-r",
+    "title": "APIs",
+    "section": "Interacting from R",
+    "text": "Interacting from R"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-from-r-1",
+    "href": "35-apis-1/slides.html#interacting-from-r-1",
+    "title": "APIs",
+    "section": "Interacting from R",
+    "text": "Interacting from R\n\n\nlibrary(httr2)\napi_url &lt;- \"https://api.bart.gov/api/stn.aspx\"\nres &lt;- request(api_url)\nres\n\n\n\n&lt;httr2_request&gt;\nGET https://api.bart.gov/api/stn.aspx\nBody: empty"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-from-r-2",
+    "href": "35-apis-1/slides.html#interacting-from-r-2",
+    "title": "APIs",
+    "section": "Interacting from R",
+    "text": "Interacting from R\n\nlibrary(httr2)\napi_url &lt;- \"https://api.bart.gov/api/stn.aspx\"\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"stninfo\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\nres\n\n\n\n&lt;httr2_response&gt;\nGET https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&key=MW9S-E7SL-26DU-VV8V&json=y\nStatus: 200 OK\nContent-Type: application/json\nBody: In memory (1810 bytes)"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#interacting-from-r-3",
+    "href": "35-apis-1/slides.html#interacting-from-r-3",
+    "title": "APIs",
+    "section": "Interacting from R",
+    "text": "Interacting from R\n\ndata &lt;- resp_body_json(res, simplifyVector = FALSE)\ndata\n\n\n\n$`?xml`\n$`?xml`$`@version`\n[1] \"1.0\"\n\n$`?xml`$`@encoding`\n[1] \"utf-8\"\n\n\n$root\n$root$`@id`\n[1] \"1\"\n\n$root$uri\n$root$uri$`#cdata-section`\n[1] \"http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&json=y\"\n\n\n$root$stations\n$root$stations$station\n$root$stations$station$name\n[1] \"Downtown Berkeley\"\n\n$root$stations$station$abbr\n[1] \"DBRK\"\n\n$root$stations$station$gtfs_latitude\n[1] \"37.870104\"\n\n$root$stations$station$gtfs_longitude\n[1] \"-122.268133\"\n\n$root$stations$station$address\n[1] \"2160 Shattuck Avenue\"\n\n$root$stations$station$city\n[1] \"Berkeley\"\n\n$root$stations$station$county\n[1] \"alameda\"\n\n$root$stations$station$state\n[1] \"CA\"\n\n$root$stations$station$zipcode\n[1] \"94704\"\n\n$root$stations$station$north_routes\n$root$stations$station$north_routes$route\n$root$stations$station$north_routes$route[[1]]\n[1] \"ROUTE 3\"\n\n$root$stations$station$north_routes$route[[2]]\n[1] \"ROUTE 8\"\n\n\n\n$root$stations$station$south_routes\n$root$stations$station$south_routes$route\n$root$stations$station$south_routes$route[[1]]\n[1] \"ROUTE 4\"\n\n$root$stations$station$south_routes$route[[2]]\n[1] \"ROUTE 7\"\n\n\n\n$root$stations$station$north_platforms\n$root$stations$station$north_platforms$platform\n$root$stations$station$north_platforms$platform[[1]]\n[1] \"1\"\n\n\n\n$root$stations$station$south_platforms\n$root$stations$station$south_platforms$platform\n$root$stations$station$south_platforms$platform[[1]]\n[1] \"2\"\n\n\n\n$root$stations$station$platform_info\n[1] \"\"\n\n$root$stations$station$intro\n$root$stations$station$intro$`#cdata-section`\n[1] \"The Downtown Berkeley BART Station is located on Shattuck Avenue between Allston Way and Addison Street. It is conveniently located close to the University of California campus and to many shops, restaurants, theaters and other attractions, and has valet bike parking. Public restrooms are available.Maps of this stationStation MapTransit StopsTransit RoutesSchedules and Fares\"\n\n\n$root$stations$station$cross_street\n$root$stations$station$cross_street$`#cdata-section`\n[1] \"Between: Center St. & Allston Way\"\n\n\n$root$stations$station$food\n$root$stations$station$food$`#cdata-section`\n[1] \"Nearby restaurant reviews from &lt;a href=\\\"http://www.yelp.com/search?find_desc=Restaurant+&ns=1&rpp=10&find_loc=2160 Shattuck Avenue Berkeley, CA 94704\\\"&gt;yelp.com&lt;/a&gt;\"\n\n\n$root$stations$station$shopping\n$root$stations$station$shopping$`#cdata-section`\n[1] \"Local shopping from &lt;a href=\\\"http://www.yelp.com/search?find_desc=Shopping+&ns=1&rpp=10&find_loc=2160 Shattuck Avenue Berkeley, CA 94704\\\"&gt;yelp.com&lt;/a&gt;\"\n\n\n$root$stations$station$attraction\n$root$stations$station$attraction$`#cdata-section`\n[1] \"More station area attractions from &lt;a href=\\\"http://www.yelp.com/search?find_desc=+&ns=1&rpp=10&find_loc=2160 Shattuck Avenue Berkeley, CA 94704\\\"&gt;yelp.com&lt;/a&gt; and &lt;a href=\\\"http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2008/03/13/NSENVEA1M.DTL&type=travel\\\"&gt;sfgate.com&lt;/a&gt;\"\n\n\n$root$stations$station$link\n$root$stations$station$link$`#cdata-section`\n[1] \"http://www.bart.gov/stations/DBRK\"\n\n\n\n\n$root$message\n[1] \"\"\n\n\n\n\nlat &lt;- data$root$stations$station$gtfs_latitude\nlat\n\n\n\n[1] \"37.870104\""
+  },
+  {
+    "objectID": "35-apis-1/slides.html#section-14",
+    "href": "35-apis-1/slides.html#section-14",
+    "title": "APIs",
+    "section": "",
+    "text": "# Station Info API request\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"stninfo\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\n\n\n\n\n\nQuestion: How would you modify this request to get estimated departure times (ETDs) for trains leaving from the Downtown Berkeley station (DBRK)?"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#recall-station-call",
+    "href": "35-apis-1/slides.html#recall-station-call",
+    "title": "APIs",
+    "section": "Recall: Station Call",
+    "text": "Recall: Station Call\n\nlibrary(httr2)\napi_url &lt;- \"https://api.bart.gov/api/stn.aspx\"\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"stninfo\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\nres\n\n\n\n&lt;httr2_response&gt;\nGET https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&key=MW9S-E7SL-26DU-VV8V&json=y\nStatus: 200 OK\nContent-Type: application/json\nBody: In memory (1810 bytes)"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#etd-call",
+    "href": "35-apis-1/slides.html#etd-call",
+    "title": "APIs",
+    "section": "ETD Call",
+    "text": "ETD Call\n\napi_url &lt;- \"https://api.bart.gov/api/etd.aspx\"\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"etd\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\nres\n\n\n\n&lt;httr2_response&gt;\nGET https://api.bart.gov/api/etd.aspx?cmd=etd&orig=DBRK&key=MW9S-E7SL-26DU-VV8V&json=y\nStatus: 200 OK\nContent-Type: application/json\nBody: In memory (1977 bytes)"
+  },
+  {
+    "objectID": "35-apis-1/slides.html#section-15",
+    "href": "35-apis-1/slides.html#section-15",
+    "title": "APIs",
+    "section": "",
+    "text": "data &lt;- resp_body_json(res, simplifyVector = FALSE)\ndata\n\n\n\n$`?xml`\n$`?xml`$`@version`\n[1] \"1.0\"\n\n$`?xml`$`@encoding`\n[1] \"utf-8\"\n\n\n$root\n$root$`@id`\n[1] \"1\"\n\n$root$uri\n$root$uri$`#cdata-section`\n[1] \"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DBRK&json=y\"\n\n\n$root$date\n[1] \"11/24/2025\"\n\n$root$time\n[1] \"05:26:48 PM PST\"\n\n$root$station\n$root$station[[1]]\n$root$station[[1]]$name\n[1] \"Downtown Berkeley\"\n\n$root$station[[1]]$abbr\n[1] \"DBRK\"\n\n$root$station[[1]]$etd\n$root$station[[1]]$etd[[1]]\n$root$station[[1]]$etd[[1]]$destination\n[1] \"Berryessa\"\n\n$root$station[[1]]$etd[[1]]$abbreviation\n[1] \"BERY\"\n\n$root$station[[1]]$etd[[1]]$limited\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate\n$root$station[[1]]$etd[[1]]$estimate[[1]]\n$root$station[[1]]$etd[[1]]$estimate[[1]]$minutes\n[1] \"11\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$delay\n[1] \"78\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]\n$root$station[[1]]$etd[[1]]$estimate[[2]]$minutes\n[1] \"30\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]\n$root$station[[1]]$etd[[1]]$estimate[[3]]$minutes\n[1] \"50\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$dynamicflag\n[1] \"0\"\n\n\n\n\n$root$station[[1]]$etd[[2]]\n$root$station[[1]]$etd[[2]]$destination\n[1] \"Millbrae\"\n\n$root$station[[1]]$etd[[2]]$abbreviation\n[1] \"MLBR\"\n\n$root$station[[1]]$etd[[2]]$limited\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate\n$root$station[[1]]$etd[[2]]$estimate[[1]]\n$root$station[[1]]$etd[[2]]$estimate[[1]]$minutes\n[1] \"17\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]\n$root$station[[1]]$etd[[2]]$estimate[[2]]$minutes\n[1] \"37\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]\n$root$station[[1]]$etd[[2]]$estimate[[3]]$minutes\n[1] \"57\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$dynamicflag\n[1] \"0\"\n\n\n\n\n$root$station[[1]]$etd[[3]]\n$root$station[[1]]$etd[[3]]$destination\n[1] \"Richmond\"\n\n$root$station[[1]]$etd[[3]]$abbreviation\n[1] \"RICH\"\n\n$root$station[[1]]$etd[[3]]$limited\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate\n$root$station[[1]]$etd[[3]]$estimate[[1]]\n$root$station[[1]]$etd[[3]]$estimate[[1]]$minutes\n[1] \"3\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$platform\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$direction\n[1] \"North\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$delay\n[1] \"128\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]\n$root$station[[1]]$etd[[3]]$estimate[[2]]$minutes\n[1] \"15\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$platform\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$direction\n[1] \"North\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$length\n[1] \"8\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$delay\n[1] \"60\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]\n$root$station[[1]]$etd[[3]]$estimate[[3]]$minutes\n[1] \"21\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$platform\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$direction\n[1] \"North\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$dynamicflag\n[1] \"0\"\n\n\n\n\n\n\n\n$root$message\n[1] \"\""
+  },
+  {
+    "objectID": "35-apis-1/slides.html#apis-another-data-product",
+    "href": "35-apis-1/slides.html#apis-another-data-product",
+    "title": "APIs",
+    "section": "APIs: another Data Product",
+    "text": "APIs: another Data Product\n\nDraw picture of computing diagram except this time have the whole thing be in the cloud and the data product be another data set or a prediction."
+  },
+  {
     "objectID": "22-text-analysis/slides.html#romeo-and-juliet-shakespeare-1597",
     "href": "22-text-analysis/slides.html#romeo-and-juliet-shakespeare-1597",
     "title": "Text Analysis",
@@ -1834,14 +1981,14 @@
     "href": "24-date-time-2/slides.html#how-old-am-i",
     "title": "Dates and Times II",
     "section": "How old am I?",
-    "text": "How old am I?\n\n\nlibrary(lubridate)\na &lt;- today()\nb &lt;- ymd(\"1983-02-28\")\nclass(a)\n\n\n\n[1] \"Date\"\n\nclass(b)\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 15610 days"
+    "text": "How old am I?\n\n\nlibrary(lubridate)\na &lt;- today()\nb &lt;- ymd(\"1983-02-28\")\nclass(a)\n\n\n\n[1] \"Date\"\n\nclass(b)\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 15611 days"
   },
   {
     "objectID": "24-date-time-2/slides.html#durations",
     "href": "24-date-time-2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two Date vectors -&gt; difftime vector.\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\nmy_age_s &lt;- as.duration(a - b)\nclass(my_age_s)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\nmy_age_s\n\n\n\n[1] \"1348704000s (~42.74 years)\""
+    "text": "Durations\nSubtraction of two Date vectors -&gt; difftime vector.\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\nmy_age_s &lt;- as.duration(a - b)\nclass(my_age_s)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\nmy_age_s\n\n\n\n[1] \"1348790400s (~42.74 years)\""
   },
   {
     "objectID": "24-date-time-2/slides.html#constructing-a-duration",
@@ -1883,7 +2030,7 @@
     "href": "24-date-time-2/slides.html#how-old-will-i-be",
     "title": "Dates and Times II",
     "section": "How old will I be…",
-    "text": "How old will I be…\nIn a year?\n\n\nmy_age_s\n\n\n\n[1] \"1348704000s (~42.74 years)\"\n\nmy_age_s + dyears(1) # adding average seconds in a year\n\n[1] \"1380261600s (~43.74 years)\"\n\n\n\n\n\nas.period(my_age_s)\n\n\n\n[1] \"42y 0m 269d 12H 0M 0S\"\n\n\n\n\n\nas.period(my_age_s) + years(1)\n\n\n\n[1] \"43y 0m 269d 12H 0M 0S\""
+    "text": "How old will I be…\nIn a year?\n\n\nmy_age_s\n\n\n\n[1] \"1348790400s (~42.74 years)\"\n\nmy_age_s + dyears(1) # adding average seconds in a year\n\n[1] \"1380348000s (~43.74 years)\"\n\n\n\n\n\nas.period(my_age_s)\n\n\n\n[1] \"42y 0m 270d 12H 0M 0S\"\n\n\n\n\n\nas.period(my_age_s) + years(1)\n\n\n\n[1] \"43y 0m 270d 12H 0M 0S\""
   },
   {
     "objectID": "24-date-time-2/slides.html#time-spans-recap",
@@ -3349,7 +3496,7 @@
     "href": "07-control-flow/slides.html#a-random-condition-in-r",
     "title": "Control Flow",
     "section": "A random condition in R",
-    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] 0.053706\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
+    "text": "A random condition in R\n\n\nrnorm(1)\n\n\n\n[1] -0.836864\n\n\n\n\nrnorm() will generate a random number from a Normal distribution with mean 0 and SD 1."
   },
   {
     "objectID": "07-control-flow/slides.html#if-then",
@@ -3398,35 +3545,35 @@
     "href": "07-control-flow/slides.html#what-if-x-has-multiple-elements",
     "title": "Control Flow",
     "section": "What if x has multiple elements?",
-    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -1.0977478 -1.2140355 -0.6484043\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
+    "text": "What if x has multiple elements?\n\n\nx &lt;- rnorm(3)\nx\n\n\n\n[1] -0.6120911 -1.3505319  2.0653139\n\n\n\n\n\n\n\n\n\n\n      if (x &gt; 0) {\n        print(\"x is positive :)\")\n      }\n\n\n\nAnnotate this if-then by wrapping it in a for loop."
   },
   {
     "objectID": "07-control-flow/slides.html#option-1",
     "href": "07-control-flow/slides.html#option-1",
     "title": "Control Flow",
     "section": "Option 1",
-    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}"
+    "text": "Option 1\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(\"x is positive :)\")\n  }\n}\n\n\n\n[1] \"x is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-2",
     "href": "07-control-flow/slides.html#option-2",
     "title": "Control Flow",
     "section": "Option 2",
-    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}"
+    "text": "Option 2\n\nfor (i in 1:length(x)) {\n  if (x[i] &gt; 0) {\n    print(paste(\"element\", i, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"element 3 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#option-3",
     "href": "07-control-flow/slides.html#option-3",
     "title": "Control Flow",
     "section": "Option 3",
-    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}"
+    "text": "Option 3\n\nfor (x_elem in x) {\n  if (x_elem &gt; 0) {\n    print(paste(x_elem, \"is positive :)\"))\n  }\n}\n\n\n\n[1] \"2.06531391818125 is positive :)\""
   },
   {
     "objectID": "07-control-flow/slides.html#ifelse",
     "href": "07-control-flow/slides.html#ifelse",
     "title": "Control Flow",
     "section": "ifelse()",
-    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1] TRUE TRUE TRUE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is positive :)\""
+    "text": "ifelse()\n\nifelse(): A vectorized if-else statement.\n\n\n\n\n\nx &lt; 0 \n\n\n\n[1]  TRUE  TRUE FALSE\n\n\n\n\n\nifelse(test = x &lt; 0, yes = \"is positive :)\", no = \"is negative :(\")\n\n\n\n[1] \"is positive :)\" \"is positive :)\" \"is negative :(\""
   },
   {
     "objectID": "06-lists/slides.html#section",
@@ -4000,7 +4147,7 @@
     "href": "index.html",
     "title": "STAT 133",
     "section": "",
-    "text": "Concepts in Computing with Data\nStat 133 UC Berkeley\n\n\n\n\n\n\n\n\n\n\n  \n  Week 1\n  \n\n  \n    \n    \n    \n    Aug 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 27\n    \n    \n    Welcome\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 28\n    \n    \n    Lab 0: Data in Trees\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 29\n    \n    \n    Intro to R\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 2\n  \n\n  \n    \n    \n    \n    Sep 1\n    \n    \n    No Class: Labor Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 3\n    \n    \n    Atomic Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 4\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 5\n    \n    \n    Working with Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 3\n  \n\n  \n    \n    \n    \n    Sep 8\n    \n    \n    Extending Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 9\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 10\n    \n    \n    Lists\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 11\n    \n    \n    Quiz 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 12\n    \n    \n    Control Flow\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 4\n  \n\n  \n    \n    \n    \n    Sep 15\n    \n    \n    Functions\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 17\n    \n    \n    The R Ecosystem\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 18\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 19\n    \n    \n    Factors and Data Frames\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 5\n  \n\n  \n    \n    \n    \n    Sep 22\n    \n    \n    Git & GitHub\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 23\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 24\n    \n    \n    Data Wrangling I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 25\n    \n    \n    Quiz 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 26\n    \n    \n    Data Wrangling II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 6\n  \n\n  \n    \n    \n    \n    Sep 29\n    \n    \n    Intro to Data Viz\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 30\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 1\n    \n    \n    Grammar of Graphics\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 2\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 3\n    \n    \n    EDA\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 7\n  \n\n  \n    \n    \n    \n    Oct 6\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 8\n    \n    \n    Explanatory DA\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 9\n    \n    \n    Quiz 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 10\n    \n    \n    Joins and Pivots\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 8\n  \n\n  \n    \n    \n    \n    Oct 13\n    \n    \n    Quarto\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 7\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 15\n    \n    \n    Strings I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 16\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 17\n    \n    \n    Strings II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 9\n  \n\n  \n    \n    \n    \n    Oct 20\n    \n    \n    Text Analysis\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 8\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 22\n    \n    \n    Dates and Times I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 23\n    \n    \n    Quiz 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 24\n    \n    \n    Dates and Times II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 10\n  \n\n  \n    \n    \n    \n    Oct 27\n    \n    \n    Spatial Data I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 9\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 29\n    \n    \n    Gerrymandering\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 30\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 31\n    \n    \n    Spatial Data II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 11\n  \n\n  \n    \n    \n    \n    Nov 3\n    \n    \n    Dashboards\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 4\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 10\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 5\n    \n    \n    Election Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 6\n    \n    \n    Quiz 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 7\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 12\n  \n\n  \n    \n    \n    \n    Nov 10\n    \n    \n    R Packages I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 11\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 12\n    \n    \n    R Packages II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 11\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 13\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 14\n    \n    \n    Prediction I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 13\n  \n\n  \n    \n    \n    \n    Nov 17\n    \n    \n    Prediction II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 19\n    \n    \n    Classification\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 12\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 20\n    \n    \n    Quiz 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 21\n    \n    \n    APIs\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 14\n  \n\n  \n    \n    \n    \n    Nov 24\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 13\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 26\n    \n    \n    No Class: Thanksgiving\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 27\n    \n    \n    No Class: Thanksgiving\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 28\n    \n    \n    No Class: Thanksgiving\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 15\n  \n\n  \n    \n    \n    \n    Dec 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 14\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 4\n    \n    \n    Quiz 7\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 16\n  \n\n  \n    \n    \n    \n    Dec 8\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 9\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 10\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 11\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 12\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 17\n  \n\n  \n    \n    \n    \n    Dec 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 17\n    \n    \n    Final Exam\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n\n\nNo matching items",
+    "text": "Concepts in Computing with Data\nStat 133 UC Berkeley\n\n\n\n\n\n\n\n\n\n\n  \n  Week 1\n  \n\n  \n    \n    \n    \n    Aug 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 26\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 27\n    \n    \n    Welcome\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 28\n    \n    \n    Lab 0: Data in Trees\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Aug 29\n    \n    \n    Intro to R\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 2\n  \n\n  \n    \n    \n    \n    Sep 1\n    \n    \n    No Class: Labor Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 3\n    \n    \n    Atomic Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 4\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 5\n    \n    \n    Working with Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 3\n  \n\n  \n    \n    \n    \n    Sep 8\n    \n    \n    Extending Vectors\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 9\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 10\n    \n    \n    Lists\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 11\n    \n    \n    Quiz 1\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 12\n    \n    \n    Control Flow\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 4\n  \n\n  \n    \n    \n    \n    Sep 15\n    \n    \n    Functions\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 17\n    \n    \n    The R Ecosystem\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Lab 1\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 18\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 19\n    \n    \n    Factors and Data Frames\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 5\n  \n\n  \n    \n    \n    \n    Sep 22\n    \n    \n    Git & GitHub\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 23\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 24\n    \n    \n    Data Wrangling I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 25\n    \n    \n    Quiz 2\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 26\n    \n    \n    Data Wrangling II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 6\n  \n\n  \n    \n    \n    \n    Sep 29\n    \n    \n    Intro to Data Viz\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Sep 30\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 1\n    \n    \n    Grammar of Graphics\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 2\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 2\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 3\n    \n    \n    EDA\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 7\n  \n\n  \n    \n    \n    \n    Oct 6\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 7\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 8\n    \n    \n    Explanatory DA\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 9\n    \n    \n    Quiz 3\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 10\n    \n    \n    Joins and Pivots\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 8\n  \n\n  \n    \n    \n    \n    Oct 13\n    \n    \n    Quarto\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 14\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 7\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 15\n    \n    \n    Strings I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 3\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 16\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 17\n    \n    \n    Strings II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 9\n  \n\n  \n    \n    \n    \n    Oct 20\n    \n    \n    Text Analysis\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 21\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 8\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 22\n    \n    \n    Dates and Times I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 23\n    \n    \n    Quiz 4\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 24\n    \n    \n    Dates and Times II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 10\n  \n\n  \n    \n    \n    \n    Oct 27\n    \n    \n    Spatial Data I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 28\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 9\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 29\n    \n    \n    Gerrymandering\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 4\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 30\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Oct 31\n    \n    \n    Spatial Data II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 11\n  \n\n  \n    \n    \n    \n    Nov 3\n    \n    \n    Dashboards\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 4\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 10\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 5\n    \n    \n    Election Day\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 6\n    \n    \n    Quiz 5\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 7\n    \n    \n    No Class\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 12\n  \n\n  \n    \n    \n    \n    Nov 10\n    \n    \n    R Packages I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 11\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 12\n    \n    \n    R Packages II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 11\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 13\n    \n    \n    Lab\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n        \n          \n          \n          \n            Project\n          \n        \n      \n        \n          \n          \n          \n            Worksheet\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 14\n    \n    \n    Prediction I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 5\n        \n        \n      \n      \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 13\n  \n\n  \n    \n    \n    \n    Nov 17\n    \n    \n    Prediction II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 19\n    \n    \n    Classification\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 12\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 20\n    \n    \n    Quiz 6\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 21\n    \n    \n    APIs I\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 14\n  \n\n  \n    \n    \n    \n    Nov 24\n    \n    \n    APIs II\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n      \n      \n        \n          \n          \n          \n            Slides\n          \n        \n      \n      \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 25\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 13\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 26\n    \n    \n    No Class: Thanksgiving\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 27\n    \n    \n    No Class: Thanksgiving\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Nov 28\n    \n    \n    No Class: Thanksgiving\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 15\n  \n\n  \n    \n    \n    \n    Dec 1\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 2\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          PS 14\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 3\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n      \n      Due:\n      \n        \n        \n          Project 6\n        \n        \n      \n      \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 4\n    \n    \n    Quiz 7\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 5\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 16\n  \n\n  \n    \n    \n    \n    Dec 8\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 9\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 10\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 11\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 12\n    \n    \n    RRR\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n  \n  Week 17\n  \n\n  \n    \n    \n    \n    Dec 15\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 16\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 17\n    \n    \n    Final Exam\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 18\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n    \n    \n    \n    Dec 19\n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  \n  \n  \n\n\n\nNo matching items",
     "crumbs": [
       "Home"
     ]
@@ -4720,6 +4867,13 @@
     "text": "Text Analysis\nFollowing a similar structure to the lecture, you will perform an elemenary exploratory analysis of a work of your choosing cataloged by Project Gutenberg (https://www.gutenberg.org/). You are welcome to search the website and read in the text file directly, or you can use the gutenbergr package in R and search the metadata file using View(gutenberg_metadata) in Positron.\nOnce you have selected a work to study, record the code you us to perform each of the following.\n\nRead the data into R.\n\n\n\n\n\n\n\nWhat is unit of observation in your text file and how many units are there (i.e. how many lines are there)?\n\n\n\n\n\n\n\nBrowse the text and note any unexpected syntax or structure. Clean the data to remove any rows that are not relevant to your analysis.\n\n\n\n\n\n\n\n\n\n\nHow long is the longest unit (likely a line) in terms of characters? How about in terms of words?\n\n\n\n\n\n\n\n\nCreate a data frame where each row is a single token. Then create a bar chart of the top 15 tokens, ordered in terms of their frequency.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRemove stop words then remake the previous plot."
   },
   {
+    "objectID": "35-apis-1/ps.html",
+    "href": "35-apis-1/ps.html",
+    "title": "STAT 133",
+    "section": "",
+    "text": "APIs I\nRevisit the homepage for the BART Legacy API discussed in Lecture.\nhttps://www.bart.gov/schedules/developers/api\n\nWhat is the public key that can be used to access data through the legacy API?\n\n\n\n\n\nNext visit the documention site: https://api.bart.gov/docs/overview/index.aspx. Note that each category of data has its own endpoint / base URL, and all takes a similar format (e.g. for estimated departure data use https://api.bart.gov/api/etd.aspx.)\n\nProvide the URL that will query the API for a list of all BART stations in JSON format.\n\n\n\n\n\nProvide the corresponding shell/terminal command.\n\n\n\n\n\nProvide the corresponding R code that will perform the query and parse the JSON response into an R list object.\n\n\n\n\n\n\n\n\n\n\n\nSubset the list to to return a data frame that contains the station abbreviation, name, latitude, longitude, address, city, county, state, and zipcode for each station. Which county has the greatest number of stations?\n\n\n\n\n\n\n\n\n\nProvide the URL that will query the API for estimated departure times (ETDs) from the Downtown Berkeley Station in JSON format.\n\n\n\n\n\nProvide the corresponding R code that will perform the query and parse the JSON response into an R list object.\n\n\n\n\n\n\n\n\n\n\n\n\nExtract the elemented called root and then the station element within it. View the object using the data viewer. What type of object is it an what are it’s dimensions?\n\n\n\n\n\nUse the unnest() function from the tidyr package to expand the etd list-column. What are the dimensions of the resulting data frame?\n\n\n\n\n\n\n\n\nUse unnest() again to expand the estimate list-column. What are the dimensions of the resulting data frame?\n\n\n\n\n\n\n\n\nHow long (in minutes) is the shortest estimated wait time for a train departing from Downtown Berkeley Station? Which destination does this train go to? For reference, what time is it now?\n\n\n\n\n\n\n\n\n\nQuery the BSA (BART System Advisories) endpoint to retrieve the latest system advisory information. You’re welcome to use any method: web browser, command line, or R. What are the different bits of information that they provide through this endpoint?\n\n\n\n\n\n\n\n\n\n\n\n\nOptional Challenge: Use the data provided by the BART API to construct a map of the BART system showing the locations of all stations. You could make it interactive with leaflet or static like the one below."
+  },
+  {
     "objectID": "30-r-packages-1/slides.html#agenda",
     "href": "30-r-packages-1/slides.html#agenda",
     "title": "R Packages I",
@@ -4879,6 +5033,132 @@
     "title": "R Packages I",
     "section": "Sharing through GitHub",
     "text": "Sharing through GitHub\nUsers can install an R package from GitHub using the remotes package.\n\nlibrary(remotes)\ninstall_github(\"andrewpbray/mypkg\")"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#api-review",
+    "href": "36-apis-2/slides.html#api-review",
+    "title": "APIs II",
+    "section": "API Review",
+    "text": "API Review\n\nAPI: Application Programming Interface\nAllows different software systems to communicate\nEndpoints define specific functionalities\nParameters customize endpoint behavior\nCan access via browser or programmatically\nReturns data in structured format\nOur reqests so far: GET (retrieve data)\n\n\nDraw a Computational Pipeline on board for the statewide data base: where the product is a another data set. Wrap this in a cloud and title it API.\nLayout endpoints: - /svprecint - parameters: election, county - /srprecint - parameters: election, county\nThen draw our computational pipeline for Gerrymandering lab that starts with a call to their api."
+  },
+  {
+    "objectID": "36-apis-2/slides.html#plan-for-building-an-api",
+    "href": "36-apis-2/slides.html#plan-for-building-an-api",
+    "title": "APIs II",
+    "section": "Plan for building an API",
+    "text": "Plan for building an API\n\nDefine endpoints\nSpecify parameters\nReturn structured responses"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-2",
+    "href": "36-apis-2/slides.html#section-2",
+    "title": "APIs II",
+    "section": "",
+    "text": "Define endpoints\n\n\n\ngreet &lt;- function(){\n  greeting &lt;- paste0(\"Hello!\")\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-3",
+    "href": "36-apis-2/slides.html#section-3",
+    "title": "APIs II",
+    "section": "",
+    "text": "Define endpoints\nSpecify parameters\n\n\ngreet &lt;- function(name = \"\"){\n  greeting &lt;- paste0(\"Hello \", name, \"!\")\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-4",
+    "href": "36-apis-2/slides.html#section-4",
+    "title": "APIs II",
+    "section": "",
+    "text": "Define endpoints\nSpecify parameters\nReturn structured responses\n\n\ngreet &lt;- function(name = \"\"){\n  greeting &lt;- paste0(\"Hello \", name, \"!\")\n  list(greeting)\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-5",
+    "href": "36-apis-2/slides.html#section-5",
+    "title": "APIs II",
+    "section": "",
+    "text": "Define endpoints\nSpecify parameters\nReturn structured responses\nDeploy as a web service"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-7",
+    "href": "36-apis-2/slides.html#section-7",
+    "title": "APIs II",
+    "section": "",
+    "text": "Define endpoints\nSpecify parameters\nReturn structured responses\nDeploy as a web service Annotate with Plumber\n\n\n\ngreet &lt;- function(name = \"\"){\n  greeting &lt;- paste0(\"Hello \", name, \"!\")\n  list(greeting)\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-8",
+    "href": "36-apis-2/slides.html#section-8",
+    "title": "APIs II",
+    "section": "",
+    "text": "Define endpoints\nSpecify parameters\nReturn structured responses\n~Deploy as a web service~ Annotate with Plumber\n\n\n#* @apiTitle Stat 133 API\n#* @apiDescription A collection of simple example endpoints\n#* \n#* Greet a person by name\n#* @param name The person to greet\n#* @get /greet\nfunction(name = \"\"){\n  greeting &lt;- paste0(\"Hello \", name, \"!\")\n  list(greeting)\n}\n\n\nCopy this into an R script called stat133-api.R"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#running-a-plumber-api-from-your-session",
+    "href": "36-apis-2/slides.html#running-a-plumber-api-from-your-session",
+    "title": "APIs II",
+    "section": "Running a Plumber API from your session",
+    "text": "Running a Plumber API from your session\n\nMove code into R script (e.g., stat133-api.R)\nUse plumber::plumb() to load the script\nUse pr_run() to start the API server\n\n\n\nlibrary(plumber)\nstat133_api &lt;- plumb(\"stat133-api.R\")\npr_run(stat133_api,\n       host = \"0.0.0.0\",\n       port = 8080)"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#connecting-to-the-api",
+    "href": "36-apis-2/slides.html#connecting-to-the-api",
+    "title": "APIs II",
+    "section": "Connecting to the API",
+    "text": "Connecting to the API\n\nIf your computer is the API server, you can access it at:\n\nhttp://localhost:8080/greet?name=Andrew\n\n\nIf someone else wants to access your API, they need your IP address (which changes each time you connect to the internet) and be on the same network\n\n\n\nFind your IP address at the terminal:\nipconfig getifaddr en0\n\n\n\nFor “production” use, deploy to a cloud service (e.g., Digital Ocean, AWS, Posit Connect, etc.)"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-9",
+    "href": "36-apis-2/slides.html#section-9",
+    "title": "APIs II",
+    "section": "",
+    "text": "#* Greet a person by name\n#* @param name The person to greet\n#* @get /greet\nfunction(name = \"\"){\n  greeting &lt;- paste0(\"Hello \", name, \"!\")\n  list(greeting)\n}\n\n\n\nlibrary(babynames)\nbabynames\n\n\n\n# A tibble: 1,924,665 × 5\n    year sex   name          n   prop\n   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;\n 1  1880 F     Mary       7065 0.0724\n 2  1880 F     Anna       2604 0.0267\n 3  1880 F     Emma       2003 0.0205\n 4  1880 F     Elizabeth  1939 0.0199\n 5  1880 F     Minnie     1746 0.0179\n 6  1880 F     Margaret   1578 0.0162\n 7  1880 F     Ida        1472 0.0151\n 8  1880 F     Alice      1414 0.0145\n 9  1880 F     Bertha     1320 0.0135\n10  1880 F     Sarah      1288 0.0132\n# ℹ 1,924,655 more rows\n\n\n\n\nQuestion: Sketch ~7-9 lines of code to create a new endpoint /babynames that takes a param babyname and returns a data frame filtered on that name.\n\n  \n    −\n    +\n \n 02:00\n \n\nAfter timer is up, flip to R script and transcribe the code that a student (who got it right) wrote. Run the api to test it, then if you like, add another parameter for filtering on year."
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-10",
+    "href": "36-apis-2/slides.html#section-10",
+    "title": "APIs II",
+    "section": "",
+    "text": "#* Get data for a name from the babynames dataset\n#* @param babyname The name to filter on\n#* @get /babynames\nfunction(babyname = \"Mary\"){\n  library(babynames)\n  library(dplyr)\n\n  myData &lt;- babynames |&gt;\n    filter(name == babyname)\n  \n  myData\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#returning-plots-from-an-api",
+    "href": "36-apis-2/slides.html#returning-plots-from-an-api",
+    "title": "APIs II",
+    "section": "Returning Plots from an API",
+    "text": "Returning Plots from an API\n\nPlumber defaults to returning JSON\nYou can change the format of the returned data using serializers\nCommon serializers:\n\n@serializer json (default)\n@serializer png\n@serializer jpeg\n@serializer html\n@serializer contentType list(type=\"image/svg+xml\")"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-11",
+    "href": "36-apis-2/slides.html#section-11",
+    "title": "APIs II",
+    "section": "",
+    "text": "#* Plot timeseries of a name from the babynames dataset\n#* @param babyname The name to plot (required)\n#* @get /plot\n#* @serializer png\nfunction(babyname = \"Mary\"){\n  library(babynames)\n  library(dplyr)\n  library(ggplot2)\n\n  myData &lt;- babynames |&gt;\n    filter(name == babyname) |&gt;\n    group_by(year) |&gt;\n    summarize(n = sum(n), .groups = \"drop\")\n\n  p &lt;- ggplot(myData, aes(x = year, y = n)) +\n    geom_line() +\n    labs(title = paste(\"Popularity of\", babyname, \"over time\"),\n         x = \"year\",\n         y = \"Count\") +\n    theme_bw()\n\n  print(p)\n}\n\n\nCopy this into the api file, then it, then ask students to test it.\n\n\n\nLet’s improve the clarify by returning an SVG (support vector graphics) image instead of PNG."
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-12",
+    "href": "36-apis-2/slides.html#section-12",
+    "title": "APIs II",
+    "section": "",
+    "text": "#* Plot timeseries of a name from the babynames dataset\n#* Returns an SVG image viewable directly in browser\n#* @param babyname The name to plot (required)\n#* @get /plot\n#* @serializer contentType list(type=\"image/svg+xml\")\nfunction(babyname = \"Mary\"){\n  library(babynames)\n  library(dplyr)\n  library(ggplot2)\n  library(svglite)\n\n  myData &lt;- babynames |&gt;\n    filter(name == babyname) |&gt;\n    group_by(year) |&gt;\n    summarize(n = sum(n), .groups = \"drop\")\n\n  p &lt;- ggplot(myData, aes(x = year, y = n)) +\n    geom_line() +\n    labs(title = paste(\"Popularity of\", babyname, \"over time\"),\n         x = \"year\",\n         y = \"Count\") +\n    theme_bw()\n\n  tf &lt;- tempfile(fileext = \".svg\")\n  svglite::svglite(tf, width = 7, height = 5)\n  print(p)\n  dev.off()\n\n  paste(readLines(tf, warn = FALSE), collapse = \"\\n\")\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#what-is-a-post-request",
+    "href": "36-apis-2/slides.html#what-is-a-post-request",
+    "title": "APIs II",
+    "section": "What is a POST request?",
+    "text": "What is a POST request?\n\nAnother HTTP method (like GET)\nUsed to send data to a server to create/update a resource or parameterize an operation\nData is not included in the URL (unlike GET)\nData is included in the body of the request\nCommonly used for:\n\nSubmitting form data\nUploading files\nSending JSON payloads"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#section-13",
+    "href": "36-apis-2/slides.html#section-13",
+    "title": "APIs II",
+    "section": "",
+    "text": "#* Compute final course grade\n#* @post /grade\nfunction(req) {\n  body &lt;- jsonlite::fromJSON(req$postBody)\n  \n  ps  &lt;- body$problem_sets\n  prj &lt;- body$projects\n  qz  &lt;- body$quizzes\n  fn  &lt;- body$final\n  \n  course_grade &lt;- \n    0.05 * ps +\n    0.15 * prj +\n    0.50 * qz +\n    0.30 * fn\n  \n  list(course_grade)\n}"
+  },
+  {
+    "objectID": "36-apis-2/slides.html#making-a-post-request",
+    "href": "36-apis-2/slides.html#making-a-post-request",
+    "title": "APIs II",
+    "section": "Making a POST request",
+    "text": "Making a POST request\n\nlibrary(httr2)\n\nmy_grades &lt;- list(problem_sets = 92,\n                  projects = 88,\n                  quizzes = 81,\n                  final = 90)\n\nresp &lt;- request(\"http://localhost:8080/grade\") |&gt;\n  req_method(\"POST\") |&gt;\n  req_body_json(my_grades) |&gt;\n  req_perform()\n\nresp |&gt; \n  resp_body_json()"
   },
   {
     "objectID": "28-dashboards/slides.html#data-dashboards",
@@ -5208,146 +5488,6 @@
     "title": "Strings II",
     "section": "",
     "text": "select(survey, major)\n\n\n\n# A tibble: 202 × 1\n   major                           \n   &lt;chr&gt;                           \n 1 Applied mathematics             \n 2 Psychology & Data Science       \n 3 Statistics                      \n 4 Statistics                      \n 5 math major + ds minor           \n 6 Economics and minor Data Science\n 7 Political Science               \n 8 Statistics                      \n 9 Statistics + Economics          \n10 Statistics                      \n# ℹ 192 more rows"
-  },
-  {
-    "objectID": "35-apis/slides.html#section",
-    "href": "35-apis/slides.html#section",
-    "title": "APIs",
-    "section": "",
-    "text": "x &lt;- \"Hello world!\\n I have arrived!\"\ny &lt;- tibble(n = c(1, 2), pet = c(\"cat\", \"dog\"))\nz &lt;- list(x, y)\n\nwrite_____(x, \"greeting.___\")\nwrite_____(y, \"pets.___\")\nwrite_____(z, \"greeting-pets.___\")\n\nQuestion: What are the file extensions should go in the blanks above (at the end of the file names) to write the contents the objects x, y, and z to disk in the most appropriate formats?"
-  },
-  {
-    "objectID": "35-apis/slides.html#json",
-    "href": "35-apis/slides.html#json",
-    "title": "APIs",
-    "section": "JSON",
-    "text": "JSON\nJavaScript Object Notation (JSON): a lightweight, text-based format for representing structured data. Roughly anaologous to R lists.\nComponents:\n\nObjects: key-value pairs enclosed in curly braces {}.\nValues: can be strings, numbers, booleans, null, objects, or arrays.\nArrays: ordered lists of values enclosed in square brackets []."
-  },
-  {
-    "objectID": "35-apis/slides.html#json-example-1",
-    "href": "35-apis/slides.html#json-example-1",
-    "title": "APIs",
-    "section": "JSON Example 1",
-    "text": "JSON Example 1\n{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"is_student\": false,\n  \"courses\": [\"Math\", \"Science\", \"History\"],\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Wonderland\"\n  }\n}"
-  },
-  {
-    "objectID": "35-apis/slides.html#json-example-2",
-    "href": "35-apis/slides.html#json-example-2",
-    "title": "APIs",
-    "section": "JSON Example 2",
-    "text": "JSON Example 2\n[\n  {\n    \"title\": \"Inception\",\n    \"director\": \"Christopher Nolan\",\n    \"genres\": [\"Action\", \"Sci-Fi\"]\n  },\n  {\n    \"title\": \"The Matrix\",\n    \"director\": \"The Wachowskis\",\n    \"genres\": [\"Action\", \"Sci-Fi\"]\n  }\n]"
-  },
-  {
-    "objectID": "35-apis/slides.html#section-1",
-    "href": "35-apis/slides.html#section-1",
-    "title": "APIs",
-    "section": "",
-    "text": "library(jsonlite)\nx &lt;- list(\n  title = \"The Matrix\",\n  director = \"The Wachowskis\",\n  genres = c(\"Action\", \"Sci-Fi\")\n)\n\n\n\n\n\n\ntoJSON(x, auto_unbox = TRUE, pretty = TRUE)\n\n\n\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"The Wachowskis\",\n  \"genres\": [\"Action\", \"Sci-Fi\"]\n}"
-  },
-  {
-    "objectID": "35-apis/slides.html#agenda",
-    "href": "35-apis/slides.html#agenda",
-    "title": "APIs",
-    "section": "Agenda",
-    "text": "Agenda\n\nPreamble: JSON files\nWhat are APIs?\n\nWeb interface\nCommand line interface\nR interface\n\nExample: Bay Area Rapid Transit (BART)"
-  },
-  {
-    "objectID": "35-apis/slides.html#consider-the-statewide-database",
-    "href": "35-apis/slides.html#consider-the-statewide-database",
-    "title": "APIs",
-    "section": "Consider the Statewide Database",
-    "text": "Consider the Statewide Database\n\n\n\n\n\nCollect election data from each county each election cycle.\nSynthesize and clean hetereogeneous data into single file.\nUpload these files to website.\nUsers download files to local machines for analysis.\n\n\nHow can this be improved?\n\n\n\nAnnotate with: what if the analyst is a machine? how can they programatiically download the data?\nWhat if the data comes in in real-time? how can we make the data available instantaneously?"
-  },
-  {
-    "objectID": "35-apis/slides.html#apis",
-    "href": "35-apis/slides.html#apis",
-    "title": "APIs",
-    "section": "APIs",
-    "text": "APIs\nApplication Programming Interfaces (APIs): a structured format for computers to exchange data over the internet.\n\nClient-server model: client (user) makes request to server for data. Server responds with requested data.\nData typically returned in as JSON (or XML).\nMost require client to have API key to make request.\nCommon requests:\n\nGET: retrieve data from server\nPOST: send data to server"
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-with-an-api",
-    "href": "35-apis/slides.html#interacting-with-an-api",
-    "title": "APIs",
-    "section": "Interacting with an API",
-    "text": "Interacting with an API\n\nWeb browser: enter URL with parameters to make request.\nCommand line: use curl to make request.\nR or Python: use HTTP libraries to make request."
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-with-a-browser",
-    "href": "35-apis/slides.html#interacting-with-a-browser",
-    "title": "APIs",
-    "section": "Interacting with a Browser",
-    "text": "Interacting with a Browser\nCraft URL from a base URL (endpoint) and parameters.\n\n\n\n\nhttps://api.bart.gov/api/stn.aspx?cmd=stninfo&\n\n\norig=DBRK&json=y&key=MW9S-E7SL-26DU-VV8V\""
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-from-command-line",
-    "href": "35-apis/slides.html#interacting-from-command-line",
-    "title": "APIs",
-    "section": "Interacting from Command Line",
-    "text": "Interacting from Command Line\nMost shells have curl command for making HTTP requests.\n\ncurl \"https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&json=y&key=MW9S-E7SL-26DU-VV8V\""
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-from-r",
-    "href": "35-apis/slides.html#interacting-from-r",
-    "title": "APIs",
-    "section": "Interacting from R",
-    "text": "Interacting from R"
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-from-r-1",
-    "href": "35-apis/slides.html#interacting-from-r-1",
-    "title": "APIs",
-    "section": "Interacting from R",
-    "text": "Interacting from R\n\n\nlibrary(httr2)\napi_url &lt;- \"https://api.bart.gov/api/stn.aspx\"\nres &lt;- request(api_url)\nres\n\n\n\n&lt;httr2_request&gt;\nGET https://api.bart.gov/api/stn.aspx\nBody: empty"
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-from-r-2",
-    "href": "35-apis/slides.html#interacting-from-r-2",
-    "title": "APIs",
-    "section": "Interacting from R",
-    "text": "Interacting from R\n\nlibrary(httr2)\napi_url &lt;- \"https://api.bart.gov/api/stn.aspx\"\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"stninfo\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\nres\n\n\n\n&lt;httr2_response&gt;\nGET https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&key=MW9S-E7SL-26DU-VV8V&json=y\nStatus: 200 OK\nContent-Type: application/json\nBody: In memory (1810 bytes)"
-  },
-  {
-    "objectID": "35-apis/slides.html#interacting-from-r-3",
-    "href": "35-apis/slides.html#interacting-from-r-3",
-    "title": "APIs",
-    "section": "Interacting from R",
-    "text": "Interacting from R\n\ndata &lt;- resp_body_json(res, simplifyVector = FALSE)\ndata\n\n\n\n$`?xml`\n$`?xml`$`@version`\n[1] \"1.0\"\n\n$`?xml`$`@encoding`\n[1] \"utf-8\"\n\n\n$root\n$root$`@id`\n[1] \"1\"\n\n$root$uri\n$root$uri$`#cdata-section`\n[1] \"http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&json=y\"\n\n\n$root$stations\n$root$stations$station\n$root$stations$station$name\n[1] \"Downtown Berkeley\"\n\n$root$stations$station$abbr\n[1] \"DBRK\"\n\n$root$stations$station$gtfs_latitude\n[1] \"37.870104\"\n\n$root$stations$station$gtfs_longitude\n[1] \"-122.268133\"\n\n$root$stations$station$address\n[1] \"2160 Shattuck Avenue\"\n\n$root$stations$station$city\n[1] \"Berkeley\"\n\n$root$stations$station$county\n[1] \"alameda\"\n\n$root$stations$station$state\n[1] \"CA\"\n\n$root$stations$station$zipcode\n[1] \"94704\"\n\n$root$stations$station$north_routes\n$root$stations$station$north_routes$route\n$root$stations$station$north_routes$route[[1]]\n[1] \"ROUTE 3\"\n\n$root$stations$station$north_routes$route[[2]]\n[1] \"ROUTE 8\"\n\n\n\n$root$stations$station$south_routes\n$root$stations$station$south_routes$route\n$root$stations$station$south_routes$route[[1]]\n[1] \"ROUTE 4\"\n\n$root$stations$station$south_routes$route[[2]]\n[1] \"ROUTE 7\"\n\n\n\n$root$stations$station$north_platforms\n$root$stations$station$north_platforms$platform\n$root$stations$station$north_platforms$platform[[1]]\n[1] \"1\"\n\n\n\n$root$stations$station$south_platforms\n$root$stations$station$south_platforms$platform\n$root$stations$station$south_platforms$platform[[1]]\n[1] \"2\"\n\n\n\n$root$stations$station$platform_info\n[1] \"\"\n\n$root$stations$station$intro\n$root$stations$station$intro$`#cdata-section`\n[1] \"The Downtown Berkeley BART Station is located on Shattuck Avenue between Allston Way and Addison Street. It is conveniently located close to the University of California campus and to many shops, restaurants, theaters and other attractions, and has valet bike parking. Public restrooms are available.Maps of this stationStation MapTransit StopsTransit RoutesSchedules and Fares\"\n\n\n$root$stations$station$cross_street\n$root$stations$station$cross_street$`#cdata-section`\n[1] \"Between: Center St. & Allston Way\"\n\n\n$root$stations$station$food\n$root$stations$station$food$`#cdata-section`\n[1] \"Nearby restaurant reviews from &lt;a href=\\\"http://www.yelp.com/search?find_desc=Restaurant+&ns=1&rpp=10&find_loc=2160 Shattuck Avenue Berkeley, CA 94704\\\"&gt;yelp.com&lt;/a&gt;\"\n\n\n$root$stations$station$shopping\n$root$stations$station$shopping$`#cdata-section`\n[1] \"Local shopping from &lt;a href=\\\"http://www.yelp.com/search?find_desc=Shopping+&ns=1&rpp=10&find_loc=2160 Shattuck Avenue Berkeley, CA 94704\\\"&gt;yelp.com&lt;/a&gt;\"\n\n\n$root$stations$station$attraction\n$root$stations$station$attraction$`#cdata-section`\n[1] \"More station area attractions from &lt;a href=\\\"http://www.yelp.com/search?find_desc=+&ns=1&rpp=10&find_loc=2160 Shattuck Avenue Berkeley, CA 94704\\\"&gt;yelp.com&lt;/a&gt; and &lt;a href=\\\"http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2008/03/13/NSENVEA1M.DTL&type=travel\\\"&gt;sfgate.com&lt;/a&gt;\"\n\n\n$root$stations$station$link\n$root$stations$station$link$`#cdata-section`\n[1] \"http://www.bart.gov/stations/DBRK\"\n\n\n\n\n$root$message\n[1] \"\"\n\n\n\n\nlat &lt;- data$root$stations$station$gtfs_latitude\nlat\n\n\n\n[1] \"37.870104\""
-  },
-  {
-    "objectID": "35-apis/slides.html#section-14",
-    "href": "35-apis/slides.html#section-14",
-    "title": "APIs",
-    "section": "",
-    "text": "# Station Info API request\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"stninfo\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\n\n\n\n\n\nQuestion: How would you modify this request to get estimated departure times (ETDs) for trains leaving from the Downtown Berkeley station (DBRK)?"
-  },
-  {
-    "objectID": "35-apis/slides.html#recall-station-call",
-    "href": "35-apis/slides.html#recall-station-call",
-    "title": "APIs",
-    "section": "Recall: Station Call",
-    "text": "Recall: Station Call\n\nlibrary(httr2)\napi_url &lt;- \"https://api.bart.gov/api/stn.aspx\"\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"stninfo\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\nres\n\n\n\n&lt;httr2_response&gt;\nGET https://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=DBRK&key=MW9S-E7SL-26DU-VV8V&json=y\nStatus: 200 OK\nContent-Type: application/json\nBody: In memory (1810 bytes)"
-  },
-  {
-    "objectID": "35-apis/slides.html#etd-call",
-    "href": "35-apis/slides.html#etd-call",
-    "title": "APIs",
-    "section": "ETD Call",
-    "text": "ETD Call\n\napi_url &lt;- \"https://api.bart.gov/api/etd.aspx\"\nres &lt;- request(api_url) |&gt;\n  req_url_query(cmd  = \"etd\") |&gt;\n  req_url_query(orig = \"DBRK\") |&gt;\n  req_url_query(key  = \"MW9S-E7SL-26DU-VV8V\") |&gt;\n  req_url_query(json = \"y\") |&gt;\n  req_perform()\nres\n\n\n\n&lt;httr2_response&gt;\nGET https://api.bart.gov/api/etd.aspx?cmd=etd&orig=DBRK&key=MW9S-E7SL-26DU-VV8V&json=y\nStatus: 200 OK\nContent-Type: application/json\nBody: In memory (1972 bytes)"
-  },
-  {
-    "objectID": "35-apis/slides.html#section-15",
-    "href": "35-apis/slides.html#section-15",
-    "title": "APIs",
-    "section": "",
-    "text": "data &lt;- resp_body_json(res, simplifyVector = FALSE)\ndata\n\n\n\n$`?xml`\n$`?xml`$`@version`\n[1] \"1.0\"\n\n$`?xml`$`@encoding`\n[1] \"utf-8\"\n\n\n$root\n$root$`@id`\n[1] \"1\"\n\n$root$uri\n$root$uri$`#cdata-section`\n[1] \"http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DBRK&json=y\"\n\n\n$root$date\n[1] \"11/23/2025\"\n\n$root$time\n[1] \"06:51:33 PM PST\"\n\n$root$station\n$root$station[[1]]\n$root$station[[1]]$name\n[1] \"Downtown Berkeley\"\n\n$root$station[[1]]$abbr\n[1] \"DBRK\"\n\n$root$station[[1]]$etd\n$root$station[[1]]$etd[[1]]\n$root$station[[1]]$etd[[1]]$destination\n[1] \"Berryessa\"\n\n$root$station[[1]]$etd[[1]]$abbreviation\n[1] \"BERY\"\n\n$root$station[[1]]$etd[[1]]$limited\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate\n$root$station[[1]]$etd[[1]]$estimate[[1]]\n$root$station[[1]]$etd[[1]]$estimate[[1]]$minutes\n[1] \"5\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[1]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]\n$root$station[[1]]$etd[[1]]$estimate[[2]]$minutes\n[1] \"25\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[2]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]\n$root$station[[1]]$etd[[1]]$estimate[[3]]$minutes\n[1] \"45\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[1]]$estimate[[3]]$dynamicflag\n[1] \"0\"\n\n\n\n\n$root$station[[1]]$etd[[2]]\n$root$station[[1]]$etd[[2]]$destination\n[1] \"Millbrae\"\n\n$root$station[[1]]$etd[[2]]$abbreviation\n[1] \"MLBR\"\n\n$root$station[[1]]$etd[[2]]$limited\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate\n$root$station[[1]]$etd[[2]]$estimate[[1]]\n$root$station[[1]]$etd[[2]]$estimate[[1]]$minutes\n[1] \"12\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[1]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]\n$root$station[[1]]$etd[[2]]$estimate[[2]]$minutes\n[1] \"32\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[2]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]\n$root$station[[1]]$etd[[2]]$estimate[[3]]$minutes\n[1] \"52\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$platform\n[1] \"2\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$direction\n[1] \"South\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[2]]$estimate[[3]]$dynamicflag\n[1] \"0\"\n\n\n\n\n$root$station[[1]]$etd[[3]]\n$root$station[[1]]$etd[[3]]$destination\n[1] \"Richmond\"\n\n$root$station[[1]]$etd[[3]]$abbreviation\n[1] \"RICH\"\n\n$root$station[[1]]$etd[[3]]$limited\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate\n$root$station[[1]]$etd[[3]]$estimate[[1]]\n$root$station[[1]]$etd[[3]]$estimate[[1]]$minutes\n[1] \"10\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$platform\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$direction\n[1] \"North\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[1]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]\n$root$station[[1]]$etd[[3]]$estimate[[2]]$minutes\n[1] \"16\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$platform\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$direction\n[1] \"North\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$color\n[1] \"ORANGE\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$hexcolor\n[1] \"#ff9933\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$delay\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[2]]$dynamicflag\n[1] \"0\"\n\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]\n$root$station[[1]]$etd[[3]]$estimate[[3]]$minutes\n[1] \"32\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$platform\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$direction\n[1] \"North\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$length\n[1] \"6\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$color\n[1] \"RED\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$hexcolor\n[1] \"#ff0000\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$bikeflag\n[1] \"1\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$delay\n[1] \"126\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$cancelflag\n[1] \"0\"\n\n$root$station[[1]]$etd[[3]]$estimate[[3]]$dynamicflag\n[1] \"0\"\n\n\n\n\n\n\n\n$root$message\n[1] \"\""
-  },
-  {
-    "objectID": "35-apis/slides.html#apis-another-data-product",
-    "href": "35-apis/slides.html#apis-another-data-product",
-    "title": "APIs",
-    "section": "APIs: another Data Product",
-    "text": "APIs: another Data Product\n\nDraw picture of computing diagram except this time have the whole thing be in the cloud and the data product be another data set or a prediction."
   },
   {
     "objectID": "09-packages/slides.html#the-birth-of-r-1976",
