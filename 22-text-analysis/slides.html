@@ -5912,8 +5912,9 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a></a><span class="co"># install.packages("gutenbergr")</span></span>
 <span id="cb3-2" class="hljs-ln-code"><a></a><span class="fu">library</span>(gutenbergr)</span>
-<span id="cb3-3" class="hljs-ln-code"><a></a>rj_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="at">gutenberg_id =</span> <span class="dv">1513</span>)</span>
-<span id="cb3-4" class="hljs-ln-code"><a></a><span class="fu">slice</span>(rj_raw, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-3" class="hljs-ln-code"><a></a>rj_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="at">gutenberg_id =</span> <span class="dv">1513</span>,</span>
+<span id="cb3-4" class="hljs-ln-code"><a></a>                             <span class="at">mirror =</span> <span class="st">"https://aleph.pglaf.org/"</span>)</span>
+<span id="cb3-5" class="hljs-ln-code"><a></a><span class="fu">slice</span>(rj_raw, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -6086,7 +6087,7 @@
 </div>
 </div>
 </div></div>
-<div id="timer_5a9932b669e143f4087b0ecf918a9d9f2a8f9829" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_6c7269c65a6e57614eaac106897553d442862df2" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
