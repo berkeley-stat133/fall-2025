@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STAT 133 – Project: Gerrymandering</title>
+  <title>STAT 133 – A World of Abstraction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,15 +27,81 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-6248525f1bfeb46420cc643b2d6e76f6.css">
-  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6248525f1bfeb46420cc643b2d6e76f6.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -130,9 +194,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133_slide.png" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Project: Gerrymandering</h1>
-  <p class="subtitle">Analyzing Prop 50 and Spatial Voting Data in California</p>
+<section id="title-slide" data-background-image="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133_slide.png" data-background-size="contain" class="quarto-title-block center">
+  <h1 class="title">A World of Abstraction</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -141,168 +204,282 @@
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ol type="1">
-<li class="fragment">Icebreaker</li>
-<li class="fragment">Project Overview</li>
-<li class="fragment">Worksheet</li>
-<li class="fragment">Project Data</li>
-<li class="fragment">Project Worktime</li>
+<li class="fragment">One task</li>
+<li class="fragment">CT-Predict Contest Winners</li>
+<li class="fragment">DataBot Revisited</li>
+<li class="fragment">A World of Abstraction</li>
 </ol>
+</section>
+<section id="one-task" class="slide level2">
+<h2>One Task</h2>
+<ul>
+<li class="fragment">Please take out a phone or computer and open up your email.</li>
+<li class="fragment">Start a new email.</li>
+<li class="fragment">Address it to yourself.</li>
+<li class="fragment">In the subject line, write “Fill out your Evals!”.</li>
+<li class="fragment">Click send.</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>Thank you</p>
+</blockquote>
+</div>
 </section>
 <section>
-<section id="project-overview" class="title-slide slide level1 center">
-<h1>Project Overview</h1>
+<section id="ct-predict-contest-winners" class="title-slide slide level1 center">
+<h1>CT-Predict Contest Winners</h1>
 
 </section>
-<section id="california-votes" class="slide level2">
-<h2>California Votes!</h2>
-<ul>
-<li class="fragment">Special Election Nov 4th, 2025</li>
-<li class="fragment">Only statewide item: Proposition 50</li>
-</ul>
-<div class="fragment">
-<p><img data-src="images/prop50.png"></p>
-</div>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><span class="fragment fade-in-then-semi-out">I did a logistic regression with basically the exact same steps as the slides (I split it into 70/30 training/testing groups and then just copied the rest of the code).</span> <span class="fragment fade-in-then-semi-out">To determine the model parameters, I first ran the lm function (I just used it because I’m more familiar with it, but I think glm should work the same) on all the variables with citbi_outcome as the response variable to see which variables were significant or not.</span> <span class="fragment fade-in-then-semi-out">I removed the non-significant ones and used those for my recipe.</span> <span class="fragment fade-in-then-semi-out">To deal with the NA, I turned them into 1s for all the binary variables and 3 for GCS total (since the lowest score is 3).</span> <span class="fragment fade-in-then-semi-out">During the previous project with this data, I saw that the NA values were definitely more similar to the positive injury cases, which is why I chose to make them positive instead of 0 or the mean.</span></p>
 </section>
-<section id="current-map" class="slide level2">
-<h2>Current Map</h2>
-
-<img data-src="images/ca-dist-map.png" class="r-stretch"></section>
-<section id="proposed-map" class="slide level2">
-<h2>Proposed Map</h2>
-
-<img data-src="images/ab604-map.png" class="r-stretch"></section>
-<section id="measures-of-partisan-redistricting" class="slide level2">
-<h2>Measures of Partisan Redistricting</h2>
-<p><strong>Mean-Median Score</strong> Suppose we observe an election where the vote share for Republicans in each of <span class="math inline">\(n\)</span> districts is <span class="math inline">\(v_1, \ldots, v_N\)</span>.</p>
-<p>The <strong>mean-median score</strong> is:</p>
-<p><span class="math display">\[
-M = \textrm{mean}(v_i) - \textrm{median}(v_i)
-\]</span></p>
-</section>
-<section id="measures-of-partisan-redistricting-1" class="slide level2">
-<h2>Measures of Partisan Redistricting</h2>
-<p>Suppose two parties, A and B. The <strong>efficiency gap</strong> (EG) favoring party A for a given pattern of votes, is defined as the difference in wasted votes divided by the total number of votes:</p>
-<p><span class="math display">\[
-EG = \frac{W_B - W_A}{T}
-\]</span></p>
-<p>Where <span class="math inline">\(W_B\)</span> is the number of wasted votes by Party B, <span class="math inline">\(W_A\)</span> is the number of wasted votes by Party A, and <span class="math inline">\(T\)</span> is the total votes cast.</p>
-</section>
-<section id="research-question" class="slide level2">
-<h2>Research Question</h2>
-<p>Will adoption of a new district map lead to an increase in partisan advantage relative to 2024?</p>
-<p>If so, by how much?</p>
-</section>
-<section id="words-of-wisdom" class="slide level2">
-<h2>Words of Wisdom</h2>
-<p>Moon Duchin, from <em>Political Geometry</em>:</p>
-<p><strong>Things I Don’t Believe In</strong></p>
-<ol type="1">
-<li class="fragment">Presenting any single number as a metric of fairness</li>
-<li class="fragment">Especially any single number with a prescribed ideal</li>
-<li class="fragment">Redistricting as optimization</li>
-</ol>
-<div class="fragment">
-<p><strong>Things I Do Believe In</strong></p>
-<ol type="1">
-<li class="fragment">Using quantitative information to tell a qualitative story</li>
-</ol>
-
-</div>
-<aside><div>
-<p>Select items from “Political Geometry”, p.&nbsp;25</p>
-</div></aside></section></section>
-<section id="worksheet" class="title-slide slide level1 center">
-<h1>Worksheet</h1>
-<div id="timer_a2970b79ec4598e3f902feda18b39864bedc4f97" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-</section>
-
-<section>
-<section id="project-data" class="title-slide slide level1 center">
-<h1>Project Data</h1>
-
-</section>
-<section id="project-data-1" class="slide level2">
-<h2>Project Data</h2>
-<p>To measure potential partisan gerrymandering in 2024…</p>
-<div class="columns">
-<div class="column">
-<h3 id="what-we-need">What we need</h3>
-<ul>
-<li class="fragment">Vote results by district</li>
-</ul>
-</div><div class="column">
-<h3 id="what-we-have">What we have</h3>
-<ul>
-<li class="fragment">Vote results by <em>precinct</em></li>
-</ul>
-</div></div>
-</section>
-<section id="source-of-2024-election-data" class="slide level2">
-<h2>Source of 2024 Election Data</h2>
-
-<img data-src="images/statewide.png" class="r-stretch"></section>
-<section id="statement-of-vote-sov" class="slide level2">
-<h2>2024 Statement of Vote (SOV)</h2>
-<p>Statewide by voting precincts (SVPREC).</p>
-
-<img data-src="images/sov.png" class="r-stretch"></section>
-<section id="different-areas" class="slide level2">
-<h2>Different areas</h2>
-<p>Data in California exists at several different geographic areas:</p>
-<p>In decreasing size…</p>
-<ol type="1">
-<li class="fragment">State</li>
-<li class="fragment">County (also identified by FIPS code)</li>
-<li class="fragment">Congressional District (CDDIST)</li>
-<li class="fragment">Voting Precinct (SVPREC)</li>
-<li class="fragment">Census Block (has demographic data)</li>
-</ol>
-<div class="fragment">
-<p>Votes are recorded at the <em>precinct</em> level. Precincts are administered by the counties.</p>
-</div>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><span class="fragment fade-in-then-semi-out">I didn’t use the AI tools you mentioned in class, but I asked chat gpt what function to use to increase the weight of the positive cases and swap the success class for the metrics (they were previously counting 0 as positive and 1 as negative).</span> <span class="fragment fade-in-then-semi-out">My first few models predicted basically everything to be negative, which I thought was because the dataset had an overwhelming proportion of negative cases.</span> <span class="fragment fade-in-then-semi-out">The accuracy of the models was very high but the recall was very low, so I asked chat gpt what function I could use to increase the weight of the positive samples (step_upsample from the themis package you mentioned).</span> <span class="fragment fade-in-then-semi-out">I played around with the ratio until settling on .05 which seemed to maximize the F Beta score.</span></p>
 </section></section>
-<section id="project-worktime" class="title-slide slide level1 center">
-<h1>Project Worktime</h1>
-<div id="timer_a2970b79ec4598e3f902feda18b39864bedc4f97" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
- </div>
-
+<section>
+<section id="databot-revisited" class="title-slide slide level1 center">
+<h1>DataBot Revisited</h1>
 
 </section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="images/databot.png" class="r-stretch"><blockquote>
+<p>How did it work?</p>
+</blockquote>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ellmer)</span>
+<span id="cb1-2"><a></a>claude1 <span class="ot">&lt;-</span> <span class="fu">chat_claude</span>()</span>
+<span id="cb1-3"><a></a><span class="fu">str</span>(claude1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+
+</div>
+<div class="fragment">
+<pre><code>Classes 'Chat', 'R6' &lt;Chat&gt;
+  Public:
+    add_turn: function (user, assistant, log_tokens = TRUE) 
+    chat: function (..., echo = NULL) 
+    chat_async: function (..., tool_mode = c("concurrent", "sequential")) 
+    chat_structured: function (..., type, echo = "none", convert = TRUE) 
+    chat_structured_async: function (..., type, echo = "none", convert = TRUE) 
+    clone: function (deep = FALSE) 
+    get_cost: function (include = c("all", "last")) 
+    get_model: function () 
+    get_provider: function () 
+    get_system_prompt: function () 
+    get_tokens: function (include_system_prompt = deprecated()) 
+    get_tools: function () 
+    get_turns: function (include_system_prompt = FALSE) 
+    initialize: function (provider, system_prompt = NULL, echo = "none") 
+    last_turn: function (role = c("assistant", "user", "system")) 
+    on_tool_request: function (callback) 
+    on_tool_result: function (callback) 
+    register_tool: function (tool) 
+    register_tools: function (tools) 
+    set_system_prompt: function (value) 
+    set_tools: function (tools) 
+    set_turns: function (value) 
+    stream: function (..., stream = c("text", "content")) 
+    stream_async: function (..., tool_mode = c("concurrent", "sequential"), stream = c("text", 
+  Private:
+    .turns: list
+    callback_on_tool_request: CallbackManager, R6
+    callback_on_tool_result: CallbackManager, R6
+    chat_impl: function (...) 
+    chat_impl_async: function (...) 
+    complete_dangling_tool_requests: function () 
+    echo: output
+    has_system_prompt: function () 
+    provider: ellmer::ProviderAnthropic, ellmer::Provider, S7_object
+    submit_turns: function (...) 
+    submit_turns_async: function (...) 
+    tools: list </code></pre>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>claude1<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"The capital of France is"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+
+</div>
+<div class="fragment">
+<pre><code>Paris.</code></pre>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">str</span>(claude1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</div>
+<div class="fragment">
+<pre><code>Classes 'Chat', 'R6' &lt;Chat&gt;
+  Public:
+    add_turn: function (user, assistant, log_tokens = TRUE) 
+    chat: function (..., echo = NULL) 
+    chat_async: function (..., tool_mode = c("concurrent", "sequential")) 
+    chat_structured: function (..., type, echo = "none", convert = TRUE) 
+    chat_structured_async: function (..., type, echo = "none", convert = TRUE) 
+    clone: function (deep = FALSE) 
+    get_cost: function (include = c("all", "last")) 
+    get_model: function () 
+    get_provider: function () 
+    get_system_prompt: function () 
+    get_tokens: function (include_system_prompt = deprecated()) 
+    get_tools: function () 
+    get_turns: function (include_system_prompt = FALSE) 
+    initialize: function (provider, system_prompt = NULL, echo = "none") 
+    last_turn: function (role = c("assistant", "user", "system")) 
+    on_tool_request: function (callback) 
+    on_tool_result: function (callback) 
+    register_tool: function (tool) 
+    register_tools: function (tools) 
+    set_system_prompt: function (value) 
+    set_tools: function (tools) 
+    set_turns: function (value) 
+    stream: function (..., stream = c("text", "content")) 
+    stream_async: function (..., tool_mode = c("concurrent", "sequential"), stream = c("text", 
+  Private:
+    .turns: list
+    callback_on_tool_request: CallbackManager, R6
+    callback_on_tool_result: CallbackManager, R6
+    chat_impl: function (...) 
+    chat_impl_async: function (...) 
+    complete_dangling_tool_requests: function () 
+    echo: output
+    has_system_prompt: function () 
+    provider: ellmer::ProviderAnthropic, ellmer::Provider, S7_object
+    submit_turns: function (...) 
+    submit_turns_async: function (...) 
+    tools: list </code></pre>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>claude1<span class="sc">$</span><span class="fu">get_turns</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+
+</div>
+<div class="fragment">
+<pre><code>[[1]]
+&lt;Turn: user&gt;
+The capital of France is
+
+[[2]]
+&lt;Turn: assistant&gt;
+Paris.</code></pre>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Where are DataBot’s logs?</p>
+</blockquote>
+<p>Demo</p>
+</div>
+</section>
+<section id="what-are-tools" class="slide level2">
+<h2>What are tools?</h2>
+<ul>
+<li class="fragment">Tools are functions that an LLM can call to extend its capabilities.</li>
+<li class="fragment">Examples:
+<ul>
+<li class="fragment">Web search</li>
+<li class="fragment">Calculations</li>
+<li class="fragment">Database queries</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-6" class="slide level2" data-background-image="images/tool-calling-wrong.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/tool-calling-right.svg" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="was-it-correct" class="slide level2">
+<h2>Was it correct?</h2>
+</section>
+<section id="step-cautiously" class="slide level2">
+<h2>Step Cautiously…</h2>
+<ul>
+<li class="fragment">LLMs can easily be wrong</li>
+<li class="fragment">Agentic LLMs can be malicious</li>
+<li class="fragment">LLMs don’t know what’s important</li>
+<li class="fragment">LLMs can derail your thinking</li>
+<li class="fragment">LLMs can be inefficient</li>
+<li class="fragment">LLMs can demolish your understanding of how to code</li>
+</ul>
+</section></section>
+<section>
+<section id="a-world-of-abstraction" class="title-slide slide level1 center">
+<h1>A World of Abstraction</h1>
+
+</section>
+<section id="section-8" class="slide level2" data-background-image="images/english-good.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/english-bad.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div style="font-family: Georgia, serif; font-size: 2em; border-left: 5px solid #ccc; padding-left: 20px; margin: 40px 0; font-style: italic;">
+<p>Let’s say, two men are trying to drive a stake into the ground. One of them has a hammer, and the other says, ‘when I nod my head, hit it with a hammer,’</p>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+
+<img data-src="images/bike-flat.jpg" class="r-stretch"><blockquote>
+<p>What do you do when you get a flat tire?</p>
+</blockquote>
+</section></section>
+<section>
+<section id="the-end" class="title-slide slide level1 center">
+<h1>The End</h1>
+
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li class="fragment">Diagrams from the Ellmer documentation: <a href="https://ellmer.tidyverse.org/" class="uri">https://ellmer.tidyverse.org/</a></li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="../../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-logo-vsmall.png" class="slide-logo"></p>
+<p><img src="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-logo-vsmall.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
-  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -499,6 +676,44 @@ EG = \frac{W_B - W_A}{T}
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
