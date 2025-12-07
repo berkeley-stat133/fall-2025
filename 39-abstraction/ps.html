@@ -216,6 +216,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">PS 13</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/ps14.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PS 14</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -232,15 +238,14 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="a-world-of-abstraction" class="level3">
 <h3 class="anchored" data-anchor-id="a-world-of-abstraction">A World of Abstraction</h3>
-<hr>
 <p>In lecture we looked through the log of the exchange of text data between me on my laptop and the LLM (i.e.&nbsp;DataBot).</p>
 <ul>
 <li><a href="../39-abstraction/conversation-export.html">Conversation HTML file</a></li>
 <li><a href="../39-abstraction/conversation-export.json">Conversation JSON file</a></li>
 </ul>
-<p>The first substantive (although poorly spelled) request that I made was: “I’m working on my gerrmadering prooject. could you please load the g24 sv precinct data and tell me a bit about it?”. We saw how the result was impressive (it found the issue with <code>***</code>) but also faulty: it didn’t catch that some of the rows were totals of other rows, so it greatly overstaed the number of votes.</p>
+<p>The first substantive (although poorly spelled) request that I made was: “I’m working on my gerrmadering prooject. could you please load the g24 sv precinct data and tell me a bit about it?”. We saw how the result was impressive (it found the issue with <code>***</code>) but also faulty: it didn’t catch that some of the rows were totals of other rows, so it greatly overstated the number of votes.</p>
 <p>In the space below, rewrite this prompt in a way that you think will give the model a better chance of finding the issue with the row totals. Your rewrite shouldn’t show that you already know the answer (e.g.&nbsp;“some rows are totals of other rows”), but it should guide the model to think more carefully about the data.</p>
-<p>If you have access to DataBot, you can start it in your project directory (or a new clone of the project repository) and try your prompt there. Is it more correct? Are there any other issues that occurred?</p>
+<p>If you have access to DataBot, you can start it in your project directory (or a new clone of the project repository) and try your prompt there. Is the response fully correct? Are there any other issues that occurred?</p>
 
 
 </section>
