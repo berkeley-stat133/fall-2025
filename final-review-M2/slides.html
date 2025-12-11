@@ -6,12 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
-<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STAT 133 – Control Flow</title>
+  <title>STAT 133 – Final Exam Review Module 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -197,326 +195,569 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133_slide.png" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Control Flow</h1>
-  <p class="subtitle">Choices and Iteration</p>
+  <h1 class="title">Final Exam Review Module 2</h1>
+  <p class="subtitle">Git to Strings</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ul>
+<li class="fragment">Git</li>
+<li class="fragment">Data Wrangling</li>
+<li class="fragment">Data Viz and Grammar of Graphics</li>
+<li class="fragment">Project 3: ER Visits</li>
+<li class="fragment">EDA and Explanatory DA</li>
+<li class="fragment">Joins and Pivots</li>
+<li class="fragment">Strings</li>
+<li class="fragment">Project 4: EV Power</li>
+</ul>
+</section>
 <section>
-<section id="choices" class="title-slide slide level1 center">
-<h1>Choices</h1>
+<section id="git" class="title-slide slide level1 center">
+<h1>Git</h1>
 
 </section>
-<section id="section" class="slide level2" data-background-image="images/lyft.jpeg" data-background-size="contain">
-<h2></h2>
+<section id="git-basics" class="slide level2">
+<h2>Git Basics</h2>
+<ul>
+<li class="fragment">Git is part of your toolbox to do computations with (includes R and the unix shell) - Version control system that helps you track changes to files and collaborate with others</li>
+<li class="fragment">A <strong>repository</strong> (or “repo”) is a directory that contains your project files and the history of changes made to those files</li>
+</ul>
 </section>
-<section id="getting-to-campus" class="slide level2">
-<h2>Getting to Campus</h2>
-<p>If my bike is working<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride my bike to campus.</p>
-<div class="fragment">
-<p>If my bike is not working and I have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride the bus to campus.</p>
-</div>
-<div class="fragment">
-<p>If my bike is not working and I don’t have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I take a cab.</p>
-</div>
+<section id="common-git-commands" class="slide level2">
+<h2>Common Git commands:</h2>
+<ul>
+<li class="fragment"><code>git init</code>: Initialize a new Git repository.</li>
+<li class="fragment"><code>git clone &lt;url&gt;</code>: Clone an existing repository from a URL.</li>
+<li class="fragment"><code>git add &lt;file&gt;</code>: Stage changes to a file for the next commit.</li>
+<li class="fragment"><code>git commit -m "message"</code>: Commit staged changes with a message.</li>
+<li class="fragment"><code>git push</code>: Push committed changes to a remote repository.</li>
+</ul>
+</section></section>
+<section>
+<section id="data-wrangling" class="title-slide slide level1 center">
+<h1>Data Wrangling</h1>
+
 </section>
-<section id="a-random-condition-in-r" class="slide level2">
-<h2>A random condition in R</h2>
-<div class="fragment">
+<section id="base-r-vs.-dplyr" class="slide level2">
+<h2>Base R vs.&nbsp;dplyr</h2>
+<p>Base R lets you subset data frames using $, [], and logical expressions, but this often becomes messy and hard to read:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">rnorm</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a>starwars[starwars<span class="sc">$</span>height <span class="sc">&lt;</span> <span class="fl">1.75</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.671851</code></pre>
+<pre><code># A tibble: 6 × 14
+  name  height  mass hair_color skin_color eye_color birth_year sex   gender
+  &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+1 &lt;NA&gt;      NA    NA &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;              NA &lt;NA&gt;  &lt;NA&gt;  
+2 &lt;NA&gt;      NA    NA &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;              NA &lt;NA&gt;  &lt;NA&gt;  
+3 &lt;NA&gt;      NA    NA &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;              NA &lt;NA&gt;  &lt;NA&gt;  
+4 &lt;NA&gt;      NA    NA &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;              NA &lt;NA&gt;  &lt;NA&gt;  
+5 &lt;NA&gt;      NA    NA &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;              NA &lt;NA&gt;  &lt;NA&gt;  
+6 &lt;NA&gt;      NA    NA &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;              NA &lt;NA&gt;  &lt;NA&gt;  
+# ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>starwars<span class="sc">$</span>height_in <span class="ot">&lt;-</span> starwars<span class="sc">$</span>height <span class="sc">*</span> <span class="fl">39.3701</span></span>
+<span id="cb3-2"><a></a><span class="fu">mean</span>(starwars<span class="sc">$</span>height[starwars<span class="sc">$</span>homeworld <span class="sc">==</span> <span class="st">"Tatooine"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
 </div>
-</div>
-<div class="fragment">
-<p><code>rnorm()</code> will generate a random number from a Normal distribution with mean 0 and SD 1.</p>
 </div>
 </section>
-<section id="if-then" class="slide level2">
-<h2>if-then</h2>
-<p><strong>“if then” statement</strong>: executes a block of code if a condition is met.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb3-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb3-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<aside class="notes">
-<p>Drop:</p>
+<section id="how-is-dplyr-better" class="slide level2">
+<h2>How is dplyr better?</h2>
 <ul>
-<li>Run this multiple times to see how it’s random.</li>
-<li>Could set x &lt;- 1 to make it deterministic or even just TRUE.</li>
-<li>Annotate code with different colors: if-then syntax, logical condition, and what to do.</li>
+<li class="fragment"><p>Reusing clean data frames</p></li>
+<li class="fragment"><p>Using readable verbs (filter(), select(), mutate(), etc.)</p></li>
+<li class="fragment"><p>Referencing columns without quotes</p></li>
+<li class="fragment"><p>Producing consistent data frames as output</p></li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
 </section>
-<section id="if-else" class="slide level2">
-<h2>if-else</h2>
-<p><strong>“if else” statement</strong>: executes one block of code if a condition is met and a different block of code if it is not met.</p>
-<div class="fragment">
+<section id="review-question" class="slide level2">
+<h2>Review Question</h2>
+<p>Q: In Base R, how do you compute the average height of characters from Tatooine?</p>
+</section>
+<section id="answer" class="slide level2">
+<h2>Answer</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb4-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb4-5"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb4-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative :("</span>)</span>
-<span id="cb4-7"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">mean</span>(starwars<span class="sc">$</span>height[starwars<span class="sc">$</span>homeworld <span class="sc">==</span> <span class="st">"Tatooine"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<aside class="notes">
-<p>Similarly, run it multiple times and annotate code with different colors: if-then syntax, logical condition, and what to do.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 169.8</code></pre>
+</div>
 </div>
 </section>
-<section id="nested-ifs" class="slide level2">
-<h2>Nested ifs</h2>
-<div class="fragment">
+<section id="core-dplyr-functions" class="slide level2 smaller">
+<h2>Core dplyr functions</h2>
+<ul>
+<li class="fragment"><code>slice()</code>: pick rows by number</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb5-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb5-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb5-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative :("</span>)</span>
-<span id="cb5-7"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb5-8"><a></a>  <span class="fu">print</span>(<span class="st">"x is zero :|"</span>)</span>
-<span id="cb5-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a></a><span class="fu">slice</span>(starwars, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<aside class="notes">
-<p>Run it multiple times, then get the zero to toggle using x &lt;- 0</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 15
+  name  height  mass hair_color skin_color eye_color birth_year sex   gender   
+  &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    
+1 C-3PO    167    75 &lt;NA&gt;       gold       yellow           112 none  masculine
+# ℹ 6 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;, height_in &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>select()</code>: pick columns by name or helper</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">select</span>(starwars, homeworld)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 87 × 1
+   homeworld
+   &lt;chr&gt;    
+ 1 Tatooine 
+ 2 Tatooine 
+ 3 Naboo    
+ 4 Tatooine 
+ 5 Alderaan 
+ 6 Tatooine 
+ 7 Tatooine 
+ 8 Tatooine 
+ 9 Tatooine 
+10 Stewjon  
+# ℹ 77 more rows</code></pre>
+</div>
 </div>
 </section>
-<section id="getting-to-campus-1" class="slide level2">
-<h2>Getting to Campus</h2>
-<div class="fragment">
-<p>If my bike is working<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride my bike to campus.</p>
-<p>If my bike is not working and I have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I ride the bus to campus.</p>
-<p>If my bike is not working and I don’t have enough time<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then I take a cab.</p>
+<section id="section" class="slide level2">
+<h2></h2>
+<ul>
+<li class="fragment"><code>filter()</code>: pick rows by condition</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">filter</span>(starwars, height <span class="sc">&lt;</span> <span class="fl">1.75</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<h4 id="question">Question</h4>
-<p>Using the R objects <code>bike_working</code> and <code>enough_time</code>, both logical vectors of length 1, write this decision tree in R using nested if-then statements and <code>print()</code>.</p>
-<div id="timer_849eb23bcd2406e4917f63ce12dd1a497be50c09" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
-  <div class="countdown-controls">
-    <button class="countdown-bump-down">−</button>
-    <button class="countdown-bump-up">+</button>
- </div>
- <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
- </div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 15
+# ℹ 15 variables: name &lt;chr&gt;, height &lt;int&gt;, mass &lt;dbl&gt;, hair_color &lt;chr&gt;,
+#   skin_color &lt;chr&gt;, eye_color &lt;chr&gt;, birth_year &lt;dbl&gt;, sex &lt;chr&gt;,
+#   gender &lt;chr&gt;, homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;, height_in &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>mutate()</code>: create or transform columns</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">mutate</span>(starwars, <span class="at">height_in =</span> height <span class="sc">*</span> <span class="fl">39.3701</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 87 × 15
+   name     height  mass hair_color skin_color eye_color birth_year sex   gender
+   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+ 1 Luke Sk…    172    77 blond      fair       blue            19   male  mascu…
+ 2 C-3PO       167    75 &lt;NA&gt;       gold       yellow         112   none  mascu…
+ 3 R2-D2        96    32 &lt;NA&gt;       white, bl… red             33   none  mascu…
+ 4 Darth V…    202   136 none       white      yellow          41.9 male  mascu…
+ 5 Leia Or…    150    49 brown      light      brown           19   fema… femin…
+ 6 Owen La…    178   120 brown, gr… light      blue            52   male  mascu…
+ 7 Beru Wh…    165    75 brown      light      blue            47   fema… femin…
+ 8 R5-D4        97    32 &lt;NA&gt;       white, red red             NA   none  mascu…
+ 9 Biggs D…    183    84 black      light      brown           24   male  mascu…
+10 Obi-Wan…    182    77 auburn, w… fair       blue-gray       57   male  mascu…
+# ℹ 77 more rows
+# ℹ 6 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;, height_in &lt;dbl&gt;</code></pre>
+</div>
 </div>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+<ul>
+<li class="fragment"><code>summarize()</code>: collapse to single row</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="cf">if</span> (bike_working) {</span>
-<span id="cb6-2"><a></a>  <span class="fu">print</span>(<span class="st">"ride bike"</span>)</span>
-<span id="cb6-3"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (enough_time) {</span>
-<span id="cb6-4"><a></a>  <span class="fu">print</span>(<span class="st">"ride bus"</span>)</span>
-<span id="cb6-5"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb6-6"><a></a>  <span class="fu">print</span>(<span class="st">"call cab"</span>)</span>
-<span id="cb6-7"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">summarize</span>(starwars, <span class="at">avg_height =</span> <span class="fu">mean</span>(height))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<aside class="notes">
-<p>If time you can set the values of bike_working and enough_time to verify that it works.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_height
+       &lt;dbl&gt;
+1         NA</code></pre>
+</div>
+</div>
+</section>
+<section id="review-question-1" class="slide level2">
+<h2>Review Question</h2>
+<p>Using dplyr, how do you compute the average height of characters from Tatooine?</p>
+</section>
+<section id="answer-1" class="slide level2">
+<h2>Answer:</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">summarise</span>(</span>
+<span id="cb17-2"><a></a>  <span class="fu">filter</span>(starwars, homeworld <span class="sc">==</span> <span class="st">"Tatooine"</span>),</span>
+<span id="cb17-3"><a></a>  <span class="at">avg_height =</span> <span class="fu">mean</span>(height)</span>
+<span id="cb17-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_height
+       &lt;dbl&gt;
+1       170.</code></pre>
+</div>
+</div>
+</section>
+<section id="chaining-with-the-pipe-operator" class="slide level2">
+<h2>Chaining with the Pipe Operator</h2>
+<ul>
+<li class="fragment">The pipe operator <code>|&gt;</code> allows you to chain multiple dplyr functions together in a readable way.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>starwars <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">filter</span>(homeworld <span class="sc">==</span> <span class="st">"Tatooine"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">summarize</span>(<span class="fu">mean</span>(height))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  `mean(height)`
+           &lt;dbl&gt;
+1           170.</code></pre>
+</div>
+</div>
+</section>
+<section id="grouped-operations" class="slide level2">
+<h2>Grouped Operations</h2>
+<ul>
+<li class="fragment">Use <code>group_by()</code> to perform operations by group<br>
+</li>
+<li class="fragment">It marks groups in the data, allowing functions like <code>summarise()</code> and <code>mutate()</code> to work group by group instead of on the whole dataset<br>
+</li>
+</ul>
+</section>
+<section id="example" class="slide level2 smaller">
+<h2>Example</h2>
+<p>Without grouping:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>starwars <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_height =</span> <span class="fu">mean</span>(height))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_height
+       &lt;dbl&gt;
+1         NA</code></pre>
+</div>
+</div>
+<p>With grouping:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>starwars <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">mutate</span>(<span class="at">height_mean =</span> <span class="fu">mean</span>(height))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 87 × 16
+# Groups:   homeworld [49]
+   name     height  mass hair_color skin_color eye_color birth_year sex   gender
+   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+ 1 Luke Sk…    172    77 blond      fair       blue            19   male  mascu…
+ 2 C-3PO       167    75 &lt;NA&gt;       gold       yellow         112   none  mascu…
+ 3 R2-D2        96    32 &lt;NA&gt;       white, bl… red             33   none  mascu…
+ 4 Darth V…    202   136 none       white      yellow          41.9 male  mascu…
+ 5 Leia Or…    150    49 brown      light      brown           19   fema… femin…
+ 6 Owen La…    178   120 brown, gr… light      blue            52   male  mascu…
+ 7 Beru Wh…    165    75 brown      light      blue            47   fema… femin…
+ 8 R5-D4        97    32 &lt;NA&gt;       white, red red             NA   none  mascu…
+ 9 Biggs D…    183    84 black      light      brown           24   male  mascu…
+10 Obi-Wan…    182    77 auburn, w… fair       blue-gray       57   male  mascu…
+# ℹ 77 more rows
+# ℹ 7 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;, height_in &lt;dbl&gt;, height_mean &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="review-question-2" class="slide level2">
+<h2>Review Question</h2>
+<p>Q: Explain what happens if you do group_by() → mutate() → summarize().</p>
+</section>
+<section id="answer-2" class="slide level2 smaller">
+<h2>Answer</h2>
+<p>A:<br>
+- group_by() creates groups<br>
+</p>
+<ul>
+<li class="fragment"><p>mutate() calculates new variables within each group (like group means, group z-scores)<br>
+</p></li>
+<li class="fragment"><p>summarize(), when applied afterward, collapses each group to one row, producing one summary per group<br>
+</p></li>
+<li class="fragment"><p>After summarize(), the grouping is dropped automatically, because each group has been reduced to one row and grouping no longer makes sense</p></li>
+</ul>
 </section></section>
 <section>
-<section id="iteration" class="title-slide slide level1 center">
-<h1>Iteration</h1>
+<section id="data-viz-and-grammar-of-graphics" class="title-slide slide level1 center">
+<h1>Data Viz and Grammar of Graphics</h1>
 
 </section>
-<section id="for-loops" class="slide level2">
-<h2>For loops</h2>
-<p><a href="https://stat133.berkeley.edu/spring-2025/slides/stat133-02-prog3-for-loop.pdf">Prof.&nbsp;Sanchez Slides</a></p>
-<div class="fragment">
-<div class="r-fit-text">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="cf">for</span> (item <span class="cf">in</span> vector) {</span>
-<span id="cb7-2"><a></a>    perform_action</span>
-<span id="cb7-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="what-is-the-grammar-of-graphics" class="slide level2">
+<h2>What is the Grammar of Graphics?</h2>
+<p>A systematic way to describe and build visualizations built from three core components:<br>
+</p>
+<ul>
+<li class="fragment"><p>Data<br>
+</p></li>
+<li class="fragment"><p>Aesthetic mappings (link variables → visual channels)<br>
+</p></li>
+<li class="fragment"><p>Geometries (how data becomes marks: points, lines, bars)<br>
+</p></li>
+</ul>
+</section>
+<section id="review-question-3" class="slide level2">
+<h2>Review Question</h2>
+<p>Q: What is one example of an aesthetic mapping? What visual channel does it use?<br>
+</p>
+</section>
+<section id="answer-3" class="slide level2">
+<h2>Answer</h2>
+<p>A: An example is mapping species to color. This uses the color visual channel to encode differences between species.</p>
+</section>
+<section id="different-geometries" class="slide level2">
+<h2>Different geometries</h2>
+<p>Different geoms = different ways to summarize a variable<br>
+- <code>geom_point()</code>: scatterplots (two continuous variables)<br>
+- <code>geom_line()</code>: line plots (continuous variable over time)<br>
+- <code>geom_bar()</code>: bar plots (categorical variable counts or summaries)<br>
+- <code>geom_histogram()</code>: histograms (distribution of a single continuous variable)<br>
+- <code>geom_boxplot()</code>: boxplots (distribution summaries by category)<br>
+… and more! Depends on the use case<br>
+</p>
+</section>
+<section id="example-components-of-ggplot" class="slide level2 smaller">
+<h2>Example components of ggplot</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb25-2"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb25-4"><a></a>             <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb25-5"><a></a>             <span class="at">color =</span> species,</span>
+<span id="cb25-6"><a></a>             <span class="at">shape =</span> sex)) <span class="sc">+</span></span>
+<span id="cb25-7"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
 </div>
+</div>
+</div></div>
+<ul>
+<li class="fragment"><p>Data: palmerpenguins::penguins</p></li>
+<li class="fragment"><p>Aesthetics: x, y, color, shape</p></li>
+<li class="fragment"><p>Geometry: geom_point()</p></li>
+</ul>
+</section></section>
+<section>
+<section id="project-3-er-visits" class="title-slide slide level1 center">
+<h1>Project 3: ER Visits</h1>
+
+</section>
+<section id="core-skills" class="slide level2">
+<h2>Core skills:</h2>
+<ul>
+<li class="fragment">Data cleaning (using dplyr)<br>
+</li>
+<li class="fragment">EDA (including missing value analysis)<br>
+</li>
+<li class="fragment">Communicating findings (using ggplot2)</li>
+</ul>
+</section></section>
+<section>
+<section id="eda-vs.-explanatory-data-analysis" class="title-slide slide level1 center">
+<h1>EDA vs.&nbsp;Explanatory Data Analysis</h1>
+
+</section>
+<section id="eda" class="slide level2">
+<h2>EDA</h2>
+<p>Exploratory Data Analysis<br>
+- Open-ended exploration of data to find patterns or anomalies<br>
+- Often uses many plots and summary statistics<br>
+</p>
+<p>Example questions to answer:<br>
+- What are the cols and rows?<br>
+- Is there any missing data?<br>
+- What are the distributions of key variables?<br>
+</p>
+</section>
+<section id="explanatory-data-analysis" class="slide level2">
+<h2>Explanatory Data Analysis</h2>
+<ul>
+<li class="fragment">Focused on communicating specific findings or insights.<br>
+</li>
+<li class="fragment">Uses clear, well-designed visualizations to tell a story.<br>
+</li>
+</ul>
+<p>Example tools to use:<br>
+- Clear titles and labels<br>
+- Setting aesthetics and themes<br>
+</p>
+</section></section>
+<section>
+<section id="joins-and-pivots" class="title-slide slide level1 center">
+<h1>Joins and Pivots</h1>
+
+</section>
+<section id="joins" class="slide level2">
+<h2>Joins</h2>
+<ul>
+<li class="fragment">Joins combine two data frames based on a common key.<br>
+</li>
+<li class="fragment">Types of joins:<br>
+
+<ul>
+<li class="fragment">Inner join: keeps only matching rows.<br>
+</li>
+<li class="fragment">Left join: keeps all rows from the left table, matching from the right.<br>
+</li>
+<li class="fragment">Right join: keeps all rows from the right table, matching from the left.<br>
+</li>
+<li class="fragment">Full join: keeps all rows from both tables, matching where possible.<br>
+</li>
+</ul></li>
+</ul>
+</section>
+<section id="pivots" class="slide level2">
+<h2>Pivots</h2>
+<ul>
+<li class="fragment">Pivoting reshapes data between wide and long formats.<br>
+</li>
+<li class="fragment"><code>pivot_longer()</code>: converts wide format to long format.<br>
+</li>
+<li class="fragment"><code>pivot_wider()</code>: converts long format to wide format.<br>
+</li>
+</ul>
+</section>
+<section id="review-question-4" class="slide level2">
+<h2>Review Question</h2>
+<p>Q: When would you use a left join instead of an inner join?<br>
+</p>
+</section>
+<section id="answer-4" class="slide level2">
+<h2>Answer</h2>
+<p>A: You would use a left join when you want to keep all rows from the left table, even if there are no matching rows in the right table. This is useful when you want to preserve all data from the primary dataset while adding information from a secondary dataset where available.</p>
+</section></section>
+<section>
+<section id="strings" class="title-slide slide level1 center">
+<h1>Strings</h1>
+
+</section>
+<section id="string-basics" class="slide level2">
+<h2>String Basics</h2>
+<ul>
+<li class="fragment">Strings are sequences of characters enclosed in quotes.<br>
+</li>
+<li class="fragment">Common stringr functions:<br>
+
+<ul>
+<li class="fragment"><code>str_length()</code>: gets the length of strings<br>
+</li>
+<li class="fragment"><code>str_c()</code>: concatenates strings<br>
+</li>
+<li class="fragment"><code>str_sub()</code>: extracts substrings<br>
+</li>
+<li class="fragment"><code>str_detect()</code>: checks for pattern presence<br>
+</li>
+<li class="fragment"><code>str_view()</code>: visualizes patterns in strings<br>
+</li>
+</ul></li>
+</ul>
+</section>
+<section id="regular-expressions" class="slide level2">
+<h2>Regular Expressions</h2>
+<ul>
+<li class="fragment">A sequence of characters expressing a string or pattern to be searched for within a longer piece of text.<br>
+</li>
+<li class="fragment">Search for:<br>
+
+<ul>
+<li class="fragment">Literal characters<br>
+</li>
+<li class="fragment">Metacharacters<br>
+</li>
+<li class="fragment">Character sets<br>
+</li>
+<li class="fragment">Character classes</li>
+</ul></li>
+</ul>
+</section>
+<section id="review-question-5" class="slide level2">
+<h2>Review Question</h2>
+<p>Q: How would you use str_detect() to find all strings that contain the word “data”?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(stringr)</span>
+<span id="cb26-2"><a></a>strings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"data science"</span>, <span class="st">"statistics"</span>, <span class="st">"big data"</span>, <span class="st">"analysis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</section>
+<section id="answer-5" class="slide level2">
+<h2>Answer</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">str_detect</span>(strings, <span class="st">"data"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE FALSE</code></pre>
 </div>
 </div>
 </section></section>
 <section>
-<section id="iterated-choices" class="title-slide slide level1 center">
-<h1>Iterated Choices</h1>
+<section id="project-4-ev-power" class="title-slide slide level1 center">
+<h1>Project 4: EV Power</h1>
 
 </section>
-<section id="what-if-x-has-multiple-elements" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What if x has multiple elements?</h2>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">3</span>)</span>
-<span id="cb8-2"><a></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.09551927  0.86368641 -2.28866538</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><br>
-<br>
-<br>
-</p>
-<div class="r-fit-text">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>      <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb10-2"><a></a>        <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb10-3"><a></a>      }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<aside class="notes">
-<p>Annotate this if-then by wrapping it in a for loop.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
-</section>
-<section id="option-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Option 1</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
-<span id="cb11-2" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (x[i] <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb11-3" class="hljs-ln-code"><a></a>    <span class="fu">print</span>(<span class="st">"x is positive :)"</span>)</span>
-<span id="cb11-4" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb11-5" class="hljs-ln-code"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "x is positive :)"
-[1] "x is positive :)"</code></pre>
-</div>
-</div>
-</section>
-<section id="option-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Option 2</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
-<span id="cb13-2" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (x[i] <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb13-3" class="hljs-ln-code"><a></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"element"</span>, i, <span class="st">"is positive :)"</span>))</span>
-<span id="cb13-4" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb13-5" class="hljs-ln-code"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "element 1 is positive :)"
-[1] "element 2 is positive :)"</code></pre>
-</div>
-</div>
-</section>
-<section id="option-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Option 3</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a></a><span class="cf">for</span> (x_elem <span class="cf">in</span> x) {</span>
-<span id="cb15-2" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (x_elem <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb15-3" class="hljs-ln-code"><a></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x_elem, <span class="st">"is positive :)"</span>))</span>
-<span id="cb15-4" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb15-5" class="hljs-ln-code"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "0.0955192748637143 is positive :)"
-[1] "0.863686410991415 is positive :)"</code></pre>
-</div>
-</div>
-</section>
-<section id="ifelse" class="slide level2">
-<h2><code>ifelse()</code></h2>
-<div class="fragment">
-<p><code>ifelse()</code>: A <em>vectorized</em> if-else statement.</p>
-<p><br>
-</p>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>x <span class="sc">&lt;</span> <span class="dv">0</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE FALSE  TRUE</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ifelse</span>(<span class="at">test =</span> x <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="at">yes =</span> <span class="st">"is positive :)"</span>, <span class="at">no =</span> <span class="st">"is negative :("</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "is negative :(" "is negative :(" "is positive :)"</code></pre>
-</div>
-</div>
-
-
-</div>
+<section id="core-skills-1" class="slide level2">
+<h2>Core skills:</h2>
+<ul>
+<li class="fragment">Data cleaning (using stringr and regex)<br>
+</li>
+<li class="fragment">Table joins and pivots<br>
+</li>
+<li class="fragment">Mapping (using ggplot2, sf, leaflet)<br>
+</li>
+<li class="fragment">Communicating findings (using Quarto Dashboards)</li>
+</ul>
 </section></section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+<ul>
+<li class="fragment">Git helps manage version control and collaboration.</li>
+<li class="fragment">dplyr simplifies data wrangling with readable functions and piping.</li>
+<li class="fragment">The Grammar of Graphics provides a framework for building visualizations.</li>
+<li class="fragment">EDA is exploratory, while Explanatory Data Analysis focuses on communication.</li>
+<li class="fragment">Joins and pivots are essential for combining and reshaping data.</li>
+<li class="fragment">String manipulation is crucial for handling text data in R.</li>
+<li class="fragment">Practice these concepts to prepare for the final exam!</li>
+</ul>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-logo-vsmall.png" class="slide-logo"></p>
